@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
-  <style>#anim{max-width:700px; margin: 0 auto;}</style>
+  <style>
+  #anim{max-width:700px; margin: 0 auto;}
+  @media only screen and (max-width:700px){grid-container{grid-template-columns:repeat(2, 1fr); grid-template-rows:repeat(3, 27vw)}}
+</style>
     <a href="index.html">
         <div id="anim"></div>
     </a>
@@ -17,28 +20,47 @@
         path:'AshleyHeader1.json'
         })
     </script>
+
 </head>
 <body style="margin:5%;background-color:#89D5D2;">
 <i class="fa-solid fa-phone"></i>
 <i class="fa-solid fa-route"></i>
-<div class="grid-container" style="display:grid; grid-gap:1rem; grid-template-columns:repeat(3, 1fr); grid-template-rows:auto;">
+<div class="grid-container" style="position:center; display:grid; grid-gap:20% 1%; grid-template-columns:repeat(3, 1fr); grid-template-rows:repeat(2, 27vw);"          >
     <div class="grid-item">
-        <img src="SelfImage.jpeg" alt="p1" style="display:flex; max-width:100%; border-radius:25%;">
+        <a href="RecognitionResearch.html" style="text-decoration:none" >
+        <div style="text-align:center; border-radius:5%; text-decoration:bold; background-color:#BBF1F1; color:#008080; font-size:3vw; margin-bottom:5%; ">Person/Vehicle Recognition</div>
+        <img src="p1.png" alt="p1" style="cursor:pointer; text-align:center; overflow:hidden; display:flex; border-radius:25%; width:100%; height:100%; object-fit:cover;">
+        </a>
     </div>
     <div class="grid-item">
-        <img src="SelfImage.jpeg" alt="p2" style="display:flex; border-radius:25%; max-width:100%;">
+        <a href="PhoneBill.html" style="text-decoration:none" >
+        <div style="border-radius:5%; text-align:center; background-color:#BBF1F1; color:#008080;  font-size:3vw; margin-bottom:5%; ">Phone Bill Manager - site/app</div>
+        <img src="p2.png" alt="p2" style="display:flex; border-radius:25%; width:100%; height:100%; object-fit:cover;">
+        </a>
     </div>
     <div class="grid-item">
-        <img src="SelfImage.jpeg" alt="p3" style="display:flex; border-radius:25%; max-width:100%;">
+        <a href="CompareAlgorithms.html" style="text-decoration:none" >
+        <div style="border-radius:5%; text-align:center; background-color:#BBF1F1; color:#008080;  font-size:3vw; margin-bottom:5%; ">AI algorithms - CIFAR10</div>
+        <img src="p3.png" alt="p3" style="display:flex; border-radius:25%; width:100%; height:100%; object-fit:cover;">
+        </a>
     </div>
     <div class="grid-item">
-        <img src="SelfImage.jpeg" alt="p4" style="display:flex; border-radius:25%; max-width:100%;">
+        <a href="DataStructures.html" style="text-decoration:none" >
+        <div style="border-radius:5%; text-align:center; background-color:#BBF1F1; color:#008080;  font-size:3vw; margin-bottom:5%; ">small programs - Data structures</div>
+        <img src="p4.jpeg" alt="p4" style="display:flex; border-radius:25%; width:100%; height:100%; object-fit:cover;">
+        </a>
     </div>
     <div class="grid-item">
-        <img src="SelfImage.jpeg" alt="p5" style="display:flex; border-radius:25%; max-width:100%;">
+        <a href="TravelingSalesman.html" style="text-decoration:none" >
+        <div style="border-radius:5%; text-align:center; background-color:#BBF1F1; color:#008080;  font-size:3vw; margin-bottom:5%; ">small programs - WebDev</div>
+        <img src="tsp.png" alt="p5" style="display:flex; border-radius:25%; width:100%; height:100%; object-fit:cover;">
+        </a>
     </div>
     <div class="grid-item">
-        <img src="SelfImage.jpeg" alt="p6" style="display:flex; border-radius:25%; max-width:100%;">
+        <a href="JoiRide.html" style="text-decoration:none" >
+        <div style="border-radius:5%; text-align:center; background-color:#BBF1F1; color:#008080;  font-size:3vw; margin-bottom:5%; "> JoiRide Roadtrip - web/app</div>
+        <img src="p6.png" alt="p6" style="display:flex; border-radius:25%; width:100%; height:100%; object-fit:cover;">
+        </a>
     </div>
 </div>
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+  <title>Ashley Maddix</title>
+
+  <h1 style="font-size:50px; position:relative; top:40px; color:#89D5D2; text-align:center;"> Hey! I'm Ashley Maddix</h1>
+-->
+  <style>
+    #anim{max-width:700px; margin:0 auto;}
+    a:hover i{transform:scale(1.5); color:#35B5AC;}
+    a:hover button{transform:scale(1.3);}
+    @media only screen and (max-width:640px){
+      #links{
+      display:grid;
+      position:fixed;
+      padding-left:5%;
+      padding-top:10%;
+      text-align:left;
+      grid-gap:3rem;
+      grid-template-columns:repeat(1, 1fr);
+      grid-template-rows:repeat(2, 50px);
+      }
+    }
+
+    </style>
+  <a href="index.html">
+    <div id="anim"></div>
+  </a>
+  <script src="lottie.js"></script>
+  <script>
+        var animation = bodymovin.loadAnimation({
+        container: document.getElementById('anim'),
+        renderer:'svg',
+        loop:true,
+        autoplay:true,
+        path:'AshleyHeader1.json'
+        })
+    </script>
+
+  <script src="https://kit.fontawesome.com/d224905442.js" crossorigin="anonymous"></script>
+
+  <title>PhoneBillManager</title>
+
+</head>
+
+
+<body style="background-color:#89D5D2;">
+<div class="links" style="display:grid; position:fixed; padding-left:5%; padding-top:10%; text-align:left; grid-gap:3rem; grid-template-columns:repeat(1, 2fr); grid-template-rows:repeat(4, 60px);">
+  <a href="https://github.com/amaddix/CS410-SUMQ22" style="text-decoration:none" >
+    <i class="fa-brands fa-github fa-3x" style="position:center; color:#008080;"></i>
+  </a>
+  <a href="Documentation.pdf" style="text-decoration:none" >
+    <i class="fa-solid fa-book fa-3x" style="position:center; color:#008080;"></i>
+  </a>
+  <a href="" style="text-decoration:none" >
+    <i class="fa-solid fa-earth-americas fa-3x"style="position:center; color:#008080;"></i>
+  </a>
+  <a href="Projects.html" style="text-decoration:none" >
+    <i class="fa-solid fa-circle-arrow-left fa-3x" style="position:center; color:#008080;"></i>
+  </a>
+</div>
+<div style="border-radius:15%; position:grid; text-align:center; background-color:#BBF1F1; margin-left:17%; padding-bottom:80%; margin-right:2%;">
+  <h1 style="text-align:center; color:#265C5C; padding:5%;">Phone Bill Manager</h1>
+
+</div>
+</body>
+</html>
