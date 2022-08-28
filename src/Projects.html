@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
-  <style>#anim{max-width:700px; margin: 0 auto;}</style>
+  <style>
+  #anim{max-width:700px; margin: 0 auto;}
+  a:hover img{opacity:0.25;}
+  .text{visibility:none; opacity:0;}
+  a:hover .text{visibility: visible; opacity:1; color:#008080; padding:5%; font-size:3vw;}
+  @media only screen and (max-width:700px){grid-container{grid-template-columns:repeat(2, 1fr); grid-template-rows:repeat(3, 27vw)}}
+</style>
     <a href="index.html">
         <div id="anim"></div>
     </a>
@@ -17,28 +23,54 @@
         path:'AshleyHeader1.json'
         })
     </script>
+
 </head>
 <body style="margin:5%;background-color:#89D5D2;">
 <i class="fa-solid fa-phone"></i>
 <i class="fa-solid fa-route"></i>
-<div class="grid-container" style="display:grid; grid-gap:1rem; grid-template-columns:repeat(3, 1fr); grid-template-rows:auto;">
-    <div class="grid-item">
-        <img src="SelfImage.jpeg" alt="p1" style="display:flex; max-width:100%; border-radius:25%;">
+<div class="grid-container" style="margin:5%; position:center; display:grid; grid-gap:20% 1%; grid-template-columns:repeat(3, 1fr); grid-template-rows:repeat(2, 27vw);"          >
+    <div class="grid-item" style="position:relative;">
+        <a href="RecognitionResearch.html" style="text-decoration:none; " >
+        <div style="text-align:center; border-radius:5%; text-decoration:bold; background-color:#BBF1F1; color:#008080; font-size:3vw; margin-bottom:5%; ">ML Team Research - Car/Person Classifier</div>
+            <img src="p1.png" alt="p1" style="cursor:pointer; text-align:center; overflow:hidden; display:flex; border-radius:25%; width:100%; height:100%; object-fit:cover;">
+            <div class="text" style="text-align:center; position:absolute; left:7%; top:45%; padding:1%; "><b>  Image Detection <br><br> Team ML Research</b></div>
+        </a>
     </div>
-    <div class="grid-item">
-        <img src="SelfImage.jpeg" alt="p2" style="display:flex; border-radius:25%; max-width:100%;">
+    <div class="grid-item" style="position:relative;">
+        <a href="PhoneBill2.html" style="text-decoration:none" >
+        <div style="border-radius:5%; text-align:center; background-color:#BBF1F1; color:#008080;  font-size:3vw; margin-bottom:5%; ">Web/App - Phone Bill Manager</div>
+        <img src="p2.png" alt="p2" style="display:flex; border-radius:25%; width:100%; height:100%; object-fit:cover;">
+            <div class="text" style="text-align:center; position:absolute; left:7%; top:45%; padding:1%; "><b> Java <br><br> Android Studio <br><br> Server/Client Interface</b></div>
+        </a>
     </div>
-    <div class="grid-item">
-        <img src="SelfImage.jpeg" alt="p3" style="display:flex; border-radius:25%; max-width:100%;">
+    <div class="grid-item" style="position:relative;">
+        <a href="CompareAlgorithms.html" style="text-decoration:none" >
+        <div style="border-radius:5%; text-align:center; background-color:#BBF1F1; color:#008080;  font-size:3vw; margin-bottom:5%; ">AI Algorithms - CIFAR10</div>
+        <img src="p3.png" alt="p3" style="display:flex; border-radius:25%; width:100%; height:100%; object-fit:cover;">
+            <div class="text" style="text-align:center; position:absolute; left:7%; top:45%; padding:1%; "><b> Python <br><br> Image Detection <br><br> Team AI Research</b></div>
+        </a>
     </div>
-    <div class="grid-item">
-        <img src="SelfImage.jpeg" alt="p4" style="display:flex; border-radius:25%; max-width:100%;">
+    <div class="grid-item" style="position:relative;">
+        <a href="DataStructures.html" style="text-decoration:none" >
+        <div style="border-radius:5%; text-align:center; background-color:#BBF1F1; color:#008080;  font-size:3vw; margin-bottom:5%; ">Small Programs - Data structures</div>
+        <img src="p4.jpeg" alt="p4" style="display:flex; border-radius:25%; width:100%; height:100%; object-fit:cover;">
+            <div class="text" style="text-align:center; position:absolute; left:7%; top:45%; padding:1%; "><b> C++ <br><br> Object Oriented <br><br> Data Structures</b></div>
+        </a>
     </div>
-    <div class="grid-item">
-        <img src="SelfImage.jpeg" alt="p5" style="display:flex; border-radius:25%; max-width:100%;">
+    <div class="grid-item" style="position:relative;">
+        <a href="TravelingSalesman.html" style="text-decoration:none" >
+        <div style="border-radius:5%; text-align:center; background-color:#BBF1F1; color:#008080;  font-size:3vw; margin-bottom:5%; ">AI Algorithm - traveling salesman</div>
+        <img src="tsp.png" alt="p5" style="display:flex; border-radius:25%; width:100%; height:100%; object-fit:cover;">
+            <div class="text" style="text-align:center; position:absolute; left:7%; top:45%; padding:1%; "><b> Python <br><br> Team AI Research</b></div>
+        </a>
     </div>
-    <div class="grid-item">
-        <img src="SelfImage.jpeg" alt="p6" style="display:flex; border-radius:25%; max-width:100%;">
+    <div class="grid-item" style="position:relative;">
+        <a href="JoiRide.html" style="text-decoration:none" >
+        <div style="border-radius:5%; text-align:center; background-color:#BBF1F1; color:#008080;  font-size:3vw; margin-bottom:5%; ">Web/App - JoiRide Roadtrip</div>
+        <img src="p6.png" alt="p6" style="display:flex; border-radius:25%; width:100%; height:100%; object-fit:cover;">
+            <div class="text" style="text-decoration:none; text-align:center; position:absolute; left:7%; top:45%; padding:1%; "><b> Node.Js <br><br> HTML/CSS <br><br> Google Maps API</b></div>
+
+        </a>
     </div>
 </div>
 

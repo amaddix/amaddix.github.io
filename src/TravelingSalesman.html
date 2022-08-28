@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+  <title>Ashley Maddix</title>
+
+  <h1 style="font-size:50px; position:relative; top:40px; color:#89D5D2; text-align:center;"> Hey! I'm Ashley Maddix</h1>
+-->
+  <style>
+    #anim{max-width:700px; margin:0 auto;}
+    a:hover i{transform:scale(1.5); color:#35B5AC;}
+    a:hover button{transform:scale(1.3);}
+    @media only screen and (max-width:640px){
+      #links{
+      display:grid;
+      position:fixed;
+      padding-left:5%;
+      padding-top:10%;
+      text-align:left;
+      grid-gap:3rem;
+      grid-template-columns:repeat(1, 1fr);
+      grid-template-rows:repeat(2, 50px);
+      }
+    }
+
+    </style>
+  <a href="index.html">
+    <div id="anim"></div>
+  </a>
+  <script src="lottie.js"></script>
+  <script>
+        var animation = bodymovin.loadAnimation({
+        container: document.getElementById('anim'),
+        renderer:'svg',
+        loop:true,
+        autoplay:true,
+        path:'AshleyHeader1.json'
+        })
+    </script>
+
+  <script src="https://kit.fontawesome.com/d224905442.js" crossorigin="anonymous"></script>
+
+  <title>SmallPrograms-WebDev</title>
+
+</head>
+
+
+<body style="background-color:#89D5D2;">
+<div class="links" style="display:grid; position:fixed; padding-left:5%; padding-top:10%; text-align:left; grid-gap:3rem; grid-template-columns:repeat(1, 2fr); grid-template-rows:repeat(2, 60px);">
+  <a href="https://github.com/camilionaire/AI_GroupProj_TSP" style="text-decoration:none" >
+    <i class="fa-brands fa-github fa-3x" style="position:center; color:#008080;"></i>
+  </a>
+  <a href="AI_ProjectReport.pdf" style="text-decoration:none" >
+    <i class="fa-solid fa-book fa-3x" style="position:center; color:#008080;"></i>
+  </a>
+  <a href="Projects.html" style="text-decoration:none" >
+    <i class="fa-solid fa-circle-arrow-left fa-3x" style="position:center; color:#008080;"></i>
+  </a>
+</div>
+<div style="border-radius:15%; position:grid; text-align:center; background-color:#BBF1F1; margin-left:17%; margin-right:2%;">
+  <br><br>
+  <h2 style="text-align:right; color:#265C5C; padding-right:15%; ">2021</h2>
+  <h1 style="text-align:center; color:#265C5C; padding-bottom:5%;">TravelingSalesman- Comparing AI algorithms</h1>
+  <h3 style="color:#265C5C; padding:5%;">
+    <b><i> Python Language - TSP optimization - AI algorithm comparison research </i></b> <br><br>
+    <b>Team Research project </b> : Myself along with, <i>Camilo Schaser-Hughes, Jason Bockover, Yufie Tao</i> <br><br><br>
+
+    This project focused on efficiently solving the Traveling Salesman problem, a task to find the shortest path between <i>n</i> locations.
+    We analyzed and compared results from 3 different algorithms to find the most optimal method.
+    We used the Genetic algorithm, Simulated Annealing, and an Ant Colony Optimization and found that they all preformed
+    well when <i>n</i> was between 5 - 26. At <i>n</i> = 42 the Genetic Algorithm and ACO performed best. However, at 48, the highest value
+    of <i>n</i> we tested, Simulated Annealing outperformed the rest.
+ <br>
+  </h3>
+</div>
+</body>
+</html>

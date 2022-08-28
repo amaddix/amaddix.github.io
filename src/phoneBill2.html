@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+  <title>Ashley Maddix</title>
+
+  <h1 style="font-size:50px; position:relative; top:40px; color:#89D5D2; text-align:center;"> Hey! I'm Ashley Maddix</h1>
+-->
+  <style>
+    #anim{max-width:700px; margin:0 auto;}
+    a:hover i{transform:scale(1.5); color:#35B5AC;}
+    a:hover button{transform:scale(1.3);}
+    @media only screen and (max-width:640px){
+      #links{
+      display:grid;
+      position:fixed;
+      padding-left:5%;
+      padding-top:10%;
+      text-align:left;
+      grid-gap:3rem;
+      grid-template-columns:repeat(1, 1fr);
+      grid-template-rows:repeat(2, 50px);
+      }
+    }
+
+    </style>
+  <a href="index.html">
+    <div id="anim"></div>
+  </a>
+  <script src="lottie.js"></script>
+  <script>
+        var animation = bodymovin.loadAnimation({
+        container: document.getElementById('anim'),
+        renderer:'svg',
+        loop:true,
+        autoplay:true,
+        path:'AshleyHeader1.json'
+        })
+    </script>
+
+  <script src="https://kit.fontawesome.com/d224905442.js" crossorigin="anonymous"></script>
+
+  <title>PhoneBillManager-android</title>
+
+</head>
+
+
+<body style="background-color:#89D5D2;">
+<div class="links" style="display:grid; position:fixed; padding-left:5%; padding-top:10%; text-align:left; grid-gap:3rem; grid-template-columns:repeat(1, 2fr); grid-template-rows:repeat(4, 60px);">
+  <a href="https://github.com/amaddix/CS410-SUMQ22/tree/main/phonebill-android" style="text-decoration:none" >
+    <i class="fa-brands fa-github fa-3x" style="position:center; color:#008080;"></i>
+  </a>
+
+  <a href="Projects.html" style="text-decoration:none" >
+    <i class="fa-solid fa-circle-arrow-left fa-3x" style="position:center; color:#008080;"></i>
+  </a>
+</div>
+<div style="border-radius:15%; position:grid; text-align:center; background-color:#BBF1F1; margin-left:17%; padding-bottom:5%; margin-right:2%;">
+  <br><br>
+  <h2 style="text-align:right; color:#265C5C; padding-right:15%; ">2022</h2>
+
+  <h1 style="text-align:center; color:#265C5C; padding-bottom:5%;">  Phone Bill Manager - <br>   Android App  </h1>
+  <h3 style="color:#265C5C; padding:5%;">     <b><i> Java Language - Object Oriented design - Test driven development - intelliJ - android studio - REST API - maven - javadocs - jacoco -  </i></b>
+    <br><br><br>
+
+
+    Through the course of an advanced java programming course, I created both a client-server web interface and an android
+    application to simulate a phone bill managing account.<br><br>
+
+    <i> Client-Server</i>:
+    <a href="phoneBill.html" style="text-decoration:none" >
+      <i class="fa-solid fa-chevron-right fa-2x" style="position:right; text-align:right; color:#008080;"></i>
+    </a></h3>
+  <h3 style="color:#265C5C; padding:5%;">
+
+    <br>
+
+    <hr style="border-color:#008080; ">
+
+    <br> This program receives information from the user on a customer and a phone call, saves
+    that information to the server. The user can request and retrieve information about a customers
+    phone bill history, and has the option to filter their search between two times for a customers phone bill history.
+    With each added phone call, the program saves this new information into a local file stored on the user's smartphone,
+     and each time the app is launched, the user has the ability to re-upload the previous data or overwrite changes. <br><br>
+<br><br>
+
+      <video width="700px" height="700px"
+             controls="controls"/>
+
+      <source src="phonebill.mov"
+              type="video/mp4">
+      </video>
+  </h3>
+
+</div>
+</div>
+</body>
+</html>

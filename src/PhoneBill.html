@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+  <title>Ashley Maddix</title>
+
+  <h1 style="font-size:50px; position:relative; top:40px; color:#89D5D2; text-align:center;"> Hey! I'm Ashley Maddix</h1>
+-->
+  <style>
+    #anim{max-width:700px; margin:0 auto;}
+    a:hover i{transform:scale(1.5); color:#35B5AC;}
+    a:hover button{transform:scale(1.3);}
+    @media only screen and (max-width:640px){
+      #links{
+      display:grid;
+      position:fixed;
+      padding-left:5%;
+      padding-top:10%;
+      text-align:left;
+      grid-gap:3rem;
+      grid-template-columns:repeat(1, 1fr);
+      grid-template-rows:repeat(2, 50px);
+      }
+    }
+
+    </style>
+  <a href="index.html">
+    <div id="anim"></div>
+  </a>
+  <script src="lottie.js"></script>
+  <script>
+        var animation = bodymovin.loadAnimation({
+        container: document.getElementById('anim'),
+        renderer:'svg',
+        loop:true,
+        autoplay:true,
+        path:'AshleyHeader1.json'
+        })
+    </script>
+
+  <script src="https://kit.fontawesome.com/d224905442.js" crossorigin="anonymous"></script>
+
+  <title>PhoneBillManager</title>
+
+</head>
+
+
+<body style="background-color:#89D5D2;">
+<div class="links" style="display:grid; position:fixed; padding-left:5%; padding-top:10%; text-align:left; grid-gap:3rem; grid-template-columns:repeat(1, 2fr); grid-template-rows:repeat(4, 60px);">
+  <a href="https://github.com/amaddix/CS410-SUMQ22/tree/main/phonebill-web" style="text-decoration:none" >
+    <i class="fa-brands fa-github fa-3x" style="position:center; color:#008080;"></i>
+  </a>
+
+  <a href="Projects.html" style="text-decoration:none" >
+    <i class="fa-solid fa-circle-arrow-left fa-3x" style="position:center; color:#008080;"></i>
+  </a>
+</div>
+<div style="border-radius:15%; position:grid; text-align:center; background-color:#BBF1F1; margin-left:17%; margin-right:2%; ">
+  <br><br>
+    <h2 style="text-align:right; color:#265C5C; padding-right:15%; ">2022</h2>
+    <h1 style="text-align:center; color:#265C5C; padding-bottom:5%;">  Phone Bill Manager - <br>   Client / Server  </h1>
+
+    <h3 style="color:#265C5C; padding:5%;">           <b><i> Java Language - Object Oriented design - Test driven development - intelliJ - android studio - REST API - maven - javadocs - jacoco </i></b> <br><br><br>
+<br>
+        Through the course of an advanced java programming course, I created both a client-server web interface and an android
+        application to simulate a phone bill managing account.<br><br>
+        <i> Android App</i>:
+        <a href="phoneBill2.html" style="text-decoration:none" >
+            <i class="fa-solid fa-chevron-right fa-2x" style="position:right; text-align:right; color:#008080;"></i>
+        </a></h3>
+
+        <hr style="border-color:#008080; ">
+
+
+  <h3 style="color:#265C5C; padding:5%;">
+
+<br>
+
+
+      <br> This program receives information from the client on a customer and a phone call, saves
+      that information to the server. The client can request and retrieve information from the server about a customers
+      phone bill history, and has the option to filter their search between two times for a customers phone bill history<br><br>
+      <img src="phonebill4.png" alt="p3" style="display:relative; border-radius:5%; width:100%; height:100%; object-fit:cover;">
+      <i>Site Launches on local host 8888</i>
+      <br><br><br><br>
+
+      <img src="phonebill3.png" alt="p3" style="display:relative; border-radius:5%; width:100%; height:100%; object-fit:cover;">
+      <i>Client enters a phone call transaction to save onto the server</i>
+      <br><br><br><br>
+
+      <img src="phonebill1.png" alt="p3" style="display:relative; border-radius:5%; width:100%; height:100%; object-fit:cover;">
+      <i>Client can request a particular customers phone bill information, displaying a complete list
+      of calls under requested customers name</i>
+      <br><br><br><br>
+
+      <img src="phonebill2.png" alt="p3" style="display:relative; border-radius:5%; width:100%; height:1auto; object-fit:cover;">
+      <i>Client can filter the search results, only displaying the calls between two times for the
+      requested customer</i>
+      <br><br><br><br>
+
+
+  </h3>
+
+  </div>
+</div>
+</body>
+</html>

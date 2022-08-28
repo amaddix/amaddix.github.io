@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+  <title>Ashley Maddix</title>
+
+  <h1 style="font-size:50px; position:relative; top:40px; color:#89D5D2; text-align:center;"> Hey! I'm Ashley Maddix</h1>
+-->
+  <style>
+    #anim{max-width:700px; margin:0 auto;}
+    a:hover i{transform:scale(1.5); color:#35B5AC;}
+    a:hover button{transform:scale(1.3);}
+    @media only screen and (max-width:640px){
+      #links{
+      display:grid;
+      position:fixed;
+      padding-left:5%;
+      padding-top:10%;
+      text-align:left;
+      grid-gap:3rem;
+      grid-template-columns:repeat(1, 1fr);
+      grid-template-rows:repeat(2, 50px);
+      }
+    }
+
+    </style>
+  <a href="index.html">
+    <div id="anim"></div>
+  </a>
+  <script src="lottie.js"></script>
+  <script>
+        var animation = bodymovin.loadAnimation({
+        container: document.getElementById('anim'),
+        renderer:'svg',
+        loop:true,
+        autoplay:true,
+        path:'AshleyHeader1.json'
+        })
+    </script>
+
+  <script src="https://kit.fontawesome.com/d224905442.js" crossorigin="anonymous"></script>
+
+  <title>Person/Vehicle Recognition Research</title>
+
+</head>
+
+
+<body style="background-color:#89D5D2;">
+<div class="links" style="display:grid; position:fixed; padding-left:5%; padding-top:10%; text-align:left; grid-gap:3rem; grid-template-columns:repeat(1, 2fr); grid-template-rows:repeat(3, 60px);">
+  <a href="Final Presentation.pdf" style="text-decoration:none" >
+  <i class="fa-solid fa-person-chalkboard fa-3x" style="position:center; color:#008080;"></i>
+  </a>
+  <a href="Documentation.pdf" style="text-decoration:none" >
+  <i class="fa-solid fa-book fa-3x" style="position:center; color:#008080;"></i>
+  </a>
+  <a href="Projects.html" style="text-decoration:none" >
+    <i class="fa-solid fa-circle-arrow-left fa-3x" style="position:center; color:#008080;"></i>
+  </a>
+</div>
+<div style="border-radius:15%; position:grid; text-align:center; background-color:#BBF1F1; margin-left:17%; padding-bottom:5%; margin-right:2%;">
+  <br><br>
+  <h2 style="text-align:right; color:#265C5C; padding-right:15%; ">2021</h2>
+  <h1 style="text-align:center; color:#265C5C; padding-bottom:5%;">Person/Vehicle Recognition Research</h1>
+  <h3 style="color:#265C5C; padding:5%;">
+    <b><i> Machine Learning </i> - <i> object detection</i> - <i> image classifier training </i></b> <br><br>
+    <b>6 Month - Team Research project </b> : Myself along with, <i>Chiharu Akiyama, Ritvik Chitram, Sanad Thapa, Tim Hall, Zhe Han</i> <br><br><br>
+
+
+    <b>In collaboration with <i>Leila Kaneda</i> at SightLine Applications, a company specializing in video processing for advanced camera systems
+      worked with SightLine to help improve the quality of their image detection services.</b> <br><br>
+
+    Our objective in this project was to create a base classifier identifying objects into 4 categories, cars, people, objects,
+    and background. We collected a total of 4,800 un-augmented images and 9,000 augmented imaged. We found these images
+    by looking through a number of public databases of images and videos, and by taking personal videos and cropping each person,
+    and car. With the goal of getting an accuracy greater than 95%, we would use the data from this base classifier to help
+    fine tune Sightline's preexisting vehicle/person classifier.<br> In the end, we did not succeed in getting an accuracy of 95%,
+     however our classifier still helped Sightline find existing bugs in their software, to better improve its performance.
+
+  </h3>
+</div>
+</body>
+</html>
