@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--
-    <title>Ashley Maddix</title>
 
-    <h1 style="font-size:50px; position:relative; top:40px; color:#89D5D2; text-align:center;"> Hey! I'm Ashley Maddix</h1>
-
-
-    color scheme: beige: E5D9B6, light green:A4BE7B , green:5F8D4E , dark green:285430
--->
     <style>
     #anim{max-width:700px; margin:0 auto;}
     a:hover i{transform:scale(1.5); color:#35B5AC;}
     a:hover button{transform:scale(1.3);}
-
+    @media only screen and (max-width:640px){
+      #links{
+      display:grid;
+      position:fixed;
+      padding-left:5%;
+      padding-top:10%;
+      text-align:left;
+      grid-gap:3rem;
+      grid-template-columns:repeat(1, 1fr);
+      grid-template-rows:repeat(2, 50px);
+      }
+    }
 
     </style>
     <a href="index.html">
-    <div id="anim"></div>
+        <div id="anim"></div>
     </a>
     <script src="lottie.js"></script>
     <script>
@@ -37,14 +41,20 @@
 </head>
 
 
-<body style="background-color:#A4BE7B;" max-width="100%" max-length="100%">
+<body style="background-color:#89D5D2;" max-width="100%" max-length="100%">
+
+<div>
+
+
+
+
 <!--<img src="SelfImage.jpeg" alt="Image of me" style="float :left; max-width:30%; border-radius:25%; position:relative; top:1%; padding:5%;">
 -->
 
 <div id="textBox" style="position:center;">
 
 
-<p style="font-size:20px; position:relative; color:#285430; text-align:justify; padding-top:10%; padding-right:10%; padding-left:10%;">
+<p style="font-size:20px; position:relative; color:#265C5C; text-align:justify; padding-right:10%; padding-left:10%;">
 Thanks for visiting my page!! My name's Ashley, I've graduated recently with my Bachelors of Science in Computer Science.
 I'd like to say that I'm a pretty creative person, and I love when I can freely think and strategize. What drew me to this field was how
     some of these problems we work on feel like puzzles, how everything can work together and flow perfectly. I've also always been the kind of
@@ -64,25 +74,26 @@ I'd like to say that I'm a pretty creative person, and I love when I can freely 
 
 </p>
 </div>
-<div>
 
-    <div id="links" style="display:grid; padding-left:4%;padding-right:7%; position:relative; text-align:center; grid-gap:2rem; grid-template-columns:repeat(1, 3fr) grid-template-rows:repeat(2, 50px);">
-    <div id="box" style="display:grid; position:relative; text-align:center; grid-gap:2rem; grid-template-columns:repeat(3, 1fr); grid-template-rows:repeat(1, 50px);">
-        <a class="github" href="https://github.com/amaddix" style="text-decoration:none;">
-        <i class="fa-brands fa-github fa-3x" style="color:#285430; padding:10%;"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/ashley-maddix-a28643118/" style="text-decoration:none;">
-        <i class="fa-brands fa-linkedin-in fa-3x" style="color:#285430; padding:10%"></i>
-        </a>
-        <a href="Copy of CS Resume - 2023-2.pdf" style="text-decoration:none;">
-        <i class="fa-solid fa-file fa-3x" style="color:#285430; padding:10%;"></i>
-        </a>
-    </div>
-        <a href="Projects.html" style="padding:10%;" >
-        <button type="button" style="border:none; border-radius:25%; position:relative; font-size:26px; background-color:#E5D9B6; color:#285430; text-align:center; ">Check out my Projects!</button>
+
+    <div id="links" style="display:grid;  position:relative; text-align:center; grid-gap:auto; grid-template-columns:repeat(1, 3fr) grid-template-rows:repeat(2, 50px);">
+        <div id="box" style="display:grid; position:relative; text-align:center; grid-gap:auto; grid-template-columns:repeat(3, 1fr); grid-template-rows:repeat(1, 50px);">
+            <a class="github" href="https://github.com/amaddix" style="text-decoration:none;">
+                <i class="fa-brands fa-github fa-3x" style="color:#008080; padding:2%;"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ashley-maddix-a28643118/" style="text-decoration:none;">
+                <i class="fa-brands fa-linkedin-in fa-3x" style="color:#008080; padding:2%"></i>
+            </a>
+            <a href="Copy of CS Resume - 2023-2.pdf" style="text-decoration:none;">
+                <i class="fa-solid fa-file fa-3x" style="color:#008080; padding:2%;"> <div style="font-size:20px">resume</div> </i>
+            </a>
+        </div>
+        <a href="Projects.html" style="padding:2%;" >
+            <button type="button" style="border:none; border-radius:25%; position:relative; font-size:26px; background-color:#BBF1F1; color:#285430; text-align:center; ">Check out my Projects!</button>
         </a>
     </div>
 
 </div>
+
 </body>
 </html>
