@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sekuya&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>PROJECTS</title>
+
+  <style>
+   #anim{max-width:700px; margin:0 auto;}
+   a:hover i, a:hover span.fa-regular {transform:scale(1.5); color:#CBCBCB; transition: 0.3s;}
+   button:hover { transform:scale(1.3); color:#CBCBCB; cursor: pointer; transition: 0.3s; }
+
+
+
+   h1, button {
+      font-family: "Sekuya", sans-serif;
+      font-weight: 400;
+   }
+
+   .fa-regular {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 400 !important;
+      display: inline-block;
+   }
+
+   body, p {
+       font-family: "Raleway", sans-serif;
+       font-weight: 400;
+       font-style: normal;
+   }
+
+   .background-block{ margin:0; padding:0; }
+   .title{ display:flex; flex-wrap:wrap; flex-direction:column; }
+   .project-page{ display:block; width:400px; font-size: 20px; }
+   .project-page-container{ display:flex; justify-content:flex-end; font-size:0; }
+   .slideshow-arrows{ display:flex; justify-content:space-around; }
+   .arrow-buttons{ color:#EFFFE3; }
+   .projects{ flex:1; display:none; }
+   .detail2-container{ display:flex; justify-content:space-evenly; flex-wrap:wrap; flex-direction:row; }
+   .detail2{ flex: 1; }
+
+   @media (max-width: 700px) {
+      .detail2-container{ display:block; }
+      .project-page{ width:400px; font-size: 10px; }
+   }
+  </style>
+</head>
+
+<body style="background-color:#EFFFE3; margin:0;">
+<div>
+  <H1 style="font-size:80px; color:#6D8196; text-align:center; padding: 40px 10%;"> ASHLEY MADDIX </H1>
+</div>
+
+<div class="project-page-container">
+  <a href="index.html" class="project-page" style="border-radius: 40px 40px 0 0; color:#EFFFE3; background-color:#6D8196; text-align:center; text-decoration:none;  padding: 10px;">
+   <i>
+    <h1 style="font-size:auto;">ABOUT ME</h1>
+   </i>
+  </a>
+</div>
+
+<div class="background-block" style="background-color:#6D8196; text-align:center; padding-bottom: 50px;">
+  <div class="title" style="color:#EFFFE3; text-align:center;">
+    <h1 style="font-size:60px; padding: 20px;">Projects</h1>
+
+    <div class="slideshow-arrows">
+      <button class="arrow-buttons" onclick="plusDivs(-1)" style="border:none; font-size:50px; background-color:transparent;">&#10094;</button>
+      <button class="arrow-buttons" onclick="plusDivs(1)" style="border:none; font-size:50px; background-color:transparent;">&#10095;</button>
+    </div>
+  </div>
+
+
+  <!-- project "slide-show" -->
+
+  <!-- PROJECT #1 PHONE BILL -->
+  <div class="projects">
+    <br><br><br><br>
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%;font-size:30px;">  Phone Bill Manager </h1>
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:20px;">Full Stack - Java Language - Object Oriented design - Test driven development - intelliJ - android studio - REST API - maven - javadocs - jacoco </h1>
+
+    <a class="github" href="https://github.com/amaddix/CS410-SUMQ22/tree/main/phonebill-android" style="text-decoration:none;">
+      <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+    </a>
+
+    <div class="detail2-container">
+      <div class="detail2" >
+        <p style="color:#EFFFE3;font-size:25px;padding:1%;">
+          <br>
+          <br> I designed and built a full-stack application that simulates a real-world phone billing system, enabling secure storage, retrieval, and analysis of customer call data.<br>
+          The application allows users to submit customer and phone call transaction data, which is persisted on the server and organized by customer. Users can retrieve a complete call history for any customer and apply time-based filters to view calls within a specific date or time range, mimicking real billing and reporting workflows.<br>
+          On the client side, the application maintains a local data store on the user’s smartphone, saving call transactions as they are created. Upon launching the app, users can choose to re-upload previously saved data to the server or overwrite existing records, ensuring data persistence and flexibility across sessions.<br>
+          This project demonstrates practical experience with client–server communication, data persistence, file handling, and filterable query logic, while modeling how production systems manage transactional data and historical records.
+
+          <br><br>
+          <br><br>
+        </p>
+      </div>
+      <div class="detail2" style="position:right; ">
+        <video style="width:80%;height:80%;" controls="controls">
+          <source src="phonebill.mov " type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- PROJECT #2 JOI RIDE -->
+
+
+  <div class="projects">
+    <br><br><br><br>
+
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%;font-size:30px;">  JoiRide - RoadTrip Itinerary </h1>
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:20px;">Google Maps API - HTML - CSS - Java Script - EJS - Express Node.js </h1>
+
+    <!--<div class="links" style="display:grid; position:fixed; padding-left:5%; padding-top:10%; text-align:left; grid-gap:2rem; grid-template-columns:repeat(1, 2fr); grid-template-rows:repeat(5, 60px);">
+     -->
+
+      <div id="box" style="display:grid; position:relative; text-align:center; grid-gap:auto; grid-template-columns:repeat(2, 1fr); grid-template-rows:repeat(1, 50px);">
+
+      <a href="CS465_ProjectProposal.pdf" style="text-decoration:none" >
+      <i class="fa-regular fa-file fa-3x" style="position:center; color:#CBCBCB;"><span style="display:block; font-size:20px;padding:1%;">REPORT</span>
+      </i>
+    </a>
+
+    <a href="Joi Ride - Journal .pdf" style="text-decoration:none" >
+      <i class="fa-regular fa-file fa-3x" style="position:center; color:#CBCBCB;"><span style="display:block; font-size:20px;padding:1%;">PRESENTATION</span>
+      </i>
+    </a>
+    </div>
+
+
+    <div class="detail2-container">
+      <div class="detail2" >
+        <p style="color:#EFFFE3;font-size:25px;padding:1%;">
+          Collaboration project with : Greg Hairfield
+
+          We created a site with the intentions of helping users plan a road trip or vacation. The API key we used for our site is currently
+          inactive, but when initially launched we successfully created some useful features. By entering a starting and end location,
+          with the ability to add stops, you get direction for your route. The most useful feature of our site was the filtering tool, that
+          allows the user to select types of places they'd like to visit along their trip (such as restaurants, trails, museums etc.).
+          <br>
+          With a time crunch our site didnt turn out the most visually appealing, there's definitely modifications I would make now
+          given my growth since.
+          <br>
+        </p>
+      </div>
+
+      <div class="aboutIMG" style="text-alight=center;">
+        <img src="joiride1.JPEG" alt="p5" style="display:flex; width:98%; height:98%; object-fit:cover; padding:1%; text-align:center;">
+      </div>
+      <div class="aboutIMG">
+        <img src="joiride2.JPEG" alt="p5" style="display:flex; width:98%; height:98%; object-fit:cover;padding:1%; display:center;">
+      </div>
+    </div>
+  </div>
+
+    <!-- PROJECT #3 -->
+
+    <div class="projects">
+      <br><br><br><br>
+      <h1 style="text-align:center; color:#EFFFE3; padding:1%;font-size:30px;">Person/Vehicle Recognition Research</h1>
+      <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:20px;"> Machine Learning- object detection- image classifier training <br><br></h1>
+
+      <div id="box" style="display:grid; position:relative; text-align:center; grid-gap:auto; grid-template-columns:repeat(2, 1fr); grid-template-rows:repeat(1, 50px);">
+
+        <a href="Documentation.pdf" style="text-decoration:none" >
+          <i class="fa-regular fa-file fa-3x" style="position:center; color:#CBCBCB;"><span style="display:block; font-size:20px;padding:1%;">REPORT</span>
+          </i>
+        </a>
+
+        <a href="Final Presentation.pdf" style="text-decoration:none" >
+          <i class="fa-regular fa-file fa-3x" style="position:center; color:#CBCBCB;"><span style="display:block; font-size:20px;padding:1%;">PRESENTATION</span>
+          </i>
+        </a>
+      </div>
+      <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:20px;"><br><br><br><br><br>
+        6 Month - Team Research project : Myself along with, Chiharu Akiyama, Ritvik Chitram, Sanad Thapa, Tim Hall, Zhe Han <br><br>
+      </h1>
+
+
+        <div class="detail2-container">
+        <div class="detail2" >
+          <p style="color:#EFFFE3;font-size:25px;padding:1%;">
+            <br>
+            In collaboration with Leila Kaneda at SightLine Applications, a company specializing in video processing for advanced camera systems
+              worked with SightLine to help improve the quality of their image detection services.<br><br>
+
+            Our objective in this project was to create a base classifier identifying objects into 4 categories, cars, people, objects,
+            and background. We collected a total of 4,800 un-augmented images and 9,000 augmented imaged. We found these images
+            by looking through a number of public databases of images and videos, and by taking personal videos and cropping each person,
+            and car. With the goal of getting an accuracy greater than 95%, we would use the data from this base classifier to help
+            fine tune Sightline's preexisting vehicle/person classifier.<br> In the end, we did not succeed in getting an accuracy of 95%,
+            however our classifier still helped Sightline find existing bugs in their software, to better improve its performance.
+
+            <br><br>
+            <video style="width:80%;height:80%;" controls="controls">
+              <source src="AI-DETECTION1.mp4" type="video/mp4">
+            </video>
+            <br><br>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+      <!-- PROJECT 4 -->
+
+
+  <div class="projects">
+    <br><br><br><br>
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%;font-size:30px;">  C++  </h1>
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:20px;">Object Oriented design</h1>
+
+    <a class="github" href="https://github.com/amaddix/CS410-SUMQ22/tree/main/phonebill-android" style="text-decoration:none;">
+      <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+    </a>
+
+    <div class="detail2-container">
+      <div class="detail2" >
+        <p style="color:#EFFFE3;font-size:25px;padding:1%;">
+          <br>
+          <br> I designed and built a full-stack application that simulates a real-world phone billing system, enabling secure storage, retrieval, and analysis of customer call data.<br>
+          The application allows users to submit customer and phone call transaction data, which is persisted on the server and organized by customer. Users can retrieve a complete call history for any customer and apply time-based filters to view calls within a specific date or time range, mimicking real billing and reporting workflows.<br>
+          On the client side, the application maintains a local data store on the user’s smartphone, saving call transactions as they are created. Upon launching the app, users can choose to re-upload previously saved data to the server or overwrite existing records, ensuring data persistence and flexibility across sessions.<br>
+          This project demonstrates practical experience with client–server communication, data persistence, file handling, and filterable query logic, while modeling how production systems manage transactional data and historical records.
+
+          <br><br>
+          <br><br>
+        </p>
+      </div>
+      <div class="detail2" style="position:center; ">
+        <iframe
+                style="width:80%;height:80%; border:none;"
+                src="terminal_widget_cs163.html"
+                class="widget-frame"
+                title="Code Editor"
+
+
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- Project 5 -->
+
+
+      <div class="projects">
+        <br><br><br><br>
+
+        <h1 style="text-align:center; color:#EFFFE3; padding:1%;font-size:30px;">  CIFAR-10 image recognition algorithm comparison</h1>
+        <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:20px;">Python Language - Machine Learning -  Object Detection - performance optimization - framework proficiency - AI algorithm comparison research - analytical mindset <br><br>
+        </h1>
+
+        <div id="box" style="display:grid; position:relative; text-align:center; grid-gap:auto; grid-template-columns:repeat(2, 1fr); grid-template-rows:repeat(1, 50px);">
+
+          <a href="CS445_545 ML Group Project Report.pdf" style="text-decoration:none" >
+            <i class="fa-brands fa-github fa-3x" style="position:center; color:#CBCBCB;"><span style="display:block; font-size:20px;padding:1%;">REPORT</span>
+            </i>
+          </a>
+
+          <a href="https://github.com/ForestPearson/CS445-545-ML-Project" style="text-decoration:none" >
+            <i class="fa-regular fa-file fa-3x" style="position:center; color:#CBCBCB;"><span style="display:block; font-size:20px;padding:1%;">PRESENTATION</span>
+            </i>
+          </a>
+        </div>
+        <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:20px;"><br><br><br>  Team Research project : Myself along with, Forest Pearson, Ian Wasson, Eben Weisman, Jingjing Zhao <br><br><br>
+        </h1>
+
+        <!--<div class="links" style="display:grid; position:fixed; padding-left:5%; padding-top:10%; text-align:left; grid-gap:2rem; grid-template-columns:repeat(1, 2fr); grid-template-rows:repeat(5, 60px);">
+         -->
+
+
+
+
+        <div class="detail2-container">
+          <div class="detail2" >
+            <p style="color:#EFFFE3;font-size:25px;padding:1%;">
+
+              <b>Overview</b>
+              In this research-intensive project, I spearheaded a comparative analysis of supervised and unsupervised learning paradigms to solve a high-dimensional computer vision problem. Using the CIFAR-10 dataset—a benchmark collection of 60,000 color images—I developed, optimized, and benchmarked three distinct algorithmic approaches: a Multi-Layer Perceptron (MLP), a Convolutional Neural Network (CNN), and a K-Means Clustering algorithm.
+<br><br>
+             <b> Phase 1: </b> Supervised Learning & Architecture Optimization
+              The project began with the development of a custom Multi-Layer Perceptron (MLP). This phase focused on the mathematical foundations of deep learning, where I implemented manual backpropagation and weight-update logic.
+              Through rigorous hyperparameter tuning, I analyzed the relationship between model complexity and convergence. By experimenting with hidden unit density and momentum values, I discovered that a leaner architecture (50 units) paired with lower momentum ($0.5$) actually mitigated oscillations and improved accuracy from a baseline of 43% to 60%. This demonstrated my ability to use empirical data to refine model performance rather than relying on default configurations.
+             <br><br> <b>Phase 2: </b>High-Performance Computing with CNNs
+              To push the boundaries of the dataset, I transitioned to a Convolutional Neural Network (CNN) built with TensorFlow and Keras. Recognizing the massive computational overhead of processing 32x32 RGB tensors, I integrated NVIDIA CUDA and cuDNN to leverage GPU acceleration.
+              This architectural shift was transformative:
+              Efficiency: Training time per epoch dropped to just 6 seconds, a massive improvement over the 12-hour training cycles required for the unoptimized MLP.
+              Spatial Intelligence: By utilizing convolutional layers that reference neighboring pixel data, the model achieved a peak testing accuracy of 70%+.
+              Analytical Insight: I identified and documented significant overfitting (94% training vs. 68% testing), providing a foundation for future implementation of dropout layers and data augmentation.
+            <br><br> <b>Phase 3: </b>  Unsupervised Learning & Dimensionality
+              Finally, I implemented a K-Means Clustering algorithm to evaluate how unsupervised models handle high-dimensional raw image data. The primary challenge was the "Curse of Dimensionality"—transforming 3,072-dimensional image vectors into meaningful clusters. By optimizing matrix formations and centroid convergence logic, I achieved a stable classification rate of 23%. While expectedly lower than the supervised models, this provided critical insights into the inherent structure of the CIFAR-10 data and the limitations of heuristic clustering for complex visual tasks.
+              <br><br>
+           <b>   Key Technical Competencies Demonstrated </b>
+              <b>Frameworks & Tools: </b> TensorFlow, Keras, NumPy, Matplotlib.
+            <b>  Deep Learning: </b> CNN Architecture, Backpropagation, Hyperparameter Optimization, Gradient Descent.
+            <b>  Hardware Acceleration: </b> GPU Computing (NVIDIA CUDA/cuDNN).
+             <b> Data Science: </b> Dimensionality Reduction, Unsupervised Clustering, Statistical Analysis of Model Loss.
+              <br><br>
+           <b>  Conclusion:</b>
+              This project demonstrates my proficiency in the full machine learning lifecycle: from data preprocessing and custom algorithm implementation to hardware-level optimization and performance benchmarking. I possess the technical agility to switch between high-level frameworks like TensorFlow and low-level mathematical implementations, ensuring I can both build and explain complex software systems.
+            </p>
+          </div>
+
+
+        </div>
+
+
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+function plusDivs(n) { showDivs(slideIndex += n); }
+function showDivs(n) {
+  var x = document.getElementsByClassName("projects");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+  x[slideIndex-1].style.display = "block";
+}
+</script>
+</body>
+</html>
+

@@ -4,27 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-    #anim{max-width:700px; margin:0 auto;}
-    a:hover i{transform:scale(1.5); color:#35B5AC;}
-    a:hover button{transform:scale(1.3);}
-    @media only screen and (max-width:640px){
-      #links{
-      display:grid;
-      position:fixed;
-      padding-left:5%;
-      padding-top:10%;
-      text-align:left;
-      grid-gap:3rem;
-      grid-template-columns:repeat(1, 1fr);
-      grid-template-rows:repeat(2, 50px);
-      }
-    }
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sekuya&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>ASHLEY MADDIX</title>
+
+    <!--background-color:#CBCBCB; color:#6D8196; -->
+    <style>
+
+    #anim{max-width:700px; margin:0 auto;}
+    a:hover i{transform:scale(1.5); color:#CBCBCB;}
+    a:hover button{transform:scale(1.3); color:#CBCBCB;}
+    a: hover w3-button w3-black w3-display-left{transform:scale(1.3);}
+    a: hover x{transform:scale(1.5); color:#35B5AC;}
+
+        .background-block{ margin:0; padding:0; }
+
+        body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevents accidental side-scrolling */
+}
+
+        h1, button{
+            font-family: "Sekuya", system-ui;
+            font-weight: <weight>; /*400*/
+            font-style: normal;
+        }
+
+        body, p{
+            font-family: "Raleway", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
+        }
+
+
+        .title{
+            display:flex;
+            flex-wrap:wrap;
+            flex-direction:column;
+
+        }
+
+       .project-page{
+        display:block;
+        width:400px;
+        font-size: 20px;
+
+       }
+
+       .project-page-container{
+            display:flex;
+            justify-content:flex-end;
+            font-size:0;
+            flex:5 2
+       }
+
+        .slideshow-arrows{
+            display:flex;
+            justify-content:space-around;
+            align-items:center;
+            color:#EFFFE3;
+        }
+
+        .arrow-buttons{
+        color:#EFFFE3;
+        }
+
+        .details-container{
+            display:flex;
+            justify-content:space-around;
+            flex:4 1 1 1;
+        }
+
+        .details{
+
+            padding:3%;
+            flex: 4 1 1 1;
+
+        }
+
+        .about-container{
+          display:flex;
+          justify-content:space-evenly;
+          flex-wrap:wrap;
+          flex-direction:row;
+        }
+
+        .about-details{
+         flex: 1;
+         min-width: 300px;
+        }
+
+        .aboutIMG{
+            width:50%
+            height:50%;
+
+        }
+
+        .projects{
+            flex:1;
+            width:3 2;
+            display:none;
+        }
+
+        .detail2{
+            flex: 1;
+        }
+
+        .video{
+        display:block;
+        }
+
+        .detail2-container{
+          display:flex;
+          justify-content:space-evenly;
+          flex-wrap:wrap;
+          flex-direction:row;
+        }
+
+                @media (max-width: 700px) {
+                .details{
+                padding:1%;
+                }
+
+         .detail2-container{
+                display:block;
+
+            }
+
+
+
+            .detail2{
+            test-align:center;
+            }
+
+            .project-page{
+                 width:400px;
+                 font-size: 10px;
+            }
+
+           .details-container {
+            display: block;
+        }
+
+        }
+
+
+    }
     </style>
-    <a href="index.html">
-        <div id="anim"></div>
-    </a>
+
+    <!--           .details-container {
+            display: block;
+        }
+        -->
+    <!--animation for buttons with hover-->
     <script src="lottie.js"></script>
     <script>
         var animation = bodymovin.loadAnimation({
@@ -35,65 +175,363 @@
         path:'AshleyHeader1.json'
         })
     </script>
-
     <script src="https://kit.fontawesome.com/d224905442.js" crossorigin="anonymous"></script>
+
+
+
 
 </head>
 
+<!-- NAME / LINKS -->
+<body style="background-color:#EFFFE3; max-width=100%; max-length=100%;">
 
-<body style="background-color:#89D5D2;" max-width="100%" max-length="100%">
+    <div>
+        <H1 style ="font-size:80px; position:center; color:#6D8196; text-align:center; padding-right:10%; padding-left:10%; text-decoration:none;"> ASHLEY MADDIX </H1><br><br>
 
-<div>
-
-
-
-
-<!--<img src="SelfImage.jpeg" alt="Image of me" style="float :left; max-width:30%; border-radius:25%; position:relative; top:1%; padding:5%;">
+</div><br><br><br>
+<!--
 -->
 
-<div id="textBox" style="position:center;">
+
+    <div class="project-page-container">
+        <a href="index-projects.html" class="project-page" style="border-radius: 40px 40px 0 0; color:#EFFFE3; background-color:#6D8196; text-align:center; text-decoration:none; padding: 10px;">
+            <i>
+                <h1>PROJECT</h1>
+            </i>
+        </a>
+    </div>
+
+        <!--SKILLS -->
+    <div class="background-block" style="background-color:#6D8196; text-align:center; padding-bottom: 50px;">        <div class="details-container">
+            <div class="details" style="font-size:20px; position:left; color:#EFFFE3; text-align:left;">
+                <h1 style="border:none; position:center; font-size:50px;  color:#EFFFE3; text-align:center; padding:1%;">Full Stack / Backend Software Developer</h1>
+            </div>
+         <div class="details" style="font-size:20px; color:#EFFFE3; text-align:center; ">  LANGUAGE & TOOLS <br>C++<br>Java<br>Python<br>HTML<br>CSS<br>Java Script<br>Git<br><br></div>
+         <div class="details" style="font-size:20px; color:#EFFFE3; text-align:center;">  FRAMEWORKS & LIBRARIES<br>React<br>Node.js<br>Express.js<br>Bootstrap<br>jQuery<br>Spring Boot <br> Angular<br><br></div>
+         <div class="details" style="font-size:20px; color:#EFFFE3; text-align:center; right-padding:20px;">   CORE CS CONCEPTS <br>OOP<br>Data Structures<br>Algorithm<br>AI Training<br>Fullstack<br><br></div>
+    </div><br><br><br>
+
+        <!--ABOUT ME -->
+
+        <div class="about-details">
 
 
-<p style="font-size:20px; position:relative; color:#265C5C; text-align:justify; padding-right:10%; padding-left:10%;">
-Thanks for visiting my page!! My name's Ashley, I've graduated recently with my Bachelors of Science in Computer Science.
-I'd like to say that I'm a pretty creative person, and I love when I can freely think and strategize. What drew me to this field was how
-    some of these problems we work on feel like puzzles, how everything can work together and flow perfectly. I've also always been the kind of
-    person who appreciates when something is made with a lot of consideration to the users.
-    So I enjoy working full stack, it really allows me to take all perspectives in consideration and ensures my work is usable and
-    reflects it's intended design. I also love knowing that this industry
-    is always evolving, meaning no one person will know everything - leaving lots of room for growth in one another!
-    <br><br>
-    <b>Technical Skills :</b> <i>C++, Java, Python, HTML, CSS, Java Script, SQL, Linux, Vim, MacOS, Android Studio, Visual Studio, Atom, NetBeans, Adobe After Effects, IntelliJ, Object-Oriented Programs,
+            <h1 class="details2" style="border:none; position:center; font-size:50px;  color:#EFFFE3; text-align:center; padding:1%;">ABOUT ME</h1>
+            <div id="links" style="display:grid;  position:relative; text-align:center; grid-gap:auto; grid-template-columns:repeat(1, 3fr); grid-template-rows:repeat(2, 50px);">
+                <div id="box" style="display:grid; position:relative; text-align:center; grid-gap:auto; grid-template-columns:repeat(3, 1fr); grid-template-rows:repeat(1, 50px);">
+                    <a class="github" href="https://github.com/amaddix" style="text-decoration:none;">
+                        <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ashley-maddix-a28643118/" style="text-decoration:none;">
+                        <i class="fa-brands fa-linkedin-in fa-3x" style="color:#CBCBCB; padding:1%"></i>
+                    </a>
+                    <a href="CS RESUME 2025.pdf" style="text-decoration:none;">
+                        <i class="fa-solid fa-file fa-3x" style="color:#CBCBCB; padding:1%;"><h1 style="font-size:15px;">RESUME</h1></i>
+                    </a>
+                </div>
+            </div><br><br>
+
+
+        </div>
+        <div class="about-container">
+            <div class="about-details">
+                <div id="links">
+                <div class="slideshow-arrows">
+
+                    <div class="photo-node">
+                    <i><a>
+                    <button id="slideLeftBtn" class="arrow-buttons" onclick="plusDivs(-1)" style="border:none; font-size:50px; background-color:transparent; position:relative; text-align:center; padding:2%;">&#10094;</button>
+                    </i></a>
+                    </div>
+
+
+                    <div class="photo-node">
+                        <div class="aboutIMG">
+                            <img src="PROJGLACIERME.JPEG" alt="p5" style="display:flex; width:100%; height:100%; object-fit:cover;">
+                    </div>
+
+                    <div class="aboutIMG">
+                        <img src="PROJZIONVIEW.JPEG" alt="p5" style="display:flex; width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="aboutIMG">
+                        <img src="PROJLATTEARTjpeg.jpeg" alt="p5" style="display:flex; width:100%; height:100%; object-fit:cover;">
+                    </div>
+                        <div class="aboutIMG">
+                            <img src="PROJKIKO.JPEG" alt="p5" style="display:flex; width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        <div class="aboutIMG">
+                            <img src="PROJCAVE.JPEG" alt="p5" style="display:flex; width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        <div class="aboutIMG">
+                            <img src="PROJKAYAK.JPEG" alt="p5" style="display:flex; width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        <div class="aboutIMG">
+                            <img src="PROJZIONME.JPEG" alt="p5" style="display:flex; width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        <!--
+                        <div class="aboutIMG">
+                            <img src="PROJDOGMTVIEW.jpg" alt="p5" style="display:flex; width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        -->
+                        <div class="aboutIMG">
+                            <img src="PROJGRANDCANYON.JPEG" alt="p5" style="display:flex; width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        <div class="aboutIMG">
+                            <img src="PORTFOLIO10tidepools..JPEG" alt="p5" style="display:flex; width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        <!--
+                        <div class="aboutIMG">
+                            <img src="PORTFOLIO11kikoCRAB.JPG" alt="p5" style="display:flex; width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        -->
+                        <div class="aboutIMG">
+                            <img src="PROJNLIGHTS.JPEG" alt="p5" style="display:flex; width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        <div class="aboutIMG">
+                            <img src="PROJANTELOPE.JPEG" alt="p5" style="display:flex; width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        <!--
+                        <div class="aboutIMG">
+                            <img src="PROJDOGMTVIEW.jpg" alt="p5" style="display:flex; width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        -->
+                        <div class="aboutIMG">
+                            <img src="PROJGLACIERVIEW.jpg" alt="p5" style="display:flex; width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        <div class="aboutIMG">
+                            <img src="PROJROSSLAKE.JPEG" alt="p5" style="display:flex; width:100%; height:100%; object-fit:cover;">
+                        </div>
+                    </div>
+
+                    <div class="photo-node">
+                    <i><a>
+                    <button id="slideRightBtn" class="arrow-buttons" onclick="plusDivs(1)" style="border:none; font-size:50px;  background-color:transparent; position:right; text-align:right; padding:2%;">&#10095;</button>
+                    </i></a>
+                    </div>
+
+
+
+
+                    </div>
+                </div>
+        </div>
+
+            <div class="about-details" style="font-size:24px; color:#EFFFE3;padding:2%;">
+                <p>
+                <p>I didn't walk into my computer science degree with complete certainty — I walked in curious, and a little nervous. What I found on the other side completely changed me. <br><br>
+                    From the moment I started building, I knew this was it.  There's nothing quite like starting from a blank file and crafting something that actually works —
+                    designing the structure, breaking everything down to its smallest moving parts, finding the cleanest way to organize it all. It feels like solving a puzzle. A puzzle that, without fail, breaks on you. <br><br>
+                    Sure, a stubborn bug at midnight can make me want to lose my mind. But tracking it down — figuring out exactly what went wrong and why
+                    — is genuinely one of the most satisfying feelings I know. That obsession with getting every little piece interacting perfectly is what keeps me locked in, and always improving my work. <br><br>
+                    I consider myself a fullstack developer with a natural pull toward the backend. I love architecting the core of a system
+                    — thinking through the logic, the data flow, the foundation that everything else depends on.
+                    But I also care deeply about aesthetics and cohesion in my everyday life, and that sensibility carries straight into my frontend work.
+                    Because at the end of the day, I believe a backend is only as good as the cohesive, polished experience it provides the user.
+                    Clean design isn't an afterthought to me — it's part of the craft. <br><br><br>
+
+                    Outside of software, I'm always chasing the next challenge. I travel as much as I can, drawn to places with striking geology and rich cultural or historical roots
+                    — the kind of places that make you feel just how vast and layered the world really is. I love hiking and don’t shy away from the brutal ones
+                    — Angels Landing in Zion, Grinnell Glacier in Glacier National Park, and Dog Mountain along the Columbia River Gorge have all humbled me in the best way.
+                    And yes, I'm absolutely the person stopping mid-trail to look at every bird and bug I come across
+                    — I find wonder in the details everywhere I look, and that curiosity never really turns off.<br><br>
+
+                </p>
+
+            </div>
+            </div>
+
+        <!-- PROJECTS -->
+        <!--
+
+        <div class="title" style="font-size:20px; position:right; color:#EFFFE3; text-align:right;">
+            <h1 class ="slideshow-arrows" style="border:none; position:right; font-size:60px;  color:#EFFFE3; text-align:right; padding:1%;">Projects</h1>
+
+            <div class="slideshow-arrows">
+            <button id="slideLeftBtn" class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)" style="border:none; font-size:50px; color:#EFFFE3; background-color:#6D8196; position:right; text-align:right; padding:1%;">&#10094;</button>
+            <button id="slideRightBtn" class="w3-button w3-black w3-display-right" onclick="plusDivs(1)" style="border:none; font-size:50px; color:#EFFFE3; background-color:#6D8196; position:right; text-align:right; padding:1%;">&#10095;</button>
+
+            </div>
+        </div>
+-->
+
+        <!-- project "slide-show" -->
+        <!--
+            <div class="projects">
+                <br><br><br><br>
+            <h1 style="text-align:left; color:#EFFFE3; padding:1%">  Phone Bill Manager </h1>
+            <h1 style="text-align:left; color:#EFFFE3; padding:1%; font-size:20px;">Full Stack - Java Language - Object Oriented design - Test driven development - intelliJ - android studio - REST API - maven - javadocs - jacoco </h1>
+            <div class="detail2-container">
+                <div class="detail2" >
+                    <p style="color:#EFFFE3;font-size:25px;padding:1%;">
+                        <br>
+                <br> I designed and built a full-stack application that simulates a real-world phone billing system, enabling secure storage, retrieval, and analysis of customer call data.<br>
+                        The application allows users to submit customer and phone call transaction data, which is persisted on the server and organized by customer. Users can retrieve a complete call history for any customer and apply time-based filters to view calls within a specific date or time range, mimicking real billing and reporting workflows.<br>
+                        On the client side, the application maintains a local data store on the user’s smartphone, saving call transactions as they are created. Upon launching the app, users can choose to re-upload previously saved data to the server or overwrite existing records, ensuring data persistence and flexibility across sessions.<br>
+                        This project demonstrates practical experience with client–server communication, data persistence, file handling, and filterable query logic, while modeling how production systems manage transactional data and historical records.
+
+                        <br><br>
+                        <br><br>
+                    </p>
+                </div>
+                <div class="detail2" style="position:right; ">
+                <video style="width:80%;height:80%;" controls="controls"/>
+
+                <source src="phonebill.mov "
+                        type="video/mp4">
+                </video>
+                </div>
+            </div>
+                </div>
+
+
+            <div class="projects">
+                <h1>poooop</h1>
+            </div>
+
+            <div class="slideshow-arrows">
+                <button id="slideLeftBtn" class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)" style="border:none; font-size:50px; color:#EFFFE3; background-color:#6D8196; position:right; text-align:right; ">&#10094;</button>
+                <button id="slideRightBtn" class="w3-button w3-black w3-display-right" onclick="plusDivs(1)" style="border:none; font-size:50px; color:#EFFFE3; background-color:#6D8196; position:right; text-align:right; ">&#10095;</button>
+
+            </div>
+            <br><br><br><br>
+
+
+            </div>
+        </div>
+
+    -->
+
+
+</body>
+
+<script>
+let leftSlideButton = document.getElementById("clicker");
+let rightSlideButton = document.getElementById("clicker");
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("aboutIMG");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+
+let slideForward = plusDivs(1);
+let slideBack = plusDivs(-1);
+
+leftSlideButton.onclick = slideBack;
+rightSlideButton.onclick = slideForward;
+</script>
+</html>
+
+<!--
+
+            <p style="color:#EFFFE3;font-size:25px">
+            <br> This program receives information from the client on a customer and a phone call, saves
+            that information to the server. The client can request and retrieve information from the server about a customers
+            phone bill history, and has the option to filter their search between two times for a customers phone bill history<br><br>
+            <img src="phonebill4.png" alt="p3" style="display:relative; border-radius:5%; width:100%; height:100%; object-fit:cover;">
+            <i>Site Launches on local host 8888</i>
+            <br><br><br><br>
+
+            <img src="phonebill3.png" alt="p3" style="display:relative; border-radius:5%; width:100%; height:100%; object-fit:cover;">
+            <i>Client enters a phone call transaction to save onto the server</i>
+            <br><br><br><br>
+
+            <img src="phonebill1.png" alt="p3" style="display:relative; border-radius:5%; width:100%; height:100%; object-fit:cover;">
+            <i>Client can request a particular customers phone bill information, displaying a complete list
+                of calls under requested customers name</i>
+            <br><br><br><br>
+
+            <img src="phonebill2.png" alt="p3" style="display:relative; border-radius:5%; width:100%; height:1auto; object-fit:cover;">
+            <i>Client can filter the search results, only displaying the calls between two times for the
+                requested customer</i>
+            </p>
+
+            -->
+
+<!--
+     <h1 style="border:none; position:center; font-size:60px;  color:#EFFFE3; text-align:center; ">Projects</h1>
+     <h2 style="text-align:left; color:#EFFFE3; ">2022</h2>
+     <h1 style="text-align:left; color:#EFFFE3; padding:2%">  Phone Bill Manager - <br>   Client / Server  </h1>
+
+     <h3 style="color:#EFFFE3; padding:1%;">
+         <b><i> Java Language - Object Oriented design - Test driven development - intelliJ - android studio - REST API - maven - javadocs - jacoco </i></b> <br><br><br>
+<h3 Through the course of an advanced java programming course, I created both a client-server web interface and an android
+    application to simulate a phone bill managing account.<br><br>
+
+         <i> Client-Server</i>:
+         <a href="PhoneBill.html" style="text-decoration:none" >
+             <i class="fa-solid fa-chevron-right fa-2x" style="position:right; text-align:right; color:#008080;"></i>
+         </a></h3>
+     <h3 style="color:#265C5C; padding:1%;">
+
+         <br>
+
+         <hr style="border-color:#008080; ">
+
+         <br> This program receives information from the user on a customer and a phone call, saves
+         that information to the server. The user can request and retrieve information about a customers
+         phone bill history, and has the option to filter their search between two times for a customers phone bill history.
+         With each added phone call, the program saves this new information into a local file stored on the user's smartphone,
+         and each time the app is launched, the user has the ability to re-upload the previous data or overwrite changes. <br><br>
+         <br><br>
+
+         <video width="50%" height="50%;"
+                controls="controls"/>
+
+         <source src="phonebill.mov "
+                 type="video/mp4">
+         </video>
+     </h3>
+     -->
+
+
+
+<!--
+ Thanks for visiting my page!! My name's Ashley, I've graduated recently with my Bachelors of Science in Computer Science.
+            I'd like to say that I'm a pretty creative person, and I love when I can freely think and strategize. What drew me to this field was how
+            some of these problems we work on feel like puzzles, how everything can work together and flow perfectly. I've also always been the kind of
+            person who appreciates when something is made with a lot of consideration to the users.
+            So I enjoy working full stack, it really allows me to take all perspectives in consideration and ensures my work is usable and
+            reflects it's intended design. I also love knowing that this industry
+            is always evolving, meaning no one person will know everything - leaving lots of room for growth in one another!
+            <br><br>
+
+            <b>Technical Skills :</b> <i>C++, Java, Python, HTML, CSS, Java Script, SQL, Linux, Vim, MacOS, Android Studio, Visual Studio, Atom, NetBeans, Adobe After Effects, IntelliJ, Object-Oriented Programs,
     Abstract Data Types, Data Structures, Algorithms, Testing + Training Data, ML Image Detection</i>
-
     <br><br><br><br><br>
     <i>Optimistic, Detail Oriented, Creative, Kind, Team Player, Independent Thinker, Hard Working </i> <br>
     I like the color green, the season fall, born march 1998, frogs, making art, finding unique things, and finding ways to make something new.
 
+-->
 
 
-</p>
-</div>
-
-
-    <div id="links" style="display:grid;  position:relative; text-align:center; grid-gap:auto; grid-template-columns:repeat(1, 3fr) grid-template-rows:repeat(2, 50px);">
-        <div id="box" style="display:grid; position:relative; text-align:center; grid-gap:auto; grid-template-columns:repeat(3, 1fr); grid-template-rows:repeat(1, 50px);">
-            <a class="github" href="https://github.com/amaddix" style="text-decoration:none;">
-                <i class="fa-brands fa-github fa-3x" style="color:#008080; padding:2%;"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/ashley-maddix-a28643118/" style="text-decoration:none;">
-                <i class="fa-brands fa-linkedin-in fa-3x" style="color:#008080; padding:2%"></i>
-            </a>
-            <a href="CS RESUME 2025.pdf" style="text-decoration:none;">
-                <i class="fa-solid fa-file fa-3x" style="color:#008080; padding:2%;"> <div style="font-size:20px">resume</div> </i>
-            </a>
-        </div>
-        <a href="Projects.html" style="padding:2%;" >
-            <button type="button" style="border:none; border-radius:25%; position:relative; font-size:26px; background-color:#BBF1F1; color:#285430; text-align:center; ">Check out my Projects!</button>
-        </a>
-    </div>
-
-</div>
-
-</body>
-</html>
+<!--
+PLACE UNDER STYLE
+#anim{max-width:700px; margin:0 auto;}
+a:hover i{transform:scale(1.5); color:#35B5AC;}
+a:hover button{transform:scale(1.3);}
+@media only screen and (max-width:640px){
+#links{
+display:grid;
+position:fixed;
+padding-left:5%;
+padding-top:10%;
+text-align:left;
+grid-gap:3rem;
+grid-template-columns:repeat(1, 1fr);
+grid-template-rows:repeat(2, 50px);
+}
+}
+-->

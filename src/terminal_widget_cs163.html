@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeShell — C++</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:         #0d0f14;
+    --panel:      #13161e;
+    --border:     #1e2330;
+    --orange:     #f97316;
+    --orange-dim: rgba(249,115,22,0.08);
+    --green:      #39ff14;
+    --red:        #ff3860;
+    --yellow:     #ffd60a;
+    --text:       #c9d1e0;
+    --muted:      #4a5468;
+    --tab-active: #1a1e2a;
+  }
+
+  body {
+    background: #070810;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 2rem;
+  }
+
+  .widget {
+    width: 100%;
+    max-width: 860px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(249,115,22,0.06),
+      0 32px 80px rgba(0,0,0,0.7),
+      0 0 60px rgba(249,115,22,0.02) inset;
+    animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Title Bar ── */
+  .titlebar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    user-select: none;
+  }
+  .dots { display: flex; gap: 6px; }
+  .dot {
+    width: 12px; height: 12px; border-radius: 50%;
+    transition: filter 0.2s;
+  }
+  .dot:hover { filter: brightness(1.4); }
+  .dot.red    { background: var(--red); }
+  .dot.yellow { background: var(--yellow); }
+  .dot.green  { background: var(--green); }
+
+  .title-text {
+    margin-left: 8px;
+    font-family: 'Syne', sans-serif;
+    font-size: 13px; font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-badge {
+    padding: 3px 8px;
+    background: var(--orange);
+    color: #000;
+    font-size: 10px; font-weight: 700;
+    border-radius: 4px;
+    letter-spacing: 0.06em;
+  }
+
+  .run-btn {
+    margin-left: auto;
+    display: flex; align-items: center; gap: 6px;
+    padding: 6px 16px;
+    background: transparent;
+    border: 1px solid var(--orange);
+    border-radius: 6px;
+    color: var(--orange);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, box-shadow 0.15s, transform 0.1s;
+    letter-spacing: 0.05em;
+  }
+  .run-btn:hover  { background: var(--orange-dim); box-shadow: 0 0 14px rgba(249,115,22,0.25); }
+  .run-btn:active { transform: scale(0.96); }
+  .run-btn.running { color: var(--yellow); border-color: var(--yellow); }
+  .run-btn svg { width: 13px; height: 13px; fill: currentColor; }
+
+  /* ── Tabs ── */
+  .tabs {
+    display: flex;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto; scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+
+  .tab {
+    display: flex; align-items: center; gap: 6px;
+    padding: 8px 16px;
+    font-size: 12px; color: var(--muted);
+    cursor: pointer;
+    border-right: 1px solid var(--border);
+    transition: color 0.15s, background 0.15s;
+    white-space: nowrap; position: relative;
+  }
+  .tab:hover { color: var(--text); background: rgba(255,255,255,0.02); }
+  .tab.active { color: var(--orange); background: var(--tab-active); }
+  .tab.active::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 2px; background: var(--orange);
+    box-shadow: 0 0 8px var(--orange);
+  }
+  .tab-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); }
+  .tab.active .tab-dot { background: var(--orange); box-shadow: 0 0 6px var(--orange); }
+
+  .add-tab {
+    padding: 8px 14px; color: var(--muted);
+    cursor: pointer; font-size: 18px; line-height: 1;
+    transition: color 0.15s;
+  }
+  .add-tab:hover { color: var(--orange); }
+
+  /* ── Editor ── */
+  .editor-wrap { display: flex; background: var(--bg); }
+  .editor {
+    flex: 1; padding: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; line-height: 1.7;
+    color: var(--text); background: transparent;
+    border: none; outline: none; resize: none;
+    min-height: 240px; tab-size: 4;
+    caret-color: var(--orange);
+    white-space: pre; overflow-x: auto;
+  }
+  .editor::selection { background: rgba(249,115,22,0.15); }
+
+  /* ── Divider ── */
+  .divider {
+    height: 4px; background: var(--border);
+    cursor: ns-resize; position: relative;
+    transition: background 0.2s;
+  }
+  .divider:hover { background: var(--orange); }
+  .divider::after {
+    content: '···';
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--muted); font-size: 10px; letter-spacing: 2px;
+  }
+
+  /* ── Terminal ── */
+  .terminal-section { background: #090b10; border-top: 1px solid var(--border); }
+
+  .terminal-header {
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 16px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    font-size: 11px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .terminal-status {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--green); box-shadow: 0 0 6px var(--green);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .terminal-status.busy { background: var(--yellow); box-shadow: 0 0 6px var(--yellow); }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+  .compiler-info { color: var(--muted); font-size: 10px; }
+
+  .clear-btn {
+    margin-left: auto; background: none; border: none;
+    color: var(--muted); font-family: inherit;
+    font-size: 11px; cursor: pointer;
+    transition: color 0.15s; letter-spacing: 0.05em;
+  }
+  .clear-btn:hover { color: var(--red); }
+
+  /* Stdin row */
+  .stdin-row {
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 16px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(249,115,22,0.04);
+  }
+  .stdin-label { font-size: 11px; color: var(--orange); text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
+  .stdin-input {
+    flex: 1; background: none; border: none; outline: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: #fdba74; caret-color: var(--orange);
+  }
+  .stdin-input::placeholder { color: var(--muted); }
+
+  .terminal-output {
+    padding: 12px 16px; font-size: 13px; line-height: 1.7;
+    color: var(--text); min-height: 100px; max-height: 200px;
+    overflow-y: auto; scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  .terminal-output::-webkit-scrollbar { width: 4px; }
+  .terminal-output::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  .out-line { display: block; animation: fadein 0.15s ease; white-space: pre-wrap; word-break: break-word; }
+  @keyframes fadein { from { opacity: 0; transform: translateX(-4px); } to { opacity: 1; } }
+  .out-line.info   { color: var(--orange); }
+  .out-line.warn   { color: var(--yellow); }
+  .out-line.error  { color: var(--red); }
+  .out-line.result { color: var(--green); }
+  .out-line.muted  { color: var(--muted); }
+
+  .terminal-input-row {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 16px; border-top: 1px solid var(--border);
+  }
+  .prompt { color: var(--orange); font-size: 13px; white-space: nowrap; }
+  .terminal-input {
+    flex: 1; background: none; border: none; outline: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; color: var(--text); caret-color: var(--green);
+  }
+  .terminal-input::placeholder { color: var(--muted); }
+
+  /* Status bar */
+  .statusbar {
+    display: flex; align-items: center; gap: 16px;
+    padding: 4px 16px; background: #9a3412;
+    font-size: 11px; color: rgba(255,255,255,0.7); letter-spacing: 0.04em;
+  }
+  .statusbar .lang { font-weight: 700; color: #fff; }
+
+  /* Spinner */
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .spinner {
+    display: inline-block; width: 10px; height: 10px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-top-color: currentColor; border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle; margin-right: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="widget">
+
+    <!-- Title Bar -->
+    <div class="titlebar">
+        <div class="dots">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+        </div>
+        <span class="title-text">CodeShell</span>
+        <span class="title-badge">C++</span>
+        <button class="run-btn" id="runBtn" onclick="runCode()">
+            <svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6z"/></svg>
+            Run
+        </button>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs" id="tabs">
+        <div class="tab active" onclick="switchTab(0)">
+            <span class="tab-dot"></span>main.cpp
+        </div>
+        <div class="tab" onclick="switchTab(1)">
+            <span class="tab-dot"></span>hello.cpp
+        </div>
+        <div class="add-tab" onclick="addTab()">+</div>
+    </div>
+
+    <!-- Editor -->
+    <div class="editor-wrap">
+        <textarea class="editor" id="editor" spellcheck="false" onkeydown="handleKeys(event)"></textarea>
+    </div>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- Terminal -->
+    <div class="terminal-section">
+        <div class="terminal-header">
+            <div class="terminal-status" id="termStatus"></div>
+            <span>Terminal</span>
+            <span class="compiler-info">· g++-12 · C++17 · -O2</span>
+            <button class="clear-btn" onclick="clearTerminal()">clear</button>
+        </div>
+
+        <div class="stdin-row">
+            <span class="stdin-label">stdin</span>
+            <input type="text" class="stdin-input" id="stdinInput"
+                   placeholder="optional input passed to your program via stdin">
+        </div>
+
+        <div class="terminal-output" id="output"></div>
+
+        <div class="terminal-input-row">
+            <span class="prompt">❯</span>
+            <input type="text" class="terminal-input" id="termInput"
+                   placeholder="type a command..." onkeydown="handleTermInput(event)">
+        </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="statusbar">
+        <span class="lang">C++17</span>
+        <span id="statusCursor">Ln 1, Col 1</span>
+        <span>UTF-8</span>
+        <span>Spaces: 4</span>
+    </div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────
+//  Files
+// ─────────────────────────────────────────────
+const files = [
+  {
+    name: 'main.cpp',
+    content:
+`#include <iostream>
+#include <vector>
+#include <numeric>
+#include <string>
+
+// Recursive Fibonacci
+int fib(int n) {
+    return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+}
+
+int main() {
+    std::cout << "Hello from C++17!" << std::endl;
+
+    // Fibonacci sequence
+    std::cout << "Fibonacci: ";
+    for (int i = 0; i < 8; i++)
+        std::cout << fib(i) << (i < 7 ? " " : "\\n");
+
+    // STL vector + accumulate
+    std::vector<int> nums(5);
+    std::iota(nums.begin(), nums.end(), 1);   // fills 1..5
+    int sum = std::accumulate(nums.begin(), nums.end(), 0);
+    std::cout << "Sum of 1..5 = " << sum << std::endl;
+
+    // Range-based for loop
+    std::vector<std::string> langs = {"C++", "Rust", "Go"};
+    std::cout << "Languages: ";
+    for (const auto& l : langs) std::cout << l << " ";
+    std::cout << std::endl;
+
+    return 0;
+}
+`
+  },
+  {
+    name: 'hello.cpp',
+    content:
+`#include <iostream>
+#include <string>
+
+int main() {
+    std::string name;
+    std::cout << "Enter your name: ";
+    std::cin >> name;
+    std::cout << "Hello, " << name << "!" << std::endl;
+    return 0;
+}
+`
+  }
+];
+
+let currentTab  = 0;
+let termHistory = [];
+let historyIdx  = -1;
+
+// ─────────────────────────────────────────────
+//  Tab management
+// ─────────────────────────────────────────────
+function switchTab(idx) {
+  files[currentTab].content = document.getElementById('editor').value;
+  currentTab = idx;
+  document.getElementById('editor').value = files[idx].content;
+  document.querySelectorAll('.tab').forEach((t, i) =>
+    t.classList.toggle('active', i === idx)
+  );
+}
+
+function addTab() {
+  const name = prompt('File name (e.g. program.cpp):', 'new.cpp');
+  if (!name) return;
+  files.push({
+    name,
+    content: `#include <iostream>\n\nint main() {\n    std::cout << "Hello, World!" << std::endl;\n    return 0;\n}\n`
+  });
+  const tabs   = document.getElementById('tabs');
+  const addBtn = tabs.querySelector('.add-tab');
+  const tab    = document.createElement('div');
+  tab.className = 'tab';
+  tab.innerHTML = `<span class="tab-dot"></span>${name}`;
+  tab.onclick   = () => switchTab(files.length - 1);
+  tabs.insertBefore(tab, addBtn);
+  switchTab(files.length - 1);
+}
+
+// ─────────────────────────────────────────────
+//  Editor keys
+// ─────────────────────────────────────────────
+function handleKeys(e) {
+  if (e.key === 'Tab') {
+    e.preventDefault();
+    const ed = document.getElementById('editor');
+    const s  = ed.selectionStart, end = ed.selectionEnd;
+    ed.value = ed.value.substring(0, s) + '    ' + ed.value.substring(end);
+    ed.selectionStart = ed.selectionEnd = s + 4;
+  }
+  if (e.ctrlKey && e.key === 'Enter') runCode();
+  setTimeout(() => {
+    const ed    = document.getElementById('editor');
+    const val   = ed.value.substring(0, ed.selectionStart);
+    const lines = val.split('\n');
+    document.getElementById('statusCursor').textContent =
+      `Ln ${lines.length}, Col ${lines[lines.length - 1].length + 1}`;
+  }, 0);
+}
+
+// ─────────────────────────────────────────────
+//  Terminal helpers
+// ─────────────────────────────────────────────
+function addOutput(text, type = '') {
+  const out  = document.getElementById('output');
+  const span = document.createElement('span');
+  span.className   = 'out-line ' + type;
+  span.textContent = text;
+  out.appendChild(span);
+  out.scrollTop = out.scrollHeight;
+}
+
+function clearTerminal() { document.getElementById('output').innerHTML = ''; }
+
+function setBusy(on) {
+  document.getElementById('termStatus').classList.toggle('busy', on);
+}
+
+// ─────────────────────────────────────────────
+//  Run (Wandbox API)
+// ─────────────────────────────────────────────
+async function runCode() {
+  files[currentTab].content = document.getElementById('editor').value;
+  const f     = files[currentTab];
+  const btn   = document.getElementById('runBtn');
+  const stdin = document.getElementById('stdinInput').value;
+
+  // Set loading state
+  btn.classList.add('running');
+  btn.innerHTML = `<span class="spinner"></span>Compiling...`;
+  setBusy(true);
+
+  addOutput('', '');
+  addOutput(`▶  Compiling ${f.name}  [g++-12, C++17, -O2]`, 'info');
+
+  try {
+    const res = await fetch('https://wandbox.org/api/compile.json', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        compiler:              'gcc-12-cpp17',
+        code:                  f.content,
+        stdin:                 stdin,
+        options:               '',
+        'compiler-option-raw': '-std=c++17 -O2 -Wall -Wextra'
+      })
+    });
+
+    if (!res.ok) throw new Error(`Wandbox returned HTTP ${res.status}`);
+    const data = await res.json();
+
+    // Compiler warnings / errors
+    if (data.compiler_message && data.compiler_message.trim()) {
+      addOutput('', '');
+      data.compiler_message.trim().split('\n').forEach(line =>
+        addOutput(line, line.toLowerCase().includes('error') ? 'error' : 'warn')
+      );
+    }
+
+    // Program stdout
+    if (data.program_output && data.program_output.trim()) {
+      addOutput('', '');
+      data.program_output.trim().split('\n').forEach(line => addOutput(line, 'result'));
+    }
+
+    // Program stderr
+    if (data.program_error && data.program_error.trim())
+      data.program_error.trim().split('\n').forEach(line => addOutput(line, 'error'));
+
+    addOutput('', '');
+    const ok = String(data.status) === '0';
+    addOutput(
+      ok ? '✓  Exited with code 0' : `✖  Exited with code ${data.status}`,
+      ok ? 'muted' : 'error'
+    );
+
+  } catch (err) {
+    addOutput('', '');
+    addOutput('✖  Could not reach Wandbox compiler API.', 'error');
+    addOutput('   Serve this file over http:// (not file://) and check your connection.', 'muted');
+    addOutput('   ' + err.message, 'muted');
+  }
+
+  btn.classList.remove('running');
+  btn.innerHTML = `<svg viewBox="0 0 16 16" style="fill:currentColor;width:13px;height:13px"><path d="M3 2l10 6-10 6z"/></svg> Run`;
+  setBusy(false);
+}
+
+// ─────────────────────────────────────────────
+//  Terminal commands
+// ─────────────────────────────────────────────
+function handleTermInput(e) {
+  const input = document.getElementById('termInput');
+  if (e.key === 'Enter') {
+    const cmd = input.value.trim();
+    if (!cmd) return;
+    termHistory.unshift(cmd);
+    historyIdx = -1;
+    addOutput('❯ ' + cmd, 'info');
+    processCommand(cmd);
+    input.value = '';
+  }
+  if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    if (historyIdx < termHistory.length - 1) historyIdx++;
+    input.value = termHistory[historyIdx] || '';
+  }
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    historyIdx > 0 ? historyIdx-- : (historyIdx = -1);
+    input.value = historyIdx >= 0 ? termHistory[historyIdx] : '';
+  }
+}
+
+function processCommand(cmd) {
+  const parts = cmd.trim().split(/\s+/);
+  switch (parts[0]) {
+    case 'help':    addOutput('Commands: help, clear, ls, run, echo, date, version', 'muted'); break;
+    case 'clear':   clearTerminal(); break;
+    case 'ls':      addOutput(files.map(f => f.name).join('   '), 'result'); break;
+    case 'run':     runCode(); break;
+    case 'echo':    addOutput(parts.slice(1).join(' '), 'result'); break;
+    case 'date':    addOutput(new Date().toString(), 'result'); break;
+    case 'version': addOutput('CodeShell v2.1.0  |  C++ (gcc-12 via Wandbox)', 'muted'); break;
+    default:        addOutput(`Command not found: ${parts[0]}. Type 'help'.`, 'error');
+  }
+}
+
+// ─────────────────────────────────────────────
+//  Init
+// ─────────────────────────────────────────────
+document.getElementById('editor').value = files[0].content;
+addOutput('CodeShell v2.1.0  |  C++17 · gcc-12 · powered by Wandbox', 'muted');
+addOutput('Requires internet. Serve over http:// for best results.', 'muted');
+addOutput("Press Run or Ctrl+Enter to compile. Type 'help' for commands.", 'muted');
+</script>
+</body>
+</html>
