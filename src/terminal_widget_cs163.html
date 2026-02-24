@@ -482,7 +482,7 @@ async function runCode() {
   addOutput(`▶  Compiling ${f.name}  [g++-12, C++17, -O2]`, 'info');
 
   try {
-    const res = await fetch('https://wandbox.org/api/compile.json', {
+    const res = await fetch('/compile', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -524,8 +524,8 @@ async function runCode() {
 
   } catch (err) {
     addOutput('', '');
-    addOutput('✖  Could not reach Wandbox compiler API.', 'error');
-    addOutput('   Serve this file over http:// (not file://) and check your connection.', 'muted');
+    addOutput('✖  Could not reach the local compile server.', 'error');
+    addOutput('   Make sure server.js is running:  node server.js', 'muted');
     addOutput('   ' + err.message, 'muted');
   }
 
@@ -579,7 +579,7 @@ function processCommand(cmd) {
 // ─────────────────────────────────────────────
 document.getElementById('editor').value = files[0].content;
 addOutput('CodeShell v2.1.0  |  C++17 · gcc-12 · powered by Wandbox', 'muted');
-addOutput('Requires internet. Serve over http:// for best results.', 'muted');
+addOutput('Run server.js first, then open http://localhost:3000', 'muted');
 addOutput("Press Run or Ctrl+Enter to compile. Type 'help' for commands.", 'muted');
 </script>
 </body>
