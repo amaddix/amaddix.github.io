@@ -321,8 +321,19 @@
   <div class="projects">
     <br><br><br><br>
     <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:30px;">Pizza Builder</h1>
-    <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:20px;">C++ &nbsp;·&nbsp; Object-Oriented Design &nbsp;·&nbsp; Linked Lists &nbsp;·&nbsp; Dynamic Memory Management &nbsp;·&nbsp; Recursion</h1>
-
+    <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2%; padding-top:0%;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Linked Lists</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">OOP / Classes</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Dynamic Memory</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Recursion</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Sorted Insertion</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Pointer Arithmetic</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">File Architecture</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Encapsulation</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Defensive Programming</span>
+      </div>
+    </div>
     <a class="github" href="https://github.com/amaddix" style="text-decoration:none;">
       <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
     </a>
@@ -340,19 +351,7 @@
           and the destructor carefully traverses both levels to fully clean up without leaks.
         </p>
       </div>
-      <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2%; padding-top:8%;">
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
-          <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Linked Lists</span>
-          <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">OOP / Classes</span>
-          <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Dynamic Memory</span>
-          <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Recursion</span>
-          <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Sorted Insertion</span>
-          <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Pointer Arithmetic</span>
-          <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">File Architecture</span>
-          <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Encapsulation</span>
-          <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Defensive Programming</span>
-        </div>
-      </div>
+
     </div>
 
     <!-- 2. KEY IMPLEMENTATION DETAILS — proof of depth before showing code -->
@@ -386,18 +385,18 @@
     <!-- 3. CODE SAMPLES — concrete evidence, one per concept, stacked -->
     <div style="padding: 2% 3% 0 3%;">
       <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:10px; border-bottom:1px solid rgba(203,203,203,0.3);">Code Samples</h1>
-      <p style="color:#d0dde8; font-size:16px; font-weight:400; line-height:1.6; padding-top:12px; padding-bottom:4px;">
-        The two snippets below are included to show <b style="color:#EFFFE3;">depth beyond syntax</b>. The first demonstrates
-        intentional data structure design — each struct field is purposeful, with self-referential pointers forming the
-        linked list chain and a nested ownership model built entirely by hand. The second shows the sorted insertion algorithm
-        in full: three distinct cases (empty list, insert before head, traverse-and-splice) handled cleanly with pointer
-        manipulation — the kind of low-level reasoning that signals strong CS fundamentals to a technical reviewer.
-      </p>
 
-      <!-- Snippet 1 -->
-      <p style="color:#CBCBCB; font-size:14px; font-family:monospace; padding:16px 0 6px 0; letter-spacing:0.05em;">header.h &nbsp;—&nbsp; nested data structure design</p>
-      <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
-        <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#7dd4b0;">// Outer list — pizza types (alphabetically sorted)</span>
+      <!-- Snippet 1: text left, code right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:20px;">
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            The first snippet shows the data structure definitions from <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">header.h</code>. Each struct is designed with a clear purpose — <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">pizza_type</code> holds a name, a pointer to its own inner topping list, and a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">next</code> pointer to chain with other pizza types. <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">pizza_topping</code> mirrors this pattern one level down. Together they form the two-level nested structure that the entire program is built around.
+          </p>
+        </div>
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">header.h &nbsp;—&nbsp; nested data structure design</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#7dd4b0;">// Outer list — pizza types (alphabetically sorted)</span>
 <span style="color:#88c9e8;">struct</span> pizza_type {
   <span style="color:#88c9e8;">char</span>          *type_name;
   pizza_topping *head_topping;  <span style="color:#7dd4b0;">// ↓ owns inner topping list</span>
@@ -415,12 +414,16 @@
 <span style="color:#CBCBCB;">head</span> → [ BBQ Chicken ] → [ Margherita ] → NULL
               ↓  head_topping
          [ Bacon ] → [ BBQ Sauce ] → NULL</pre>
+          </div>
+        </div>
       </div>
 
-      <!-- Snippet 2 -->
-      <p style="color:#CBCBCB; font-size:14px; font-family:monospace; padding:16px 0 6px 0; letter-spacing:0.05em;">function.cpp &nbsp;—&nbsp; sorted insertion (all three cases)</p>
-      <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden; margin-bottom:8px;">
-        <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#7dd4b0;">// Case 1: empty list</span>
+      <!-- Snippet 2: code left, text right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:28px; margin-bottom:8px;">
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">function.cpp &nbsp;—&nbsp; sorted insertion (all three cases)</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#7dd4b0;">// Case 1: empty list</span>
 <span style="color:#88c9e8;">if</span> (!head) {
   head = temp;  head->next = NULL;  return 1;
 }
@@ -435,6 +438,13 @@ pizza_type *prev = head, *cur = head->next;
 }
 <span style="color:#7dd4b0;">// Splice new node between prev and cur</span>
 temp->next = cur;  prev->next = temp;  return 1;</pre>
+          </div>
+        </div>
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            The second snippet shows the sorted insertion logic from <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">add_pizza()</code>. Rather than inserting freely and sorting afterward, new nodes are placed in alphabetical order at the moment of insertion. All three cases are handled explicitly — an empty list, a new name that sorts before the current head, and a name that belongs somewhere in the middle — using a previous/current pointer traversal to find the right position and splice the node in.
+          </p>
+        </div>
       </div>
     </div>
 
@@ -662,8 +672,1374 @@ temp->next = cur;  prev->next = temp;  return 1;</pre>
             </div>
 
           </div>
+  <!-- PROJECT #7 MESSAGE MANAGER -->
+  <div class="projects">
+    <br><br><br><br>
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:30px;">Message Manager</h1>
+    <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2%; padding-top:0%;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Stack (LLL of Arrays)</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Circular Linked List</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Queue</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">OOP / Classes</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Dynamic Memory</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Recursion</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Pointer Arithmetic</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Encapsulation</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Randomized Dispatch</span>
+      </div>
+    </div>
+    <a class="github" href="https://github.com/amaddix" style="text-decoration:none;">
+      <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+    </a>
+
+    <!-- 1. OVERVIEW + SKILLS -->
+    <div class="detail2-container" style="align-items:flex-start;">
+      <div class="detail2" style="flex:3; min-width:280px;">
+        <p style="color:#EFFFE3; font-size:22px; padding:1%; line-height:1.7; font-weight:500;">
+          <br>
+          This project is a menu-driven C++ messaging simulation that models how an inbox and outbox work at the data structure level — with no standard library containers. Received messages are stored in a <b>stack built from a linked list of arrays</b>, while outgoing messages queue up in a <b>circular linked list</b> and are dispatched in randomized batches using <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">rand()</code>.<br><br>
+          Every field in every message is <b>heap-allocated</b> on input and the destructors for both classes fully traverse their respective structures, deallocating each <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">char*</code> field and node without leaks. Reply messages carry a reference to the original message they respond to, making the outbox context-aware.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. KEY IMPLEMENTATION DETAILS -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Key Implementation Details</h1>
+      <div class="detail2-container" style="gap:16px; padding-top:16px; flex-wrap:wrap;">
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Stack — LLL of Arrays</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The inbox is not a simple stack — each node holds a fixed-size array of <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">MAX</code> messages. When an array fills, a new node is allocated and pushed to the front. This hybrid structure demonstrates understanding of both contiguous and linked memory models simultaneously.</p>
         </div>
 
+        <div style="flex:1; min-width:220px; border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Queue — Circular Linked List</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The outbox is implemented as a circular linked list where <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">queue_rear->next</code> always points back to the head. This allows O(1) enqueue at the tail and O(1) dequeue from the head — with careful pointer management to convert between CLL and linear form for counting.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #e8a87c; background:rgba(232,168,124,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Recursive Count</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Because the queue is circular, traversal requires temporarily breaking the ring. The public <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">count()</code> wrapper converts the CLL to a linear list, calls the private recursive overload, then restores the ring — separating traversal concerns cleanly and protecting the data structure's integrity.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #b8a0e8; background:rgba(184,160,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Context-Aware Replies</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Each <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">q_node</code> carries both a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">reply</code> and a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">sent</code> message field plus a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">response</code> bool. When a user replies, the original incoming message is saved alongside the outgoing one — modelling real-world message threading at the struct level.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. CODE SAMPLES -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:10px; border-bottom:1px solid rgba(203,203,203,0.3);">Code Samples</h1>
+
+      <!-- Snippet 1: text left, code right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:20px;">
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            The first snippet is the destructor for the circular queue. Because <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">queue_rear->next</code> always points back to the head rather than <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">NULL</code>, a standard traversal loop would never terminate. The solution is to sever that back-link first, converting the circular structure into a regular linear list, then traverse and deallocate normally.
+          </p>
+        </div>
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">queue.cpp &nbsp;—&nbsp; ~replied_message() destructor</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#88c9e8;">if</span> (queue_rear) {
+  <span style="color:#7dd4b0;">// break the ring: save head, sever rear->next</span>
+  q_node *head = queue_rear->next;
+  queue_rear->next = NULL;
+  queue_rear = head;
+
+  <span style="color:#88c9e8;">while</span> (queue_rear) {
+    clear_reply();
+    <span style="color:#88c9e8;">if</span> (queue_rear->responce) clear_sent();
+    head = head->next;
+    <span style="color:#88c9e8;">delete</span> queue_rear;
+    queue_rear = head;        <span style="color:#7dd4b0;">// advance — terminates at NULL</span>
+  }
+  queue_rear = NULL;
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Snippet 2: code left, text right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:28px; margin-bottom:8px;">
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">queue.cpp &nbsp;—&nbsp; count() wrapper + recursive overload</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#7dd4b0;">// Public wrapper: temporarily linearise the CLL, count, restore ring</span>
+<span style="color:#88c9e8;">int</span> replied_message::count() {
+  <span style="color:#88c9e8;">if</span> (!queue_rear) return 0;
+  <span style="color:#88c9e8;">if</span> (queue_rear->next == queue_rear) return 1;
+
+  q_node *head      = queue_rear->next;
+  q_node *rear_temp = queue_rear;
+  queue_rear->next  = NULL;          <span style="color:#7dd4b0;">// sever: CLL → LLL</span>
+  queue_rear        = head;
+
+  <span style="color:#88c9e8;">int</span> amount = count(queue_rear);    <span style="color:#7dd4b0;">// recurse on linear list</span>
+
+  queue_rear        = rear_temp;     <span style="color:#7dd4b0;">// restore rear pointer</span>
+  queue_rear->next  = head;          <span style="color:#7dd4b0;">// re-link: LLL → CLL</span>
+  return amount;
+}
+
+<span style="color:#7dd4b0;">// Private recursive overload</span>
+<span style="color:#88c9e8;">int</span> replied_message::count(q_node *queue_rear) {
+  <span style="color:#88c9e8;">if</span> (!queue_rear) return 0;
+  return count(queue_rear->next) + 1;
+}</pre>
+          </div>
+        </div>
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            The second snippet shows the <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">count()</code> function, which faces the same challenge. The public wrapper temporarily breaks the ring, saves the rear pointer, then calls the private recursive overload on the now-linear list. Once counting is done, the ring is fully restored before returning. This keeps the recursive logic simple while protecting the structure's circular integrity.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. THREE-FILE ARCHITECTURE -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Four-File Architecture</h1>
+      <div class="detail2-container" style="gap:16px; padding-top:16px;">
+
+        <div style="flex:1; min-width:200px; background:#4a6275; border-radius:10px; padding:20px; text-align:left;">
+          <code style="font-family:monospace; font-size:14px; color:#7dd4b0; display:block; margin-bottom:8px;">prog1.h</code>
+          <p style="color:#EFFFE3; font-size:16px; font-weight:500; margin-bottom:6px;">Contracts &amp; Interfaces</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.5;">Defines the <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">message</code>, <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">s_node</code>, and <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">q_node</code> structs plus both class declarations. The single source of truth for all data shapes shared across files.</p>
+        </div>
+
+        <div style="flex:1; min-width:200px; background:#4a6275; border-radius:10px; padding:20px; text-align:left;">
+          <code style="font-family:monospace; font-size:14px; color:#7dd4b0; display:block; margin-bottom:8px;">stack.cpp</code>
+          <p style="color:#EFFFE3; font-size:16px; font-weight:500; margin-bottom:6px;">Inbox / Stack Logic</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.5;">All methods for <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">received_message</code>: constructor, destructor, push, pop, peek, display, save_in, and clear_index.</p>
+        </div>
+
+        <div style="flex:1; min-width:200px; background:#4a6275; border-radius:10px; padding:20px; text-align:left;">
+          <code style="font-family:monospace; font-size:14px; color:#7dd4b0; display:block; margin-bottom:8px;">queue.cpp</code>
+          <p style="color:#EFFFE3; font-size:16px; font-weight:500; margin-bottom:6px;">Outbox / Queue Logic</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.5;">All methods for <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">replied_message</code>: constructor, destructor, enqueue, dequeue, peek, display, count (recursive), save_out, save_message, clear_reply, and clear_sent.</p>
+        </div>
+
+        <div style="flex:1; min-width:200px; background:#4a6275; border-radius:10px; padding:20px; text-align:left;">
+          <code style="font-family:monospace; font-size:14px; color:#7dd4b0; display:block; margin-bottom:8px;">main.cpp</code>
+          <p style="color:#EFFFE3; font-size:16px; font-weight:500; margin-bottom:6px;">User Interface</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.5;">Menu loop, input collection via <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">receiving()</code>, and randomized batch dispatch logic. No data structure logic leaks into the UI layer.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 5. OOP CLASS DIAGRAM -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">OOP Class &amp; Data Structure Diagram</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 460" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="mm-grey"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+            <marker id="mm-teal"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7dd4b0"/></marker>
+            <marker id="mm-blue"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#88c9e8"/></marker>
+            <marker id="mm-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#b8a0e8"/></marker>
+            <marker id="mm-orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#e8a87c"/></marker>
+          </defs>
+
+          <!-- received_message CLASS (stack) -->
+          <rect x="20" y="20" width="250" height="180" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <rect x="20" y="20" width="250" height="34" rx="10" fill="#7dd4b0"/>
+          <rect x="20" y="42" width="250" height="12" fill="#7dd4b0"/>
+          <text x="145" y="42" text-anchor="middle" fill="#2e3d4a" font-size="13" font-weight="700">class received_message</text>
+          <text x="35" y="70"  fill="#b8a0e8" font-size="10" font-weight="700">PRIVATE</text>
+          <text x="35" y="86"  fill="#CBCBCB" font-size="10" font-family="monospace">s_node* stack_head</text>
+          <text x="35" y="101" fill="#CBCBCB" font-size="10" font-family="monospace">int stack_index</text>
+          <text x="35" y="116" fill="#7dd4b0" font-size="10" font-family="monospace">save_in()  /  clear_index()</text>
+          <line x1="30" y1="124" x2="260" y2="124" stroke="rgba(203,203,203,0.2)" stroke-width="1"/>
+          <text x="35" y="138" fill="#e8a87c" font-size="10" font-weight="700">PUBLIC</text>
+          <text x="35" y="153" fill="#EFFFE3" font-size="10" font-family="monospace">push()  /  pop()  /  peek()</text>
+          <text x="35" y="168" fill="#EFFFE3" font-size="10" font-family="monospace">display()</text>
+          <text x="35" y="183" fill="#EFFFE3" font-size="10" font-family="monospace">received_message()  /  ~()</text>
+
+          <!-- replied_message CLASS (queue) -->
+          <rect x="310" y="20" width="250" height="180" rx="10" fill="#2e3d4a" stroke="#88c9e8" stroke-width="2"/>
+          <rect x="310" y="20" width="250" height="34" rx="10" fill="#88c9e8"/>
+          <rect x="310" y="42" width="250" height="12" fill="#88c9e8"/>
+          <text x="435" y="42" text-anchor="middle" fill="#2e3d4a" font-size="13" font-weight="700">class replied_message</text>
+          <text x="325" y="70"  fill="#b8a0e8" font-size="10" font-weight="700">PRIVATE</text>
+          <text x="325" y="86"  fill="#CBCBCB" font-size="10" font-family="monospace">q_node* queue_rear</text>
+          <text x="325" y="101" fill="#7dd4b0" font-size="10" font-family="monospace">save_out()  /  save_message()</text>
+          <line x1="320" y1="110" x2="550" y2="110" stroke="rgba(203,203,203,0.2)" stroke-width="1"/>
+          <text x="325" y="124" fill="#e8a87c" font-size="10" font-weight="700">PUBLIC</text>
+          <text x="325" y="139" fill="#EFFFE3" font-size="10" font-family="monospace">enqueue()  /  dequeue()  /  peek()</text>
+          <text x="325" y="154" fill="#EFFFE3" font-size="10" font-family="monospace">display()  /  count()</text>
+          <text x="325" y="169" fill="#EFFFE3" font-size="10" font-family="monospace">clear_sent()  /  clear_reply()</text>
+          <text x="325" y="184" fill="#EFFFE3" font-size="10" font-family="monospace">replied_message()  /  ~()</text>
+
+          <!-- s_node STRUCT -->
+          <rect x="20" y="260" width="220" height="100" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <rect x="20" y="260" width="220" height="32" rx="10" fill="#7dd4b0"/>
+          <rect x="20" y="278" width="220" height="14" fill="#7dd4b0"/>
+          <text x="130" y="279" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">struct s_node</text>
+          <text x="35"  y="308" fill="#88c9e8" font-size="10" font-family="monospace">message* list  [MAX=5]</text>
+          <text x="35"  y="323" fill="#CBCBCB" font-size="10" font-family="monospace">s_node* next</text>
+          <text x="35"  y="348" fill="#7dd4b0" font-size="9">array of messages per node</text>
+
+          <!-- q_node STRUCT -->
+          <rect x="280" y="260" width="240" height="118" rx="10" fill="#2e3d4a" stroke="#88c9e8" stroke-width="2"/>
+          <rect x="280" y="260" width="240" height="32" rx="10" fill="#88c9e8"/>
+          <rect x="280" y="278" width="240" height="14" fill="#88c9e8"/>
+          <text x="400" y="279" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">struct q_node</text>
+          <text x="295" y="308" fill="#CBCBCB" font-size="10" font-family="monospace">message sent</text>
+          <text x="295" y="323" fill="#CBCBCB" font-size="10" font-family="monospace">message reply</text>
+          <text x="295" y="338" fill="#b8a0e8" font-size="10" font-family="monospace">bool responce</text>
+          <text x="295" y="353" fill="#CBCBCB" font-size="10" font-family="monospace">q_node* next</text>
+          <text x="295" y="372" fill="#88c9e8" font-size="9">circular: rear->next == head</text>
+
+          <!-- message STRUCT -->
+          <rect x="570" y="260" width="270" height="150" rx="10" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="2"/>
+          <rect x="570" y="260" width="270" height="32" rx="10" fill="#b8a0e8"/>
+          <rect x="570" y="278" width="270" height="14" fill="#b8a0e8"/>
+          <text x="705" y="279" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">struct message</text>
+          <text x="585" y="308" fill="#CBCBCB" font-size="10" font-family="monospace">char* name, *number, *email</text>
+          <text x="585" y="323" fill="#CBCBCB" font-size="10" font-family="monospace">char* nick, *date, *time</text>
+          <text x="585" y="338" fill="#CBCBCB" font-size="10" font-family="monospace">char* subject, *body</text>
+          <text x="585" y="353" fill="#b8a0e8" font-size="10" font-family="monospace">bool blocked, secret</text>
+          <text x="585" y="375" fill="#b8a0e8" font-size="9">all char* heap-allocated on input</text>
+          <text x="585" y="390" fill="#b8a0e8" font-size="9">deallocated by each class destructor</text>
+
+          <!-- received_message → s_node -->
+          <line x1="130" y1="200" x2="130" y2="258" stroke="#7dd4b0" stroke-width="1.5" marker-end="url(#mm-teal)"/>
+          <text x="135" y="235" fill="#7dd4b0" font-size="10">owns stack_head*</text>
+
+          <!-- replied_message → q_node -->
+          <line x1="400" y1="200" x2="400" y2="258" stroke="#88c9e8" stroke-width="1.5" marker-end="url(#mm-blue)"/>
+          <text x="405" y="235" fill="#88c9e8" font-size="10">owns queue_rear*</text>
+
+          <!-- s_node → message (list array) -->
+          <line x1="240" y1="308" x2="568" y2="308" stroke="#b8a0e8" stroke-width="1.5" marker-end="url(#mm-purple)"/>
+          <text x="390" y="300" fill="#b8a0e8" font-size="10" text-anchor="middle">list[ ] holds messages</text>
+
+          <!-- q_node → message (sent + reply) -->
+          <line x1="520" y1="325" x2="568" y2="325" stroke="#b8a0e8" stroke-width="1.5" marker-end="url(#mm-purple)"/>
+          <text x="544" y="318" fill="#b8a0e8" font-size="10" text-anchor="middle">sent &amp; reply</text>
+
+          <!-- s_node self-ref next -->
+          <path d="M 60,360 A 40,22 0 1,0 150,360" fill="none" stroke="#CBCBCB" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#mm-grey)"/>
+          <text x="105" y="400" fill="#CBCBCB" font-size="10" text-anchor="middle">next*</text>
+
+          <!-- q_node self-ref next (circular) -->
+          <path d="M 320,378 A 40,22 0 1,0 410,378" fill="none" stroke="#CBCBCB" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#mm-grey)"/>
+          <text x="365" y="418" fill="#CBCBCB" font-size="10" text-anchor="middle">next* (circular)</text>
+
+          <!-- Legend -->
+          <text x="30"  y="445" fill="rgba(203,203,203,0.5)" font-size="10">─ ─  self-referential / circular next*</text>
+          <text x="270" y="445" fill="rgba(203,203,203,0.5)" font-size="10">───  ownership / composition</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 6. PROGRAM FLOW DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Program Flow — Menu to Data Structures</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 540" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="pf1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+            <marker id="pf2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7dd4b0"/></marker>
+            <marker id="pf3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#88c9e8"/></marker>
+          </defs>
+
+          <!-- START -->
+          <ellipse cx="430" cy="28" rx="80" ry="20" fill="#7dd4b0"/>
+          <text x="430" y="33" text-anchor="middle" fill="#2e3d4a" font-size="13" font-weight="700">START</text>
+          <line x1="430" y1="48" x2="430" y2="70" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#pf1)"/>
+
+          <!-- init box -->
+          <rect x="280" y="72" width="300" height="38" rx="8" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="430" y="88"  text-anchor="middle" fill="#EFFFE3"  font-size="12">received_message received;</text>
+          <text x="430" y="103" text-anchor="middle" fill="#7dd4b0" font-size="10" font-family="monospace">replied_message replied;  →  both constructors run</text>
+          <line x1="430" y1="110" x2="430" y2="132" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#pf1)"/>
+
+          <!-- menu diamond -->
+          <polygon points="430,136 570,178 430,220 290,178" fill="#243039" stroke="#88c9e8" stroke-width="2"/>
+          <text x="430" y="174" text-anchor="middle" fill="#88c9e8" font-size="13" font-weight="600">menu()</text>
+          <text x="430" y="190" text-anchor="middle" fill="#CBCBCB" font-size="10">choose 1–7</text>
+
+          <!-- quit -->
+          <line x1="570" y1="178" x2="634" y2="178" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#pf1)"/>
+          <text x="574" y="172" fill="#CBCBCB" font-size="10">7 = Quit</text>
+          <ellipse cx="700" cy="178" rx="62" ry="22" fill="#4a6275" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="700" y="175" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">END</text>
+          <text x="700" y="189" text-anchor="middle" fill="#7dd4b0" font-size="9">~received / ~replied</text>
+
+          <!-- down from diamond -->
+          <line x1="430" y1="220" x2="430" y2="242" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#pf1)"/>
+          <text x="436" y="236" fill="#CBCBCB" font-size="10">1–6</text>
+
+          <!-- horizontal spine -->
+          <line x1="55" y1="242" x2="805" y2="242" stroke="rgba(203,203,203,0.35)" stroke-width="1"/>
+          <line x1="55"  y1="242" x2="55"  y2="262" stroke="#CBCBCB" stroke-width="1" marker-end="url(#pf1)"/>
+          <line x1="185" y1="242" x2="185" y2="262" stroke="#CBCBCB" stroke-width="1" marker-end="url(#pf1)"/>
+          <line x1="315" y1="242" x2="315" y2="262" stroke="#CBCBCB" stroke-width="1" marker-end="url(#pf1)"/>
+          <line x1="545" y1="242" x2="545" y2="262" stroke="#CBCBCB" stroke-width="1" marker-end="url(#pf1)"/>
+          <line x1="675" y1="242" x2="675" y2="262" stroke="#CBCBCB" stroke-width="1" marker-end="url(#pf1)"/>
+          <line x1="805" y1="242" x2="805" y2="262" stroke="#CBCBCB" stroke-width="1" marker-end="url(#pf1)"/>
+
+          <!-- op boxes row -->
+          <rect x="5"   y="264" width="100" height="52" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="55"  y="284" text-anchor="middle" fill="#7dd4b0"  font-size="11" font-weight="600">① receive</text>
+          <text x="55"  y="299" text-anchor="middle" fill="#d0dde8" font-size="10">receiving()</text>
+          <text x="55"  y="311" text-anchor="middle" fill="#d0dde8" font-size="10">→ push()</text>
+
+          <rect x="133" y="264" width="104" height="52" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="185" y="284" text-anchor="middle" fill="#7dd4b0"  font-size="11" font-weight="600">② view inbox</text>
+          <text x="185" y="299" text-anchor="middle" fill="#d0dde8" font-size="10">received</text>
+          <text x="185" y="311" text-anchor="middle" fill="#d0dde8" font-size="10">.display()</text>
+
+          <rect x="263" y="264" width="104" height="52" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="315" y="284" text-anchor="middle" fill="#88c9e8"  font-size="11" font-weight="600">③ reply</text>
+          <text x="315" y="299" text-anchor="middle" fill="#d0dde8" font-size="10">peek() + receiving()</text>
+          <text x="315" y="311" text-anchor="middle" fill="#d0dde8" font-size="10">→ enqueue()</text>
+
+          <rect x="493" y="264" width="104" height="52" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="545" y="284" text-anchor="middle" fill="#88c9e8"  font-size="11" font-weight="600">④ send new</text>
+          <text x="545" y="299" text-anchor="middle" fill="#d0dde8" font-size="10">receiving()</text>
+          <text x="545" y="311" text-anchor="middle" fill="#d0dde8" font-size="10">→ enqueue()</text>
+
+          <rect x="623" y="264" width="104" height="52" rx="7" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="675" y="284" text-anchor="middle" fill="#e8a87c"  font-size="11" font-weight="600">⑤ disregard</text>
+          <text x="675" y="299" text-anchor="middle" fill="#d0dde8" font-size="10">peek() then</text>
+          <text x="675" y="311" text-anchor="middle" fill="#d0dde8" font-size="10">pop()</text>
+
+          <rect x="753" y="264" width="104" height="52" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="805" y="284" text-anchor="middle" fill="#88c9e8"  font-size="11" font-weight="600">⑥ view sent</text>
+          <text x="805" y="299" text-anchor="middle" fill="#d0dde8" font-size="10">replied</text>
+          <text x="805" y="311" text-anchor="middle" fill="#d0dde8" font-size="10">.display()</text>
+
+          <!-- auto-dispatch check -->
+          <line x1="430" y1="316" x2="430" y2="340" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#pf1)"/>
+          <rect x="270" y="342" width="320" height="42" rx="8" fill="#243039" stroke="#b8a0e8" stroke-width="1.5"/>
+          <text x="430" y="359" text-anchor="middle" fill="#b8a0e8" font-size="12" font-weight="600">Auto-dispatch check: count() &gt; 3?</text>
+          <text x="430" y="375" text-anchor="middle" fill="#d0dde8" font-size="10">recursive count on CLL  →  rand() % count  →  dequeue loop</text>
+
+          <!-- yes/no from dispatch -->
+          <line x1="590" y1="363" x2="640" y2="363" stroke="#CBCBCB" stroke-width="1" marker-end="url(#pf1)"/>
+          <text x="594" y="357" fill="#CBCBCB" font-size="10">No</text>
+          <text x="643" y="367" fill="#CBCBCB" font-size="11">loop back</text>
+
+          <line x1="430" y1="384" x2="430" y2="406" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#pf1)"/>
+          <text x="436" y="399" fill="#CBCBCB" font-size="10">Yes</text>
+
+          <!-- dequeue batch -->
+          <rect x="290" y="408" width="280" height="38" rx="8" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="430" y="424" text-anchor="middle" fill="#e8a87c" font-size="12" font-weight="600">dequeue() × rand batch</text>
+          <text x="430" y="438" text-anchor="middle" fill="#d0dde8" font-size="10">removes from front of circular queue</text>
+          <line x1="430" y1="446" x2="430" y2="468" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#pf1)"/>
+
+          <!-- data structures box -->
+          <rect x="180" y="470" width="500" height="50" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <text x="430" y="489" text-anchor="middle" fill="#7dd4b0" font-size="13" font-weight="700">Data Structures in Memory</text>
+          <text x="430" y="507" text-anchor="middle" fill="#CBCBCB" font-size="10" font-family="monospace">Stack: s_node[head → ... → NULL]   |   Queue: q_node[rear→next=head] ↺</text>
+
+          <!-- loop back arrow -->
+          <path d="M180,495 Q30,495 30,178 Q30,150 288,164" fill="none" stroke="rgba(203,203,203,0.3)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#pf1)"/>
+          <text x="8" y="350" fill="rgba(203,203,203,0.4)" font-size="10" transform="rotate(-90,8,350)">loop</text>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PROJECT #8 CS GLOSSARY / HASH TABLE -->
+  <div class="projects">
+    <br><br><br><br>
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:30px;">CS Glossary — Hash Table</h1>
+    <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2%; padding-top:0%;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Hash Table</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Separate Chaining</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">File I/O</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">OOP / Classes</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Dynamic Memory</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Recursion</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Pointer Arithmetic</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Encapsulation</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Bulk Source Removal</span>
+      </div>
+    </div>
+    <a class="github" href="https://github.com/amaddix" style="text-decoration:none;">
+      <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+    </a>
+
+    <!-- 1. OVERVIEW + SKILLS -->
+    <div class="detail2-container" style="align-items:flex-start;">
+      <div class="detail2" style="flex:3; min-width:280px;">
+        <p style="color:#EFFFE3; font-size:22px; padding:1%; line-height:1.7; font-weight:500;">
+          <br>
+          This project is a menu-driven C++ glossary application that stores and retrieves computer science definitions using a <b>hash table with separate chaining</b>. Terms can be loaded in bulk from a pipe-delimited text file or added one at a time by the user. Each entry stores a term name, definition, source, and citation — all heap-allocated — and is inserted at the head of the linked list at its hashed index.<br><br>
+          The hash function converts a term into a table index by summing its ASCII character values and taking the result modulo the table size. Collisions are handled by chaining nodes in a linked list at each index, meaning multiple terms can share a slot without overwriting each other. The destructor traverses every chain in the array, deallocating each <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">char*</code> field and node fully before freeing the array itself.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. KEY IMPLEMENTATION DETAILS -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Key Implementation Details</h1>
+      <div class="detail2-container" style="gap:16px; padding-top:16px; flex-wrap:wrap;">
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Hash Function</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The index is computed by summing the ASCII values of every character in the key and taking the result modulo the table size (61). This distributes terms across the array based on their content, giving O(1) average-case lookup without any sorting overhead.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Separate Chaining</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Each index of the array holds the head of a singly linked list. Collisions are resolved by prepending new nodes to the front of the chain — a clean O(1) insert that intentionally preserves all entries rather than overwriting them, which also allows a term to exist under multiple sources.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #e8a87c; background:rgba(232,168,124,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Bulk Source Removal</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;"><code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">remove_all_source()</code> scans every chain in the entire table and deletes any node whose <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">ref</code> field matches the given source. It handles both mid-chain removal using a previous/current pointer pair and head removal as a separate edge case, returning the total count of deleted entries.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #b8a0e8; background:rgba(184,160,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Recursive Display</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The public <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">display_all()</code> iterates over the array and calls a private recursive helper <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">display_all_recursion()</code> on each chain. The helper prints one node, recurses on <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">next</code>, and accumulates the count — keeping the loop and the traversal logic cleanly separated.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. CODE SAMPLES -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:10px; border-bottom:1px solid rgba(203,203,203,0.3);">Code Samples</h1>
+
+      <!-- Sample 1: text left, code right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:20px;">
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            The first snippet shows the hash function and <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">add()</code> together. The hash function sums ASCII values and mods by the table size to produce an index, then <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">add()</code> allocates a new node and prepends it to the front of the chain at that index. This pair shows how the two responsibilities — computing where a term goes and physically inserting it — are kept in separate functions while working together cleanly.
+          </p>
+        </div>
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">table.cpp &nbsp;—&nbsp; hash_function() + add()</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#7dd4b0;">// Sum ASCII values of each character, mod by table size</span>
+<span style="color:#88c9e8;">int</span> table::hash_function(<span style="color:#88c9e8;">char</span> *key_value) {
+  <span style="color:#88c9e8;">int</span> sum = 0;
+  <span style="color:#88c9e8;">for</span> (<span style="color:#88c9e8;">int</span> i = 0; key_value[i] != '\0'; ++i)
+    sum += key_value[i];
+  <span style="color:#88c9e8;">return</span> sum %= table_size;
+}
+
+<span style="color:#7dd4b0;">// Prepend new node to the front of the chain at the hashed index</span>
+<span style="color:#88c9e8;">int</span> table::add(<span style="color:#88c9e8;">char</span> *key_value, definition users) {
+  <span style="color:#88c9e8;">int</span> index = hash_function(key_value);
+  node *temp = <span style="color:#88c9e8;">new</span> node;
+  temp->next        = hash_table[index]; <span style="color:#7dd4b0;">// point new node to current head</span>
+  hash_table[index] = temp;              <span style="color:#7dd4b0;">// new node becomes new head</span>
+  copy(users, index);
+  <span style="color:#88c9e8;">return</span> 1;
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 2: code left, text right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:28px; margin-bottom:8px;">
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">table.cpp &nbsp;—&nbsp; remove_all_source()</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#88c9e8;">for</span> (<span style="color:#88c9e8;">int</span> i = 0; i &lt; table_size; ++i) {     <span style="color:#7dd4b0;">// scan every chain</span>
+  <span style="color:#88c9e8;">if</span> (hash_table[i] &amp;&amp; hash_table[i]->next) {
+    node *previous = hash_table[i];
+    node *current  = hash_table[i]->next;
+    <span style="color:#88c9e8;">while</span> (current) {
+      <span style="color:#88c9e8;">if</span> (strcmp(current->term.ref, key_value) == 0) {
+        previous->next = current->next; <span style="color:#7dd4b0;">// unlink</span>
+        <span style="color:#88c9e8;">delete</span> current;
+        current = previous;
+        ++deleted;
+      }
+      previous = current;
+      current  = current->next;
+    }
+  }
+  <span style="color:#7dd4b0;">// handle head node separately</span>
+  <span style="color:#88c9e8;">if</span> (hash_table[i] &amp;&amp;
+      strcmp(hash_table[i]->term.ref, key_value) == 0) {
+    node *temp    = hash_table[i];
+    hash_table[i] = hash_table[i]->next;
+    <span style="color:#88c9e8;">delete</span> temp;
+    ++deleted;
+  }
+}
+<span style="color:#88c9e8;">return</span> deleted;</pre>
+          </div>
+        </div>
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            The second snippet shows <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">remove_all_source()</code>. Because the search key is a source rather than a term name, the function can't use the hash to narrow to a single index — it has to scan every chain in the entire table. Within each chain it uses a previous/current pointer pair to unlink mid-chain nodes, then checks the head separately as an edge case. This demonstrates the difference between a targeted hash lookup and a full-table scan, and why each requires a different traversal strategy.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. THREE-FILE ARCHITECTURE -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Three-File Architecture</h1>
+      <div class="detail2-container" style="gap:16px; padding-top:16px;">
+
+        <div style="flex:1; min-width:220px; background:#4a6275; border-radius:10px; padding:20px; text-align:left;">
+          <code style="font-family:monospace; font-size:14px; color:#7dd4b0; display:block; margin-bottom:8px;">header.h</code>
+          <p style="color:#EFFFE3; font-size:16px; font-weight:500; margin-bottom:6px;">Contracts &amp; Interfaces</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.5;">Defines the <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">definition</code> and <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">node</code> structs and the full <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">table</code> class declaration. The single contract shared across all files.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; background:#4a6275; border-radius:10px; padding:20px; text-align:left;">
+          <code style="font-family:monospace; font-size:14px; color:#7dd4b0; display:block; margin-bottom:8px;">table.cpp</code>
+          <p style="color:#EFFFE3; font-size:16px; font-weight:500; margin-bottom:6px;">Core Data Structure</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.5;">Implements all <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">table</code> methods: constructor, destructor, hash function, add, copy, retrieve, remove_all_source, display, display_all, and the recursive display helper.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; background:#4a6275; border-radius:10px; padding:20px; text-align:left;">
+          <code style="font-family:monospace; font-size:14px; color:#7dd4b0; display:block; margin-bottom:8px;">main.cpp</code>
+          <p style="color:#EFFFE3; font-size:16px; font-weight:500; margin-bottom:6px;">User Interface &amp; File I/O</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.5;">Menu loop, user input via <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">save_users()</code>, and bulk file loading via <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">read_file()</code>. All data structure logic stays fully isolated in <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">table.cpp</code>.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 5. OOP CLASS DIAGRAM -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">OOP Class &amp; Data Structure Diagram</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 430" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="ht-grey"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+            <marker id="ht-teal"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7dd4b0"/></marker>
+            <marker id="ht-blue"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#88c9e8"/></marker>
+            <marker id="ht-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#b8a0e8"/></marker>
+          </defs>
+
+          <!-- table CLASS -->
+          <rect x="240" y="20" width="300" height="190" rx="10" fill="#2e3d4a" stroke="#88c9e8" stroke-width="2"/>
+          <rect x="240" y="20" width="300" height="34" rx="10" fill="#88c9e8"/>
+          <rect x="240" y="42"  width="300" height="12" fill="#88c9e8"/>
+          <text x="390" y="43" text-anchor="middle" fill="#2e3d4a" font-size="14" font-weight="700">class table</text>
+          <text x="255" y="72"  fill="#b8a0e8" font-size="11" font-weight="700">PRIVATE</text>
+          <text x="255" y="88"  fill="#CBCBCB" font-size="11" font-family="monospace">node** hash_table</text>
+          <text x="255" y="104" fill="#CBCBCB" font-size="11" font-family="monospace">int table_size  (61)</text>
+          <text x="255" y="120" fill="#7dd4b0" font-size="11" font-family="monospace">hash_function()</text>
+          <text x="255" y="136" fill="#7dd4b0" font-size="11" font-family="monospace">copy()  /  display_all_recursion()</text>
+          <line x1="250" y1="146" x2="530" y2="146" stroke="rgba(203,203,203,0.2)" stroke-width="1"/>
+          <text x="255" y="160" fill="#e8a87c" font-size="11" font-weight="700">PUBLIC</text>
+          <text x="255" y="175" fill="#EFFFE3" font-size="11" font-family="monospace">add()  /  retrieve()  /  display()</text>
+          <text x="255" y="191" fill="#EFFFE3" font-size="11" font-family="monospace">remove_all_source()  /  display_all()</text>
+          <text x="255" y="207" fill="#EFFFE3" font-size="11" font-family="monospace">table()  /  ~table()</text>
+
+          <!-- node STRUCT -->
+          <rect x="40" y="270" width="230" height="110" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <rect x="40" y="270" width="230" height="32" rx="10" fill="#7dd4b0"/>
+          <rect x="40" y="288" width="230" height="14" fill="#7dd4b0"/>
+          <text x="155" y="289" text-anchor="middle" fill="#2e3d4a" font-size="13" font-weight="700">struct node</text>
+          <text x="56"  y="318" fill="#b8a0e8" font-size="11" font-family="monospace">definition term</text>
+          <text x="56"  y="334" fill="#CBCBCB" font-size="11" font-family="monospace">node* next</text>
+          <text x="56"  y="358" fill="#7dd4b0" font-size="10">chain at each table index</text>
+
+          <!-- definition STRUCT -->
+          <rect x="330" y="270" width="240" height="130" rx="10" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="2"/>
+          <rect x="330" y="270" width="240" height="32" rx="10" fill="#b8a0e8"/>
+          <rect x="330" y="288" width="240" height="14" fill="#b8a0e8"/>
+          <text x="450" y="289" text-anchor="middle" fill="#2e3d4a" font-size="13" font-weight="700">struct definition</text>
+          <text x="346" y="318" fill="#CBCBCB" font-size="11" font-family="monospace">char* name</text>
+          <text x="346" y="334" fill="#CBCBCB" font-size="11" font-family="monospace">char* def</text>
+          <text x="346" y="350" fill="#CBCBCB" font-size="11" font-family="monospace">char* ref  (source)</text>
+          <text x="346" y="366" fill="#CBCBCB" font-size="11" font-family="monospace">char* citation</text>
+          <text x="346" y="390" fill="#b8a0e8" font-size="10">all char* heap-allocated</text>
+
+          <!-- hash_table array visual -->
+          <rect x="620" y="200" width="210" height="160" rx="10" fill="#243039" stroke="#CBCBCB" stroke-width="1.5" stroke-dasharray="5,3"/>
+          <text x="725" y="222" text-anchor="middle" fill="#CBCBCB" font-size="11" font-weight="700">hash_table[ ]  (size 61)</text>
+          <line x1="630" y1="228" x2="820" y2="228" stroke="rgba(203,203,203,0.3)" stroke-width="1"/>
+          <text x="635" y="248" fill="#7dd4b0" font-size="10" font-family="monospace">[0]  →  node → node → NULL</text>
+          <text x="635" y="264" fill="#CBCBCB" font-size="10" font-family="monospace">[1]  →  NULL</text>
+          <text x="635" y="280" fill="#7dd4b0" font-size="10" font-family="monospace">[2]  →  node → NULL</text>
+          <text x="635" y="296" fill="#CBCBCB" font-size="10" font-family="monospace">...</text>
+          <text x="635" y="312" fill="#7dd4b0" font-size="10" font-family="monospace">[60] →  node → node → NULL</text>
+          <text x="725" y="348" text-anchor="middle" fill="#CBCBCB" font-size="9">collisions resolved by chaining</text>
+
+          <!-- table → node (owns hash_table*) -->
+          <line x1="330" y1="188" x2="155" y2="268" stroke="#7dd4b0" stroke-width="1.5" marker-end="url(#ht-teal)"/>
+          <text x="210" y="236" fill="#7dd4b0" font-size="10" text-anchor="middle">node** hash_table</text>
+
+          <!-- table → array visual -->
+          <line x1="540" y1="130" x2="618" y2="240" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#ht-grey)"/>
+          <text x="598" y="192" fill="#CBCBCB" font-size="10" text-anchor="middle">array of</text>
+          <text x="598" y="204" fill="#CBCBCB" font-size="10" text-anchor="middle">node* heads</text>
+
+          <!-- node → definition (embeds) -->
+          <line x1="270" y1="318" x2="328" y2="318" stroke="#b8a0e8" stroke-width="1.5" marker-end="url(#ht-purple)"/>
+          <text x="299" y="311" fill="#b8a0e8" font-size="10" text-anchor="middle">embeds</text>
+
+          <!-- node self-ref next -->
+          <path d="M 95,380 A 40,20 0 1,0 185,380" fill="none" stroke="#CBCBCB" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#ht-grey)"/>
+          <text x="140" y="416" fill="#CBCBCB" font-size="10" text-anchor="middle">next*</text>
+
+          <!-- Legend -->
+          <text x="30"  y="430" fill="rgba(203,203,203,0.5)" font-size="10">─ ─  self-referential next* (chain)</text>
+          <text x="260" y="430" fill="rgba(203,203,203,0.5)" font-size="10">───  ownership / composition</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 6. PROGRAM FLOW DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Program Flow — Menu to Hash Table</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 520" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="hf1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+          </defs>
+
+          <!-- START -->
+          <ellipse cx="430" cy="28" rx="80" ry="20" fill="#7dd4b0"/>
+          <text x="430" y="33" text-anchor="middle" fill="#2e3d4a" font-size="13" font-weight="700">START</text>
+          <line x1="430" y1="48" x2="430" y2="70" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#hf1)"/>
+
+          <!-- init -->
+          <rect x="280" y="72" width="300" height="38" rx="8" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="430" y="88"  text-anchor="middle" fill="#EFFFE3"  font-size="12">table my_table;</text>
+          <text x="430" y="103" text-anchor="middle" fill="#7dd4b0" font-size="10" font-family="monospace">constructor: hash_table[61] = { NULL, … }</text>
+          <line x1="430" y1="110" x2="430" y2="132" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#hf1)"/>
+
+          <!-- menu diamond -->
+          <polygon points="430,136 570,178 430,220 290,178" fill="#243039" stroke="#88c9e8" stroke-width="2"/>
+          <text x="430" y="174" text-anchor="middle" fill="#88c9e8" font-size="13" font-weight="600">menu()</text>
+          <text x="430" y="190" text-anchor="middle" fill="#CBCBCB" font-size="10">choose 1–6</text>
+
+          <!-- quit -->
+          <line x1="570" y1="178" x2="634" y2="178" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#hf1)"/>
+          <text x="574" y="172" fill="#CBCBCB" font-size="10">6 = Quit</text>
+          <ellipse cx="700" cy="178" rx="62" ry="22" fill="#4a6275" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="700" y="175" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">END</text>
+          <text x="700" y="189" text-anchor="middle" fill="#7dd4b0" font-size="9">~table() frees all memory</text>
+
+          <!-- down from diamond -->
+          <line x1="430" y1="220" x2="430" y2="242" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#hf1)"/>
+          <text x="436" y="236" fill="#CBCBCB" font-size="10">1–5</text>
+
+          <!-- horizontal spine -->
+          <line x1="55" y1="242" x2="805" y2="242" stroke="rgba(203,203,203,0.35)" stroke-width="1"/>
+          <line x1="55"  y1="242" x2="55"  y2="262" stroke="#CBCBCB" stroke-width="1" marker-end="url(#hf1)"/>
+          <line x1="215" y1="242" x2="215" y2="262" stroke="#CBCBCB" stroke-width="1" marker-end="url(#hf1)"/>
+          <line x1="375" y1="242" x2="375" y2="262" stroke="#CBCBCB" stroke-width="1" marker-end="url(#hf1)"/>
+          <line x1="590" y1="242" x2="590" y2="262" stroke="#CBCBCB" stroke-width="1" marker-end="url(#hf1)"/>
+          <line x1="750" y1="242" x2="750" y2="262" stroke="#CBCBCB" stroke-width="1" marker-end="url(#hf1)"/>
+
+          <!-- op boxes -->
+          <rect x="5"   y="264" width="100" height="62" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="55"  y="283" text-anchor="middle" fill="#7dd4b0"  font-size="10" font-weight="600">① load file</text>
+          <text x="55"  y="297" text-anchor="middle" fill="#d0dde8" font-size="9">read_file()</text>
+          <text x="55"  y="309" text-anchor="middle" fill="#d0dde8" font-size="9">→ add() per term</text>
+          <text x="55"  y="321" text-anchor="middle" fill="#d0dde8" font-size="9">hash → prepend</text>
+
+          <rect x="163" y="264" width="104" height="62" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="215" y="283" text-anchor="middle" fill="#7dd4b0"  font-size="10" font-weight="600">② add term</text>
+          <text x="215" y="297" text-anchor="middle" fill="#d0dde8" font-size="9">save_users()</text>
+          <text x="215" y="309" text-anchor="middle" fill="#d0dde8" font-size="9">→ add()</text>
+          <text x="215" y="321" text-anchor="middle" fill="#d0dde8" font-size="9">hash → prepend</text>
+
+          <rect x="323" y="264" width="104" height="62" rx="7" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="375" y="283" text-anchor="middle" fill="#e8a87c"  font-size="10" font-weight="600">③ remove source</text>
+          <text x="375" y="297" text-anchor="middle" fill="#d0dde8" font-size="9">remove_all_source()</text>
+          <text x="375" y="309" text-anchor="middle" fill="#d0dde8" font-size="9">scan all chains</text>
+          <text x="375" y="321" text-anchor="middle" fill="#d0dde8" font-size="9">prev/cur + head check</text>
+
+          <rect x="538" y="264" width="104" height="62" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="590" y="283" text-anchor="middle" fill="#88c9e8"  font-size="10" font-weight="600">④ display term</text>
+          <text x="590" y="297" text-anchor="middle" fill="#d0dde8" font-size="9">display()</text>
+          <text x="590" y="309" text-anchor="middle" fill="#d0dde8" font-size="9">hash → scan chain</text>
+          <text x="590" y="321" text-anchor="middle" fill="#d0dde8" font-size="9">match on name</text>
+
+          <rect x="698" y="264" width="104" height="62" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="750" y="283" text-anchor="middle" fill="#88c9e8"  font-size="10" font-weight="600">⑤ display all</text>
+          <text x="750" y="297" text-anchor="middle" fill="#d0dde8" font-size="9">display_all()</text>
+          <text x="750" y="309" text-anchor="middle" fill="#d0dde8" font-size="9">loop all indices</text>
+          <text x="750" y="321" text-anchor="middle" fill="#d0dde8" font-size="9">recurse each chain</text>
+
+          <!-- all ops funnel to hash table -->
+          <line x1="55"  y1="326" x2="55"  y2="370" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="215" y1="326" x2="215" y2="370" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="375" y1="326" x2="375" y2="370" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="590" y1="326" x2="590" y2="370" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="750" y1="326" x2="750" y2="370" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="55"  y1="370" x2="750" y2="370" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="430" y1="370" x2="430" y2="390" stroke="#b8a0e8" stroke-width="1.5" marker-end="url(#hf1)"/>
+
+          <!-- hash function box -->
+          <rect x="300" y="392" width="260" height="38" rx="8" fill="#243039" stroke="#7dd4b0" stroke-width="2"/>
+          <text x="430" y="409" text-anchor="middle" fill="#7dd4b0" font-size="12" font-weight="600">hash_function(key)</text>
+          <text x="430" y="423" text-anchor="middle" fill="#d0dde8" font-size="10" font-family="monospace">sum ASCII values → mod table_size → index</text>
+          <line x1="430" y1="430" x2="430" y2="452" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#hf1)"/>
+
+          <!-- hash table memory box -->
+          <rect x="185" y="454" width="490" height="48" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <text x="430" y="473" text-anchor="middle" fill="#7dd4b0" font-size="13" font-weight="700">hash_table[ 0 … 60 ]</text>
+          <text x="430" y="490" text-anchor="middle" fill="#CBCBCB" font-size="10" font-family="monospace">each index → linked list of node* (separate chaining)</text>
+
+          <!-- loop back -->
+          <path d="M185,478 Q30,478 30,178 Q30,150 288,164" fill="none" stroke="rgba(203,203,203,0.3)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#hf1)"/>
+          <text x="8" y="340" fill="rgba(203,203,203,0.4)" font-size="10" transform="rotate(-90,8,340)">loop</text>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+  <!-- PROJECT #9 — CS DEFINITION BST -->
+  <div class="projects">
+    <br><br><br><br>
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:30px;">CS Glossary — Binary Search Tree</h1>
+    <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2%; padding-top:0%;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Binary Search Tree</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">BST Deletion (3 Cases)</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">In-Order Traversal</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Recursion</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">OOP / Classes</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Dynamic Memory</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">File I/O</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Wrapper/Recursive Pattern</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Encapsulation</span>
+      </div>
+    </div>
+    <a class="github" href="https://github.com/amaddix" style="text-decoration:none;">
+      <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+    </a>
+
+    <!-- 1. OVERVIEW -->
+    <div class="detail2-container" style="align-items:flex-start;">
+      <div class="detail2" style="flex:3; min-width:280px;">
+        <p style="color:#EFFFE3; font-size:22px; padding:1%; line-height:1.7; font-weight:500;">
+          <br>
+          This project is a menu-driven C++ glossary application that organizes computer science definitions in a <b>Binary Search Tree</b> — keeping terms in sorted alphabetical order at all times without any external sorting step. Each node stores a term, definition, source, and citation — all heap-allocated — and the tree is maintained purely through pointer manipulation with no standard library containers.<br><br>
+          Every public operation follows a clean <b>wrapper/recursive pattern</b>: the public method accepts user-facing arguments, then delegates to a private recursive function that traverses the tree by value comparison. The destructor uses post-order recursion to fully deallocate every node and its fields without leaks, and the tree height can be queried at any time for structural insight.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. KEY IMPLEMENTATION DETAILS -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Key Implementation Details</h1>
+      <div class="detail2-container" style="gap:16px; padding-top:16px; flex-wrap:wrap;">
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">BST Insert</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Insertion is handled recursively using a reference-to-pointer parameter (<code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">node*&amp;</code>). At each node, a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">strcmp</code> determines whether to descend left or right until a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">NULL</code> slot is reached, where the new node is allocated in place — preserving sorted order with no additional passes.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">BST Deletion — 3 Cases</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Removal handles all three structural cases: leaf nodes are deleted directly; nodes with one child are bypassed; nodes with two children find the <b>in-order successor</b> by traversing to the leftmost node of the right subtree via the <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">go_left()</code> helper, which extracts and returns that node's data before unlinking it.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #e8a87c; background:rgba(232,168,124,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Remove by Source</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;"><code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">remove_source()</code> performs a full tree traversal — not a directed BST search — to find and remove every node whose <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">ref</code> field matches the given source. This demonstrates understanding of the distinction between key-based BST lookup and full-tree scans, applying the same three-case deletion logic at each match.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #b8a0e8; background:rgba(184,160,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">In-Order Display &amp; Height</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">display()</code> function traverses left → visit → right, producing alphabetically sorted output automatically — a property of the BST structure itself, not a sorting step. The <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">height()</code> function computes tree depth recursively by comparing left and right subtree heights and returning the greater value plus one.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. CODE SAMPLES -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:10px; border-bottom:1px solid rgba(203,203,203,0.3);">Code Samples</h1>
+
+      <!-- Sample 1: text left, code right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:20px;">
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            The recursive insert uses a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">node*&amp;</code> parameter — a reference to a pointer — so that assigning <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">root = new node</code> at any depth directly wires the new node into the tree's structure. There's no need to track a parent pointer separately; the reference handles the linkage automatically.
+          </p>
+        </div>
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">tree.cpp &nbsp;—&nbsp; insert_rec()</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#88c9e8;">int</span> trees::insert_rec(<span style="color:#88c9e8;">node</span> *&amp; root, definition to_add) {
+  <span style="color:#7dd4b0;">// base case: found an empty slot — allocate here</span>
+  <span style="color:#88c9e8;">if</span> (!root) {
+    root = <span style="color:#88c9e8;">new</span> node;
+    root->term.name     = to_add.name;
+    root->term.def      = to_add.def;
+    root->term.ref      = to_add.ref;
+    root->term.citation = to_add.citation;
+    root->left = root->right = NULL;
+    <span style="color:#88c9e8;">return</span> 1;
+  }
+  <span style="color:#7dd4b0;">// go left if key is smaller, right otherwise</span>
+  <span style="color:#88c9e8;">if</span> (strcmp(to_add.name, root->term.name) &lt; 0)
+    <span style="color:#88c9e8;">return</span> insert_rec(root->left,  to_add);
+  <span style="color:#88c9e8;">else</span>
+    <span style="color:#88c9e8;">return</span> insert_rec(root->right, to_add);
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 2: code left, text right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:28px;">
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">tree.cpp &nbsp;—&nbsp; go_left() — in-order successor</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#7dd4b0;">// Find leftmost node: the in-order successor.</span>
+<span style="color:#7dd4b0;">// Copy its data out, then unlink it from the tree.</span>
+<span style="color:#88c9e8;">int</span> trees::go_left(<span style="color:#88c9e8;">node</span> *&amp; root, definition &amp; users) {
+  <span style="color:#88c9e8;">if</span> (!root) <span style="color:#88c9e8;">return</span> 1;
+
+  <span style="color:#88c9e8;">if</span> (!root->left) {
+    <span style="color:#7dd4b0;">// reached leftmost — save its data</span>
+    users.name     = root->term.name;
+    users.def      = root->term.def;
+    users.ref      = root->term.ref;
+    users.citation = root->term.citation;
+
+    <span style="color:#7dd4b0;">// bypass this node (may have a right child)</span>
+    node *temp = root;
+    root = root->right;
+    temp->right = temp->left = NULL;
+    <span style="color:#88c9e8;">delete</span> temp;
+    <span style="color:#88c9e8;">return</span> 1;
+  }
+  <span style="color:#88c9e8;">return</span> go_left(root->left, users);
+}</pre>
+          </div>
+        </div>
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            When deleting a node with two children, the BST invariant must be preserved. <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">go_left()</code> finds the in-order successor — the smallest value in the right subtree — by recursing left until <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">root-&gt;left</code> is <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">NULL</code>. It copies that node's data into a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">definition&amp;</code> out-parameter, then unlinks and deletes the node — leaving the tree's sorted structure intact.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. DATA STRUCTURE DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Data Structure — BST Memory Layout</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 480" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="bt-teal"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7dd4b0"/></marker>
+            <marker id="bt-blue"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#88c9e8"/></marker>
+            <marker id="bt-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#b8a0e8"/></marker>
+            <marker id="bt-grey"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+          </defs>
+
+          <!-- trees CLASS -->
+          <rect x="330" y="10" width="200" height="80" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <rect x="330" y="10" width="200" height="30" rx="10" fill="#7dd4b0"/>
+          <rect x="330" y="26" width="200" height="14" fill="#7dd4b0"/>
+          <text x="430" y="28" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">class trees</text>
+          <text x="345" y="56" fill="#CBCBCB" font-size="10" font-family="monospace">node* root</text>
+          <text x="345" y="73" fill="#b8a0e8" font-size="9">private: insert_rec, remove_*_rec</text>
+          <text x="345" y="84" fill="#b8a0e8" font-size="9">go_left, display, height</text>
+
+          <!-- ROOT node -->
+          <rect x="305" y="130" width="250" height="90" rx="10" fill="#2e3d4a" stroke="#88c9e8" stroke-width="2"/>
+          <rect x="305" y="130" width="250" height="28" rx="10" fill="#88c9e8"/>
+          <rect x="305" y="144" width="250" height="14" fill="#88c9e8"/>
+          <text x="430" y="147" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">node  (root — e.g. "Hash Table")</text>
+          <text x="320" y="172" fill="#CBCBCB" font-size="10" font-family="monospace">definition term  { name, def, ref, citation }</text>
+          <text x="320" y="188" fill="#7dd4b0" font-size="10" font-family="monospace">node* left   node* right</text>
+          <text x="320" y="204" fill="#b8a0e8" font-size="9">all char* fields heap-allocated on insert</text>
+
+          <!-- LEFT CHILD -->
+          <rect x="80" y="290" width="210" height="80" rx="10" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <rect x="80" y="290" width="210" height="26" rx="10" fill="#3a4f62"/>
+          <rect x="80" y="304" width="210" height="12" fill="#3a4f62"/>
+          <text x="185" y="307" text-anchor="middle" fill="#88c9e8" font-size="10" font-weight="700">node (left child — e.g. "Array")</text>
+          <text x="95"  y="330" fill="#CBCBCB" font-size="10" font-family="monospace">definition term</text>
+          <text x="95"  y="346" fill="#7dd4b0" font-size="10" font-family="monospace">node* left   node* right</text>
+          <text x="95"  y="360" fill="#CBCBCB" font-size="9">NULL        NULL  (leaf)</text>
+
+          <!-- RIGHT CHILD -->
+          <rect x="570" y="290" width="210" height="80" rx="10" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <rect x="570" y="290" width="210" height="26" rx="10" fill="#3a4f62"/>
+          <rect x="570" y="304" width="210" height="12" fill="#3a4f62"/>
+          <text x="675" y="307" text-anchor="middle" fill="#88c9e8" font-size="10" font-weight="700">node (right child — e.g. "Pointer")</text>
+          <text x="585" y="330" fill="#CBCBCB" font-size="10" font-family="monospace">definition term</text>
+          <text x="585" y="346" fill="#7dd4b0" font-size="10" font-family="monospace">node* left   node* right</text>
+          <text x="585" y="360" fill="#88c9e8" font-size="9">subtree     subtree</text>
+
+          <!-- definition STRUCT -->
+          <rect x="310" y="390" width="240" height="76" rx="10" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="2"/>
+          <rect x="310" y="390" width="240" height="28" rx="10" fill="#b8a0e8"/>
+          <rect x="310" y="404" width="240" height="14" fill="#b8a0e8"/>
+          <text x="430" y="407" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">struct definition</text>
+          <text x="325" y="432" fill="#CBCBCB" font-size="10" font-family="monospace">char* name</text>
+          <text x="325" y="447" fill="#CBCBCB" font-size="10" font-family="monospace">char* def,  *ref,  *citation</text>
+          <text x="325" y="460" fill="#b8a0e8" font-size="9">all heap-allocated; freed by remove_all()</text>
+
+          <!-- arrows: trees → root node -->
+          <line x1="430" y1="90" x2="430" y2="128" stroke="#7dd4b0" stroke-width="1.5" marker-end="url(#bt-teal)"/>
+          <text x="436" y="114" fill="#7dd4b0" font-size="10">root*</text>
+
+          <!-- root → left child -->
+          <line x1="360" y1="220" x2="230" y2="288" stroke="#88c9e8" stroke-width="1.5" marker-end="url(#bt-blue)"/>
+          <text x="270" y="260" fill="#88c9e8" font-size="10">left*</text>
+
+          <!-- root → right child -->
+          <line x1="500" y1="220" x2="630" y2="288" stroke="#88c9e8" stroke-width="1.5" marker-end="url(#bt-blue)"/>
+          <text x="575" y="260" fill="#88c9e8" font-size="10">right*</text>
+
+          <!-- root → definition embed -->
+          <line x1="430" y1="220" x2="430" y2="388" stroke="#b8a0e8" stroke-width="1.5" marker-end="url(#bt-purple)"/>
+          <text x="436" y="310" fill="#b8a0e8" font-size="10">embeds</text>
+
+          <!-- Legend -->
+          <text x="30"  y="460" fill="rgba(203,203,203,0.5)" font-size="10">──→  pointer ownership</text>
+          <text x="180" y="460" fill="rgba(203,203,203,0.5)" font-size="10">──→  BST left / right child</text>
+          <text x="360" y="460" fill="rgba(203,203,203,0.5)" font-size="10" fill="rgba(184,160,232,0.5)">──→  embedded struct</text>
+
+          <!-- BST property label -->
+          <text x="430" y="268" text-anchor="middle" fill="rgba(203,203,203,0.4)" font-size="10" font-style="italic">left subtree &lt; root &lt; right subtree  (strcmp order)</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 5. PROGRAM FLOW DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Program Flow — Menu to BST</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 540" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="bf1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+          </defs>
+
+          <!-- START -->
+          <ellipse cx="430" cy="28" rx="80" ry="20" fill="#7dd4b0"/>
+          <text x="430" y="33" text-anchor="middle" fill="#2e3d4a" font-size="13" font-weight="700">START</text>
+          <line x1="430" y1="48" x2="430" y2="70" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#bf1)"/>
+
+          <!-- init -->
+          <rect x="280" y="72" width="300" height="38" rx="8" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="430" y="88"  text-anchor="middle" fill="#EFFFE3"  font-size="12">trees tree;  definition users;</text>
+          <text x="430" y="103" text-anchor="middle" fill="#7dd4b0" font-size="10" font-family="monospace">constructor: root = NULL</text>
+          <line x1="430" y1="110" x2="430" y2="132" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#bf1)"/>
+
+          <!-- menu diamond -->
+          <polygon points="430,136 580,180 430,224 280,180" fill="#243039" stroke="#88c9e8" stroke-width="2"/>
+          <text x="430" y="176" text-anchor="middle" fill="#88c9e8" font-size="13" font-weight="600">menu()</text>
+          <text x="430" y="193" text-anchor="middle" fill="#CBCBCB" font-size="10">choose 1–8</text>
+
+          <!-- quit -->
+          <line x1="580" y1="180" x2="634" y2="180" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#bf1)"/>
+          <text x="584" y="174" fill="#CBCBCB" font-size="10">8 = Quit</text>
+          <ellipse cx="700" cy="180" rx="62" ry="22" fill="#4a6275" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="700" y="177" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">END</text>
+          <text x="700" y="191" text-anchor="middle" fill="#7dd4b0" font-size="9">~trees() post-order free</text>
+
+          <!-- down from diamond -->
+          <line x1="430" y1="224" x2="430" y2="246" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#bf1)"/>
+          <text x="436" y="240" fill="#CBCBCB" font-size="10">1–7</text>
+
+          <!-- horizontal spine -->
+          <line x1="40" y1="246" x2="820" y2="246" stroke="rgba(203,203,203,0.35)" stroke-width="1"/>
+          <line x1="40"  y1="246" x2="40"  y2="266" stroke="#CBCBCB" stroke-width="1" marker-end="url(#bf1)"/>
+          <line x1="160" y1="246" x2="160" y2="266" stroke="#CBCBCB" stroke-width="1" marker-end="url(#bf1)"/>
+          <line x1="310" y1="246" x2="310" y2="266" stroke="#CBCBCB" stroke-width="1" marker-end="url(#bf1)"/>
+          <line x1="460" y1="246" x2="460" y2="266" stroke="#CBCBCB" stroke-width="1" marker-end="url(#bf1)"/>
+          <line x1="600" y1="246" x2="600" y2="266" stroke="#CBCBCB" stroke-width="1" marker-end="url(#bf1)"/>
+          <line x1="720" y1="246" x2="720" y2="266" stroke="#CBCBCB" stroke-width="1" marker-end="url(#bf1)"/>
+          <line x1="820" y1="246" x2="820" y2="266" stroke="#CBCBCB" stroke-width="1" marker-end="url(#bf1)"/>
+
+          <!-- op boxes -->
+          <rect x="5"   y="268" width="70" height="60" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="40"  y="286" text-anchor="middle" fill="#7dd4b0"  font-size="9" font-weight="600">① load file</text>
+          <text x="40"  y="301" text-anchor="middle" fill="#d0dde8" font-size="8">read_file()</text>
+          <text x="40"  y="316" text-anchor="middle" fill="#d0dde8" font-size="8">→ insert() loop</text>
+
+          <rect x="118" y="268" width="84" height="60" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="160" y="286" text-anchor="middle" fill="#7dd4b0"  font-size="9" font-weight="600">② add term</text>
+          <text x="160" y="301" text-anchor="middle" fill="#d0dde8" font-size="8">save_users()</text>
+          <text x="160" y="316" text-anchor="middle" fill="#d0dde8" font-size="8">→ insert()</text>
+
+          <rect x="265" y="268" width="90" height="60" rx="7" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="310" y="284" text-anchor="middle" fill="#e8a87c"  font-size="9" font-weight="600">③ remove</text>
+          <text x="310" y="298" text-anchor="middle" fill="#e8a87c"  font-size="9" font-weight="600">by term</text>
+          <text x="310" y="312" text-anchor="middle" fill="#d0dde8" font-size="8">remove_term()</text>
+          <text x="310" y="326" text-anchor="middle" fill="#d0dde8" font-size="8">BST search + del</text>
+
+          <rect x="415" y="268" width="90" height="60" rx="7" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="460" y="284" text-anchor="middle" fill="#e8a87c"  font-size="9" font-weight="600">④ remove</text>
+          <text x="460" y="298" text-anchor="middle" fill="#e8a87c"  font-size="9" font-weight="600">by source</text>
+          <text x="460" y="312" text-anchor="middle" fill="#d0dde8" font-size="8">remove_source()</text>
+          <text x="460" y="326" text-anchor="middle" fill="#d0dde8" font-size="8">full scan + del</text>
+
+          <rect x="558" y="268" width="84" height="60" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="600" y="286" text-anchor="middle" fill="#88c9e8"  font-size="9" font-weight="600">⑤ retrieve</text>
+          <text x="600" y="301" text-anchor="middle" fill="#d0dde8" font-size="8">retrieve()</text>
+          <text x="600" y="316" text-anchor="middle" fill="#d0dde8" font-size="8">BST search</text>
+
+          <rect x="676" y="268" width="88" height="60" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="720" y="286" text-anchor="middle" fill="#88c9e8"  font-size="9" font-weight="600">⑥ display all</text>
+          <text x="720" y="301" text-anchor="middle" fill="#d0dde8" font-size="8">display()</text>
+          <text x="720" y="316" text-anchor="middle" fill="#d0dde8" font-size="8">in-order traversal</text>
+
+          <rect x="775" y="268" width="80" height="60" rx="7" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="1.5"/>
+          <text x="815" y="286" text-anchor="middle" fill="#b8a0e8"  font-size="9" font-weight="600">⑦ height</text>
+          <text x="815" y="301" text-anchor="middle" fill="#d0dde8" font-size="8">height()</text>
+          <text x="815" y="316" text-anchor="middle" fill="#d0dde8" font-size="8">L/R max+1</text>
+
+          <!-- funnel all down -->
+          <line x1="40"  y1="328" x2="40"  y2="372" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="160" y1="328" x2="160" y2="372" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="310" y1="328" x2="310" y2="372" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="460" y1="328" x2="460" y2="372" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="600" y1="328" x2="600" y2="372" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="720" y1="328" x2="720" y2="372" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="815" y1="328" x2="815" y2="372" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="40"  y1="372" x2="815" y2="372" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="430" y1="372" x2="430" y2="394" stroke="#b8a0e8" stroke-width="1.5" marker-end="url(#bf1)"/>
+
+          <!-- recursive helper box -->
+          <rect x="270" y="396" width="320" height="42" rx="8" fill="#243039" stroke="#b8a0e8" stroke-width="2"/>
+          <text x="430" y="414" text-anchor="middle" fill="#b8a0e8" font-size="12" font-weight="600">private recursive functions</text>
+          <text x="430" y="430" text-anchor="middle" fill="#d0dde8" font-size="10" font-family="monospace">insert_rec  •  remove_*_rec  •  go_left  •  display  •  height</text>
+          <line x1="430" y1="438" x2="430" y2="460" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#bf1)"/>
+
+          <!-- BST in memory -->
+          <rect x="175" y="462" width="510" height="52" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <text x="430" y="482" text-anchor="middle" fill="#7dd4b0" font-size="13" font-weight="700">Binary Search Tree  (node* root)</text>
+          <text x="430" y="500" text-anchor="middle" fill="#CBCBCB" font-size="10" font-family="monospace">left subtree &lt; node &lt; right subtree  •  sorted by strcmp(name)</text>
+
+          <!-- loop back arrow -->
+          <path d="M175,488 Q30,488 30,180 Q30,152 278,168" fill="none" stroke="rgba(203,203,203,0.3)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#bf1)"/>
+          <text x="10" y="340" fill="rgba(203,203,203,0.4)" font-size="10" transform="rotate(-90,10,340)">loop</text>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+  <!-- PROJECT #10 — WORKFLOW GRAPH -->
+  <div class="projects">
+    <br><br><br><br>
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:30px;">Workflow Graph — Adjacency List</h1>
+    <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2%; padding-top:0%;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Graph (Directed)</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Adjacency List</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Array of Vertices</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Linked List of Edges</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Pointer to Pointer</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">OOP / Classes</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Dynamic Memory</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Linear Search</span>
+      </div>
+    </div>
+    <a class="github" href="https://github.com/amaddix" style="text-decoration:none;">
+      <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+    </a>
+
+    <!-- 1. OVERVIEW -->
+    <div class="detail2-container" style="align-items:flex-start;">
+      <div class="detail2" style="flex:3; min-width:280px;">
+        <p style="color:#EFFFE3; font-size:22px; padding:1%; line-height:1.7; font-weight:500;">
+          <br>
+          This project is a C++ graph application that models a <b>directed workflow</b> — a sequence of steps where each step can connect to one or more following steps. Vertices (steps) are stored in a heap-allocated array, and edges (connections) are stored as <b>adjacency lists</b>: each vertex holds a linked list of <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">node</code> pointers, each pointing directly to another vertex in the array.<br><br>
+          The design keeps the graph compact and memory-efficient. Rather than copying vertex data into edge nodes, each <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">node</code> stores a raw <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">vertex*</code> — a pointer directly into the array — so displaying neighbors requires no lookup, just a single pointer dereference. The destructor fully traverses every adjacency list and deallocates all dynamic memory without leaks.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. KEY IMPLEMENTATION DETAILS -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Key Implementation Details</h1>
+      <div class="detail2-container" style="gap:16px; padding-top:16px; flex-wrap:wrap;">
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Array of Vertices</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The graph is backed by a dynamically allocated array of <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">vertex</code> structs, each holding a heap-allocated <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">char* step</code> name and a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">node* head</code> to its adjacency list. Vertices are inserted sequentially into the next available slot, giving O(1) insertion when the position is known.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Pointer-to-Vertex Edges</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Edge nodes don't copy vertex data — they store a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">vertex* adjacent</code> pointing directly to the target vertex in the array. This is a deliberate design choice: it eliminates redundant storage and makes neighbor traversal a single pointer dereference rather than a search.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #e8a87c; background:rgba(232,168,124,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">find_location()</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;"><code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">find_location()</code> performs a linear scan through the vertex array using <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">strcmp</code> to match by name and returns the index. Both <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">insert_edge()</code> and <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">display_next()</code> depend on this helper, keeping vertex lookup logic in one place and both callers clean.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #b8a0e8; background:rgba(184,160,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Directed Edge Insert</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;"><code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">insert_edge()</code> prepends a new node to <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">list[index1].head</code>, setting its <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">adjacent</code> to <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">&amp;list[index2]</code>. The edge is one-directional — only vertex1 gains a link to vertex2 — which makes this a <b>directed graph</b> where workflow order matters.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. CODE SAMPLES -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:10px; border-bottom:1px solid rgba(203,203,203,0.3);">Code Samples</h1>
+
+      <!-- Sample 1: text left, code right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:20px;">
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">insert_edge()</code> is the heart of the graph. It resolves both vertex names to array indices, allocates a new edge node, sets its <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">adjacent</code> to the address of the destination vertex in the array, and prepends it to the source vertex's adjacency list. The address-of operator (<code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">&amp;list[index2]</code>) is the key detail — it creates a live pointer into the array rather than a copy.
+          </p>
+        </div>
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">graph.cpp &nbsp;—&nbsp; insert_edge()</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#88c9e8;">int</span> table::insert_edge(<span style="color:#88c9e8;">char</span> *vertex1, <span style="color:#88c9e8;">char</span> *vertex2) {
+  <span style="color:#88c9e8;">int</span> index1 = find_location(vertex1);
+  <span style="color:#88c9e8;">int</span> index2 = find_location(vertex2);
+
+  <span style="color:#88c9e8;">if</span> (index1 &lt; SIZE &amp;&amp; index2 &lt; SIZE) {
+    node *temp    = <span style="color:#88c9e8;">new</span> node;
+    <span style="color:#7dd4b0;">// point directly into the vertex array — no data copy</span>
+    temp->adjacent = &amp;list[index2];
+    temp->next     = list[index1].head;
+    list[index1].head = temp;  <span style="color:#7dd4b0;">// prepend to adjacency list</span>
+    <span style="color:#88c9e8;">return</span> 1;
+  }
+  <span style="color:#88c9e8;">return</span> 0; <span style="color:#7dd4b0;">// one or both vertices not found</span>
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 2: code left, text right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:28px;">
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">graph.cpp &nbsp;—&nbsp; display_next() + destructor</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#7dd4b0;">// one dereference to get the neighbor's name</span>
+<span style="color:#88c9e8;">int</span> table::display_next(<span style="color:#88c9e8;">char</span> *key_value) {
+  <span style="color:#88c9e8;">int</span> index = find_location(key_value);
+  node *current = list[index].head;
+  <span style="color:#88c9e8;">while</span> (current) {
+    cout &lt;&lt; current->adjacent->step &lt;&lt; endl;
+    current = current->next;
+  }
+}
+
+<span style="color:#7dd4b0;">// destructor: free each adjacency list, then the array</span>
+table::~table() {
+  <span style="color:#88c9e8;">for</span> (<span style="color:#88c9e8;">int</span> i = 0; i &lt; SIZE; ++i) {
+    <span style="color:#88c9e8;">delete</span> [] list[i].step;
+    node *cur = list[i].head;
+    <span style="color:#88c9e8;">while</span> (cur) {
+      node *next = cur->next;
+      cur->adjacent = NULL;
+      <span style="color:#88c9e8;">delete</span> cur;
+      cur = next;
+    }
+  }
+  <span style="color:#88c9e8;">delete</span> [] list;
+}</pre>
+          </div>
+        </div>
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            Because edge nodes hold a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">vertex*</code> rather than copied data, displaying a neighbor's name is just <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">current-&gt;adjacent-&gt;step</code> — one pointer hop. The destructor mirrors this structure: it nulls each <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">adjacent</code> pointer before deleting the node (avoiding dangling pointer reads), then frees the vertex array itself — demonstrating careful, layered memory cleanup.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. DATA STRUCTURE DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Data Structure — Adjacency List Memory Layout</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 420" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="ga-teal"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7dd4b0"/></marker>
+            <marker id="ga-blue"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#88c9e8"/></marker>
+            <marker id="ga-orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#e8a87c"/></marker>
+            <marker id="ga-grey"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+          </defs>
+
+          <!-- TABLE CLASS box -->
+          <rect x="10" y="10" width="160" height="70" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <rect x="10" y="10" width="160" height="28" rx="10" fill="#7dd4b0"/>
+          <rect x="10" y="24"  width="160" height="14" fill="#7dd4b0"/>
+          <text x="90" y="27" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">class table</text>
+          <text x="22" y="52" fill="#CBCBCB" font-size="10" font-family="monospace">vertex* list</text>
+          <text x="22" y="67" fill="#b8a0e8" font-size="9">int list_size = SIZE</text>
+
+          <!-- arrow: table → vertex array -->
+          <line x1="170" y1="45" x2="210" y2="45" stroke="#7dd4b0" stroke-width="1.5" marker-end="url(#ga-teal)"/>
+          <text x="185" y="40" fill="#7dd4b0" font-size="9">list*</text>
+
+          <!-- VERTEX ARRAY -->
+          <!-- vertex[0] -->
+          <rect x="212" y="10" width="130" height="56" rx="6" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="277" y="28" text-anchor="middle" fill="#88c9e8" font-size="10" font-weight="600">vertex[0]</text>
+          <text x="222" y="44" fill="#CBCBCB" font-size="10" font-family="monospace">step: "Plan"</text>
+          <text x="222" y="58" fill="#7dd4b0" font-size="10" font-family="monospace">head ──────→</text>
+
+          <!-- vertex[1] -->
+          <rect x="212" y="86" width="130" height="56" rx="6" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="277" y="104" text-anchor="middle" fill="#88c9e8" font-size="10" font-weight="600">vertex[1]</text>
+          <text x="222" y="120" fill="#CBCBCB" font-size="10" font-family="monospace">step: "Build"</text>
+          <text x="222" y="134" fill="#7dd4b0" font-size="10" font-family="monospace">head ──────→</text>
+
+          <!-- vertex[2] -->
+          <rect x="212" y="162" width="130" height="56" rx="6" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="277" y="180" text-anchor="middle" fill="#88c9e8" font-size="10" font-weight="600">vertex[2]</text>
+          <text x="222" y="196" fill="#CBCBCB" font-size="10" font-family="monospace">step: "Test"</text>
+          <text x="222" y="210" fill="#7dd4b0" font-size="10" font-family="monospace">head ──────→</text>
+
+          <!-- vertex[3] -->
+          <rect x="212" y="238" width="130" height="56" rx="6" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="277" y="256" text-anchor="middle" fill="#88c9e8" font-size="10" font-weight="600">vertex[3]</text>
+          <text x="222" y="272" fill="#CBCBCB" font-size="10" font-family="monospace">step: "Review"</text>
+          <text x="222" y="286" fill="#7dd4b0" font-size="10" font-family="monospace">head ──────→</text>
+
+          <!-- vertex[4] -->
+          <rect x="212" y="314" width="130" height="56" rx="6" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="277" y="332" text-anchor="middle" fill="#88c9e8" font-size="10" font-weight="600">vertex[4]</text>
+          <text x="222" y="348" fill="#CBCBCB" font-size="10" font-family="monospace">step: "Deploy"</text>
+          <text x="222" y="362" fill="#CBCBCB" font-size="10" font-family="monospace">head: NULL</text>
+
+          <!-- NODE for vertex[0] -->
+          <rect x="380" y="22" width="120" height="44" rx="6" fill="#243039" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="440" y="38" text-anchor="middle" fill="#e8a87c" font-size="10" font-weight="600">node</text>
+          <text x="392" y="52" fill="#CBCBCB" font-size="9" font-family="monospace">adjacent → vertex[1]</text>
+          <text x="392" y="62" fill="#7dd4b0" font-size="9" font-family="monospace">next → node</text>
+
+          <!-- second node for vertex[0] -->
+          <rect x="520" y="22" width="120" height="44" rx="6" fill="#243039" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="580" y="38" text-anchor="middle" fill="#e8a87c" font-size="10" font-weight="600">node</text>
+          <text x="532" y="52" fill="#CBCBCB" font-size="9" font-family="monospace">adjacent → vertex[2]</text>
+          <text x="532" y="62" fill="#CBCBCB" font-size="9" font-family="monospace">next: NULL</text>
+
+          <!-- NODE for vertex[1] -->
+          <rect x="380" y="98" width="120" height="44" rx="6" fill="#243039" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="440" y="114" text-anchor="middle" fill="#e8a87c" font-size="10" font-weight="600">node</text>
+          <text x="392" y="128" fill="#CBCBCB" font-size="9" font-family="monospace">adjacent → vertex[2]</text>
+          <text x="392" y="138" fill="#CBCBCB" font-size="9" font-family="monospace">next: NULL</text>
+
+          <!-- NODE for vertex[2] -->
+          <rect x="380" y="174" width="120" height="44" rx="6" fill="#243039" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="440" y="190" text-anchor="middle" fill="#e8a87c" font-size="10" font-weight="600">node</text>
+          <text x="392" y="204" fill="#CBCBCB" font-size="9" font-family="monospace">adjacent → vertex[3]</text>
+          <text x="392" y="214" fill="#CBCBCB" font-size="9" font-family="monospace">next: NULL</text>
+
+          <!-- NODE for vertex[3] -->
+          <rect x="380" y="250" width="120" height="44" rx="6" fill="#243039" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="440" y="266" text-anchor="middle" fill="#e8a87c" font-size="10" font-weight="600">node</text>
+          <text x="392" y="280" fill="#CBCBCB" font-size="9" font-family="monospace">adjacent → vertex[4]</text>
+          <text x="392" y="290" fill="#CBCBCB" font-size="9" font-family="monospace">next: NULL</text>
+
+          <!-- head arrows vertex → first node -->
+          <line x1="342" y1="56"  x2="378" y2="44"  stroke="#7dd4b0" stroke-width="1.2" marker-end="url(#ga-teal)"/>
+          <line x1="342" y1="132" x2="378" y2="120" stroke="#7dd4b0" stroke-width="1.2" marker-end="url(#ga-teal)"/>
+          <line x1="342" y1="208" x2="378" y2="196" stroke="#7dd4b0" stroke-width="1.2" marker-end="url(#ga-teal)"/>
+          <line x1="342" y1="284" x2="378" y2="268" stroke="#7dd4b0" stroke-width="1.2" marker-end="url(#ga-teal)"/>
+
+          <!-- node[0] next → node[0b] -->
+          <line x1="500" y1="44" x2="518" y2="44" stroke="#CBCBCB" stroke-width="1.2" marker-end="url(#ga-grey)"/>
+
+          <!-- adjacent arrows (back into vertex array) — curved -->
+          <path d="M500,52 Q560,90 344,114" fill="none" stroke="#e8a87c" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#ga-orange)"/>
+          <path d="M640,52 Q720,186 344,190" fill="none" stroke="#e8a87c" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#ga-orange)"/>
+          <path d="M500,128 Q560,166 344,186" fill="none" stroke="#e8a87c" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#ga-orange)"/>
+          <path d="M500,204 Q560,242 344,262" fill="none" stroke="#e8a87c" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#ga-orange)"/>
+          <path d="M500,280 Q560,318 344,338" fill="none" stroke="#e8a87c" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#ga-orange)"/>
+
+          <!-- Legend -->
+          <text x="30"  y="400" fill="rgba(125,212,176,0.7)"  font-size="10">──→  head* (vertex to first edge node)</text>
+          <text x="290" y="400" fill="rgba(203,203,203,0.6)"  font-size="10">──→  next* (edge chain)</text>
+          <text x="460" y="400" fill="rgba(232,168,124,0.7)"  font-size="10">- -→  adjacent* (pointer back into vertex array)</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 5. PROGRAM FLOW DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Program Flow — Setup &amp; Menu</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 460" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="gf1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+          </defs>
+
+          <!-- START -->
+          <ellipse cx="430" cy="28" rx="80" ry="20" fill="#7dd4b0"/>
+          <text x="430" y="33" text-anchor="middle" fill="#2e3d4a" font-size="13" font-weight="700">START</text>
+          <line x1="430" y1="48" x2="430" y2="70" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#gf1)"/>
+
+          <!-- init box -->
+          <rect x="260" y="72" width="340" height="38" rx="8" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="430" y="88"  text-anchor="middle" fill="#EFFFE3"  font-size="12">table graph;</text>
+          <text x="430" y="103" text-anchor="middle" fill="#7dd4b0" font-size="10" font-family="monospace">constructor: list = new vertex[SIZE],  all heads = NULL</text>
+          <line x1="430" y1="110" x2="430" y2="132" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#gf1)"/>
+
+          <!-- setup loop box -->
+          <rect x="250" y="134" width="360" height="44" rx="8" fill="#243039" stroke="#7dd4b0" stroke-width="2"/>
+          <text x="430" y="152" text-anchor="middle" fill="#7dd4b0" font-size="12" font-weight="600">Setup: add SIZE vertices</text>
+          <text x="430" y="170" text-anchor="middle" fill="#d0dde8" font-size="10" font-family="monospace">for i in 0..SIZE → cin step name → insert_vertex()</text>
+          <line x1="430" y1="178" x2="430" y2="200" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#gf1)"/>
+
+          <!-- display all box -->
+          <rect x="300" y="202" width="260" height="36" rx="8" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="430" y="218" text-anchor="middle" fill="#EFFFE3"  font-size="11">display_vertexs()</text>
+          <text x="430" y="232" text-anchor="middle" fill="#7dd4b0"  font-size="9" font-family="monospace">print all step names</text>
+          <line x1="430" y1="238" x2="430" y2="260" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#gf1)"/>
+
+          <!-- menu diamond -->
+          <polygon points="430,264 560,298 430,332 300,298" fill="#243039" stroke="#88c9e8" stroke-width="2"/>
+          <text x="430" y="294" text-anchor="middle" fill="#88c9e8" font-size="13" font-weight="600">menu()</text>
+          <text x="430" y="310" text-anchor="middle" fill="#CBCBCB" font-size="10">choose 1–3</text>
+
+          <!-- quit -->
+          <line x1="560" y1="298" x2="624" y2="298" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#gf1)"/>
+          <text x="564" y="292" fill="#CBCBCB" font-size="10">3 = Quit</text>
+          <ellipse cx="696" cy="298" rx="62" ry="22" fill="#4a6275" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="696" y="295" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">END</text>
+          <text x="696" y="309" text-anchor="middle" fill="#7dd4b0" font-size="9">~table() frees all memory</text>
+
+          <!-- down from diamond -->
+          <line x1="430" y1="332" x2="430" y2="354" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#gf1)"/>
+          <text x="436" y="348" fill="#CBCBCB" font-size="10">1–2</text>
+
+          <!-- two op boxes -->
+          <line x1="300" y1="354" x2="560" y2="354" stroke="rgba(203,203,203,0.35)" stroke-width="1"/>
+          <line x1="330" y1="354" x2="330" y2="374" stroke="#CBCBCB" stroke-width="1" marker-end="url(#gf1)"/>
+          <line x1="530" y1="354" x2="530" y2="374" stroke="#CBCBCB" stroke-width="1" marker-end="url(#gf1)"/>
+
+          <rect x="220" y="376" width="220" height="56" rx="7" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="330" y="394" text-anchor="middle" fill="#e8a87c"  font-size="10" font-weight="600">① add connection</text>
+          <text x="330" y="409" text-anchor="middle" fill="#d0dde8" font-size="9">read vertex1, vertex2</text>
+          <text x="330" y="423" text-anchor="middle" fill="#d0dde8" font-size="9">find_location() → insert_edge()</text>
+
+          <rect x="420" y="376" width="220" height="56" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="530" y="394" text-anchor="middle" fill="#88c9e8"  font-size="10" font-weight="600">② display neighbors</text>
+          <text x="530" y="409" text-anchor="middle" fill="#d0dde8" font-size="9">read step name</text>
+          <text x="530" y="423" text-anchor="middle" fill="#d0dde8" font-size="9">find_location() → display_next()</text>
+
+          <!-- loop back -->
+          <path d="M220,404 Q40,404 40,298 Q40,276 298,286" fill="none" stroke="rgba(203,203,203,0.3)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#gf1)"/>
+          <text x="18" y="360" fill="rgba(203,203,203,0.4)" font-size="10" transform="rotate(-90,18,360)">loop</text>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
+</div>
 
 
 <script>
