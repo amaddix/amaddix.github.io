@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sekuya&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <title>ASHLEY MADDIX</title>
+
+  <style>
+
+    /* ── RESET & BASE ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body, p {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+      overflow-x: hidden;
+      background-color: #EFFFE3;
+    }
+
+    h1, button {
+      font-family: "Sekuya", system-ui;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    /* ── HOVER ANIMATIONS ─────────────────────────── */
+    #anim { max-width: 700px; margin: 0 auto; }
+    a:hover i                    { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    a:hover span.fa-regular      { transform: scale(1.5);  color: #CBCBCB; transition: 0.3s; }
+    a:hover button               { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    button:hover                 { transform: scale(1.3);  color: #CBCBCB; background-color: #6D8196; cursor: pointer; transition: 0.3s; }
+
+    .fa-regular {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 400 !important;
+      display: inline-block;
+    }
+
+    /* ── SITE TITLE ───────────────────────────────── */
+   .site-title {
+      font-size: 80px;
+      padding: 40px 10%;
+      color: #6D8196;
+      text-align: center;
+      margin: 0;
+    }
+
+    /* ── NAV TAB ──────────────────────────────────── */
+    .project-page-container {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0;
+    }
+    .project-page {
+      display: block;
+      width: 400px;
+      font-size: 20px;
+      border-radius: 40px 40px 0 0;
+      color: #EFFFE3;
+      background-color: #6D8196;
+      text-align: center;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    /* ── BACKGROUND BLOCK ─────────────────────────── */
+    .background-block {
+      background-color: #6D8196;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ── HERO TAGLINE ─────────────────────────────── */
+    .hero-tagline {
+      font-size: 53px;
+      color: #EFFFE3;
+      text-align: center;
+      padding: 48px 6% 12px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .hero-sub {
+      color: rgba(239,255,227,0.65);
+      font-size: 20px;
+      font-family: "Raleway", sans-serif;
+      text-align: center;
+      padding: 0 6% 40px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SOCIAL ICONS ROW ─────────────────────────── */
+    .social-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      padding-bottom: 48px;
+    }
+    .social-row a { text-decoration: none; }
+    .social-label {
+      display: block;
+      font-size: 13px;
+      color: #CBCBCB;
+      font-family: "Raleway", sans-serif;
+      margin-top: 6px;
+      letter-spacing: 0.06em;
+    }
+    .social-item { text-align: center; }
+
+    /* ── SKILLS GRID ──────────────────────────────── */
+    .skills-section { padding: 0 4% 48px; }
+    .skills-section-title {
+      font-size: 13px;
+      color: rgba(239,255,227,0.5);
+      letter-spacing: 0.18em;
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      margin: 0 0 28px;
+      text-transform: uppercase;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .skill-card {
+      background: rgba(46,61,74,0.55);
+      border: 1px solid rgba(203,203,203,0.18);
+      border-radius: 14px;
+      padding: 24px 20px 20px;
+      text-align: left;
+    }
+    .skill-card-title {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.5);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+    .skill-card-icon {
+      font-size: 22px;
+      color: #7dd4b0;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-tag {
+      background: rgba(109,129,150,0.4);
+      color: #EFFFE3;
+      border-radius: 20px;
+      padding: 5px 13px;
+      font-size: 13px;
+      font-family: "Raleway", sans-serif;
+      border: 1px solid rgba(203,203,203,0.2);
+      white-space: nowrap;
+    }
+
+    /* ── DIVIDER ──────────────────────────────────── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(203,203,203,0.2);
+      margin: 0 4% 48px;
+    }
+
+    /* ── ABOUT SECTION ────────────────────────────── */
+    .about-section {
+      padding: 0 4% 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Photo slideshow column */
+    .photo-column {
+      float: left;
+      width: 440px;
+      margin-right: 40px;
+      margin-bottom: 20px;
+    }
+    .slideshow-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Arrow buttons — shared by both pages */
+    .arrow-buttons {
+      background: transparent;
+      border: none;
+      color: #EFFFE3;
+      font-size: 36px;
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .arrow-buttons:hover { transform: scale(1.2); color: #CBCBCB; }
+
+    .aboutIMG { display: none; width: 100%; }
+    .aboutIMG img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+    }
+
+    /* Bio + traits column */
+    .bio-column { color: #EFFFE3; }
+    .about-section-title {
+      font-size: 36px;
+      color: #EFFFE3;
+      margin: 0 0 24px;
+    }
+    .bio-text {
+      font-size: 20px;
+      line-height: 1.8;
+      color: rgba(239,255,227,0.88);
+      margin: 0 0 32px;
+    }
+
+    /* Personality trait pills */
+    .traits-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.45);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+    .traits-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .trait-pill {
+      background: rgba(125,212,176,0.15);
+      border: 1px solid rgba(125,212,176,0.4);
+      color: #7dd4b0;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 14px;
+      font-family: "Raleway", sans-serif;
+    }
+
+    /* ── PROJECTS PAGE SPECIFIC ───────────────────── */
+    .title              { display: flex; flex-wrap: wrap; flex-direction: column; }
+    .slideshow-arrows   { display: flex; justify-content: space-around; }
+    .projects           { flex: 1; }
+    .detail2-container  { display: flex; justify-content: space-evenly; flex-wrap: wrap; flex-direction: row; }
+    .detail2            { flex: 1; }
+    .section-title      { font-size: 60px; }
+
+    /* ── RESPONSIVE BREAKPOINTS ───────────────────── */
+    @media (max-width: 768px) {
+      .site-title             { font-size: 52px; padding: 32px 5% 16px; }
+      .hero-tagline           { font-size: 30px; }
+      .section-title          { font-size: 42px; }
+      .project-page           { width: 50%; font-size: clamp(10px, 3.5vw, 20px); }
+      .project-page-container { justify-content: flex-end; }
+      .project-page h1        { font-size: clamp(12px, 4vw, 24px); margin: 0; padding: 6px 0; }
+      a.project-page          { border-radius: 14px 14px 0 0 !important; padding: 10px !important; }
+      .skills-grid            { grid-template-columns: repeat(2, 1fr); }
+      .about-section          { flex-direction: column; }
+      .photo-column           { max-width: 100%; }
+      .detail2-container      { flex-direction: column; }
+      .detail2                { min-width: 0; width: 100%; }
+      pre                     { font-size: 11px !important; }
+    }
+
+    @media (max-width: 480px) {
+      .site-title    { font-size: 36px; padding: 24px 4% 12px; }
+      .hero-tagline  { font-size: 24px; }
+      .hero-sub      { font-size: 15px; }
+      .section-title { font-size: 28px; }
+      .skills-grid   { grid-template-columns: 1fr; }
+      .skill-tag     { font-size: 12px; }
+      .bio-text      { font-size: 16px; }
+      .aboutIMG img  { height: 240px; }
+      .social-row    { gap: 20px; }
+      /* NOTE: index.html keeps .project-page at 50% on mobile (no override here).
+         If using index-projects.html layout, uncomment the line below instead: */
+      /* .project-page  { width: 100%; font-size: 12px; } */
+      .projects      { padding: 0 4px; }
+      .projects span[style] { font-size: 12px !important; padding: 4px 10px !important; }
+      pre            { font-size: 10px !important; white-space: pre; overflow-x: auto; }
+      svg            { min-width: 480px; }
+      .projects h1   { font-size: 16px !important; }
+      .projects p    { font-size: 16px !important; }
+      .arrow-buttons { font-size: 36px !important; }
+    }
+
+  </style>
+</head>
+
+<body style="background-color:#EFFFE3; margin:0;">
+
+<!-- ── SITE TITLE ──────────────────────────────── -->
+<div>
+  <h1 class="site-title" style="color:#6D8196; text-align:center;">ASHLEY MADDIX</h1>
+</div>
+
+<!-- ── NAV TAB ─────────────────────────────────── -->
+<!--
+  For index.html    → link to index-projects.html, label = PROJECTS
+  For index-projects.html → link to index.html, label = ABOUT ME
+
+  index.html nav tab:
+  <div class="project-page-container">
+    <a href="index-projects.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>PROJECTS</h1></i>
+    </a>
+  </div>
+
+  index-projects.html nav tab:
+  <div class="project-page-container">
+    <a href="index.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>ABOUT ME</h1></i>
+    </a>
+  </div>
+-->
+<div class="project-page-container">
+  <a href="index-projects.html" class="project-page" style="color:#CBCBCB; background-color:#6D8196;">
+    <i><h1 style="font-size:auto; margin:0;">PROJECTS</h1></i>
+  </a>
+  <a href="index.html" class="project-page" style="color:#EFFFE3; background-color:#8fa3b5;">
+    <i><h1 style="font-size:auto; margin:0;">ABOUT ME</h1></i>
+  </a>
+</div>
+
+<!-- ── MAIN CONTENT BLOCK ──────────────────────── -->
+<div class="background-block" style="background-color:#6D8196; padding-bottom:60px;">
+
+  <!-- PROJECT #13 — FOOD BST -->
+  <div class="projects">
+    <br><br><br><br>
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:30px;">Food Tracker — BST with Polymorphism &amp; Operator Overloading</h1>
+
+    <!-- SKILL TAGS -->
+    <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2%; padding-top:0%;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Binary Search Tree</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Polymorphism</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Abstract Base Class</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Operator Overloading</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">OOP Inheritance</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Friend Functions</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">In-Order Traversal</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Dietary Filter Search</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Wrapper / Recursive Pattern</span>
+      </div>
+    </div>
+
+
+    <div style="text-align:center; padding-top:16px;">
+      <a class="github" href="https://github.com/amaddix/CS202_Prog3" style="text-decoration:none;">
+        <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+      </a>
+    </div>
+
+    <!-- 1. OVERVIEW -->
+    <div class="detail2-container" style="align-items:flex-start;">
+      <div class="detail2" style="flex:3; min-width:280px;">
+        <p style="color:#EFFFE3; font-size:22px; padding:1%; line-height:1.7; font-weight:500;">
+          <br>
+          This C++ project is a food tracking system that stores meal items in a <b>binary search tree</b>, ordered alphabetically by food name using <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">strcmp</code>. The food hierarchy starts with <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">gen_food</code> as an abstract base class and branches into three derived types — <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">main_course</code>, <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">dessert</code>, and <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">drink</code> — each tracking its own nutritional attributes like meat, nuts, alcohol, and sugar.<br><br>
+          Each <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">node</code> holds a <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">gen_food*</code> base pointer for runtime polymorphism, and exposes a full suite of <b>comparison operator overloads</b> — <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">&lt;</code>, <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">&lt;=</code>, <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">&gt;</code>, <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">&gt;=</code>, <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">==</code>, <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">!=</code> — each defined as friend functions in three overloaded variants (node vs char*, char* vs node, node vs node). The tree supports in-order display and six dietary filter traversals — non-dairy, vegetarian, nut-free, non-alcoholic, and search by name — all using the wrapper/recursive pattern.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. KEY IMPLEMENTATION DETAILS -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Key Implementation Details</h1>
+      <div class="detail2-container" style="gap:16px; padding-top:16px; flex-wrap:wrap;">
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">BST — Alphabetical Insertion by Name</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The tree is ordered by food name using <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">strcmp</code> on the name string. <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">node::compare(char*)</code> encapsulates the comparison — returning true if the name being inserted is alphabetically less than the current node's name — and <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">tree::add()</code> uses it recursively to navigate left or right until it finds an empty slot. In-order traversal then naturally produces alphabetically sorted output.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Operator Overloads — 18 Friend Functions</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">node</code> class defines 18 comparison operator overloads as friend functions — each of <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">&lt; &lt;= &gt; &gt;= == !=</code> comes in three forms: node vs char*, char* vs node, and node vs node. All comparisons resolve to <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">strcmp</code> on the underlying food name, enabling natural comparison syntax anywhere two nodes or a node and a name string need to be ordered.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #e8a87c; background:rgba(232,168,124,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Stream Operators — &lt;&lt; and &gt;&gt; on Base Pointer</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;"><code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">gen_food</code> declares <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">operator&lt;&lt;</code> and <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">operator&gt;&gt;</code> as friend functions taking a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">gen_food*&amp;</code> — a reference to a base pointer. The <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">&lt;&lt;</code> operator calls the virtual <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">display()</code> through the pointer (dispatching to the correct derived type), and <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">&gt;&gt;</code> calls the virtual <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">add()</code>, allowing polymorphic I/O through the base interface.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #b8a0e8; background:rgba(184,160,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Dietary Filter Traversals</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Six filter functions traverse the entire tree in-order and display only items matching a dietary criteria. Each calls through the <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">gen_food*</code> base pointer to virtual getters — <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">get_dairy()</code>, <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">get_meat()</code>, <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">get_nuts()</code>, <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">get_alcohol()</code> — that each derived class implements based on its own attributes. <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">find_name()</code> uses BST navigation instead — comparing the search key at each node and going left or right rather than scanning the whole tree.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. CODE SAMPLES -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:10px; border-bottom:1px solid rgba(203,203,203,0.3);">Code Samples</h1>
+
+      <!-- Sample 1: text left, code right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:20px;">
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">tree::add()</code> shows the BST insert pattern. The wrapper passes <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">root</code> by reference so the recursive function can write directly to tree structure. At each node, <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">compare()</code> does a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">strcmp</code> to decide left or right. When an empty slot is found, the node is placed there. In-order traversal then reads the tree back out in alphabetical order.
+          </p>
+        </div>
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">tree.cpp &nbsp;—&nbsp; tree::add() + node::compare()</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#7dd4b0;">// node::compare — true if inserting name goes LEFT</span>
+<span style="color:#88c9e8;">bool</span> node::compare(<span style="color:#88c9e8;">char</span> *adding) {
+  <span style="color:#88c9e8;">return</span> strcmp(adding, base_food->get_name()) &lt; 0;
+}
+
+<span style="color:#7dd4b0;">// tree::add — recursive BST insert by name</span>
+<span style="color:#88c9e8;">int</span> tree::add(node *&amp;root, node *temp, <span style="color:#88c9e8;">char</span> *name) {
+  <span style="color:#88c9e8;">if</span> (!root) {       <span style="color:#7dd4b0;">// empty slot found — place node here</span>
+    root = temp;
+    root->set_left(NULL);
+    root->set_right(NULL);
+    <span style="color:#88c9e8;">return</span> 0;
+  }
+  <span style="color:#7dd4b0;">// go left if name &lt; current node, right otherwise</span>
+  <span style="color:#88c9e8;">if</span> (root->compare(name))
+    add(root->get_left(), temp, name);
+  <span style="color:#88c9e8;">else</span>
+    add(root->get_right(), temp, name);
+}
+
+<span style="color:#7dd4b0;">// in-order traversal → alphabetical output</span>
+<span style="color:#88c9e8;">void</span> tree::display(node *root) <span style="color:#88c9e8;">const</span> {
+  <span style="color:#88c9e8;">if</span> (!root) <span style="color:#88c9e8;">return</span>;
+  display(root->get_left());
+  root->display();           <span style="color:#7dd4b0;">// virtual → correct derived type</span>
+  display(root->get_right());
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 2: code left, text right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:28px;">
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">tree.h + tree.cpp &nbsp;—&nbsp; operator overloads + dietary filter</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#7dd4b0;">// one of 18 friend operator overloads on node</span>
+<span style="color:#88c9e8;">bool</span> <span style="color:#88c9e8;">operator</span> &lt; (<span style="color:#88c9e8;">const</span> node &amp;a, <span style="color:#88c9e8;">char</span> *temp) {
+  <span style="color:#88c9e8;">return</span> strcmp(a.base_food->get_name(), temp) &lt; 0;
+}
+<span style="color:#7dd4b0;">// also defined: (char*, node&) and (node&, node&)</span>
+<span style="color:#7dd4b0;">// same pattern repeated for &lt;= &gt; &gt;= == !=</span>
+
+<span style="color:#7dd4b0;">// stream operators on base pointer</span>
+ostream&amp; <span style="color:#88c9e8;">operator</span> &lt;&lt; (ostream&amp; out, <span style="color:#88c9e8;">const</span> gen_food *&amp;item) {
+  item->display(); <span style="color:#7dd4b0;">// virtual → correct derived display()</span>
+  <span style="color:#88c9e8;">return</span> out;
+}
+
+<span style="color:#7dd4b0;">// dietary filter — full tree traversal, show non-dairy</span>
+<span style="color:#88c9e8;">int</span> tree::find_nondairy(node *root) {
+  <span style="color:#88c9e8;">if</span> (!root) <span style="color:#88c9e8;">return</span> 0;
+  find_nondairy(root->get_left());
+  <span style="color:#88c9e8;">if</span> (!root->get_dairy())  <span style="color:#7dd4b0;">// check flag via base pointer</span>
+    root->display();
+  find_nondairy(root->get_right());
+}</pre>
+          </div>
+        </div>
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            The operator overloads make node comparisons readable anywhere in the codebase — all 18 resolve to <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">strcmp</code> on the food name under the hood. The <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">&lt;&lt;</code> stream operator works through the <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">gen_food*</code> base pointer, dispatching to the right derived <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">display()</code>. The dietary filter traverses the entire tree in-order and prints only nodes where the flag is unset — relying on virtual getters that each derived class implements based on its own data members.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. CLASS HIERARCHY + BST DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Data Structure — Class Hierarchy &amp; BST Layout</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 620" xmlns="http://www.w3.org/2000/svg" style="width:100%; min-width:480px; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="fb-grey"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+            <marker id="fb-teal"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7dd4b0"/></marker>
+            <marker id="fb-blue"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#88c9e8"/></marker>
+            <marker id="fb-orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#e8a87c"/></marker>
+            <marker id="fb-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#b8a0e8"/></marker>
+          </defs>
+
+          <!-- ── GEN_FOOD (abstract base) ── -->
+          <rect x="280" y="14" width="300" height="120" rx="10" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="2"/>
+          <rect x="280" y="14" width="300" height="28" rx="10" fill="#b8a0e8"/>
+          <rect x="280" y="30"  width="300" height="12" fill="#b8a0e8"/>
+          <text x="430" y="31" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">class gen_food  (abstract)</text>
+          <text x="294" y="58" fill="#CBCBCB" font-size="10" font-family="monospace">char* name, *veggie, *fruit</text>
+          <text x="294" y="73" fill="#CBCBCB" font-size="10" font-family="monospace">int calorie  •  bool dairy</text>
+          <text x="294" y="88" fill="#b8a0e8" font-size="10" font-family="monospace">virtual add()  display()  get_dairy()</text>
+          <text x="294" y="103" fill="#b8a0e8" font-size="10" font-family="monospace">virtual get_meat()  get_nuts()  get_alcohol()</text>
+          <text x="294" y="118" fill="#7dd4b0" font-size="9" font-family="monospace">friend &lt;&lt; / &gt;&gt; operators on gen_food*&amp;</text>
+
+          <!-- inheritance arrows down -->
+          <line x1="340" y1="134" x2="130" y2="200" stroke="#b8a0e8" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#fb-purple)"/>
+          <line x1="430" y1="134" x2="430" y2="200" stroke="#b8a0e8" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#fb-purple)"/>
+          <line x1="520" y1="134" x2="720" y2="200" stroke="#b8a0e8" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#fb-purple)"/>
+
+          <!-- ── MAIN_COURSE ── -->
+          <rect x="20" y="202" width="200" height="100" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <rect x="20" y="202" width="200" height="26" rx="10" fill="#7dd4b0"/>
+          <rect x="20" y="216"  width="200" height="12" fill="#7dd4b0"/>
+          <text x="120" y="217" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">class main_course</text>
+          <text x="34"  y="244" fill="#CBCBCB" font-size="10" font-family="monospace">char* meat</text>
+          <text x="34"  y="259" fill="#CBCBCB" font-size="10" font-family="monospace">bool nuts  •  int salt</text>
+          <text x="34"  y="274" fill="#7dd4b0" font-size="9">get_meat()  get_nuts()</text>
+          <text x="34"  y="289" fill="#7dd4b0" font-size="9">get_alcohol() → false</text>
+
+          <!-- ── DESSERT ── -->
+          <rect x="330" y="202" width="200" height="100" rx="10" fill="#2e3d4a" stroke="#88c9e8" stroke-width="2"/>
+          <rect x="330" y="202" width="200" height="26" rx="10" fill="#88c9e8"/>
+          <rect x="330" y="216"  width="200" height="12" fill="#88c9e8"/>
+          <text x="430" y="217" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">class dessert</text>
+          <text x="344" y="244" fill="#CBCBCB" font-size="10" font-family="monospace">int sugar</text>
+          <text x="344" y="259" fill="#CBCBCB" font-size="10" font-family="monospace">bool nuts</text>
+          <text x="344" y="274" fill="#88c9e8" font-size="9">get_nuts()</text>
+          <text x="344" y="289" fill="#88c9e8" font-size="9">get_meat() / get_alcohol() → false</text>
+
+          <!-- ── DRINK ── -->
+          <rect x="640" y="202" width="200" height="100" rx="10" fill="#2e3d4a" stroke="#e8a87c" stroke-width="2"/>
+          <rect x="640" y="202" width="200" height="26" rx="10" fill="#e8a87c"/>
+          <rect x="640" y="216"  width="200" height="12" fill="#e8a87c"/>
+          <text x="740" y="217" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">class drink</text>
+          <text x="654" y="244" fill="#CBCBCB" font-size="10" font-family="monospace">int sugar</text>
+          <text x="654" y="259" fill="#CBCBCB" font-size="10" font-family="monospace">bool alcohol  •  carbonation</text>
+          <text x="654" y="274" fill="#e8a87c" font-size="9">get_alcohol()</text>
+          <text x="654" y="289" fill="#e8a87c" font-size="9">get_meat() / get_nuts() → false</text>
+
+          <!-- ── NODE ── -->
+          <rect x="240" y="336" width="220" height="110" rx="10" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="2"/>
+          <rect x="240" y="336" width="220" height="28" rx="10" fill="#4a6275"/>
+          <rect x="240" y="352"  width="220" height="12" fill="#4a6275"/>
+          <text x="350" y="353" text-anchor="middle" fill="#EFFFE3" font-size="12" font-weight="700">class node</text>
+          <text x="254" y="379" fill="#b8a0e8" font-size="10" font-family="monospace">gen_food* base_food</text>
+          <text x="254" y="394" fill="#CBCBCB" font-size="10" font-family="monospace">node* left  •  node* right</text>
+          <text x="254" y="409" fill="#7dd4b0" font-size="9">compare() → strcmp on name</text>
+          <text x="254" y="423" fill="#7dd4b0" font-size="9">18 friend operators: &lt; &lt;= &gt; &gt;= == !=</text>
+          <text x="254" y="437" fill="#CBCBCB" font-size="9">each in 3 forms: node/char*, char*/node, node/node</text>
+
+          <!-- base_food arrow to gen_food — routed right of node, label in clear gap -->
+          <path d="M460,360 Q530,300 510,136" fill="none" stroke="#b8a0e8" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#fb-purple)"/>
+          <text x="536" y="300" fill="#b8a0e8" font-size="9" text-anchor="start">base_food*</text>
+          <text x="536" y="312" fill="#b8a0e8" font-size="8" text-anchor="start">(runtime dispatch)</text>
+
+          <!-- ── TREE ── -->
+          <rect x="560" y="336" width="200" height="90" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <rect x="560" y="336" width="200" height="28" rx="10" fill="#7dd4b0"/>
+          <rect x="560" y="352"  width="200" height="12" fill="#7dd4b0"/>
+          <text x="660" y="353" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">class tree</text>
+          <text x="574" y="380" fill="#CBCBCB" font-size="10" font-family="monospace">node* root</text>
+          <text x="574" y="395" fill="#7dd4b0" font-size="9">add() — BST insert by name</text>
+          <text x="574" y="409" fill="#7dd4b0" font-size="9">display() — in-order traversal</text>
+          <text x="574" y="423" fill="#7dd4b0" font-size="9">find_nondairy/nomeat/nonuts</text>
+
+          <!-- tree → node -->
+          <line x1="560" y1="380" x2="462" y2="380" stroke="#7dd4b0" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#fb-teal)"/>
+          <text x="510" y="373" fill="#7dd4b0" font-size="9" text-anchor="middle">node* root</text>
+
+          <!-- BST visual (bottom) -->
+          <text x="430" y="530" text-anchor="middle" fill="rgba(203,203,203,0.5)" font-size="11" font-style="italic">BST ordered by food name (strcmp) — in-order traversal = alphabetical output</text>
+          <ellipse cx="430" cy="552" rx="50" ry="16" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="430" y="556" text-anchor="middle" fill="#EFFFE3" font-size="10">"Pasta"  (root)</text>
+          <ellipse cx="310" cy="582" rx="44" ry="16" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.2"/>
+          <text x="310" y="586" text-anchor="middle" fill="#88c9e8" font-size="9">"Brownie"</text>
+          <ellipse cx="550" cy="582" rx="40" ry="16" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.2"/>
+          <text x="550" y="586" text-anchor="middle" fill="#e8a87c" font-size="9">"Soda"</text>
+          <line x1="386" y1="560" x2="350" y2="572" stroke="#CBCBCB" stroke-width="1" marker-end="url(#fb-grey)"/>
+          <text x="362" y="564" fill="#CBCBCB" font-size="8">left</text>
+          <line x1="474" y1="560" x2="514" y2="572" stroke="#CBCBCB" stroke-width="1" marker-end="url(#fb-grey)"/>
+          <text x="490" y="564" fill="#CBCBCB" font-size="8">right</text>
+
+          <!-- legend -->
+          <text x="20"  y="612" fill="rgba(203,203,203,0.5)" font-size="9">- - -  inherits gen_food</text>
+          <text x="160" y="612" fill="rgba(184,160,232,0.5)" font-size="9">───  base_food* (virtual dispatch)</text>
+          <text x="360" y="612" fill="rgba(125,212,176,0.5)" font-size="9">- - -  root* (tree owns node)</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 5. PROGRAM FLOW DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Program Flow — Menu Loop</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 500" xmlns="http://www.w3.org/2000/svg" style="width:100%; min-width:480px; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="ff1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+          </defs>
+
+          <!-- START -->
+          <ellipse cx="430" cy="28" rx="80" ry="20" fill="#7dd4b0"/>
+          <text x="430" y="33" text-anchor="middle" fill="#2e3d4a" font-size="13" font-weight="700">START</text>
+          <line x1="430" y1="48" x2="430" y2="70" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#ff1)"/>
+
+          <!-- init -->
+          <rect x="240" y="72" width="380" height="36" rx="8" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="430" y="88"  text-anchor="middle" fill="#EFFFE3" font-size="12">tree newtree;  gen_food* afood;  node* temp;</text>
+          <text x="430" y="103" text-anchor="middle" fill="#7dd4b0" font-size="10" font-family="monospace">root = NULL  •  user selects type → afood = new main_course / dessert / drink</text>
+          <line x1="430" y1="110" x2="430" y2="132" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#ff1)"/>
+
+          <!-- menu diamond -->
+          <polygon points="430,136 570,174 430,212 290,174" fill="#243039" stroke="#88c9e8" stroke-width="2"/>
+          <text x="430" y="170" text-anchor="middle" fill="#88c9e8" font-size="13" font-weight="600">menu()</text>
+          <text x="430" y="186" text-anchor="middle" fill="#CBCBCB" font-size="10">choose 1–9</text>
+
+          <!-- quit -->
+          <line x1="570" y1="174" x2="634" y2="174" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#ff1)"/>
+          <text x="574" y="168" fill="#CBCBCB" font-size="10">9 = end</text>
+          <ellipse cx="700" cy="174" rx="62" ry="22" fill="#4a6275" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="700" y="171" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">END</text>
+          <text x="700" y="185" text-anchor="middle" fill="#7dd4b0" font-size="9">~tree() frees all nodes</text>
+
+          <!-- down -->
+          <line x1="430" y1="212" x2="430" y2="234" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#ff1)"/>
+          <text x="436" y="228" fill="#CBCBCB" font-size="10">1–8</text>
+
+          <!-- horizontal spine — 7 options -->
+          <line x1="50" y1="234" x2="810" y2="234" stroke="rgba(203,203,203,0.35)" stroke-width="1"/>
+          <line x1="70"  y1="234" x2="70"  y2="254" stroke="#CBCBCB" stroke-width="1" marker-end="url(#ff1)"/>
+          <line x1="185" y1="234" x2="185" y2="254" stroke="#CBCBCB" stroke-width="1" marker-end="url(#ff1)"/>
+          <line x1="300" y1="234" x2="300" y2="254" stroke="#CBCBCB" stroke-width="1" marker-end="url(#ff1)"/>
+          <line x1="415" y1="234" x2="415" y2="254" stroke="#CBCBCB" stroke-width="1" marker-end="url(#ff1)"/>
+          <line x1="530" y1="234" x2="530" y2="254" stroke="#CBCBCB" stroke-width="1" marker-end="url(#ff1)"/>
+          <line x1="645" y1="234" x2="645" y2="254" stroke="#CBCBCB" stroke-width="1" marker-end="url(#ff1)"/>
+          <line x1="780" y1="234" x2="780" y2="254" stroke="#CBCBCB" stroke-width="1" marker-end="url(#ff1)"/>
+
+          <!-- op boxes -->
+          <rect x="10"  y="256" width="120" height="80" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="70"  y="274" text-anchor="middle" fill="#7dd4b0"  font-size="10" font-weight="600">① add item</text>
+          <text x="70"  y="289" text-anchor="middle" fill="#d0dde8" font-size="9">pick type → new</text>
+          <text x="70"  y="302" text-anchor="middle" fill="#d0dde8" font-size="9">node::add(afood)</text>
+          <text x="70"  y="315" text-anchor="middle" fill="#d0dde8" font-size="9">BST insert by name</text>
+          <text x="70"  y="328" text-anchor="middle" fill="#d0dde8" font-size="9">→ newtree.add()</text>
+
+          <rect x="135" y="256" width="100" height="80" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="185" y="274" text-anchor="middle" fill="#88c9e8"  font-size="10" font-weight="600">② display all</text>
+          <text x="185" y="289" text-anchor="middle" fill="#d0dde8" font-size="9">in-order</text>
+          <text x="185" y="302" text-anchor="middle" fill="#d0dde8" font-size="9">traversal</text>
+          <text x="185" y="315" text-anchor="middle" fill="#d0dde8" font-size="9">alphabetical</text>
+          <text x="185" y="328" text-anchor="middle" fill="#d0dde8" font-size="9">output</text>
+
+          <rect x="250" y="256" width="100" height="80" rx="7" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="1.5"/>
+          <text x="300" y="274" text-anchor="middle" fill="#b8a0e8"  font-size="10" font-weight="600">③ find item</text>
+          <text x="300" y="289" text-anchor="middle" fill="#d0dde8" font-size="9">find_name()</text>
+          <text x="300" y="302" text-anchor="middle" fill="#d0dde8" font-size="9">BST navigate</text>
+          <text x="300" y="315" text-anchor="middle" fill="#d0dde8" font-size="9">left / right by</text>
+          <text x="300" y="328" text-anchor="middle" fill="#d0dde8" font-size="9">strcmp</text>
+
+          <rect x="365" y="256" width="100" height="80" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="415" y="274" text-anchor="middle" fill="#7dd4b0"  font-size="10" font-weight="600">④ dairy free</text>
+          <text x="415" y="289" text-anchor="middle" fill="#d0dde8" font-size="9">find_nondairy()</text>
+          <text x="415" y="302" text-anchor="middle" fill="#d0dde8" font-size="9">full traversal</text>
+          <text x="415" y="315" text-anchor="middle" fill="#d0dde8" font-size="9">→ get_dairy()</text>
+          <text x="415" y="328" text-anchor="middle" fill="#d0dde8" font-size="9">virtual check</text>
+
+          <rect x="480" y="256" width="100" height="80" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="530" y="274" text-anchor="middle" fill="#7dd4b0"  font-size="10" font-weight="600">⑤ vegetarian</text>
+          <text x="530" y="289" text-anchor="middle" fill="#d0dde8" font-size="9">find_nomeat()</text>
+          <text x="530" y="302" text-anchor="middle" fill="#d0dde8" font-size="9">full traversal</text>
+          <text x="530" y="315" text-anchor="middle" fill="#d0dde8" font-size="9">→ get_meat()</text>
+          <text x="530" y="328" text-anchor="middle" fill="#d0dde8" font-size="9">virtual check</text>
+
+          <rect x="595" y="256" width="100" height="80" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="645" y="274" text-anchor="middle" fill="#88c9e8"  font-size="10" font-weight="600">⑥ nut free</text>
+          <text x="645" y="289" text-anchor="middle" fill="#d0dde8" font-size="9">find_nonuts()</text>
+          <text x="645" y="302" text-anchor="middle" fill="#d0dde8" font-size="9">full traversal</text>
+          <text x="645" y="315" text-anchor="middle" fill="#d0dde8" font-size="9">→ get_nuts()</text>
+          <text x="645" y="328" text-anchor="middle" fill="#d0dde8" font-size="9">virtual check</text>
+
+          <rect x="730" y="256" width="100" height="80" rx="7" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="780" y="274" text-anchor="middle" fill="#e8a87c"  font-size="10" font-weight="600">⑦ non-alcohol</text>
+          <text x="780" y="289" text-anchor="middle" fill="#d0dde8" font-size="9">find_nonalcohol()</text>
+          <text x="780" y="302" text-anchor="middle" fill="#d0dde8" font-size="9">full traversal</text>
+          <text x="780" y="315" text-anchor="middle" fill="#d0dde8" font-size="9">→ get_alcohol()</text>
+          <text x="780" y="328" text-anchor="middle" fill="#d0dde8" font-size="9">virtual check</text>
+
+          <!-- virtual dispatch label -->
+          <rect x="160" y="370" width="540" height="36" rx="8" fill="#243039" stroke="#b8a0e8" stroke-width="1.5" stroke-dasharray="5,3"/>
+          <text x="430" y="385" text-anchor="middle" fill="#b8a0e8" font-size="11" font-weight="600">All display / filter calls dispatch through gen_food* base_food via vtable</text>
+          <text x="430" y="399" text-anchor="middle" fill="#d0dde8" font-size="9" font-family="monospace">display()  →  get_dairy()  →  get_meat()  →  get_nuts()  →  get_alcohol()</text>
+
+          <!-- lines from ops to label -->
+          <line x1="70"  y1="336" x2="240" y2="368" stroke="rgba(184,160,232,0.25)" stroke-width="1"/>
+          <line x1="185" y1="336" x2="310" y2="368" stroke="rgba(184,160,232,0.25)" stroke-width="1"/>
+          <line x1="415" y1="336" x2="410" y2="368" stroke="rgba(184,160,232,0.25)" stroke-width="1"/>
+          <line x1="530" y1="336" x2="480" y2="368" stroke="rgba(184,160,232,0.25)" stroke-width="1"/>
+          <line x1="645" y1="336" x2="570" y2="368" stroke="rgba(184,160,232,0.25)" stroke-width="1"/>
+          <line x1="780" y1="336" x2="660" y2="368" stroke="rgba(184,160,232,0.25)" stroke-width="1"/>
+
+          <!-- derived type results -->
+          <rect x="100" y="432" width="100" height="32" rx="6" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="150" y="452" text-anchor="middle" fill="#7dd4b0" font-size="10" font-weight="600">main_course</text>
+          <rect x="380" y="432" width="100" height="32" rx="6" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="430" y="452" text-anchor="middle" fill="#88c9e8" font-size="10" font-weight="600">dessert</text>
+          <rect x="660" y="432" width="100" height="32" rx="6" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="710" y="452" text-anchor="middle" fill="#e8a87c" font-size="10" font-weight="600">drink</text>
+          <line x1="430" y1="406" x2="150" y2="430" stroke="#b8a0e8" stroke-width="1.2" marker-end="url(#ff1)"/>
+          <line x1="430" y1="406" x2="430" y2="430" stroke="#b8a0e8" stroke-width="1.2" marker-end="url(#ff1)"/>
+          <line x1="430" y1="406" x2="710" y2="430" stroke="#b8a0e8" stroke-width="1.2" marker-end="url(#ff1)"/>
+
+          <!-- loop back -->
+          <path d="M10,296 Q-10,296 -10,174 Q-10,150 288,162" fill="none" stroke="rgba(203,203,203,0.3)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#ff1)"/>
+          <text x="-8" y="238" fill="rgba(203,203,203,0.4)" font-size="10" transform="rotate(-90,-8,238)">loop</text>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+  </>
+</div>
+
+</div><!-- end background-block -->
+
+</body>
+
+<!-- ── JAVASCRIPT ──────────────────────────────────
+  Both pages use a slideshow. Use the correct one for each page:
+
+  ── index.html (photo slideshow) ──────────────────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("aboutIMG");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+
+  ── index-projects.html (project slideshow) ───────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("projects");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+-->
+<script>
+  // Uncomment and use the correct slideshow script for your page (see comments above).
+</script>
+
+</html>
+

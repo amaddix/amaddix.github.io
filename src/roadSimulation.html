@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sekuya&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <title>ASHLEY MADDIX</title>
+
+  <style>
+
+    /* ── RESET & BASE ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body, p {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+      overflow-x: hidden;
+      background-color: #EFFFE3;
+    }
+
+    h1, button {
+      font-family: "Sekuya", system-ui;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    /* ── HOVER ANIMATIONS ─────────────────────────── */
+    #anim { max-width: 700px; margin: 0 auto; }
+    a:hover i                    { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    a:hover span.fa-regular      { transform: scale(1.5);  color: #CBCBCB; transition: 0.3s; }
+    a:hover button               { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    button:hover                 { transform: scale(1.3);  color: #CBCBCB; background-color: #6D8196; cursor: pointer; transition: 0.3s; }
+
+    .fa-regular {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 400 !important;
+      display: inline-block;
+    }
+
+    /* ── SITE TITLE ───────────────────────────────── */
+    .site-title {
+      font-size: 80px;
+      color: #6D8196;
+      text-align: center;
+      padding: 48px 10% 20px;
+      margin: 0;
+    }
+
+    /* ── NAV TAB ──────────────────────────────────── */
+    .project-page-container {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0;
+    }
+    .project-page {
+      display: block;
+      width: 400px;
+      font-size: 20px;
+    }
+
+    /* ── MAIN CONTENT BLOCK ───────────────────────── */
+    .background-block { margin: 0; padding: 0; }
+
+    /* ── HERO TAGLINE ─────────────────────────────── */
+    .hero-tagline {
+      font-size: 53px;
+      color: #EFFFE3;
+      text-align: center;
+      padding: 48px 6% 12px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .hero-sub {
+      color: rgba(239,255,227,0.65);
+      font-size: 20px;
+      font-family: "Raleway", sans-serif;
+      text-align: center;
+      padding: 0 6% 40px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SOCIAL ICONS ROW ─────────────────────────── */
+    .social-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      padding-bottom: 48px;
+    }
+    .social-row a { text-decoration: none; }
+    .social-label {
+      display: block;
+      font-size: 13px;
+      color: #CBCBCB;
+      font-family: "Raleway", sans-serif;
+      margin-top: 6px;
+      letter-spacing: 0.06em;
+    }
+    .social-item { text-align: center; }
+
+    /* ── SKILLS GRID ──────────────────────────────── */
+    .skills-section { padding: 0 4% 48px; }
+    .skills-section-title {
+      font-size: 13px;
+      color: rgba(239,255,227,0.5);
+      letter-spacing: 0.18em;
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      margin: 0 0 28px;
+      text-transform: uppercase;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .skill-card {
+      background: rgba(46,61,74,0.55);
+      border: 1px solid rgba(203,203,203,0.18);
+      border-radius: 14px;
+      padding: 24px 20px 20px;
+      text-align: left;
+    }
+    .skill-card-title {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.5);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+    .skill-card-icon {
+      font-size: 22px;
+      color: #7dd4b0;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-tag {
+      background: rgba(109,129,150,0.4);
+      color: #EFFFE3;
+      border-radius: 20px;
+      padding: 5px 13px;
+      font-size: 13px;
+      font-family: "Raleway", sans-serif;
+      border: 1px solid rgba(203,203,203,0.2);
+      white-space: nowrap;
+    }
+
+    /* ── DIVIDER ──────────────────────────────────── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(203,203,203,0.2);
+      margin: 0 4% 48px;
+    }
+
+    /* ── ABOUT SECTION ────────────────────────────── */
+    .about-section {
+      padding: 0 4% 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Photo slideshow column */
+    .photo-column {
+      float: left;
+      width: 440px;
+      margin-right: 40px;
+      margin-bottom: 20px;
+    }
+    .slideshow-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Arrow buttons — shared by both pages */
+    .arrow-buttons {
+      background: transparent;
+      border: none;
+      color: #EFFFE3;
+      font-size: 36px;
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .arrow-buttons:hover { transform: scale(1.2); color: #CBCBCB; }
+
+    .aboutIMG { display: none; width: 100%; }
+    .aboutIMG img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+    }
+
+    /* Bio + traits column */
+    .bio-column { color: #EFFFE3; }
+    .about-section-title {
+      font-size: 36px;
+      color: #EFFFE3;
+      margin: 0 0 24px;
+    }
+    .bio-text {
+      font-size: 20px;
+      line-height: 1.8;
+      color: rgba(239,255,227,0.88);
+      margin: 0 0 32px;
+    }
+
+    /* Personality trait pills */
+    .traits-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.45);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+    .traits-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .trait-pill {
+      background: rgba(125,212,176,0.15);
+      border: 1px solid rgba(125,212,176,0.4);
+      color: #7dd4b0;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 14px;
+      font-family: "Raleway", sans-serif;
+    }
+
+    /* ── PROJECTS PAGE SPECIFIC ───────────────────── */
+    .title              { display: flex; flex-wrap: wrap; flex-direction: column; }
+    .slideshow-arrows   { display: flex; justify-content: space-around; }
+    .projects           { flex: 1; }
+    .detail2-container  { display: flex; justify-content: space-evenly; flex-wrap: wrap; flex-direction: row; }
+    .detail2            { flex: 1; }
+    .section-title      { font-size: 60px; }
+
+    /* ── RESPONSIVE BREAKPOINTS ───────────────────── */
+    @media (max-width: 768px) {
+      .site-title             { font-size: 52px; padding: 32px 5% 16px; }
+      .hero-tagline           { font-size: 30px; }
+      .section-title          { font-size: 42px; }
+      .project-page           { width: 50%; font-size: clamp(10px, 3.5vw, 20px); }
+      .project-page-container { justify-content: flex-end; }
+      .project-page h1        { font-size: clamp(12px, 4vw, 24px); margin: 0; padding: 6px 0; }
+      a.project-page          { border-radius: 14px 14px 0 0 !important; padding: 10px !important; }
+      .skills-grid            { grid-template-columns: repeat(2, 1fr); }
+      .about-section          { flex-direction: column; }
+      .photo-column           { max-width: 100%; }
+      .detail2-container      { flex-direction: column; }
+      .detail2                { min-width: 0; width: 100%; }
+      pre                     { font-size: 11px !important; }
+    }
+
+    @media (max-width: 480px) {
+      .site-title    { font-size: 36px; padding: 24px 4% 12px; }
+      .hero-tagline  { font-size: 24px; }
+      .hero-sub      { font-size: 15px; }
+      .section-title { font-size: 28px; }
+      .skills-grid   { grid-template-columns: 1fr; }
+      .skill-tag     { font-size: 12px; }
+      .bio-text      { font-size: 16px; }
+      .aboutIMG img  { height: 240px; }
+      .social-row    { gap: 20px; }
+      /* NOTE: index.html keeps .project-page at 50% on mobile (no override here).
+         If using index-projects.html layout, uncomment the line below instead: */
+      /* .project-page  { width: 100%; font-size: 12px; } */
+      .projects      { padding: 0 4px; }
+      .projects span[style] { font-size: 12px !important; padding: 4px 10px !important; }
+      pre            { font-size: 10px !important; white-space: pre; overflow-x: auto; }
+      svg            { min-width: 480px; }
+      .projects h1   { font-size: 16px !important; }
+      .projects p    { font-size: 16px !important; }
+      .arrow-buttons { font-size: 36px !important; }
+    }
+
+  </style>
+</head>
+
+<body style="background-color:#EFFFE3; margin:0;">
+
+<!-- ── SITE TITLE ──────────────────────────────── -->
+<div>
+  <h1 class="site-title" style="color:#6D8196; text-align:center;">ASHLEY MADDIX</h1>
+</div>
+
+<!-- ── NAV TAB ─────────────────────────────────── -->
+<!--
+  For index.html    → link to index-projects.html, label = PROJECTS
+  For index-projects.html → link to index.html, label = ABOUT ME
+
+  index.html nav tab:
+  <div class="project-page-container">
+    <a href="index-projects.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>PROJECTS</h1></i>
+    </a>
+  </div>
+
+  index-projects.html nav tab:
+  <div class="project-page-container">
+    <a href="index.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>ABOUT ME</h1></i>
+    </a>
+  </div>
+-->
+<div class="project-page-container">
+  <a href="index-projects.html" class="project-page"
+     style="border-radius:40px 40px 0 0; color:#CBCBCB; background-color:#6D8196;
+              text-align:center; text-decoration:none; padding:10px; ">
+    <i><h1>PROJECTS</h1> </i>
+  </a>
+  <a href="index.html" class="project-page"
+     style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+    <i><h1>ABOUT ME</h1></i>
+  </a>
+</div>
+
+<!-- ── MAIN CONTENT BLOCK ──────────────────────── -->
+<div class="background-block" style="background-color:#6D8196; padding-bottom:60px;">
+
+  <div class="projects">
+    <br><br><br><br>
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:30px;">Road Simulation — OOP Inheritance &amp; Dual Data Structures</h1>
+
+    <!-- SKILL TAGS -->
+    <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2%; padding-top:0%;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">OOP Inheritance</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Class Hierarchy</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Array of LLL</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Linked List (Path)</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Recursion</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Dynamic Memory</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Wrapper / Recursive Pattern</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Sorted Insertion</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Pointer-to-Pointer</span>
+      </div>
+    </div>
+
+    <div style="text-align:center; padding-top:16px;">
+      <a class="github" href="https://github.com/amaddix/CS202prog1" style="text-decoration:none;">
+        <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+      </a>
+    </div>
+
+    <!-- 1. OVERVIEW -->
+    <div class="detail2-container" style="align-items:flex-start;">
+      <div class="detail2" style="flex:3; min-width:280px;">
+        <p style="color:#EFFFE3; font-size:22px; padding:1%; line-height:1.7; font-weight:500;">
+          <br>
+          This C++ project simulates driving through a city — navigating stoplights, changing lanes, and tracking your route — using a fully hand-built class hierarchy and two separate data structures working in tandem. It was built from scratch: no STL containers, no standard utilities, just raw pointers and manual memory management.<br><br>
+          The <b>map</b> class models all other cars on the road as an <b>array of sorted linked lists</b> — one list per lane, each car ordered by position. The <b>path</b> class tracks every move your own car makes as a <b>singly linked list</b> where each new node prepends to the front. Both data structures are backed by a deep inheritance chain: <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">lanes</code> and <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">location</code> as independent base classes, <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">vehicle</code> inheriting from both, and <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">node</code> extending vehicle to become the list element used by both data structures.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. KEY IMPLEMENTATION DETAILS -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Key Implementation Details</h1>
+      <div class="detail2-container" style="gap:16px; padding-top:16px; flex-wrap:wrap;">
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Class Hierarchy — Deep Inheritance</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;"><code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">lanes</code> manages which of 5 lanes a vehicle is in (bike, a–d, bus). <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">location</code> manages position 1–20 on the road. <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">vehicle</code> inherits from <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">location</code> and <em>contains</em> a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">lanes</code> object, plus left/right vehicle pointers for nearby car detection. <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">node</code> extends vehicle and adds <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">node* next</code>, making it the shared list element for both data structures.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Map — Array of Sorted LLLs</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">map</code> class holds a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">node**</code> array (one pointer per lane). Each lane's list is kept sorted by road position using <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">find_spot()</code>, a recursive function that walks <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">previous</code> and <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">current</code> pointers until it finds the right gap. <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">move_forward()</code> uses the wrapper/recursive pattern to increment every car's position across all lanes.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #e8a87c; background:rgba(232,168,124,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Path — History as a Prepend LLL</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">path</code> class tracks your car's history as a linked list where each new move is prepended to the front, so <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">start</code> always points to your most recent position. Actions are encoded as chars: <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">'g'</code> = go forward, <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">'l'</code> = change left, <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">'r'</code> = change right. <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">display_path()</code> uses the wrapper/recursive pattern to print the full route.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #b8a0e8; background:rgba(184,160,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Nearby Car Search &amp; Stoplight Logic</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;"><code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">map::search()</code> takes a lane and position, recursively scans <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">a_map[lane±1]</code>, and returns left/right vehicle pointers. These are stored directly in the vehicle's <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">left</code> and <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">right</code> fields. The <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">stop_light</code> class uses <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">rand()%2</code> to generate a colour and a fixed <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">freq</code> to trigger intersections at regular position intervals.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. CODE SAMPLES -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:10px; border-bottom:1px solid rgba(203,203,203,0.3);">Code Samples</h1>
+
+      <!-- Sample 1: text left, code right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:20px;">
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">add_car()</code> shows the sorted insert logic at the core of the map data structure. It first checks if the new car belongs at the head of the list, then delegates to <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">find_spot()</code> — a recursive function that advances two pointers (<code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">previous</code> and <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">current</code>) in tandem until it finds the correct position gap, then wires the new node in between them.
+          </p>
+        </div>
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">data_structure.cpp &nbsp;—&nbsp; add_car() + find_spot()</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#88c9e8;">int</span> map::add_car(<span style="color:#88c9e8;">int</span> which_lane, <span style="color:#88c9e8;">int</span> which_loc) {
+  node *new_car = <span style="color:#88c9e8;">new</span> node;
+  new_car->set_node(which_lane, which_loc);
+
+  <span style="color:#7dd4b0;">// head insert: no cars yet, or new car comes first</span>
+  <span style="color:#88c9e8;">if</span> (!a_map[which_lane] ||
+      which_loc &lt; a_map[which_lane]->get_pos()) {
+    new_car->set_next(a_map[which_lane]);
+    a_map[which_lane] = new_car;
+    <span style="color:#88c9e8;">return</span> 1;
+  }
+
+  <span style="color:#7dd4b0;">// middle/tail insert — find the right gap recursively</span>
+  node *current  = a_map[which_lane];
+  node *previous = current;
+  current->get_next(current);
+  find_spot(previous, current, which_loc);
+
+  new_car->set_next(current);
+  previous->set_next(new_car);
+  <span style="color:#88c9e8;">return</span> 1;
+}
+
+<span style="color:#88c9e8;">int</span> map::find_spot(node *&amp;previous, node *&amp;current,
+                   <span style="color:#88c9e8;">int</span> which_loc) {
+  <span style="color:#88c9e8;">if</span> (!current) <span style="color:#88c9e8;">return</span> 0; <span style="color:#7dd4b0;">// reached end of list</span>
+  <span style="color:#88c9e8;">if</span> (which_loc &gt; previous->get_pos() &amp;&amp;
+      which_loc &lt; current->get_pos())
+    <span style="color:#88c9e8;">return</span> 1; <span style="color:#7dd4b0;">// found the gap</span>
+  previous = current;
+  current->get_next(current);
+  find_spot(previous, current, which_loc);
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 2: code left, text right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:28px;">
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">data_structure.cpp &nbsp;—&nbsp; path::move_car()</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#88c9e8;">int</span> path::move_car(<span style="color:#88c9e8;">char</span> action, map a_map) {
+  <span style="color:#88c9e8;">int</span> new_lane = start->get_lane();
+  <span style="color:#88c9e8;">int</span> new_pos  = start->get_pos();
+
+  node *current = <span style="color:#88c9e8;">new</span> node;
+
+  <span style="color:#88c9e8;">if</span> (action == <span style="color:#e8a87c;">'g'</span>) {            <span style="color:#7dd4b0;">// move forward</span>
+    ++new_pos;
+    current->set_node(new_lane, new_pos);
+  } <span style="color:#88c9e8;">else if</span> (action == <span style="color:#e8a87c;">'r'</span>) {     <span style="color:#7dd4b0;">// change right</span>
+    current->set_node(new_lane + 1, new_pos);
+  } <span style="color:#88c9e8;">else if</span> (action == <span style="color:#e8a87c;">'l'</span>) {     <span style="color:#7dd4b0;">// change left</span>
+    current->set_node(new_lane - 1, new_pos);
+  }
+
+  <span style="color:#7dd4b0;">// scan for left/right neighbours at new position</span>
+  current->set_pointer(a_map, new_lane, new_pos);
+
+  <span style="color:#7dd4b0;">// prepend to front — start always = most recent</span>
+  current->set_next(start);
+  start = current;
+  <span style="color:#88c9e8;">return</span> 1;
+}</pre>
+          </div>
+        </div>
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">move_car()</code> is the core of the path data structure. Every time the user makes a move, a new node is created, its lane/position set based on the action char, its left/right neighbour pointers populated by scanning the map, and then it's prepended to the front of the list — so <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">start</code> always points to the car's current position and the full path history trails behind it.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. DATA STRUCTURE DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Data Structures — Class Hierarchy &amp; Memory Layout</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 500" xmlns="http://www.w3.org/2000/svg" style="width:100%; min-width:480px; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="rs-grey"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+            <marker id="rs-teal"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7dd4b0"/></marker>
+            <marker id="rs-blue"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#88c9e8"/></marker>
+            <marker id="rs-orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#e8a87c"/></marker>
+            <marker id="rs-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#b8a0e8"/></marker>
+          </defs>
+
+          <!-- ── LANES class (top left) ── -->
+          <rect x="20" y="20" width="180" height="82" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <rect x="20" y="20" width="180" height="28" rx="10" fill="#7dd4b0"/>
+          <rect x="20" y="36"  width="180" height="12" fill="#7dd4b0"/>
+          <text x="110" y="37" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">class lanes</text>
+          <text x="34"  y="66" fill="#CBCBCB" font-size="10" font-family="monospace">bool bike, bus</text>
+          <text x="34"  y="80" fill="#CBCBCB" font-size="10" font-family="monospace">char lane  (a–e)</text>
+          <text x="34"  y="94" fill="#7dd4b0" font-size="9">set/get/change/display</text>
+
+          <!-- ── LOCATION class (top right) ── -->
+          <rect x="240" y="20" width="180" height="82" rx="10" fill="#2e3d4a" stroke="#88c9e8" stroke-width="2"/>
+          <rect x="240" y="20" width="180" height="28" rx="10" fill="#88c9e8"/>
+          <rect x="240" y="36"  width="180" height="12" fill="#88c9e8"/>
+          <text x="330" y="37" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">class location</text>
+          <text x="254" y="66" fill="#CBCBCB" font-size="10" font-family="monospace">int pos  (1–20)</text>
+          <text x="254" y="80" fill="#CBCBCB" font-size="10" font-family="monospace">set/get/change_info</text>
+          <text x="254" y="94" fill="#88c9e8" font-size="9">base class for position</text>
+
+          <!-- ── STOP_LIGHT (top far right) ── -->
+          <rect x="460" y="20" width="180" height="82" rx="10" fill="#2e3d4a" stroke="#e8a87c" stroke-width="2"/>
+          <rect x="460" y="20" width="180" height="28" rx="10" fill="#e8a87c"/>
+          <rect x="460" y="36"  width="180" height="12" fill="#e8a87c"/>
+          <text x="550" y="37" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">class stop_light</text>
+          <text x="474" y="63" fill="#CBCBCB" font-size="10" font-family="monospace">char color (g/y/r)</text>
+          <text x="474" y="77" fill="#CBCBCB" font-size="10" font-family="monospace">int  freq  (= 5)</text>
+          <text x="474" y="92" fill="#e8a87c" font-size="9">inherits location</text>
+
+          <!-- stop_light inherits location -->
+          <line x1="550" y1="20" x2="390" y2="20" stroke="#e8a87c" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#rs-orange)"/>
+          <text x="450" y="16" fill="#e8a87c" font-size="9" text-anchor="middle">inherits</text>
+
+          <!-- ── VEHICLE class (middle) ── -->
+          <rect x="130" y="170" width="280" height="110" rx="10" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="2"/>
+          <rect x="130" y="170" width="280" height="30" rx="10" fill="#b8a0e8"/>
+          <rect x="130" y="186"  width="280" height="14" fill="#b8a0e8"/>
+          <text x="270" y="189" text-anchor="middle" fill="#2e3d4a" font-size="13" font-weight="700">class vehicle  :  public location</text>
+          <text x="146" y="218" fill="#CBCBCB" font-size="10" font-family="monospace">int speed  •  char* type</text>
+          <text x="146" y="233" fill="#7dd4b0" font-size="10" font-family="monospace">lanes where    ← contains lanes object</text>
+          <text x="146" y="248" fill="#88c9e8" font-size="10" font-family="monospace">vehicle* left  •  vehicle* right</text>
+          <text x="146" y="263" fill="#b8a0e8" font-size="9">nearby_cars() calls map::search() → sets left/right</text>
+
+          <!-- vehicle inherits location -->
+          <line x1="270" y1="170" x2="330" y2="104" stroke="#88c9e8" stroke-width="1.5" marker-end="url(#rs-blue)"/>
+          <text x="320" y="140" fill="#88c9e8" font-size="9">inherits</text>
+
+          <!-- vehicle contains lanes -->
+          <line x1="200" y1="170" x2="140" y2="104" stroke="#7dd4b0" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#rs-teal)"/>
+          <text x="148" y="140" fill="#7dd4b0" font-size="9">contains</text>
+
+          <!-- ── NODE class (bottom centre) ── -->
+          <rect x="180" y="350" width="260" height="90" rx="10" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="2"/>
+          <rect x="180" y="350" width="260" height="30" rx="10" fill="#4a6275"/>
+          <rect x="180" y="366"  width="260" height="14" fill="#4a6275"/>
+          <text x="310" y="369" text-anchor="middle" fill="#EFFFE3" font-size="13" font-weight="700">class node  :  public vehicle</text>
+          <text x="196" y="398" fill="#CBCBCB" font-size="10" font-family="monospace">node* next</text>
+          <text x="196" y="413" fill="#7dd4b0" font-size="10" font-family="monospace">set_node()  set_next()  get_next()</text>
+          <text x="196" y="428" fill="#CBCBCB" font-size="9">list element for both map and path</text>
+
+          <!-- node inherits vehicle -->
+          <line x1="310" y1="350" x2="270" y2="282" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#rs-grey)"/>
+          <text x="302" y="320" fill="#CBCBCB" font-size="9">inherits</text>
+
+          <!-- ── MAP class (right) ── -->
+          <rect x="620" y="170" width="210" height="110" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <rect x="620" y="170" width="210" height="30" rx="10" fill="#7dd4b0"/>
+          <rect x="620" y="186"  width="210" height="14" fill="#7dd4b0"/>
+          <text x="725" y="189" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">class map</text>
+          <text x="636" y="218" fill="#CBCBCB" font-size="10" font-family="monospace">node** a_map  (5 lanes)</text>
+          <text x="636" y="233" fill="#7dd4b0" font-size="10" font-family="monospace">make_map()  move_forward()</text>
+          <text x="636" y="248" fill="#CBCBCB" font-size="10" font-family="monospace">add_car()  find_spot()</text>
+          <text x="636" y="263" fill="#7dd4b0" font-size="9">search() / display_all() — wrapper+rec</text>
+
+          <!-- ── PATH class (right bottom) ── -->
+          <rect x="620" y="340" width="210" height="100" rx="10" fill="#2e3d4a" stroke="#e8a87c" stroke-width="2"/>
+          <rect x="620" y="340" width="210" height="30" rx="10" fill="#e8a87c"/>
+          <rect x="620" y="356"  width="210" height="14" fill="#e8a87c"/>
+          <text x="725" y="359" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">class path</text>
+          <text x="636" y="388" fill="#CBCBCB" font-size="10" font-family="monospace">node* start  (most recent)</text>
+          <text x="636" y="403" fill="#e8a87c" font-size="10" font-family="monospace">move_car()  find_loc/lane()</text>
+          <text x="636" y="418" fill="#CBCBCB" font-size="10" font-family="monospace">display_path() — wrapper+rec</text>
+          <text x="636" y="431" fill="#e8a87c" font-size="9">prepend each move to front</text>
+
+          <!-- map uses node -->
+          <line x1="620" y1="225" x2="442" y2="340" stroke="#7dd4b0" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#rs-teal)"/>
+          <text x="530" y="278" fill="#7dd4b0" font-size="9" text-anchor="middle">uses node**</text>
+
+          <!-- path uses node -->
+          <line x1="620" y1="390" x2="442" y2="420" stroke="#e8a87c" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#rs-orange)"/>
+          <text x="535" y="414" fill="#e8a87c" font-size="9" text-anchor="middle">uses node*</text>
+
+          <!-- Legend -->
+          <text x="20"  y="492" fill="rgba(203,203,203,0.5)" font-size="9">───  inheritance</text>
+          <text x="130" y="492" fill="rgba(203,203,203,0.5)" font-size="9">- - -  composition / uses</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 5. PROGRAM FLOW DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Program Flow — Drive Loop</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 560" xmlns="http://www.w3.org/2000/svg" style="width:100%; min-width:480px; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="rf1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+          </defs>
+
+          <!-- START -->
+          <ellipse cx="430" cy="28" rx="80" ry="20" fill="#7dd4b0"/>
+          <text x="430" y="33" text-anchor="middle" fill="#2e3d4a" font-size="13" font-weight="700">START</text>
+          <line x1="430" y1="48" x2="430" y2="70" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#rf1)"/>
+
+          <!-- init -->
+          <rect x="220" y="72" width="420" height="44" rx="8" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="430" y="89"  text-anchor="middle" fill="#EFFFE3"  font-size="12">path your_path;  map a_map;  stop_light a_stoplight;</text>
+          <text x="430" y="107" text-anchor="middle" fill="#7dd4b0" font-size="10" font-family="monospace">a_map.make_map(10)  →  populates 5 lanes with 10 cars at random sorted positions</text>
+          <line x1="430" y1="116" x2="430" y2="138" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#rf1)"/>
+
+          <!-- start driving -->
+          <rect x="280" y="140" width="300" height="36" rx="8" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="430" y="154" text-anchor="middle" fill="#e8a87c" font-size="11">your_path.move_car('g', a_map)</text>
+          <text x="430" y="169" text-anchor="middle" fill="#d0dde8" font-size="9" font-family="monospace">creates start node at lane 1, pos 1</text>
+          <line x1="430" y1="176" x2="430" y2="198" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#rf1)"/>
+
+          <!-- outer loop diamond: pos < 20 -->
+          <polygon points="430,202 570,236 430,270 290,236" fill="#243039" stroke="#88c9e8" stroke-width="2"/>
+          <text x="430" y="232" text-anchor="middle" fill="#88c9e8" font-size="12" font-weight="600">pos &lt; 20?</text>
+          <text x="430" y="248" text-anchor="middle" fill="#CBCBCB" font-size="9">(reached destination?)</text>
+
+          <!-- no → END -->
+          <line x1="570" y1="236" x2="660" y2="236" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#rf1)"/>
+          <text x="574" y="230" fill="#CBCBCB" font-size="10">no</text>
+          <ellipse cx="726" cy="236" rx="62" ry="22" fill="#4a6275" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="726" y="233" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">END</text>
+          <text x="726" y="247" text-anchor="middle" fill="#7dd4b0" font-size="9">display_path()</text>
+
+          <!-- yes down -->
+          <line x1="430" y1="270" x2="430" y2="292" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#rf1)"/>
+          <text x="436" y="286" fill="#CBCBCB" font-size="10">yes</text>
+
+          <!-- options() box -->
+          <rect x="255" y="294" width="350" height="44" rx="8" fill="#243039" stroke="#b8a0e8" stroke-width="2"/>
+          <text x="430" y="312" text-anchor="middle" fill="#b8a0e8" font-size="12" font-weight="600">options(your_path, a_map, a_stoplight)</text>
+          <text x="430" y="330" text-anchor="middle" fill="#d0dde8" font-size="9" font-family="monospace">stoplight check → lane change check → move_car(action)</text>
+          <line x1="430" y1="338" x2="430" y2="360" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#rf1)"/>
+
+          <!-- inner menu diamond -->
+          <polygon points="430,364 560,392 430,420 300,392" fill="#243039" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="430" y="388" text-anchor="middle" fill="#e8a87c" font-size="11" font-weight="600">menu choice</text>
+          <text x="430" y="403" text-anchor="middle" fill="#CBCBCB" font-size="9">1–4</text>
+          <line x1="430" y1="420" x2="430" y2="442" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#rf1)"/>
+
+          <!-- 4 menu options -->
+          <line x1="120" y1="442" x2="740" y2="442" stroke="rgba(203,203,203,0.35)" stroke-width="1"/>
+          <line x1="160" y1="442" x2="160" y2="462" stroke="#CBCBCB" stroke-width="1" marker-end="url(#rf1)"/>
+          <line x1="340" y1="442" x2="340" y2="462" stroke="#CBCBCB" stroke-width="1" marker-end="url(#rf1)"/>
+          <line x1="540" y1="442" x2="540" y2="462" stroke="#CBCBCB" stroke-width="1" marker-end="url(#rf1)"/>
+          <line x1="700" y1="442" x2="700" y2="462" stroke="#CBCBCB" stroke-width="1" marker-end="url(#rf1)"/>
+
+          <rect x="80"  y="464" width="160" height="48" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="160" y="482" text-anchor="middle" fill="#7dd4b0"  font-size="10" font-weight="600">① display path</text>
+          <text x="160" y="496" text-anchor="middle" fill="#d0dde8" font-size="9">your_path.display_path()</text>
+          <text x="160" y="508" text-anchor="middle" fill="#d0dde8" font-size="9">recursive LLL print</text>
+
+          <rect x="260" y="464" width="160" height="48" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="340" y="482" text-anchor="middle" fill="#7dd4b0"  font-size="10" font-weight="600">② nearby cars</text>
+          <text x="340" y="496" text-anchor="middle" fill="#d0dde8" font-size="9">a_map.display_all()</text>
+          <text x="340" y="508" text-anchor="middle" fill="#d0dde8" font-size="9">all lanes + positions</text>
+
+          <rect x="460" y="464" width="160" height="48" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="540" y="482" text-anchor="middle" fill="#88c9e8"  font-size="10" font-weight="600">③ left/right cars</text>
+          <text x="540" y="496" text-anchor="middle" fill="#d0dde8" font-size="9">display_pointer()</text>
+          <text x="540" y="508" text-anchor="middle" fill="#d0dde8" font-size="9">left* / right* vehicles</text>
+
+          <rect x="628" y="464" width="144" height="48" rx="7" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="700" y="482" text-anchor="middle" fill="#e8a87c"  font-size="10" font-weight="600">④ continue</text>
+          <text x="700" y="496" text-anchor="middle" fill="#d0dde8" font-size="9">exit inner loop</text>
+          <text x="700" y="508" text-anchor="middle" fill="#d0dde8" font-size="9">update current_loc</text>
+
+          <!-- loop back to outer -->
+          <path d="M80,488 Q30,488 30,236 Q30,210 288,224" fill="none" stroke="rgba(203,203,203,0.3)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#rf1)"/>
+          <text x="10" y="370" fill="rgba(203,203,203,0.4)" font-size="10" transform="rotate(-90,10,370)">outer loop</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+</div><!-- end background-block -->
+
+</body>
+
+<!-- ── JAVASCRIPT ──────────────────────────────────
+  Both pages use a slideshow. Use the correct one for each page:
+
+  ── index.html (photo slideshow) ──────────────────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("aboutIMG");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+
+  ── index-projects.html (project slideshow) ───────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("projects");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+-->
+<script>
+  // Uncomment and use the correct slideshow script for your page (see comments above).
+</script>
+
+</html>
+

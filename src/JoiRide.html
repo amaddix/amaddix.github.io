@@ -4,85 +4,919 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <!--
-  <title>Ashley Maddix</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sekuya&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-  <h1 style="font-size:50px; position:relative; top:40px; color:#89D5D2; text-align:center;"> Hey! I'm Ashley Maddix</h1>
--->
+  <title>ASHLEY MADDIX</title>
+
   <style>
-    #anim{max-width:700px; margin:0 auto;}
-    a:hover i{transform:scale(1.5); color:#35B5AC;}
-    a:hover button{transform:scale(1.3);}
-    @media only screen and (max-width:640px){
-      #links{
-      display:grid;
-      position:fixed;
-      padding-left:5%;
-      padding-top:10%;
-      text-align:left;
-      grid-gap:3rem;
-      grid-template-columns:repeat(1, 1fr);
-      grid-template-rows:repeat(2, 50px);
-      }
+
+    /* ── RESET & BASE ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body, p {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      padding: 0;
     }
 
-    </style>
-  <a href="index.html">
-    <div id="anim"></div>
-  </a>
-  <script src="lottie.js"></script>
-  <script>
-        var animation = bodymovin.loadAnimation({
-        container: document.getElementById('anim'),
-        renderer:'svg',
-        loop:true,
-        autoplay:true,
-        path:'AshleyHeader1.json'
-        })
-    </script>
+    body {
+      width: 100%;
+      overflow-x: hidden;
+      background-color: #EFFFE3;
+    }
 
-  <script src="https://kit.fontawesome.com/d224905442.js" crossorigin="anonymous"></script>
+    h1, button {
+      font-family: "Sekuya", system-ui;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      padding: 0;
+    }
 
-  <title>JoiRide</title>
+    /* ── HOVER ANIMATIONS ─────────────────────────── */
+    #anim { max-width: 700px; margin: 0 auto; }
+    a:hover i                    { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    a:hover span.fa-regular      { transform: scale(1.5);  color: #CBCBCB; transition: 0.3s; }
+    a:hover button               { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    button:hover                 { transform: scale(1.3);  color: #CBCBCB; background-color: #6D8196; cursor: pointer; transition: 0.3s; }
 
+    .fa-regular {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 400 !important;
+      display: inline-block;
+    }
+
+    /* ── SITE TITLE ───────────────────────────────── */
+   .site-title {
+      font-size: 80px;
+      padding: 40px 10%;
+      color: #6D8196;
+      text-align: center;
+      margin: 0;
+    }
+
+    /* ── NAV TAB ──────────────────────────────────── */
+    .project-page-container {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0;
+    }
+    .project-page {
+      display: block;
+      width: 400px;
+      font-size: 20px;
+      border-radius: 40px 40px 0 0;
+      color: #EFFFE3;
+      background-color: #6D8196;
+      text-align: center;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    /* ── BACKGROUND BLOCK ─────────────────────────── */
+    .background-block {
+      background-color: #6D8196;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ── HERO TAGLINE ─────────────────────────────── */
+    .hero-tagline {
+      font-size: 53px;
+      color: #EFFFE3;
+      text-align: center;
+      padding: 48px 6% 12px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .hero-sub {
+      color: rgba(239,255,227,0.65);
+      font-size: 20px;
+      font-family: "Raleway", sans-serif;
+      text-align: center;
+      padding: 0 6% 40px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SOCIAL ICONS ROW ─────────────────────────── */
+    .social-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      padding-bottom: 48px;
+    }
+    .social-row a { text-decoration: none; }
+    .social-label {
+      display: block;
+      font-size: 13px;
+      color: #CBCBCB;
+      font-family: "Raleway", sans-serif;
+      margin-top: 6px;
+      letter-spacing: 0.06em;
+    }
+    .social-item { text-align: center; }
+
+    /* ── SKILLS GRID ──────────────────────────────── */
+    .skills-section { padding: 0 4% 48px; }
+    .skills-section-title {
+      font-size: 13px;
+      color: rgba(239,255,227,0.5);
+      letter-spacing: 0.18em;
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      margin: 0 0 28px;
+      text-transform: uppercase;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .skill-card {
+      background: rgba(46,61,74,0.55);
+      border: 1px solid rgba(203,203,203,0.18);
+      border-radius: 14px;
+      padding: 24px 20px 20px;
+      text-align: left;
+    }
+    .skill-card-title {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.5);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+    .skill-card-icon {
+      font-size: 22px;
+      color: #7dd4b0;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-tag {
+      background: rgba(109,129,150,0.4);
+      color: #EFFFE3;
+      border-radius: 20px;
+      padding: 5px 13px;
+      font-size: 13px;
+      font-family: "Raleway", sans-serif;
+      border: 1px solid rgba(203,203,203,0.2);
+      white-space: nowrap;
+    }
+
+    /* ── DIVIDER ──────────────────────────────────── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(203,203,203,0.2);
+      margin: 0 4% 48px;
+    }
+
+    /* ── ABOUT SECTION ────────────────────────────── */
+    .about-section {
+      padding: 0 4% 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Photo slideshow column */
+    .photo-column {
+      float: left;
+      width: 440px;
+      margin-right: 40px;
+      margin-bottom: 20px;
+    }
+    .slideshow-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Arrow buttons — shared by both pages */
+    .arrow-buttons {
+      background: transparent;
+      border: none;
+      color: #EFFFE3;
+      font-size: 36px;
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .arrow-buttons:hover { transform: scale(1.2); color: #CBCBCB; }
+
+    .aboutIMG { display: none; width: 100%; }
+    .aboutIMG img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+    }
+
+    /* Bio + traits column */
+    .bio-column { color: #EFFFE3; }
+    .about-section-title {
+      font-size: 36px;
+      color: #EFFFE3;
+      margin: 0 0 24px;
+    }
+    .bio-text {
+      font-size: 20px;
+      line-height: 1.8;
+      color: rgba(239,255,227,0.88);
+      margin: 0 0 32px;
+    }
+
+    /* Personality trait pills */
+    .traits-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.45);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+    .traits-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .trait-pill {
+      background: rgba(125,212,176,0.15);
+      border: 1px solid rgba(125,212,176,0.4);
+      color: #7dd4b0;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 14px;
+      font-family: "Raleway", sans-serif;
+    }
+
+    /* ── PROJECTS PAGE SPECIFIC ───────────────────── */
+    .title              { display: flex; flex-wrap: wrap; flex-direction: column; }
+    .slideshow-arrows   { display: flex; justify-content: space-around; }
+    .projects           { flex: 1; }
+    .detail2-container  { display: flex; justify-content: space-evenly; flex-wrap: wrap; flex-direction: row; }
+    .detail2            { flex: 1; }
+    .section-title      { font-size: 60px; }
+
+    /* ── RESPONSIVE BREAKPOINTS ───────────────────── */
+    @media (max-width: 768px) {
+      .site-title             { font-size: 52px; padding: 32px 5% 16px; }
+      .hero-tagline           { font-size: 30px; }
+      .section-title          { font-size: 42px; }
+      .project-page           { width: 50%; font-size: clamp(10px, 3.5vw, 20px); }
+      .project-page-container { justify-content: flex-end; }
+      .project-page h1        { font-size: clamp(12px, 4vw, 24px); margin: 0; padding: 6px 0; }
+      a.project-page          { border-radius: 14px 14px 0 0 !important; padding: 10px !important; }
+      .skills-grid            { grid-template-columns: repeat(2, 1fr); }
+      .about-section          { flex-direction: column; }
+      .photo-column           { max-width: 100%; }
+      .detail2-container      { flex-direction: column; }
+      .detail2                { min-width: 0; width: 100%; }
+      pre                     { font-size: 11px !important; }
+    }
+
+    @media (max-width: 480px) {
+      .site-title    { font-size: 36px; padding: 24px 4% 12px; }
+      .hero-tagline  { font-size: 24px; }
+      .hero-sub      { font-size: 15px; }
+      .section-title { font-size: 28px; }
+      .skills-grid   { grid-template-columns: 1fr; }
+      .skill-tag     { font-size: 12px; }
+      .bio-text      { font-size: 16px; }
+      .aboutIMG img  { height: 240px; }
+      .social-row    { gap: 20px; }
+      /* NOTE: index.html keeps .project-page at 50% on mobile (no override here).
+         If using index-projects.html layout, uncomment the line below instead: */
+      /* .project-page  { width: 100%; font-size: 12px; } */
+      .projects      { padding: 0 4px; }
+      .projects span[style] { font-size: 12px !important; padding: 4px 10px !important; }
+      pre            { font-size: 10px !important; white-space: pre; overflow-x: auto; }
+      svg            { min-width: 480px; }
+      .projects h1   { font-size: 16px !important; }
+      .projects p    { font-size: 16px !important; }
+      .arrow-buttons { font-size: 36px !important; }
+    }
+
+  </style>
 </head>
 
+<body style="background-color:#EFFFE3; margin:0;">
 
-<body style="background-color:#89D5D2;">
+<!-- ── SITE TITLE ──────────────────────────────── -->
+<div>
+  <h1 class="site-title" style="color:#6D8196; text-align:center;">ASHLEY MADDIX</h1>
+</div>
 
-<div class="links" style="display:grid; position:fixed; padding-left:5%; padding-top:10%; text-align:left; grid-gap:2rem; grid-template-columns:repeat(1, 2fr); grid-template-rows:repeat(5, 60px);">
-  <a href="CS465_ProjectProposal.pdf" style="text-decoration:none" >
-    <i class="fa-solid fa-person-chalkboard fa-3x" style="position:center; color:#008080;"> <div style="font-size:20px">presentation</div></i>
+<!-- ── NAV TAB ─────────────────────────────────── -->
+<!--
+  For index.html    → link to index-projects.html, label = PROJECTS
+  For index-projects.html → link to index.html, label = ABOUT ME
+
+  index.html nav tab:
+  <div class="project-page-container">
+    <a href="index-projects.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>PROJECTS</h1></i>
+    </a>
+  </div>
+
+  index-projects.html nav tab:
+  <div class="project-page-container">
+    <a href="index.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>ABOUT ME</h1></i>
+    </a>
+  </div>
+-->
+<div class="project-page-container">
+  <a href="index-projects.html" class="project-page"
+     style="border-radius:40px 40px 0 0; color:#CBCBCB; background-color:#6D8196;
+              text-align:center; text-decoration:none; padding:10px; ">
+    <i><h1>PROJECTS</h1> </i>
   </a>
-  <a href="Joi Ride - Journal .pdf" style="text-decoration:none" >
-    <i class="fa-solid fa-book fa-3x" style="position:center; color:#008080;"><div style="font-size:20px">report</div></i>
-  </a>
-  <!-- <a href="https://cs465final.herokuapp.com/about" style="text-decoration:none" >
-    <i class="fa-solid fa-earth-americas fa-3x"style="position:center; color:#008080;"></i>
-  </a> -->
-  <a href="Projects.html" style="text-decoration:none" >
-    <i class="fa-solid fa-circle-arrow-left fa-3x" style="position:center; color:#008080;"></i>
+  <a href="index.html" class="project-page"
+     style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+    <i><h1>ABOUT ME</h1></i>
   </a>
 </div>
-<div style="border-radius:15%; position:grid; text-align:center; background-color:#BBF1F1; margin-left:17%; margin-right:2%;">
-  <br><br>
-  <h2 style="text-align:right; color:#265C5C; padding-right:15%; ">2021</h2>
-  <h1 style="text-align:center; color:#265C5C; padding-top:0; padding-bottom:5%; ">JoiRide - RoadTrip Itinerary
-  </h1>
-  <h3 style="color:#265C5C; padding:5%;">
-    <b><i> Google Maps API - HTML - CSS - Java Script - EJS - Express Node.js</i></b> <br><br>
-    <b>Collaboration project </b> with : <i>Greg Hairfield</i> <br><br><br>
 
-    We created a site with the intentions of helping users plan a road trip or vacation. The API key we used for our site is currently
-    inactive, but when initially launched we successfully created some useful features. By entering a starting and end location,
-    with the ability to add stops, you get direction for your route. The most useful feature of our site was the filtering tool, that
-    allows the user to select types of places they'd like to visit along their trip (such as restaurants, trails, museums etc.).
-    <br>
-    With a time crunch our site didnt turn out the most visually appealing, there's definitely modifications I would make now
-     given my growth since.
-    <br>
-  </h3>
+<!-- ── MAIN CONTENT BLOCK ──────────────────────── -->
+<div class="background-block" style="background-color:#6D8196; padding-bottom:60px;">
+  <div class="projects">
+    <br><br><br><br>
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:30px;">Joi Ride — Road Trip Planner Web App</h1>
+
+    <!-- SKILL TAGS -->
+    <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2%; padding-top:0%;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">JavaScript</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Node.js</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Express.js</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">EJS Templating</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Google Maps API</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Google Places API</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Bootstrap 5</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">jQuery</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">REST APIs</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Heroku Deployment</span>
+      </div>
+    </div>
+
+    <div style="text-align:center; padding-top:16px;">
+      <a class="github" href="CS465_ProjectProposal.pdf" style="text-decoration:none;">
+        <i class="fa-solid fa-laptop-code fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+      </a>
+      <a class="github" href="https://github.com/ghairfield/CS465Final_Project" style="text-decoration:none;">
+        <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+      </a>
+      <a class="github" href="Joi Ride - Journal .pdf" style="text-decoration:none;">
+        <i class="fa-regular fa-file fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+      </a>
+    </div>
+
+    <!-- 1. OVERVIEW -->
+    <div class="detail2-container" style="align-items:flex-start;">
+      <div class="detail2" style="flex:3; min-width:280px;">
+        <p style="color:#EFFFE3; font-size:22px; padding:1%; line-height:1.7; font-weight:500;">
+          <br>
+          A full-stack web application built for road trippers and vacationers to discover and plan stops along a route. Users enter a starting location and destination, and <b>Joi Ride</b> displays live turn-by-turn directions via the Google Maps Directions API. From there, users can drop a waypoint anywhere on the map and search for nearby establishments — restaurants, parks, hotels, cafes, campgrounds, and more — filtered by keyword and search radius (5–20 miles).<br><br>
+          Built with <b>Node.js + Express</b> using EJS templates, jQuery for DOM interaction, and Bootstrap 5 for layout. The app integrates the <b>Google Maps, Directions, and Places APIs</b> together: the map auto-centers on the user's current location, address inputs use Places Autocomplete to prevent invalid entries, and each waypoint search uses <code style="font-family:monospace; background:#2e3d4a; padding:1px 6px; border-radius:3px;">nearbySearch</code> with a dynamically read checkbox value to query the correct place type. Clicking any result opens an info window with the establishment's name and rating fetched from Places using its <code style="font-family:monospace; background:#2e3d4a; padding:1px 6px; border-radius:3px;">place_id</code>. Deployed to Heroku.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. FEATURE CARDS -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Core Features</h1>
+      <div class="detail2-container" style="gap:16px; padding-top:16px; flex-wrap:wrap;">
+
+        <div style="flex:1; min-width:200px; border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:18px 20px;">
+          <p style="color:#EFFFE3; font-size:15px; font-weight:600; margin-bottom:8px;">📍 Route &amp; Directions</p>
+          <p style="color:#d0dde8; font-size:14px; line-height:1.6; margin:0;">Enter a start and destination — the Directions API renders the route on the map and populates a step-by-step directions panel below. Starting address can be omitted to use current location. Address fields use Places Autocomplete to guide valid input.</p>
+        </div>
+
+        <div style="flex:1; min-width:200px; border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px;">
+          <p style="color:#EFFFE3; font-size:15px; font-weight:600; margin-bottom:8px;">📌 Waypoint Search</p>
+          <p style="color:#d0dde8; font-size:14px; line-height:1.6; margin:0;">Drop a waypoint marker anywhere on the map. Select a keyword (Food, Hotel, Park, Cafe, Campground, Gas, Bar, Museum, Tourist Attraction, and more) and a radius — the app calls <code style="font-family:monospace; background:#2e3d4a; padding:1px 4px; border-radius:3px;">nearbySearch</code> and displays all matching results. Multiple waypoints can be created with different keywords.</p>
+        </div>
+
+        <div style="flex:1; min-width:200px; border-left:4px solid #b8a0e8; background:rgba(184,160,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px;">
+          <p style="color:#EFFFE3; font-size:15px; font-weight:600; margin-bottom:8px;">🗺️ Place Info Windows</p>
+          <p style="color:#d0dde8; font-size:14px; line-height:1.6; margin:0;">Clicking a search result marker opens an info window populated by a Places API lookup using the result's <code style="font-family:monospace; background:#2e3d4a; padding:1px 4px; border-radius:3px;">place_id</code> — displays the establishment name and rating. Initially the info window returned blank; solved by switching from default marker data to a dedicated Places details call.</p>
+        </div>
+
+        <div style="flex:1; min-width:200px; border-left:4px solid #e8a87c; background:rgba(232,168,124,0.1); border-radius:0 10px 10px 0; padding:18px 20px;">
+          <p style="color:#EFFFE3; font-size:15px; font-weight:600; margin-bottom:8px;">📡 Geolocation</p>
+          <p style="color:#d0dde8; font-size:14px; line-height:1.6; margin:0;">On load the map auto-centers on the user's current geographic location using the browser Geolocation API, making the starting point feel natural for most use cases. Users can still manually enter any starting address if preferred.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 6. INTERACTIVE MOCKUP -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Interactive Wireframe Mockup</h1>
+
+      <style>
+        .jr-wrap { font-family:'Raleway',sans-serif; padding-top:20px; }
+        .jr-tabs { display:flex; gap:6px; margin-bottom:24px; background:#CBCBCB; border-radius:50px; padding:5px; width:fit-content; flex-wrap:wrap; margin-left:auto; margin-right:auto; }
+        .jr-tab { font-family:'Caveat',cursive; font-size:15px; font-weight:600; padding:7px 16px; border-radius:50px; border:none; cursor:pointer; color:rgba(255,255,255,0.55); background:transparent; transition:all .2s; white-space:nowrap; }
+        .jr-tab.jr-active { background:#f8fef8; color:#1a4a3a; }
+        .jr-tab:hover:not(.jr-active) { color:rgba(255,255,255,0.9); }
+        .jr-desc { color:#a0bcac; font-size:13px; margin-bottom:20px; line-height:1.6; max-width:680px; }
+        .jr-phone-row { display:flex; gap:28px; flex-wrap:wrap; align-items:flex-start; justify-content:center; }
+        .jr-phone-wrap { display:flex; flex-direction:column; }
+        .jr-phone-label { font-family:'Caveat',cursive; font-size:16px; color:#CBCBCB; text-align:center; margin-bottom:8px; font-weight:600; }
+        .jr-phone { width:260px; background:#f8fef8; border-radius:32px; box-shadow:0 16px 48px rgba(0,0,0,0.35); overflow:hidden; border:3px solid #1a4a3a; display:none; flex-direction:column; animation:jrFadeUp .3s ease; }
+        .jr-phone.jr-vis { display:flex; }
+        @keyframes jrFadeUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+        .jr-hdr { background:#1a4a3a; padding:14px 16px 12px; display:flex; justify-content:space-between; align-items:center; flex-shrink:0; }
+        .jr-hdr-title { font-family:'Caveat',cursive; color:#f8fef8; font-size:20px; font-weight:700; letter-spacing:.5px; }
+        .jr-hams { display:flex; flex-direction:column; gap:4px; cursor:pointer; }
+        .jr-hams span { display:block; width:20px; height:2px; background:#f8fef8; border-radius:2px; }
+        .jr-body { flex:1; overflow-y:auto; padding:14px; background:#f8fef8; scrollbar-width:none; max-height:480px; }
+        .jr-body::-webkit-scrollbar { display:none; }
+        .jr-map { width:100%; height:138px; background:#8ecf9a; border-radius:10px; margin-bottom:10px; overflow:hidden; border:2px solid #2a6b54; }
+        .jr-map svg { width:100%; height:100%; }
+        .jr-flabel { font-family:'Caveat',cursive; font-size:17px; font-weight:700; color:#1a4a3a; margin:8px 0 5px; display:block; }
+        .jr-input { width:100%; border:2px solid #2a6b54; border-radius:9px; padding:8px 11px; font-family:'DM Sans',sans-serif; font-size:12px; color:#1a2a1a; background:#f8fef8; margin-bottom:9px; outline:none; }
+        .jr-input::placeholder { color:#aaa; }
+        .jr-stop-row { display:flex; align-items:center; gap:8px; margin-bottom:12px; }
+        .jr-sel { border:2px solid #2a6b54; border-radius:7px; padding:5px 9px; font-family:'Caveat',cursive; font-size:15px; color:#1a4a3a; background:#f8fef8; cursor:pointer; }
+        .jr-route-row { display:flex; align-items:center; gap:7px; margin-bottom:12px; }
+        .jr-route-row .jr-input { margin-bottom:0; flex:1; }
+        .jr-arr { font-size:18px; color:#1a4a3a; font-weight:700; flex-shrink:0; }
+        .jr-chips { display:flex; gap:5px; flex-wrap:wrap; margin-bottom:12px; }
+        .jr-chip { font-family:'Caveat',cursive; font-size:13px; font-weight:600; padding:4px 10px; border-radius:7px; border:2px solid #2a6b54; color:#1a4a3a; background:transparent; cursor:pointer; transition:all .2s; }
+        .jr-chip.jr-on, .jr-chip:hover { background:#1a4a3a; color:#f8fef8; border-color:#1a4a3a; }
+        .jr-tags { display:flex; gap:5px; flex-wrap:wrap; margin-bottom:12px; }
+        .jr-tag { font-family:'Caveat',cursive; font-size:13px; padding:3px 10px; border-radius:6px; border:2px solid #2a6b54; color:#1a4a3a; background:transparent; cursor:pointer; transition:all .2s; }
+        .jr-tag.jr-on, .jr-tag:hover { background:#2a6b54; color:#f8fef8; border-color:#2a6b54; }
+        .jr-btn { display:block; width:100%; padding:11px; background:#1a4a3a; color:#f8fef8; font-family:'Caveat',cursive; font-size:19px; font-weight:700; border:none; border-radius:10px; cursor:pointer; letter-spacing:1px; margin-top:6px; transition:background .2s; }
+        .jr-btn:hover { background:#2a6b54; }
+        .jr-nav-item { font-family:'Caveat',cursive; font-size:26px; font-weight:700; color:#1a4a3a; padding:5px 0; cursor:pointer; border-bottom:1px solid rgba(0,0,0,0.07); display:flex; align-items:center; gap:7px; }
+        .jr-card { border-radius:9px; padding:9px 11px; margin-bottom:7px; display:flex; justify-content:space-between; align-items:flex-start; cursor:pointer; transition:filter .15s; }
+        .jr-card:hover { filter:brightness(1.08); }
+        .jr-card.jp { background:#6b3fa0; }
+        .jr-card.jpm { background:#7e52b5; }
+        .jr-card.jmag { background:#b03080; }
+        .jr-card.jbl { background:#2255aa; }
+        .jr-card-l { flex:1; }
+        .jr-card-name { font-family:'Caveat',cursive; font-size:16px; font-weight:700; color:#f8fef8; margin-bottom:2px; }
+        .jr-stars { display:flex; gap:2px; margin-bottom:2px; }
+        .jr-stars span { color:#f0c040; font-size:12px; }
+        .jr-stars span.e { color:rgba(255,255,255,.25); }
+        .jr-note { font-size:11px; color:rgba(255,255,255,.75); font-style:italic; }
+        .jr-rcheck { font-size:10px; color:rgba(255,255,255,.65); margin-top:3px; }
+        .jr-card-r { display:flex; flex-direction:column; align-items:center; gap:5px; padding-left:7px; }
+        .jr-dot { width:11px; height:11px; border-radius:50%; flex-shrink:0; }
+        .jr-dot.or { background:#e8722a; } .jr-dot.gr { background:#4cdd80; } .jr-dot.re { background:#e83030; }
+        .jr-savebtn { background:rgba(255,255,255,.15); border:none; border-radius:5px; padding:3px 6px; cursor:pointer; font-family:'Caveat',cursive; font-size:12px; color:#f8fef8; transition:background .15s; white-space:nowrap; }
+        .jr-savebtn:hover { background:rgba(255,255,255,.3); }
+        .jr-filter-box { background:#1a4a3a; border-radius:10px; padding:11px 13px; margin-bottom:11px; }
+        .jr-filter-title { font-family:'Caveat',cursive; font-size:17px; color:#f8fef8; text-align:center; margin-bottom:10px; letter-spacing:1px; }
+        .jr-frow { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+        .jr-frow label { font-family:'Caveat',cursive; font-size:15px; color:#f8fef8; width:34px; flex-shrink:0; }
+        .jr-fsel { flex:1; border:2px solid rgba(255,255,255,.35); border-radius:7px; padding:5px 8px; font-family:'Caveat',cursive; font-size:13px; color:#1a2a1a; background:#f8fef8; cursor:pointer; }
+        .jr-sec-hdr { font-family:'Caveat',cursive; font-size:13px; font-weight:700; color:#1a4a3a; letter-spacing:.1em; text-transform:uppercase; margin:8px 0 7px; padding-bottom:3px; border-bottom:2px solid #3d8c6e; }
+        .jr-dots { text-align:center; padding:8px 0 3px; color:#2a6b54; font-size:16px; letter-spacing:4px; }
+      </style>
+
+      <div class="jr-wrap">
+        <div class="jr-tabs">
+          <button class="jr-tab jr-active" onclick="jrShow('search',this)">Search</button>
+          <button class="jr-tab" onclick="jrShow('results',this)">Results</button>
+          <button class="jr-tab" onclick="jrShow('saved',this)">Saved</button>
+          <button class="jr-tab" onclick="jrShow('saved-filter',this)">Saved + Filter</button>
+        </div>
+
+        <p class="jr-desc" id="jrd-search">Enter trip details — choose number of stops, input addresses, set distance from route, and filter by place type.</p>
+        <p class="jr-desc" id="jrd-results" style="display:none">The map shows your route and nearby stops. Results list matching places with ratings — tap any card to toggle save.</p>
+        <p class="jr-desc" id="jrd-saved" style="display:none">Saved stops displayed on your route map with dashed alternate paths. Tap cards to save or add to route.</p>
+        <p class="jr-desc" id="jrd-saved-filter" style="display:none">Filter saved stops by trip (e.g. PDX → Lincoln City), city along the route, and place type.</p>
+
+        <!-- SCREEN: SEARCH -->
+        <div class="jr-phone-row" id="jrs-search">
+          <div class="jr-phone-wrap">
+            <div class="jr-phone-label">Navigation</div>
+            <div class="jr-phone jr-vis">
+              <div class="jr-hdr"><span class="jr-hdr-title">· Joi Ride ·</span><div class="jr-hams"><span></span><span></span><span></span></div></div>
+              <div class="jr-body">
+                <div style="margin-top:8px;">
+                  <div class="jr-nav-item">🔍 Search Results</div>
+                  <div class="jr-nav-item">⭐ Saved</div>
+                  <div class="jr-nav-item">🗺️ My Trips</div>
+                  <div class="jr-nav-item">📍 Add Stop</div>
+                </div>
+                <div class="jr-chips" style="margin-top:14px;">
+                  <div class="jr-chip jr-on">On road</div><div class="jr-chip">10 min</div><div class="jr-chip">30 min</div><div class="jr-chip">+</div>
+                </div>
+                <div class="jr-sec-hdr">Filter by type</div>
+                <div class="jr-tags">
+                  <div class="jr-tag jr-on">food</div><div class="jr-tag">trails</div><div class="jr-tag jr-on">viewpoint</div>
+                  <div class="jr-tag">thrift shop</div><div class="jr-tag">historic</div><div class="jr-tag">coffee</div>
+                </div>
+                <div class="jr-dots">· · ·</div>
+                <button class="jr-btn">Submit</button>
+              </div>
+            </div>
+          </div>
+          <div class="jr-phone-wrap">
+            <div class="jr-phone-label">Search Form</div>
+            <div class="jr-phone jr-vis">
+              <div class="jr-hdr"><span class="jr-hdr-title">· Search ·</span><div class="jr-hams"><span></span><span></span><span></span></div></div>
+              <div class="jr-body">
+                <div class="jr-stop-row">
+                  <span class="jr-flabel" style="margin:0">Choose # of stop points</span>
+                  <select class="jr-sel"><option>2 ∨</option><option>1 ∨</option><option>3 ∨</option></select>
+                </div>
+                <div class="jr-route-row">
+                  <input class="jr-input" placeholder="Point A  address…"/><span class="jr-arr">→</span><input class="jr-input" placeholder="Point B  address…"/>
+                </div>
+                <span class="jr-flabel">· · ·</span>
+                <span class="jr-flabel">Distance from route</span>
+                <div class="jr-chips"><div class="jr-chip">On road</div><div class="jr-chip">10 min</div><div class="jr-chip jr-on">30 min</div><div class="jr-chip">+</div></div>
+                <span class="jr-flabel">· · ·</span>
+                <span class="jr-flabel">Filter</span>
+                <p style="font-size:11px;color:#666;margin-bottom:7px;">Choose some tags to narrow down your search</p>
+                <div class="jr-tags">
+                  <div class="jr-tag jr-on">food</div><div class="jr-tag jr-on">trails</div><div class="jr-tag jr-on">viewpoint</div>
+                  <div class="jr-tag">thrift shop</div><div class="jr-tag">historic</div><div class="jr-tag">coffee</div>
+                </div>
+                <div class="jr-dots">· · ·</div>
+                <button class="jr-btn">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCREEN: RESULTS -->
+        <div class="jr-phone-row" id="jrs-results" style="display:none">
+          <div class="jr-phone-wrap">
+            <div class="jr-phone-label">Results</div>
+            <div class="jr-phone jr-vis">
+              <div class="jr-hdr"><span class="jr-hdr-title">· Results ·</span><div class="jr-hams"><span></span><span></span><span></span></div></div>
+              <div class="jr-body">
+                <div class="jr-map"><svg viewBox="0 0 234 138" xmlns="http://www.w3.org/2000/svg"><rect width="234" height="138" fill="#8ecf9a"/><line x1="0" y1="70" x2="234" y2="70" stroke="rgba(255,255,255,.2)" stroke-width="1"/><line x1="117" y1="0" x2="117" y2="138" stroke="rgba(255,255,255,.2)" stroke-width="1"/><path d="M18,122 C45,94 75,82 112,64 C148,46 185,38 218,18" fill="none" stroke="#e8b830" stroke-width="4" stroke-linecap="round"/><circle cx="18" cy="122" r="7" fill="#6b3fa0"/><text x="18" y="126" text-anchor="middle" fill="white" font-size="8" font-family="sans-serif">A</text><circle cx="50" cy="100" r="5" fill="#3d8c6e"/><text x="50" y="104" text-anchor="middle" fill="white" font-size="7" font-family="sans-serif">1</text><circle cx="80" cy="84" r="5" fill="#3d8c6e"/><text x="80" y="88" text-anchor="middle" fill="white" font-size="7" font-family="sans-serif">2</text><circle cx="112" cy="66" r="5" fill="#3d8c6e"/><text x="112" y="70" text-anchor="middle" fill="white" font-size="7" font-family="sans-serif">3</text><circle cx="148" cy="52" r="5" fill="#3d8c6e"/><text x="148" y="56" text-anchor="middle" fill="white" font-size="7" font-family="sans-serif">4</text><circle cx="185" cy="38" r="5" fill="#3d8c6e"/><text x="185" y="42" text-anchor="middle" fill="white" font-size="7" font-family="sans-serif">5</text><circle cx="218" cy="18" r="7" fill="#2255aa"/><text x="218" y="22" text-anchor="middle" fill="white" font-size="8" font-family="sans-serif">B</text><circle cx="68" cy="55" r="3" fill="#e83030" opacity=".7"/><circle cx="130" cy="96" r="3" fill="#e83030" opacity=".7"/><circle cx="162" cy="28" r="3" fill="#e8b830" opacity=".7"/></svg></div>
+                <div class="jr-card jp" onclick="jrToggleSave(this)"><div class="jr-card-l"><div class="jr-card-name">1 : local restaurants</div><div class="jr-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span class="e">★</span></div><div class="jr-note">food is good!</div></div><div class="jr-card-r"><div class="jr-dot or"></div><button class="jr-savebtn">save! 🔖</button></div></div>
+                <div class="jr-card jpm" onclick="jrToggleSave(this)"><div class="jr-card-l"><div class="jr-card-name">2 : mountain trail</div><div class="jr-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><div class="jr-note">so pretty! &lt;3</div></div><div class="jr-card-r"><div class="jr-dot gr"></div><button class="jr-savebtn">saved ✓</button></div></div>
+                <div class="jr-card jp" onclick="jrToggleSave(this)"><div class="jr-card-l"><div class="jr-card-name">3 : Burgers — Yum!</div><div class="jr-stars"><span>★</span><span>★</span><span>★</span><span class="e">★</span><span class="e">★</span></div><div class="jr-note">Yum!</div></div><div class="jr-card-r"><div class="jr-dot or"></div><button class="jr-savebtn">save! 🔖</button></div></div>
+                <div class="jr-card jmag" onclick="jrToggleSave(this)"><div class="jr-card-l"><div class="jr-card-name">4 : forest trail</div><div class="jr-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span class="e">★</span></div><div class="jr-note">trees!</div></div><div class="jr-card-r"><div class="jr-dot gr"></div><button class="jr-savebtn">save! 🔖</button></div></div>
+                <div class="jr-dots">· · ·</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCREEN: SAVED -->
+        <div class="jr-phone-row" id="jrs-saved" style="display:none">
+          <div class="jr-phone-wrap">
+            <div class="jr-phone-label">Saved Stops</div>
+            <div class="jr-phone jr-vis">
+              <div class="jr-hdr"><span class="jr-hdr-title">· Saved ·</span><div class="jr-hams"><span></span><span></span><span></span></div></div>
+              <div class="jr-body">
+                <div class="jr-map"><svg viewBox="0 0 234 138" xmlns="http://www.w3.org/2000/svg"><rect width="234" height="138" fill="#8ecf9a"/><path d="M14,122 C38,94 65,76 110,56 C148,40 192,30 220,18" fill="none" stroke="#e8b830" stroke-width="4" stroke-linecap="round"/><path d="M55,94 C74,64 94,55 122,50" fill="none" stroke="#e83080" stroke-width="1.5" stroke-dasharray="4,3" opacity=".7"/><path d="M148,44 C170,50 190,56 210,68" fill="none" stroke="#e83080" stroke-width="1.5" stroke-dasharray="4,3" opacity=".7"/><circle cx="14" cy="122" r="7" fill="#6b3fa0"/><text x="14" y="126" text-anchor="middle" fill="white" font-size="8" font-family="sans-serif">A</text><circle cx="65" cy="82" r="6" fill="#3d8c6e"/><text x="65" y="86" text-anchor="middle" fill="white" font-size="7" font-family="sans-serif">1</text><circle cx="112" cy="57" r="6" fill="#3d8c6e"/><text x="112" y="61" text-anchor="middle" fill="white" font-size="7" font-family="sans-serif">2</text><circle cx="185" cy="33" r="7" fill="#2255aa"/><text x="185" y="37" text-anchor="middle" fill="white" font-size="8" font-family="sans-serif">3</text><circle cx="220" cy="18" r="7" fill="#2255aa"/><text x="220" y="22" text-anchor="middle" fill="white" font-size="8" font-family="sans-serif">B</text><circle cx="40" cy="104" r="4" fill="#e8b830" opacity=".8"/><circle cx="148" cy="46" r="4" fill="#e83030" opacity=".8"/></svg></div>
+                <button class="jr-chip jr-on" style="margin-bottom:10px;font-size:12px;">· filter ·</button>
+                <div class="jr-card jp" onclick="jrToggleSave(this)"><div class="jr-card-l"><div class="jr-card-name">1 : local restaurants</div><div class="jr-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><div class="jr-note">food is good!</div><div class="jr-rcheck">☑ route</div></div><div class="jr-card-r"><div class="jr-dot or"></div><button class="jr-savebtn">save! 🔖</button></div></div>
+                <div class="jr-card jbl" onclick="jrToggleSave(this)"><div class="jr-card-l"><div class="jr-card-name">2 : View point</div><div class="jr-stars"><span>★</span><span>★</span><span>★</span><span class="e">★</span><span class="e">★</span></div><div class="jr-note">Sunset!</div><div class="jr-rcheck">☑ route</div></div><div class="jr-card-r"><div class="jr-dot re"></div><button class="jr-savebtn">saved ✓</button></div></div>
+                <div class="jr-card jbl" onclick="jrToggleSave(this)"><div class="jr-card-l"><div class="jr-card-name">3 : Tacos</div><div class="jr-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><div class="jr-note">So Good!</div><div class="jr-rcheck">☑ route</div></div><div class="jr-card-r"><div class="jr-dot re"></div><button class="jr-savebtn">save! 🔖</button></div></div>
+                <div class="jr-dots">· · ·</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCREEN: SAVED + FILTER -->
+        <div class="jr-phone-row" id="jrs-saved-filter" style="display:none">
+          <div class="jr-phone-wrap">
+            <div class="jr-phone-label">Saved — Filtered</div>
+            <div class="jr-phone jr-vis">
+              <div class="jr-hdr"><span class="jr-hdr-title">· Saved ·</span><div class="jr-hams"><span></span><span></span><span></span></div></div>
+              <div class="jr-body">
+                <div class="jr-filter-box">
+                  <div class="jr-filter-title">· filter ·</div>
+                  <div class="jr-frow"><label>trip</label><select class="jr-fsel"><option>PDX → Lincoln City, OR</option><option>Portland → Tillamook</option></select></div>
+                  <div class="jr-frow"><label>City</label><select class="jr-fsel"><option>Tillamook</option><option>Lincoln City</option><option>Cannon Beach</option></select></div>
+                  <div class="jr-frow"><label>type</label><select class="jr-fsel"><option>food, trail, local</option><option>food</option><option>trails</option><option>viewpoint</option></select></div>
+                </div>
+                <div class="jr-card jp" onclick="jrToggleSave(this)"><div class="jr-card-l"><div class="jr-card-name">1 : local restaurants</div><div class="jr-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><div class="jr-note">food is good!</div><div class="jr-rcheck">☑ route</div></div><div class="jr-card-r"><div class="jr-dot or"></div><button class="jr-savebtn">save! 🔖</button></div></div>
+                <div class="jr-card jbl" onclick="jrToggleSave(this)"><div class="jr-card-l"><div class="jr-card-name">2 : View point</div><div class="jr-stars"><span>★</span><span>★</span><span>★</span><span class="e">★</span><span class="e">★</span></div><div class="jr-note">Sunset!</div><div class="jr-rcheck">☑ route</div></div><div class="jr-card-r"><div class="jr-dot re"></div><button class="jr-savebtn">saved ✓</button></div></div>
+                <div class="jr-card jbl" onclick="jrToggleSave(this)"><div class="jr-card-l"><div class="jr-card-name">3 : Tacos</div><div class="jr-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><div class="jr-note">So Good!</div><div class="jr-rcheck">☑ route</div></div><div class="jr-card-r"><div class="jr-dot re"></div><button class="jr-savebtn">save! 🔖</button></div></div>
+                <div class="jr-dots">· · ·</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- jr-wrap -->
+
+    <!-- 3. TECH STACK + DEVELOPMENT JOURNEY -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Tech Stack &amp; Development Journey</h1>
+      <div style="display:flex; flex-wrap:wrap; gap:24px; padding-top:20px; align-items:flex-start;">
+
+        <!-- Stack diagram -->
+        <div style="flex:1; min-width:260px;">
+          <p style="color:#CBCBCB; font-size:13px; font-weight:600; margin:0 0 12px 0; letter-spacing:0.05em;">FINAL STACK</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="background:#2e3d4a; border:1px solid #7dd4b0; border-radius:8px; padding:12px 16px; display:flex; justify-content:space-between; align-items:center;">
+              <span style="color:#7dd4b0; font-size:14px; font-weight:600;">Frontend</span>
+              <span style="color:#d0dde8; font-size:13px; font-family:monospace;">EJS · Bootstrap 5 · jQuery</span>
+            </div>
+            <div style="background:#2e3d4a; border:1px solid #88c9e8; border-radius:8px; padding:12px 16px; display:flex; justify-content:space-between; align-items:center;">
+              <span style="color:#88c9e8; font-size:14px; font-weight:600;">Backend</span>
+              <span style="color:#d0dde8; font-size:13px; font-family:monospace;">Node.js · Express.js</span>
+            </div>
+            <div style="background:#2e3d4a; border:1px solid #b8a0e8; border-radius:8px; padding:12px 16px; display:flex; justify-content:space-between; align-items:center;">
+              <span style="color:#b8a0e8; font-size:14px; font-weight:600;">APIs</span>
+              <span style="color:#d0dde8; font-size:13px; font-family:monospace;">Maps · Directions · Places</span>
+            </div>
+            <div style="background:#2e3d4a; border:1px solid #e8a87c; border-radius:8px; padding:12px 16px; display:flex; justify-content:space-between; align-items:center;">
+              <span style="color:#e8a87c; font-size:14px; font-weight:600;">Deploy</span>
+              <span style="color:#d0dde8; font-size:13px; font-family:monospace;">Heroku</span>
+            </div>
+          </div>
+
+          <p style="color:#CBCBCB; font-size:13px; font-weight:600; margin:20px 0 12px 0; letter-spacing:0.05em;">PLANNED ADDITIONS (STRETCH GOALS)</p>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <span style="background:rgba(203,203,203,0.08); color:rgba(203,203,203,0.6); border:1px solid rgba(203,203,203,0.2); border-radius:14px; padding:5px 12px; font-size:13px;">User login</span>
+            <span style="background:rgba(203,203,203,0.08); color:rgba(203,203,203,0.6); border:1px solid rgba(203,203,203,0.2); border-radius:14px; padding:5px 12px; font-size:13px;">Save trips</span>
+            <span style="background:rgba(203,203,203,0.08); color:rgba(203,203,203,0.6); border:1px solid rgba(203,203,203,0.2); border-radius:14px; padding:5px 12px; font-size:13px;">Share routes</span>
+            <span style="background:rgba(203,203,203,0.08); color:rgba(203,203,203,0.6); border:1px solid rgba(203,203,203,0.2); border-radius:14px; padding:5px 12px; font-size:13px;">User reviews</span>
+            <span style="background:rgba(203,203,203,0.08); color:rgba(203,203,203,0.6); border:1px solid rgba(203,203,203,0.2); border-radius:14px; padding:5px 12px; font-size:13px;">MongoDB</span>
+            <span style="background:rgba(203,203,203,0.08); color:rgba(203,203,203,0.6); border:1px solid rgba(203,203,203,0.2); border-radius:14px; padding:5px 12px; font-size:13px;">AQI / weather data</span>
+          </div>
+        </div>
+
+        <!-- Framework pivot + challenges -->
+        <div style="flex:1.3; min-width:260px; display:flex; flex-direction:column; gap:14px;">
+          <div style="border-left:4px solid #e8a87c; background:rgba(232,168,124,0.1); border-radius:0 10px 10px 0; padding:16px 18px;">
+            <p style="color:#EFFFE3; font-size:15px; font-weight:600; margin:0 0 6px 0;">The Framework Pivot — 3 Restarts</p>
+            <p style="color:#d0dde8; font-size:14px; line-height:1.6; margin:0;">Development began with <strong>AngularJS</strong>, then moved to <strong>React</strong> — both ran into problems rendering Google Maps API data correctly. React worked slightly better but still couldn't display what was needed. The final switch to <strong>Express + EJS</strong> succeeded, but restarting from scratch three times ate deep into available time and left a lot of work unused.</p>
+          </div>
+          <div style="border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:16px 18px;">
+            <p style="color:#EFFFE3; font-size:15px; font-weight:600; margin:0 0 6px 0;">Debugging nearbySearch + Checkbox Input</p>
+            <p style="color:#d0dde8; font-size:14px; line-height:1.6; margin:0;">Getting the <code style="font-family:monospace; background:#2e3d4a; padding:1px 4px; border-radius:3px;">nearbySearch</code> call to read the selected checkbox value took real troubleshooting — had to correctly grab the checked value from a <code style="font-family:monospace; background:#2e3d4a; padding:1px 4px; border-radius:3px;">type="checkbox"</code> input and pass a valid Places API type string. Once solved, keyword filtering worked cleanly and additional waypoints with different keywords could be layered on the same map.</p>
+          </div>
+          <div style="border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:16px 18px;">
+            <p style="color:#EFFFE3; font-size:15px; font-weight:600; margin:0 0 6px 0;">Git Contribution — 11 commits, 769 lines</p>
+            <p style="color:#d0dde8; font-size:14px; line-height:1.6; margin:0;">Led the majority of frontend implementation — the EJS views, jQuery event handling, Maps/Places API integration, and the waypoint/nearby search flow. Greg Hairfield handled infrastructure, routing, and deployment to Heroku.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 4. USER FLOW DIAGRAM -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">User Flow</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" style="width:100%; min-width:520px; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="jr1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+            <marker id="jr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7dd4b0"/></marker>
+            <marker id="jr3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#88c9e8"/></marker>
+          </defs>
+
+          <!-- Step 1: Open App -->
+          <rect x="10" y="80" width="120" height="60" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <rect x="10" y="80" width="120" height="24" rx="10" fill="#7dd4b0"/>
+          <rect x="10" y="92" width="120" height="12" fill="#7dd4b0"/>
+          <text x="70" y="95" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">Open App</text>
+          <text x="70" y="116" text-anchor="middle" fill="#d0dde8" font-size="10">Map centers on</text>
+          <text x="70" y="129" text-anchor="middle" fill="#d0dde8" font-size="10">current location</text>
+
+          <!-- Step 2: Enter Route -->
+          <rect x="180" y="80" width="130" height="60" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <rect x="180" y="80" width="130" height="24" rx="10" fill="#7dd4b0"/>
+          <rect x="180" y="92" width="130" height="12" fill="#7dd4b0"/>
+          <text x="245" y="95" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">Enter Route</text>
+          <text x="245" y="116" text-anchor="middle" fill="#d0dde8" font-size="10">Start + destination</text>
+          <text x="245" y="129" text-anchor="middle" fill="#d0dde8" font-size="10">with Autocomplete</text>
+
+          <!-- Step 3: View Directions -->
+          <rect x="360" y="80" width="130" height="60" rx="10" fill="#2e3d4a" stroke="#88c9e8" stroke-width="2"/>
+          <rect x="360" y="80" width="130" height="24" rx="10" fill="#88c9e8"/>
+          <rect x="360" y="92" width="130" height="12" fill="#88c9e8"/>
+          <text x="425" y="95" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">View Directions</text>
+          <text x="425" y="116" text-anchor="middle" fill="#d0dde8" font-size="10">Route drawn on map</text>
+          <text x="425" y="129" text-anchor="middle" fill="#d0dde8" font-size="10">Step-by-step panel</text>
+
+          <!-- Step 4: Add Waypoint -->
+          <rect x="540" y="80" width="130" height="60" rx="10" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="2"/>
+          <rect x="540" y="80" width="130" height="24" rx="10" fill="#b8a0e8"/>
+          <rect x="540" y="92" width="130" height="12" fill="#b8a0e8"/>
+          <text x="605" y="95" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">Add Waypoint</text>
+          <text x="605" y="116" text-anchor="middle" fill="#d0dde8" font-size="10">Select keyword +</text>
+          <text x="605" y="129" text-anchor="middle" fill="#d0dde8" font-size="10">radius, drop marker</text>
+
+          <!-- Step 5: Browse Results -->
+          <rect x="720" y="80" width="130" height="60" rx="10" fill="#2e3d4a" stroke="#e8a87c" stroke-width="2"/>
+          <rect x="720" y="80" width="130" height="24" rx="10" fill="#e8a87c"/>
+          <rect x="720" y="92" width="130" height="12" fill="#e8a87c"/>
+          <text x="785" y="95" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">Browse Results</text>
+          <text x="785" y="116" text-anchor="middle" fill="#d0dde8" font-size="10">Click pins for name</text>
+          <text x="785" y="129" text-anchor="middle" fill="#d0dde8" font-size="10">&amp; rating info window</text>
+
+          <!-- Arrows between steps -->
+          <line x1="130" y1="110" x2="178" y2="110" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#jr1)"/>
+          <line x1="310" y1="110" x2="358" y2="110" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#jr1)"/>
+          <line x1="490" y1="110" x2="538" y2="110" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#jr1)"/>
+          <line x1="670" y1="110" x2="718" y2="110" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#jr1)"/>
+
+          <!-- Loop: add another waypoint -->
+          <path d="M785,140 Q785,200 605,200 Q425,200 425,140" fill="none" stroke="rgba(184,160,232,0.4)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#jr1)"/>
+          <text x="605" y="220" text-anchor="middle" fill="rgba(184,160,232,0.55)" font-size="10">add more waypoints with different keywords</text>
+
+          <!-- Geolocation note -->
+          <text x="70" y="58" text-anchor="middle" fill="#7dd4b0" font-size="9" font-style="italic">browser Geolocation API</text>
+          <line x1="70" y1="62" x2="70" y2="78" stroke="#7dd4b0" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#jr2)"/>
+
+          <!-- Autocomplete note -->
+          <text x="245" y="58" text-anchor="middle" fill="#7dd4b0" font-size="9" font-style="italic">Places Autocomplete</text>
+          <line x1="245" y1="62" x2="245" y2="78" stroke="#7dd4b0" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#jr2)"/>
+
+          <!-- Directions note -->
+          <text x="425" y="58" text-anchor="middle" fill="#88c9e8" font-size="9" font-style="italic">Directions API</text>
+          <line x1="425" y1="62" x2="425" y2="78" stroke="#88c9e8" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#jr3)"/>
+
+          <!-- nearbySearch note -->
+          <text x="605" y="58" text-anchor="middle" fill="#b8a0e8" font-size="9" font-style="italic">Places nearbySearch</text>
+          <line x1="605" y1="62" x2="605" y2="78" stroke="#b8a0e8" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#jr1)"/>
+
+          <!-- Place Details note -->
+          <text x="785" y="58" text-anchor="middle" fill="#e8a87c" font-size="9" font-style="italic">Places getDetails (place_id)</text>
+          <line x1="785" y1="62" x2="785" y2="78" stroke="#e8a87c" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#jr1)"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 5. API ARCHITECTURE DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">API Architecture</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg" style="width:100%; min-width:520px; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="jra" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+            <marker id="jrb" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7dd4b0"/></marker>
+            <marker id="jrc" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#88c9e8"/></marker>
+            <marker id="jrd" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#b8a0e8"/></marker>
+            <marker id="jre" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#e8a87c"/></marker>
+          </defs>
+
+          <!-- Browser / Client -->
+          <rect x="320" y="10" width="220" height="70" rx="10" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="2"/>
+          <rect x="320" y="10" width="220" height="26" rx="10" fill="#4a6275"/>
+          <rect x="320" y="24" width="220" height="12" fill="#4a6275"/>
+          <text x="430" y="27" text-anchor="middle" fill="#EFFFE3" font-size="12" font-weight="700">Browser (Client)</text>
+          <text x="430" y="52" text-anchor="middle" fill="#d0dde8" font-size="10" font-family="monospace">index.ejs · maps.js · jQuery</text>
+          <text x="430" y="67" text-anchor="middle" fill="#d0dde8" font-size="10" font-family="monospace">Bootstrap 5 · style.css</text>
+
+          <!-- Express Server -->
+          <rect x="320" y="140" width="220" height="60" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <rect x="320" y="140" width="220" height="24" rx="10" fill="#7dd4b0"/>
+          <rect x="320" y="152" width="220" height="12" fill="#7dd4b0"/>
+          <text x="430" y="157" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">Express Server (Node.js)</text>
+          <text x="430" y="180" text-anchor="middle" fill="#d0dde8" font-size="10" font-family="monospace">app.js · routes/index.js</text>
+          <text x="430" y="194" text-anchor="middle" fill="#d0dde8" font-size="10" font-family="monospace">injects GOOGLE_API key via env</text>
+
+          <!-- Arrow: browser ↔ server -->
+          <line x1="430" y1="80" x2="430" y2="138" stroke="#7dd4b0" stroke-width="1.5" marker-end="url(#jrb)"/>
+          <text x="450" y="114" fill="#7dd4b0" font-size="9">GET /  →  res.render('index')</text>
+
+          <!-- Google Maps API box -->
+          <rect x="10" y="220" width="175" height="70" rx="10" fill="#2e3d4a" stroke="#88c9e8" stroke-width="2"/>
+          <rect x="10" y="220" width="175" height="24" rx="10" fill="#88c9e8"/>
+          <rect x="10" y="232" width="175" height="12" fill="#88c9e8"/>
+          <text x="97" y="237" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">Maps + Directions API</text>
+          <text x="97" y="260" text-anchor="middle" fill="#d0dde8" font-size="10">Renders map tiles</text>
+          <text x="97" y="274" text-anchor="middle" fill="#d0dde8" font-size="10">Routes A → B, directions panel</text>
+
+          <!-- Google Places API box -->
+          <rect x="220" y="220" width="175" height="70" rx="10" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="2"/>
+          <rect x="220" y="220" width="175" height="24" rx="10" fill="#b8a0e8"/>
+          <rect x="220" y="232" width="175" height="12" fill="#b8a0e8"/>
+          <text x="307" y="237" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">Places API</text>
+          <text x="307" y="260" text-anchor="middle" fill="#d0dde8" font-size="10">Autocomplete · nearbySearch</text>
+          <text x="307" y="274" text-anchor="middle" fill="#d0dde8" font-size="10">getDetails via place_id</text>
+
+          <!-- Geolocation box -->
+          <rect x="430" y="220" width="175" height="70" rx="10" fill="#2e3d4a" stroke="#e8a87c" stroke-width="2"/>
+          <rect x="430" y="220" width="175" height="24" rx="10" fill="#e8a87c"/>
+          <rect x="430" y="232" width="175" height="12" fill="#e8a87c"/>
+          <text x="517" y="237" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">Browser Geolocation</text>
+          <text x="517" y="260" text-anchor="middle" fill="#d0dde8" font-size="10">navigator.geolocation</text>
+          <text x="517" y="274" text-anchor="middle" fill="#d0dde8" font-size="10">Centers map on user</text>
+
+          <!-- Heroku box -->
+          <rect x="640" y="220" width="175" height="70" rx="10" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="2"/>
+          <rect x="640" y="220" width="175" height="24" rx="10" fill="#4a6275"/>
+          <rect x="640" y="232" width="175" height="12" fill="#4a6275"/>
+          <text x="727" y="237" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="700">Heroku</text>
+          <text x="727" y="260" text-anchor="middle" fill="#d0dde8" font-size="10">Hosts Node/Express server</text>
+          <text x="727" y="274" text-anchor="middle" fill="#d0dde8" font-size="10">Env var: GOOGLE_API key</text>
+
+          <!-- Arrows from client to APIs -->
+          <line x1="360" y1="80" x2="97" y2="218" stroke="#88c9e8" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#jrc)"/>
+          <line x1="390" y1="80" x2="307" y2="218" stroke="#b8a0e8" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#jrd)"/>
+          <line x1="500" y1="80" x2="517" y2="218" stroke="#e8a87c" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#jre)"/>
+          <!-- Arrow server to Heroku -->
+          <line x1="540" y1="170" x2="638" y2="218" stroke="#CBCBCB" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#jra)"/>
+
+          <!-- Labels on dashed arrows -->
+          <text x="230" y="172" fill="#88c9e8" font-size="9" text-anchor="middle">maps.js loads via script tag</text>
+          <text x="270" y="215" fill="#b8a0e8" font-size="9" text-anchor="middle">Places library</text>
+          <text x="562" y="175" fill="#e8a87c" font-size="9" text-anchor="middle">on page load</text>
+          <text x="620" y="204" fill="#CBCBCB" font-size="9" text-anchor="middle">deployed on</text>
+        </svg>
+      </div>
+    </div>
+
+
+    </div><!-- padding div -->
+
+    <script>
+    function jrShow(name, btn) {
+      ['search','results','saved','saved-filter'].forEach(function(s) {
+        document.getElementById('jrs-' + s).style.display = 'none';
+        var d = document.getElementById('jrd-' + s);
+        if (d) d.style.display = 'none';
+      });
+      document.getElementById('jrs-' + name).style.display = 'flex';
+      var d = document.getElementById('jrd-' + name);
+      if (d) d.style.display = 'block';
+      document.querySelectorAll('.jr-tab').forEach(function(t){ t.classList.remove('jr-active'); });
+      btn.classList.add('jr-active');
+    }
+    function jrToggleSave(card) {
+      var btn = card.querySelector('.jr-savebtn');
+      var dot = card.querySelector('.jr-dot');
+      if (btn.textContent.includes('save!')) {
+        btn.textContent = 'saved ✓';
+        dot.classList.remove('or'); dot.classList.add('gr');
+      } else {
+        btn.textContent = 'save! 🔖';
+        dot.classList.remove('gr'); dot.classList.add('or');
+      }
+    }
+    document.querySelectorAll('.jr-chip').forEach(function(c){ c.addEventListener('click', function(){ c.classList.toggle('jr-on'); }); });
+    document.querySelectorAll('.jr-tag').forEach(function(t){ t.addEventListener('click', function(){ t.classList.toggle('jr-on'); }); });
+    </script>
+
+  </div>
+
 </div>
+</div><!-- end background-block -->
+
 </body>
+
+<!-- ── JAVASCRIPT ──────────────────────────────────
+  Both pages use a slideshow. Use the correct one for each page:
+
+  ── index.html (photo slideshow) ──────────────────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("aboutIMG");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+
+  ── index-projects.html (project slideshow) ───────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("projects");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+-->
+<script>
+  // Uncomment and use the correct slideshow script for your page (see comments above).
+</script>
+
 </html>

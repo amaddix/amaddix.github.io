@@ -1,79 +1,700 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--
-  <title>Ashley Maddix</title>
 
-  <h1 style="font-size:50px; position:relative; top:40px; color:#89D5D2; text-align:center;"> Hey! I'm Ashley Maddix</h1>
--->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sekuya&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <title>ASHLEY MADDIX</title>
+
   <style>
-    #anim{max-width:700px; margin:0 auto;}
-    a:hover i{transform:scale(1.5); color:#35B5AC;}
-    a:hover button{transform:scale(1.3);}
-    @media only screen and (max-width:640px){
-      #links{
-      display:grid;
-      position:fixed;
-      padding-left:5%;
-      padding-top:10%;
-      text-align:left;
-      grid-gap:3rem;
-      grid-template-columns:repeat(1, 1fr);
-      grid-template-rows:repeat(2, 50px);
-      }
+
+    /* ── RESET & BASE ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body, p {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      padding: 0;
     }
 
-    </style>
-  <a href="index.html">
-    <div id="anim"></div>
-  </a>
-  <script src="lottie.js"></script>
-  <script>
-        var animation = bodymovin.loadAnimation({
-        container: document.getElementById('anim'),
-        renderer:'svg',
-        loop:true,
-        autoplay:true,
-        path:'AshleyHeader1.json'
-        })
-    </script>
+    body {
+      width: 100%;
+      overflow-x: hidden;
+      background-color: #EFFFE3;
+    }
 
-  <script src="https://kit.fontawesome.com/d224905442.js" crossorigin="anonymous"></script>
+    h1, button {
+      font-family: "Sekuya", system-ui;
+      font-weight: 400;
+      font-style: normal;
+    }
 
-  <title>SmallPrograms-WebDev</title>
+    /* ── HOVER ANIMATIONS ─────────────────────────── */
+    #anim { max-width: 700px; margin: 0 auto; }
+    a:hover i                    { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    a:hover span.fa-regular      { transform: scale(1.5);  color: #CBCBCB; transition: 0.3s; }
+    a:hover button               { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    button:hover                 { transform: scale(1.3);  color: #CBCBCB; background-color: #6D8196; cursor: pointer; transition: 0.3s; }
 
+    .fa-regular {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 400 !important;
+      display: inline-block;
+    }
+
+    /* ── SITE TITLE ───────────────────────────────── */
+      .site-title {
+      font-size: 80px;
+      padding: 40px 10%;
+      color: #6D8196;
+      text-align: center;
+      margin: 0;
+    }
+
+    /* ── NAV TAB ──────────────────────────────────── */
+    .project-page-container {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0;
+    }
+    .project-page {
+      display: block;
+      width: 400px;
+      font-size: 20px;
+      border-radius: 40px 40px 0 0;
+      color: #EFFFE3;
+      background-color: #6D8196;
+      text-align: center;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    /* ── BACKGROUND BLOCK ─────────────────────────── */
+    .background-block {
+      background-color: #6D8196;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ── HERO TAGLINE ─────────────────────────────── */
+    .hero-tagline {
+      font-size: 53px;
+      color: #EFFFE3;
+      text-align: center;
+      padding: 48px 6% 12px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .hero-sub {
+      color: rgba(239,255,227,0.65);
+      font-size: 20px;
+      font-family: "Raleway", sans-serif;
+      text-align: center;
+      padding: 0 6% 40px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SOCIAL ICONS ROW ─────────────────────────── */
+    .social-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      padding-bottom: 48px;
+    }
+    .social-row a { text-decoration: none; }
+    .social-label {
+      display: block;
+      font-size: 13px;
+      color: #CBCBCB;
+      font-family: "Raleway", sans-serif;
+      margin-top: 6px;
+      letter-spacing: 0.06em;
+    }
+    .social-item { text-align: center; }
+
+    /* ── SKILLS GRID ──────────────────────────────── */
+    .skills-section { padding: 0 4% 48px; }
+    .skills-section-title {
+      font-size: 13px;
+      color: rgba(239,255,227,0.5);
+      letter-spacing: 0.18em;
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      margin: 0 0 28px;
+      text-transform: uppercase;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .skill-card {
+      background: rgba(46,61,74,0.55);
+      border: 1px solid rgba(203,203,203,0.18);
+      border-radius: 14px;
+      padding: 24px 20px 20px;
+      text-align: left;
+    }
+    .skill-card-title {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.5);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+    .skill-card-icon {
+      font-size: 22px;
+      color: #7dd4b0;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-tag {
+      background: rgba(109,129,150,0.4);
+      color: #EFFFE3;
+      border-radius: 20px;
+      padding: 5px 13px;
+      font-size: 13px;
+      font-family: "Raleway", sans-serif;
+      border: 1px solid rgba(203,203,203,0.2);
+      white-space: nowrap;
+    }
+
+    /* ── DIVIDER ──────────────────────────────────── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(203,203,203,0.2);
+      margin: 0 4% 48px;
+    }
+
+    /* ── ABOUT SECTION ────────────────────────────── */
+    .about-section {
+      padding: 0 4% 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Photo slideshow column */
+    .photo-column {
+      float: left;
+      width: 440px;
+      margin-right: 40px;
+      margin-bottom: 20px;
+    }
+    .slideshow-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Arrow buttons — shared by both pages */
+    .arrow-buttons {
+      background: transparent;
+      border: none;
+      color: #EFFFE3;
+      font-size: 36px;
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .arrow-buttons:hover { transform: scale(1.2); color: #CBCBCB; }
+
+    .aboutIMG { display: none; width: 100%; }
+    .aboutIMG img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+    }
+
+    /* Bio + traits column */
+    .bio-column { color: #EFFFE3; }
+    .about-section-title {
+      font-size: 36px;
+      color: #EFFFE3;
+      margin: 0 0 24px;
+    }
+    .bio-text {
+      font-size: 20px;
+      line-height: 1.8;
+      color: rgba(239,255,227,0.88);
+      margin: 0 0 32px;
+    }
+
+    /* Personality trait pills */
+    .traits-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.45);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+    .traits-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .trait-pill {
+      background: rgba(125,212,176,0.15);
+      border: 1px solid rgba(125,212,176,0.4);
+      color: #7dd4b0;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 14px;
+      font-family: "Raleway", sans-serif;
+    }
+
+    /* ── PROJECTS PAGE SPECIFIC ───────────────────── */
+    .title              { display: flex; flex-wrap: wrap; flex-direction: column; }
+    .slideshow-arrows   { display: flex; justify-content: space-around; }
+    .projects           { flex: 1; }
+    .detail2-container  { display: flex; justify-content: space-evenly; flex-wrap: wrap; flex-direction: row; }
+    .detail2            { flex: 1; }
+    .section-title      { font-size: 60px; }
+
+    /* ── RESPONSIVE BREAKPOINTS ───────────────────── */
+    @media (max-width: 768px) {
+      .site-title             { font-size: 52px; padding: 32px 5% 16px; }
+      .hero-tagline           { font-size: 30px; }
+      .section-title          { font-size: 42px; }
+      .project-page           { width: 50%; font-size: clamp(10px, 3.5vw, 20px); }
+      .project-page-container { justify-content: flex-end; }
+      .project-page h1        { font-size: clamp(12px, 4vw, 24px); margin: 0; padding: 6px 0; }
+      a.project-page          { border-radius: 14px 14px 0 0 !important; padding: 10px !important; }
+      .skills-grid            { grid-template-columns: repeat(2, 1fr); }
+      .about-section          { flex-direction: column; }
+      .photo-column           { max-width: 100%; }
+      .detail2-container      { flex-direction: column; }
+      .detail2                { min-width: 0; width: 100%; }
+      pre                     { font-size: 11px !important; }
+    }
+
+    @media (max-width: 480px) {
+      .site-title    { font-size: 36px; padding: 24px 4% 12px; }
+      .hero-tagline  { font-size: 24px; }
+      .hero-sub      { font-size: 15px; }
+      .section-title { font-size: 28px; }
+      .skills-grid   { grid-template-columns: 1fr; }
+      .skill-tag     { font-size: 12px; }
+      .bio-text      { font-size: 16px; }
+      .aboutIMG img  { height: 240px; }
+      .social-row    { gap: 20px; }
+      /* NOTE: index.html keeps .project-page at 50% on mobile (no override here).
+         If using index-projects.html layout, uncomment the line below instead: */
+      /* .project-page  { width: 100%; font-size: 12px; } */
+      .projects      { padding: 0 4px; }
+      .projects span[style] { font-size: 12px !important; padding: 4px 10px !important; }
+      pre            { font-size: 10px !important; white-space: pre; overflow-x: auto; }
+      svg            { min-width: 480px; }
+      .projects h1   { font-size: 16px !important; }
+      .projects p    { font-size: 16px !important; }
+      .arrow-buttons { font-size: 36px !important; }
+    }
+
+  </style>
 </head>
 
+<body style="background-color:#EFFFE3; margin:0;">
 
-<body style="background-color:#89D5D2;">
-<div class="links" style="display:grid; position:fixed; padding-left:5%; padding-top:10%; text-align:left; grid-gap:3rem; grid-template-columns:repeat(1, 2fr); grid-template-rows:repeat(2, 60px);">
-  <a href="https://github.com/camilionaire/AI_GroupProj_TSP" style="text-decoration:none" >
-    <i class="fa-brands fa-github fa-3x" style="position:center; color:#008080;"></i>
+<!-- ── SITE TITLE ──────────────────────────────── -->
+<div>
+  <h1 class="site-title" style="color:#6D8196; text-align:center;">ASHLEY MADDIX</h1>
+</div>
+
+<!-- ── NAV TAB ─────────────────────────────────── -->
+<!--
+  For index.html    → link to index-projects.html, label = PROJECTS
+  For index-projects.html → link to index.html, label = ABOUT ME
+
+  index.html nav tab:
+  <div class="project-page-container">
+    <a href="index-projects.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>PROJECTS</h1></i>
+    </a>
+  </div>
+
+  index-projects.html nav tab:
+  <div class="project-page-container">
+    <a href="index.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>ABOUT ME</h1></i>
+    </a>
+  </div>
+-->
+<div class="project-page-container">
+  <a href="index-projects.html" class="project-page" style="color:#CBCBCB; background-color:#6D8196;">
+    <i><h1 style="font-size:auto; margin:0;">PROJECTS</h1></i>
   </a>
-  <a href="AI_ProjectReport.pdf" style="text-decoration:none" >
-    <i class="fa-solid fa-book fa-3x" style="position:center; color:#008080;"><div style="font-size:20px">report</div></i>
-  </a>
-  <a href="Projects.html" style="text-decoration:none" >
-    <i class="fa-solid fa-circle-arrow-left fa-3x" style="position:center; color:#008080;"></i>
+  <a href="index.html" class="project-page" style="color:#EFFFE3; background-color:#8fa3b5;">
+    <i><h1 style="font-size:auto; margin:0;">ABOUT ME</h1></i>
   </a>
 </div>
-<div style="border-radius:15%; position:grid; text-align:center; background-color:#BBF1F1; margin-left:17%; margin-right:2%;">
-  <br><br>
-  <h2 style="text-align:right; color:#265C5C; padding-right:15%; ">2021</h2>
-  <h1 style="text-align:center; color:#265C5C; padding-bottom:5%;">TravelingSalesman- Comparing AI algorithms</h1>
-  <h3 style="color:#265C5C; padding:5%;">
-    <b><i> Python Language - TSP optimization - AI algorithm comparison research </i></b> <br><br>
-    <b>Team Research project </b> : Myself along with, <i>Camilo Schaser-Hughes, Jason Bockover, Yufie Tao</i> <br><br><br>
 
-    This project focused on efficiently solving the Traveling Salesman problem, a task to find the shortest path between <i>n</i> locations.
-    We analyzed and compared results from 3 different algorithms to find the most optimal method.
-    We used the Genetic algorithm, Simulated Annealing, and an Ant Colony Optimization and found that they all preformed
-    well when <i>n</i> was between 5 - 26. At <i>n</i> = 42 the Genetic Algorithm and ACO performed best. However, at 48, the highest value
-    of <i>n</i> we tested, Simulated Annealing outperformed the rest.
- <br>
-  </h3>
+<!-- ── MAIN CONTENT BLOCK ──────────────────────── -->
+<div class="background-block" style="background-color:#6D8196; padding-bottom:60px;">
+
+  <div class="projects">
+    <br><br><br><br>
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:30px;">Travelling Salesman Problem — GA, Simulated Annealing &amp; ACO</h1>
+
+    <!-- SKILL TAGS -->
+    <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2%; padding-top:0%;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Python</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Ant Colony Optimization</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Genetic Algorithm</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Simulated Annealing</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">NP-Hard Optimization</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Heuristic Search</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Pheromone Modeling</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Hyperparameter Tuning</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">TSPLIB Datasets</span>
+      </div>
+    </div>
+
+
+    <div style="text-align:center; padding-top:16px;">
+      <a class="github" href="AI_ProjectReport.pdf" style="text-decoration:none;">
+        <i class="fa-solid fa-book fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+      </a>
+      <a class="github" href="https://github.com/camilionaire/AI_GroupProj_TSP" style="text-decoration:none;">
+        <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+      </a>
+    </div>
+
+    <!-- 1. OVERVIEW -->
+    <div class="detail2-container" style="align-items:flex-start;">
+      <div class="detail2" style="flex:3; min-width:280px;">
+        <p style="color:#EFFFE3; font-size:22px; padding:1%; line-height:1.7; font-weight:500;">
+          <br>
+          A group AI project comparing three optimization algorithms against the classic <b>Travelling Salesman Problem</b> — finding the shortest route visiting every city exactly once. Four TSPLIB datasets of increasing difficulty were used: 5, 26, 42, and 48 cities, representing a toy problem, France, the Dantzig 42 reduction, and the contiguous US state capitals. Each algorithm was tested on all four maps and results were compared against known optimal scores. My contribution focused on the <b>Ant Colony Optimization</b> algorithm and the project report.<br><br>
+          The three approaches — <b>Genetic Algorithm</b>, <b>Simulated Annealing</b>, and <b>Ant Colony Optimization</b> — each represent fundamentally different optimization strategies. All three solved the 5 and 26 city problems optimally. At scale (42 and 48 cities), SA proved the most consistently accurate, never exceeding 1.43% above optimal. ACO and GA both found near-optimal solutions for 42 cities (0.71% off) but diverged more on 48 cities as problem complexity grew.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. ALGORITHM CARDS -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Algorithm Breakdown</h1>
+      <div class="detail2-container" style="gap:16px; padding-top:16px; flex-wrap:wrap;">
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Genetic Algorithm — Crossover &amp; Mutation</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">A population of candidate routes evolves over generations. Each route's fitness score is its total distance — normalized so shorter paths score higher. Crossover splices two parent routes by a random index range; mutation randomly swaps segments between children. A <em>selectivity</em> variable filters weak parents before reproduction, which proved critical for stabilising fitness at scale. Optimal settings for larger maps: population 70, mutation rate 0.3, selectivity 15%. Found solutions within 10% of optimal almost immediately, but struggled to close that final gap on 42+ cities.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Simulated Annealing — Controlled Exploration</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Modelled on metallurgical annealing — a "temperature" parameter controls willingness to accept worse solutions, allowing escape from local optima. Temperature decays as <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">(total_iter − iter) / temp_mod</code>. With temp_mod=3000, SA matched optimal scores for both 5 and 26 cities and came within 1.43% and 1.08% for 42 and 48 cities respectively — the strongest scaling performance of the three algorithms. Runtime scaled reasonably: 6s → 27s → 45s → 76s across the four datasets.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #e8a87c; background:rgba(232,168,124,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Ant Colony Optimization — Pheromone Pathfinding</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Ants spawn in different cities and choose their next city based on both distance and pheromone trail strength. Short paths accumulate more pheromone, biasing future ants toward them. Key tunable variables: colony size (96), iterations (200), initial pheromone weight, and evaporation rate. ACO matched optimal on 5 and 26 cities and was only 0.71% off on 42 cities — but diverged to 3.59% on 48 cities. The main implementation challenge was tracking individual ant distances and ensuring pheromone evaporation was calibrated correctly across all path lengths.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. RESULTS TABLE + SVG ACCURACY CHART -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Results Across All Datasets</h1>
+      <div style="display:flex; flex-wrap:wrap; gap:24px; padding-top:20px; align-items:flex-start;">
+
+        <!-- Results table -->
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-weight:600; margin:0 0 10px 0; letter-spacing:0.05em;">BEST TOUR DISTANCE vs. KNOWN OPTIMAL</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <table style="width:100%; border-collapse:collapse; font-size:13px;">
+              <thead>
+              <tr style="background:#4a6275;">
+                <th style="color:#EFFFE3; padding:9px 12px; text-align:left; font-weight:600;">Dataset</th>
+                <th style="color:#EFFFE3; padding:9px 12px; text-align:center; font-weight:600;">Optimal</th>
+                <th style="color:#7dd4b0; padding:9px 12px; text-align:center; font-weight:600;">GA</th>
+                <th style="color:#88c9e8; padding:9px 12px; text-align:center; font-weight:600;">SA</th>
+                <th style="color:#e8a87c; padding:9px 12px; text-align:center; font-weight:600;">ACO</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr style="border-top:1px solid rgba(203,203,203,0.1);">
+                <td style="color:#d0dde8; padding:8px 12px;">5 cities</td>
+                <td style="color:#CBCBCB; padding:8px 12px; text-align:center;">19</td>
+                <td style="color:#7dd4b0; padding:8px 12px; text-align:center; font-weight:600;">19 ✓</td>
+                <td style="color:#88c9e8; padding:8px 12px; text-align:center; font-weight:600;">19 ✓</td>
+                <td style="color:#e8a87c; padding:8px 12px; text-align:center; font-weight:600;">19 ✓</td>
+              </tr>
+              <tr style="border-top:1px solid rgba(203,203,203,0.1); background:rgba(255,255,255,0.03);">
+                <td style="color:#d0dde8; padding:8px 12px;">26 cities</td>
+                <td style="color:#CBCBCB; padding:8px 12px; text-align:center;">937</td>
+                <td style="color:#7dd4b0; padding:8px 12px; text-align:center; font-weight:600;">937 ✓</td>
+                <td style="color:#88c9e8; padding:8px 12px; text-align:center; font-weight:600;">937 ✓</td>
+                <td style="color:#e8a87c; padding:8px 12px; text-align:center; font-weight:600;">937 ✓</td>
+              </tr>
+              <tr style="border-top:1px solid rgba(203,203,203,0.1);">
+                <td style="color:#d0dde8; padding:8px 12px;">42 cities</td>
+                <td style="color:#CBCBCB; padding:8px 12px; text-align:center;">699</td>
+                <td style="color:#7dd4b0; padding:8px 12px; text-align:center;">704 <span style="color:rgba(203,203,203,0.5); font-size:11px;">(+0.71%)</span></td>
+                <td style="color:#88c9e8; padding:8px 12px; text-align:center;">709 <span style="color:rgba(203,203,203,0.5); font-size:11px;">(+1.43%)</span></td>
+                <td style="color:#e8a87c; padding:8px 12px; text-align:center;">704 <span style="color:rgba(203,203,203,0.5); font-size:11px;">(+0.71%)</span></td>
+              </tr>
+              <tr style="border-top:1px solid rgba(203,203,203,0.1); background:rgba(255,255,255,0.03);">
+                <td style="color:#d0dde8; padding:8px 12px;">48 cities</td>
+                <td style="color:#CBCBCB; padding:8px 12px; text-align:center;">33,523</td>
+                <td style="color:#7dd4b0; padding:8px 12px; text-align:center;">35,530 <span style="color:rgba(203,203,203,0.5); font-size:11px;">(+5.99%)</span></td>
+                <td style="color:#88c9e8; padding:8px 12px; text-align:center; font-weight:600;">33,888 <span style="color:rgba(203,203,203,0.5); font-size:11px;">(+1.08%)</span></td>
+                <td style="color:#e8a87c; padding:8px 12px; text-align:center;">34,728 <span style="color:rgba(203,203,203,0.5); font-size:11px;">(+3.59%)</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Runtime table -->
+          <p style="color:#CBCBCB; font-size:13px; font-weight:600; margin:20px 0 10px 0; letter-spacing:0.05em;">SA RUNTIME BY DATASET</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <div style="flex:1; min-width:100px; background:#2e3d4a; border:1px solid rgba(136,201,232,0.4); border-radius:8px; padding:12px; text-align:center;">
+              <p style="color:#88c9e8; font-size:18px; font-weight:700; margin:0;">6.3s</p>
+              <p style="color:#d0dde8; font-size:11px; margin:4px 0 0 0;">5 cities</p>
+            </div>
+            <div style="flex:1; min-width:100px; background:#2e3d4a; border:1px solid rgba(136,201,232,0.4); border-radius:8px; padding:12px; text-align:center;">
+              <p style="color:#88c9e8; font-size:18px; font-weight:700; margin:0;">27.5s</p>
+              <p style="color:#d0dde8; font-size:11px; margin:4px 0 0 0;">26 cities</p>
+            </div>
+            <div style="flex:1; min-width:100px; background:#2e3d4a; border:1px solid rgba(136,201,232,0.4); border-radius:8px; padding:12px; text-align:center;">
+              <p style="color:#88c9e8; font-size:18px; font-weight:700; margin:0;">44.8s</p>
+              <p style="color:#d0dde8; font-size:11px; margin:4px 0 0 0;">42 cities</p>
+            </div>
+            <div style="flex:1; min-width:100px; background:#2e3d4a; border:1px solid rgba(136,201,232,0.4); border-radius:8px; padding:12px; text-align:center;">
+              <p style="color:#88c9e8; font-size:18px; font-weight:700; margin:0;">75.8s</p>
+              <p style="color:#d0dde8; font-size:11px; margin:4px 0 0 0;">48 cities</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- % above optimal bar chart -->
+        <div style="flex:1; min-width:260px;">
+          <p style="color:#CBCBCB; font-size:13px; font-weight:600; margin:0 0 14px 0; letter-spacing:0.05em;">% ABOVE OPTIMAL — 42 &amp; 48 CITIES</p>
+
+          <!-- 42 cities -->
+          <p style="color:#d0dde8; font-size:13px; margin:0 0 8px 0; font-weight:600;">42 cities</p>
+          <div style="margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:3px;">
+              <span style="color:#7dd4b0; font-size:12px;">GA</span><span style="color:#7dd4b0; font-size:12px;">+0.71%</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.1); border-radius:4px; height:10px;">
+              <div style="background:#7dd4b0; width:10%; height:100%; border-radius:4px;"></div>
+            </div>
+          </div>
+          <div style="margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:3px;">
+              <span style="color:#88c9e8; font-size:12px;">SA</span><span style="color:#88c9e8; font-size:12px;">+1.43%</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.1); border-radius:4px; height:10px;">
+              <div style="background:#88c9e8; width:20%; height:100%; border-radius:4px;"></div>
+            </div>
+          </div>
+          <div style="margin-bottom:20px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:3px;">
+              <span style="color:#e8a87c; font-size:12px;">ACO</span><span style="color:#e8a87c; font-size:12px;">+0.71%</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.1); border-radius:4px; height:10px;">
+              <div style="background:#e8a87c; width:10%; height:100%; border-radius:4px;"></div>
+            </div>
+          </div>
+
+          <!-- 48 cities -->
+          <p style="color:#d0dde8; font-size:13px; margin:0 0 8px 0; font-weight:600;">48 cities</p>
+          <div style="margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:3px;">
+              <span style="color:#7dd4b0; font-size:12px;">GA</span><span style="color:#7dd4b0; font-size:12px;">+5.99%</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.1); border-radius:4px; height:10px;">
+              <div style="background:#7dd4b0; width:60%; height:100%; border-radius:4px;"></div>
+            </div>
+          </div>
+          <div style="margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:3px;">
+              <span style="color:#88c9e8; font-size:12px; font-weight:600;">SA  ← best at scale</span><span style="color:#88c9e8; font-size:12px; font-weight:600;">+1.08%</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.1); border-radius:4px; height:10px;">
+              <div style="background:#88c9e8; width:11%; height:100%; border-radius:4px;"></div>
+            </div>
+          </div>
+          <div style="margin-bottom:20px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:3px;">
+              <span style="color:#e8a87c; font-size:12px;">ACO</span><span style="color:#e8a87c; font-size:12px;">+3.59%</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.1); border-radius:4px; height:10px;">
+              <div style="background:#e8a87c; width:36%; height:100%; border-radius:4px;"></div>
+            </div>
+          </div>
+
+          <p style="color:rgba(203,203,203,0.4); font-size:11px; margin:0; line-height:1.6;">Bars show % deviation from known optimal. All three algorithms matched optimal exactly on 5 and 26 city datasets.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 4. HOW ACO WORKS SVG -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">How Ant Colony Optimization Works</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 340" xmlns="http://www.w3.org/2000/svg" style="width:100%; min-width:480px; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="aco1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+            <marker id="aco2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#e8a87c"/></marker>
+          </defs>
+
+          <!-- Step boxes -->
+          <!-- Step 1 -->
+          <rect x="20" y="60" width="140" height="80" rx="10" fill="#2e3d4a" stroke="#e8a87c" stroke-width="2"/>
+          <rect x="20" y="60" width="140" height="26" rx="10" fill="#e8a87c"/>
+          <rect x="20" y="74" width="140" height="12" fill="#e8a87c"/>
+          <text x="90" y="75" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">① Spawn Ants</text>
+          <text x="90" y="100" text-anchor="middle" fill="#d0dde8" font-size="10">Colony of 96 ants</text>
+          <text x="90" y="114" text-anchor="middle" fill="#d0dde8" font-size="10">each starts in a</text>
+          <text x="90" y="128" text-anchor="middle" fill="#d0dde8" font-size="10">different city</text>
+
+          <!-- Step 2 -->
+          <rect x="200" y="60" width="140" height="80" rx="10" fill="#2e3d4a" stroke="#e8a87c" stroke-width="2"/>
+          <rect x="200" y="60" width="140" height="26" rx="10" fill="#e8a87c"/>
+          <rect x="200" y="74" width="140" height="12" fill="#e8a87c"/>
+          <text x="270" y="75" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">② Choose Next City</text>
+          <text x="270" y="100" text-anchor="middle" fill="#d0dde8" font-size="10">Probability based on</text>
+          <text x="270" y="114" text-anchor="middle" fill="#d0dde8" font-size="10">distance + pheromone</text>
+          <text x="270" y="128" text-anchor="middle" fill="#d0dde8" font-size="10">trail strength</text>
+
+          <!-- Step 3 -->
+          <rect x="380" y="60" width="140" height="80" rx="10" fill="#2e3d4a" stroke="#e8a87c" stroke-width="2"/>
+          <rect x="380" y="60" width="140" height="26" rx="10" fill="#e8a87c"/>
+          <rect x="380" y="74" width="140" height="12" fill="#e8a87c"/>
+          <text x="450" y="75" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">③ Complete Tour</text>
+          <text x="450" y="100" text-anchor="middle" fill="#d0dde8" font-size="10">Each ant visits all</text>
+          <text x="450" y="114" text-anchor="middle" fill="#d0dde8" font-size="10">cities once, returns</text>
+          <text x="450" y="128" text-anchor="middle" fill="#d0dde8" font-size="10">to start city</text>
+
+          <!-- Step 4 -->
+          <rect x="560" y="60" width="140" height="80" rx="10" fill="#2e3d4a" stroke="#e8a87c" stroke-width="2"/>
+          <rect x="560" y="60" width="140" height="26" rx="10" fill="#e8a87c"/>
+          <rect x="560" y="74" width="140" height="12" fill="#e8a87c"/>
+          <text x="630" y="75" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">④ Update Pheromones</text>
+          <text x="630" y="100" text-anchor="middle" fill="#d0dde8" font-size="10">Short paths gain more</text>
+          <text x="630" y="114" text-anchor="middle" fill="#d0dde8" font-size="10">pheromone; all paths</text>
+          <text x="630" y="128" text-anchor="middle" fill="#d0dde8" font-size="10">evaporate over time</text>
+
+          <!-- Step 5 -->
+          <rect x="700" y="60" width="140" height="80" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <rect x="700" y="60" width="140" height="26" rx="10" fill="#7dd4b0"/>
+          <rect x="700" y="74" width="140" height="12" fill="#7dd4b0"/>
+          <text x="770" y="75" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">⑤ Repeat / Output</text>
+          <text x="770" y="100" text-anchor="middle" fill="#d0dde8" font-size="10">200 iterations total</text>
+          <text x="770" y="114" text-anchor="middle" fill="#d0dde8" font-size="10">Record shortest tour</text>
+          <text x="770" y="128" text-anchor="middle" fill="#d0dde8" font-size="10">found across all ants</text>
+
+          <!-- arrows between steps -->
+          <line x1="160" y1="100" x2="198" y2="100" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#aco1)"/>
+          <line x1="340" y1="100" x2="378" y2="100" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#aco1)"/>
+          <line x1="520" y1="100" x2="558" y2="100" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#aco1)"/>
+          <line x1="700" y1="100" x2="702" y2="100" stroke="#CBCBCB" stroke-width="1.5"/>
+
+          <!-- loop back arrow -->
+          <path d="M770,140 Q770,175 450,175 Q130,175 90,140" fill="none" stroke="rgba(203,203,203,0.35)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#aco1)"/>
+          <text x="430" y="192" text-anchor="middle" fill="rgba(203,203,203,0.45)" font-size="10">repeat for 200 iterations — pheromone trails reinforce shortest paths over time</text>
+
+          <!-- Pheromone concept diagram -->
+          <text x="430" y="230" text-anchor="middle" fill="#CBCBCB" font-size="13" font-weight="600">Pheromone Reinforcement — Short Paths Grow Stronger</text>
+
+          <!-- city nodes -->
+          <circle cx="120" cy="295" r="14" fill="#2e3d4a" stroke="#e8a87c" stroke-width="2"/>
+          <text x="120" y="299" text-anchor="middle" fill="#e8a87c" font-size="10" font-weight="600">A</text>
+          <circle cx="280" cy="270" r="14" fill="#2e3d4a" stroke="#e8a87c" stroke-width="2"/>
+          <text x="280" y="274" text-anchor="middle" fill="#e8a87c" font-size="10" font-weight="600">B</text>
+          <circle cx="430" cy="300" r="14" fill="#2e3d4a" stroke="#e8a87c" stroke-width="2"/>
+          <text x="430" y="304" text-anchor="middle" fill="#e8a87c" font-size="10" font-weight="600">C</text>
+          <circle cx="580" cy="268" r="14" fill="#2e3d4a" stroke="#e8a87c" stroke-width="2"/>
+          <text x="580" y="272" text-anchor="middle" fill="#e8a87c" font-size="10" font-weight="600">D</text>
+          <circle cx="740" cy="295" r="14" fill="#2e3d4a" stroke="#e8a87c" stroke-width="2"/>
+          <text x="740" y="299" text-anchor="middle" fill="#e8a87c" font-size="10" font-weight="600">E</text>
+
+          <!-- strong path (high pheromone) -->
+          <line x1="134" y1="290" x2="266" y2="274" stroke="#7dd4b0" stroke-width="4" opacity="0.85"/>
+          <line x1="294" y1="274" x2="416" y2="296" stroke="#7dd4b0" stroke-width="4" opacity="0.85"/>
+          <line x1="444" y1="296" x2="566" y2="272" stroke="#7dd4b0" stroke-width="4" opacity="0.85"/>
+          <line x1="594" y1="272" x2="726" y2="291" stroke="#7dd4b0" stroke-width="4" opacity="0.85"/>
+
+          <!-- weak/alt paths (low pheromone) -->
+          <line x1="134" y1="298" x2="416" y2="306" stroke="rgba(203,203,203,0.2)" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <line x1="294" y1="278" x2="566" y2="276" stroke="rgba(203,203,203,0.2)" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+          <!-- labels -->
+          <text x="200" y="260" text-anchor="middle" fill="#7dd4b0" font-size="9">high pheromone</text>
+          <text x="430" y="320" text-anchor="middle" fill="rgba(203,203,203,0.4)" font-size="9">weak alternate paths — evaporate over iterations</text>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
 </div>
+
+
+
+
+</div><!-- end background-block -->
+
 </body>
+
+<!-- ── JAVASCRIPT ──────────────────────────────────
+  Both pages use a slideshow. Use the correct one for each page:
+
+  ── index.html (photo slideshow) ──────────────────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("aboutIMG");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+
+  ── index-projects.html (project slideshow) ───────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("projects");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+-->
+<script>
+  // Uncomment and use the correct slideshow script for your page (see comments above).
+</script>
+
 </html>
+

@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sekuya&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <title>ASHLEY MADDIX</title>
+
+  <style>
+
+    /* ── RESET & BASE ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body, p {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+      overflow-x: hidden;
+      background-color: #EFFFE3;
+    }
+
+    h1, button {
+      font-family: "Sekuya", system-ui;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    /* ── HOVER ANIMATIONS ─────────────────────────── */
+    #anim { max-width: 700px; margin: 0 auto; }
+    a:hover i                    { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    a:hover span.fa-regular      { transform: scale(1.5);  color: #CBCBCB; transition: 0.3s; }
+    a:hover button               { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    button:hover                 { transform: scale(1.3);  color: #CBCBCB; background-color: #6D8196; cursor: pointer; transition: 0.3s; }
+
+    .fa-regular {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 400 !important;
+      display: inline-block;
+    }
+
+    /* ── SITE TITLE ───────────────────────────────── */
+    .site-title {
+      font-size: 80px;
+      color: #6D8196;
+      text-align: center;
+      padding: 48px 10% 20px;
+      margin: 0;
+    }
+
+    /* ── NAV TAB ──────────────────────────────────── */
+    .project-page-container {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0;
+    }
+    .project-page {
+      display: block;
+      width: 400px;
+      font-size: 20px;
+    }
+
+    /* ── MAIN CONTENT BLOCK ───────────────────────── */
+    .background-block { margin: 0; padding: 0; }
+
+    /* ── HERO TAGLINE ─────────────────────────────── */
+    .hero-tagline {
+      font-size: 53px;
+      color: #EFFFE3;
+      text-align: center;
+      padding: 48px 6% 12px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .hero-sub {
+      color: rgba(239,255,227,0.65);
+      font-size: 20px;
+      font-family: "Raleway", sans-serif;
+      text-align: center;
+      padding: 0 6% 40px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SOCIAL ICONS ROW ─────────────────────────── */
+    .social-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      padding-bottom: 48px;
+    }
+    .social-row a { text-decoration: none; }
+    .social-label {
+      display: block;
+      font-size: 13px;
+      color: #CBCBCB;
+      font-family: "Raleway", sans-serif;
+      margin-top: 6px;
+      letter-spacing: 0.06em;
+    }
+    .social-item { text-align: center; }
+
+    /* ── SKILLS GRID ──────────────────────────────── */
+    .skills-section { padding: 0 4% 48px; }
+    .skills-section-title {
+      font-size: 13px;
+      color: rgba(239,255,227,0.5);
+      letter-spacing: 0.18em;
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      margin: 0 0 28px;
+      text-transform: uppercase;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .skill-card {
+      background: rgba(46,61,74,0.55);
+      border: 1px solid rgba(203,203,203,0.18);
+      border-radius: 14px;
+      padding: 24px 20px 20px;
+      text-align: left;
+    }
+    .skill-card-title {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.5);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+    .skill-card-icon {
+      font-size: 22px;
+      color: #7dd4b0;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-tag {
+      background: rgba(109,129,150,0.4);
+      color: #EFFFE3;
+      border-radius: 20px;
+      padding: 5px 13px;
+      font-size: 13px;
+      font-family: "Raleway", sans-serif;
+      border: 1px solid rgba(203,203,203,0.2);
+      white-space: nowrap;
+    }
+
+    /* ── DIVIDER ──────────────────────────────────── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(203,203,203,0.2);
+      margin: 0 4% 48px;
+    }
+
+    /* ── ABOUT SECTION ────────────────────────────── */
+    .about-section {
+      padding: 0 4% 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Photo slideshow column */
+    .photo-column {
+      float: left;
+      width: 440px;
+      margin-right: 40px;
+      margin-bottom: 20px;
+    }
+    .slideshow-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Arrow buttons — shared by both pages */
+    .arrow-buttons {
+      background: transparent;
+      border: none;
+      color: #EFFFE3;
+      font-size: 36px;
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .arrow-buttons:hover { transform: scale(1.2); color: #CBCBCB; }
+
+    .aboutIMG { display: none; width: 100%; }
+    .aboutIMG img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+    }
+
+    /* Bio + traits column */
+    .bio-column { color: #EFFFE3; }
+    .about-section-title {
+      font-size: 36px;
+      color: #EFFFE3;
+      margin: 0 0 24px;
+    }
+    .bio-text {
+      font-size: 20px;
+      line-height: 1.8;
+      color: rgba(239,255,227,0.88);
+      margin: 0 0 32px;
+    }
+
+    /* Personality trait pills */
+    .traits-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.45);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+    .traits-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .trait-pill {
+      background: rgba(125,212,176,0.15);
+      border: 1px solid rgba(125,212,176,0.4);
+      color: #7dd4b0;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 14px;
+      font-family: "Raleway", sans-serif;
+    }
+
+    /* ── PROJECTS PAGE SPECIFIC ───────────────────── */
+    .title              { display: flex; flex-wrap: wrap; flex-direction: column; }
+    .slideshow-arrows   { display: flex; justify-content: space-around; }
+    .projects           { flex: 1; }
+    .detail2-container  { display: flex; justify-content: space-evenly; flex-wrap: wrap; flex-direction: row; }
+    .detail2            { flex: 1; }
+    .section-title      { font-size: 60px; }
+
+    /* ── RESPONSIVE BREAKPOINTS ───────────────────── */
+    @media (max-width: 768px) {
+      .site-title             { font-size: 52px; padding: 32px 5% 16px; }
+      .hero-tagline           { font-size: 30px; }
+      .section-title          { font-size: 42px; }
+      .project-page           { width: 50%; font-size: clamp(10px, 3.5vw, 20px); }
+      .project-page-container { justify-content: flex-end; }
+      .project-page h1        { font-size: clamp(12px, 4vw, 24px); margin: 0; padding: 6px 0; }
+      a.project-page          { border-radius: 14px 14px 0 0 !important; padding: 10px !important; }
+      .skills-grid            { grid-template-columns: repeat(2, 1fr); }
+      .about-section          { flex-direction: column; }
+      .photo-column           { max-width: 100%; }
+      .detail2-container      { flex-direction: column; }
+      .detail2                { min-width: 0; width: 100%; }
+      pre                     { font-size: 11px !important; }
+    }
+
+    @media (max-width: 480px) {
+      .site-title    { font-size: 36px; padding: 24px 4% 12px; }
+      .hero-tagline  { font-size: 24px; }
+      .hero-sub      { font-size: 15px; }
+      .section-title { font-size: 28px; }
+      .skills-grid   { grid-template-columns: 1fr; }
+      .skill-tag     { font-size: 12px; }
+      .bio-text      { font-size: 16px; }
+      .aboutIMG img  { height: 240px; }
+      .social-row    { gap: 20px; }
+      /* NOTE: index.html keeps .project-page at 50% on mobile (no override here).
+         If using index-projects.html layout, uncomment the line below instead: */
+      /* .project-page  { width: 100%; font-size: 12px; } */
+      .projects      { padding: 0 4px; }
+      .projects span[style] { font-size: 12px !important; padding: 4px 10px !important; }
+      pre            { font-size: 10px !important; white-space: pre; overflow-x: auto; }
+      svg            { min-width: 480px; }
+      .projects h1   { font-size: 16px !important; }
+      .projects p    { font-size: 16px !important; }
+      .arrow-buttons { font-size: 36px !important; }
+    }
+
+  </style>
+</head>
+
+<body style="background-color:#EFFFE3; margin:0;">
+
+<!-- ── SITE TITLE ──────────────────────────────── -->
+<div>
+  <h1 class="site-title" style="color:#6D8196; text-align:center;">ASHLEY MADDIX</h1>
+</div>
+
+<!-- ── NAV TAB ─────────────────────────────────── -->
+<!--
+  For index.html    → link to index-projects.html, label = PROJECTS
+  For index-projects.html → link to index.html, label = ABOUT ME
+
+  index.html nav tab:
+  <div class="project-page-container">
+    <a href="index-projects.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>PROJECTS</h1></i>
+    </a>
+  </div>
+
+  index-projects.html nav tab:
+  <div class="project-page-container">
+    <a href="index.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>ABOUT ME</h1></i>
+    </a>
+  </div>
+-->
+<div class="project-page-container">
+  <a href="index-projects.html" class="project-page"
+     style="border-radius:40px 40px 0 0; color:#CBCBCB; background-color:#6D8196;
+              text-align:center; text-decoration:none; padding:10px; ">
+    <i><h1>PROJECTS</h1> </i>
+  </a>
+  <a href="index.html" class="project-page"
+     style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+    <i><h1>ABOUT ME</h1></i>
+  </a>
+</div>
+
+<!-- ── MAIN CONTENT BLOCK ──────────────────────── -->
+<div class="background-block" style="background-color:#6D8196; padding-bottom:60px;">
+
+  <div class="projects">
+    <br><br><br><br>
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:30px;">CS Glossary — Binary Search Tree</h1>
+    <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2%; padding-top:0%;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Binary Search Tree</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">BST Deletion (3 Cases)</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">In-Order Traversal</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Recursion</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">OOP / Classes</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Dynamic Memory</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">File I/O</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Wrapper/Recursive Pattern</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Encapsulation</span>
+      </div>
+    </div>
+
+    <div style="text-align:center; padding-top:16px;">
+      <a class="github" href="https://github.com/amaddix/CS164_Prog4" style="text-decoration:none;">
+        <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+      </a>
+    </div>
+
+    <!-- 1. OVERVIEW -->
+    <div class="detail2-container" style="align-items:flex-start;">
+      <div class="detail2" style="flex:3; min-width:280px;">
+        <p style="color:#EFFFE3; font-size:22px; padding:1%; line-height:1.7; font-weight:500;">
+          <br>
+          This project is a menu-driven C++ glossary application that organizes computer science definitions in a <b>Binary Search Tree</b> — keeping terms in sorted alphabetical order at all times without any external sorting step. Each node stores a term, definition, source, and citation — all heap-allocated — and the tree is maintained purely through pointer manipulation with no standard library containers.<br><br>
+          Every public operation follows a clean <b>wrapper/recursive pattern</b>: the public method accepts user-facing arguments, then delegates to a private recursive function that traverses the tree by value comparison. The destructor uses post-order recursion to fully deallocate every node and its fields without leaks, and the tree height can be queried at any time for structural insight.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. KEY IMPLEMENTATION DETAILS -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Key Implementation Details</h1>
+      <div class="detail2-container" style="gap:16px; padding-top:16px; flex-wrap:wrap;">
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">BST Insert</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Insertion is handled recursively using a reference-to-pointer parameter (<code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">node*&amp;</code>). At each node, a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">strcmp</code> determines whether to descend left or right until a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">NULL</code> slot is reached, where the new node is allocated in place — preserving sorted order with no additional passes.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">BST Deletion — 3 Cases</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Removal handles all three structural cases: leaf nodes are deleted directly; nodes with one child are bypassed; nodes with two children find the <b>in-order successor</b> by traversing to the leftmost node of the right subtree via the <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">go_left()</code> helper, which extracts and returns that node's data before unlinking it.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #e8a87c; background:rgba(232,168,124,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Remove by Source</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;"><code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">remove_source()</code> performs a full tree traversal — not a directed BST search — to find and remove every node whose <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">ref</code> field matches the given source. This demonstrates understanding of the distinction between key-based BST lookup and full-tree scans, applying the same three-case deletion logic at each match.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #b8a0e8; background:rgba(184,160,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">In-Order Display &amp; Height</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">display()</code> function traverses left → visit → right, producing alphabetically sorted output automatically — a property of the BST structure itself, not a sorting step. The <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">height()</code> function computes tree depth recursively by comparing left and right subtree heights and returning the greater value plus one.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. CODE SAMPLES -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:10px; border-bottom:1px solid rgba(203,203,203,0.3);">Code Samples</h1>
+
+      <!-- Sample 1: text left, code right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:20px;">
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            The recursive insert uses a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">node*&amp;</code> parameter — a reference to a pointer — so that assigning <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">root = new node</code> at any depth directly wires the new node into the tree's structure. There's no need to track a parent pointer separately; the reference handles the linkage automatically.
+          </p>
+        </div>
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">tree.cpp &nbsp;—&nbsp; insert_rec()</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#88c9e8;">int</span> trees::insert_rec(<span style="color:#88c9e8;">node</span> *&amp; root, definition to_add) {
+  <span style="color:#7dd4b0;">// base case: found an empty slot — allocate here</span>
+  <span style="color:#88c9e8;">if</span> (!root) {
+    root = <span style="color:#88c9e8;">new</span> node;
+    root->term.name     = to_add.name;
+    root->term.def      = to_add.def;
+    root->term.ref      = to_add.ref;
+    root->term.citation = to_add.citation;
+    root->left = root->right = NULL;
+    <span style="color:#88c9e8;">return</span> 1;
+  }
+  <span style="color:#7dd4b0;">// go left if key is smaller, right otherwise</span>
+  <span style="color:#88c9e8;">if</span> (strcmp(to_add.name, root->term.name) &lt; 0)
+    <span style="color:#88c9e8;">return</span> insert_rec(root->left,  to_add);
+  <span style="color:#88c9e8;">else</span>
+    <span style="color:#88c9e8;">return</span> insert_rec(root->right, to_add);
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 2: code left, text right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:28px;">
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">tree.cpp &nbsp;—&nbsp; go_left() — in-order successor</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#7dd4b0;">// Find leftmost node: the in-order successor.</span>
+<span style="color:#7dd4b0;">// Copy its data out, then unlink it from the tree.</span>
+<span style="color:#88c9e8;">int</span> trees::go_left(<span style="color:#88c9e8;">node</span> *&amp; root, definition &amp; users) {
+  <span style="color:#88c9e8;">if</span> (!root) <span style="color:#88c9e8;">return</span> 1;
+
+  <span style="color:#88c9e8;">if</span> (!root->left) {
+    <span style="color:#7dd4b0;">// reached leftmost — save its data</span>
+    users.name     = root->term.name;
+    users.def      = root->term.def;
+    users.ref      = root->term.ref;
+    users.citation = root->term.citation;
+
+    <span style="color:#7dd4b0;">// bypass this node (may have a right child)</span>
+    node *temp = root;
+    root = root->right;
+    temp->right = temp->left = NULL;
+    <span style="color:#88c9e8;">delete</span> temp;
+    <span style="color:#88c9e8;">return</span> 1;
+  }
+  <span style="color:#88c9e8;">return</span> go_left(root->left, users);
+}</pre>
+          </div>
+        </div>
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            When deleting a node with two children, the BST invariant must be preserved. <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">go_left()</code> finds the in-order successor — the smallest value in the right subtree — by recursing left until <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">root-&gt;left</code> is <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">NULL</code>. It copies that node's data into a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">definition&amp;</code> out-parameter, then unlinks and deletes the node — leaving the tree's sorted structure intact.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. DATA STRUCTURE DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Data Structure — BST Memory Layout</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 480" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="bt-teal"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7dd4b0"/></marker>
+            <marker id="bt-blue"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#88c9e8"/></marker>
+            <marker id="bt-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#b8a0e8"/></marker>
+            <marker id="bt-grey"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+          </defs>
+
+          <!-- trees CLASS -->
+          <rect x="330" y="10" width="200" height="80" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <rect x="330" y="10" width="200" height="30" rx="10" fill="#7dd4b0"/>
+          <rect x="330" y="26" width="200" height="14" fill="#7dd4b0"/>
+          <text x="430" y="28" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">class trees</text>
+          <text x="345" y="56" fill="#CBCBCB" font-size="10" font-family="monospace">node* root</text>
+          <text x="345" y="73" fill="#b8a0e8" font-size="9">private: insert_rec, remove_*_rec</text>
+          <text x="345" y="84" fill="#b8a0e8" font-size="9">go_left, display, height</text>
+
+          <!-- ROOT node -->
+          <rect x="305" y="130" width="250" height="90" rx="10" fill="#2e3d4a" stroke="#88c9e8" stroke-width="2"/>
+          <rect x="305" y="130" width="250" height="28" rx="10" fill="#88c9e8"/>
+          <rect x="305" y="144" width="250" height="14" fill="#88c9e8"/>
+          <text x="430" y="147" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">node  (root — e.g. "Hash Table")</text>
+          <text x="320" y="172" fill="#CBCBCB" font-size="10" font-family="monospace">definition term  { name, def, ref, citation }</text>
+          <text x="320" y="188" fill="#7dd4b0" font-size="10" font-family="monospace">node* left   node* right</text>
+          <text x="320" y="204" fill="#b8a0e8" font-size="9">all char* fields heap-allocated on insert</text>
+
+          <!-- LEFT CHILD -->
+          <rect x="80" y="290" width="210" height="80" rx="10" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <rect x="80" y="290" width="210" height="26" rx="10" fill="#3a4f62"/>
+          <rect x="80" y="304" width="210" height="12" fill="#3a4f62"/>
+          <text x="185" y="307" text-anchor="middle" fill="#88c9e8" font-size="10" font-weight="700">node (left child — e.g. "Array")</text>
+          <text x="95"  y="330" fill="#CBCBCB" font-size="10" font-family="monospace">definition term</text>
+          <text x="95"  y="346" fill="#7dd4b0" font-size="10" font-family="monospace">node* left   node* right</text>
+          <text x="95"  y="360" fill="#CBCBCB" font-size="9">NULL        NULL  (leaf)</text>
+
+          <!-- RIGHT CHILD -->
+          <rect x="570" y="290" width="210" height="80" rx="10" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <rect x="570" y="290" width="210" height="26" rx="10" fill="#3a4f62"/>
+          <rect x="570" y="304" width="210" height="12" fill="#3a4f62"/>
+          <text x="675" y="307" text-anchor="middle" fill="#88c9e8" font-size="10" font-weight="700">node (right child — e.g. "Pointer")</text>
+          <text x="585" y="330" fill="#CBCBCB" font-size="10" font-family="monospace">definition term</text>
+          <text x="585" y="346" fill="#7dd4b0" font-size="10" font-family="monospace">node* left   node* right</text>
+          <text x="585" y="360" fill="#88c9e8" font-size="9">subtree     subtree</text>
+
+          <!-- definition STRUCT -->
+          <rect x="310" y="390" width="240" height="76" rx="10" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="2"/>
+          <rect x="310" y="390" width="240" height="28" rx="10" fill="#b8a0e8"/>
+          <rect x="310" y="404" width="240" height="14" fill="#b8a0e8"/>
+          <text x="430" y="407" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">struct definition</text>
+          <text x="325" y="432" fill="#CBCBCB" font-size="10" font-family="monospace">char* name</text>
+          <text x="325" y="447" fill="#CBCBCB" font-size="10" font-family="monospace">char* def,  *ref,  *citation</text>
+          <text x="325" y="460" fill="#b8a0e8" font-size="9">all heap-allocated; freed by remove_all()</text>
+
+          <!-- arrows: trees → root node -->
+          <line x1="430" y1="90" x2="430" y2="128" stroke="#7dd4b0" stroke-width="1.5" marker-end="url(#bt-teal)"/>
+          <text x="436" y="114" fill="#7dd4b0" font-size="10">root*</text>
+
+          <!-- root → left child -->
+          <line x1="360" y1="220" x2="230" y2="288" stroke="#88c9e8" stroke-width="1.5" marker-end="url(#bt-blue)"/>
+          <text x="270" y="260" fill="#88c9e8" font-size="10">left*</text>
+
+          <!-- root → right child -->
+          <line x1="500" y1="220" x2="630" y2="288" stroke="#88c9e8" stroke-width="1.5" marker-end="url(#bt-blue)"/>
+          <text x="575" y="260" fill="#88c9e8" font-size="10">right*</text>
+
+          <!-- root → definition embed -->
+          <line x1="430" y1="220" x2="430" y2="388" stroke="#b8a0e8" stroke-width="1.5" marker-end="url(#bt-purple)"/>
+          <text x="436" y="310" fill="#b8a0e8" font-size="10">embeds</text>
+
+          <!-- Legend -->
+          <text x="30"  y="460" fill="rgba(203,203,203,0.5)" font-size="10">──→  pointer ownership</text>
+          <text x="180" y="460" fill="rgba(203,203,203,0.5)" font-size="10">──→  BST left / right child</text>
+          <text x="360" y="460" fill="rgba(203,203,203,0.5)" font-size="10" fill="rgba(184,160,232,0.5)">──→  embedded struct</text>
+
+          <!-- BST property label -->
+          <text x="430" y="268" text-anchor="middle" fill="rgba(203,203,203,0.4)" font-size="10" font-style="italic">left subtree &lt; root &lt; right subtree  (strcmp order)</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 5. PROGRAM FLOW DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Program Flow — Menu to BST</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 540" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="bf1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+          </defs>
+
+          <!-- START -->
+          <ellipse cx="430" cy="28" rx="80" ry="20" fill="#7dd4b0"/>
+          <text x="430" y="33" text-anchor="middle" fill="#2e3d4a" font-size="13" font-weight="700">START</text>
+          <line x1="430" y1="48" x2="430" y2="70" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#bf1)"/>
+
+          <!-- init -->
+          <rect x="280" y="72" width="300" height="38" rx="8" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="430" y="88"  text-anchor="middle" fill="#EFFFE3"  font-size="12">trees tree;  definition users;</text>
+          <text x="430" y="103" text-anchor="middle" fill="#7dd4b0" font-size="10" font-family="monospace">constructor: root = NULL</text>
+          <line x1="430" y1="110" x2="430" y2="132" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#bf1)"/>
+
+          <!-- menu diamond -->
+          <polygon points="430,136 580,180 430,224 280,180" fill="#243039" stroke="#88c9e8" stroke-width="2"/>
+          <text x="430" y="176" text-anchor="middle" fill="#88c9e8" font-size="13" font-weight="600">menu()</text>
+          <text x="430" y="193" text-anchor="middle" fill="#CBCBCB" font-size="10">choose 1–8</text>
+
+          <!-- quit -->
+          <line x1="580" y1="180" x2="634" y2="180" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#bf1)"/>
+          <text x="584" y="174" fill="#CBCBCB" font-size="10">8 = Quit</text>
+          <ellipse cx="700" cy="180" rx="62" ry="22" fill="#4a6275" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="700" y="177" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">END</text>
+          <text x="700" y="191" text-anchor="middle" fill="#7dd4b0" font-size="9">~trees() post-order free</text>
+
+          <!-- down from diamond -->
+          <line x1="430" y1="224" x2="430" y2="246" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#bf1)"/>
+          <text x="436" y="240" fill="#CBCBCB" font-size="10">1–7</text>
+
+          <!-- horizontal spine -->
+          <line x1="40" y1="246" x2="820" y2="246" stroke="rgba(203,203,203,0.35)" stroke-width="1"/>
+          <line x1="40"  y1="246" x2="40"  y2="266" stroke="#CBCBCB" stroke-width="1" marker-end="url(#bf1)"/>
+          <line x1="160" y1="246" x2="160" y2="266" stroke="#CBCBCB" stroke-width="1" marker-end="url(#bf1)"/>
+          <line x1="310" y1="246" x2="310" y2="266" stroke="#CBCBCB" stroke-width="1" marker-end="url(#bf1)"/>
+          <line x1="460" y1="246" x2="460" y2="266" stroke="#CBCBCB" stroke-width="1" marker-end="url(#bf1)"/>
+          <line x1="600" y1="246" x2="600" y2="266" stroke="#CBCBCB" stroke-width="1" marker-end="url(#bf1)"/>
+          <line x1="720" y1="246" x2="720" y2="266" stroke="#CBCBCB" stroke-width="1" marker-end="url(#bf1)"/>
+          <line x1="820" y1="246" x2="820" y2="266" stroke="#CBCBCB" stroke-width="1" marker-end="url(#bf1)"/>
+
+          <!-- op boxes -->
+          <rect x="5"   y="268" width="70" height="60" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="40"  y="286" text-anchor="middle" fill="#7dd4b0"  font-size="9" font-weight="600">① load file</text>
+          <text x="40"  y="301" text-anchor="middle" fill="#d0dde8" font-size="8">read_file()</text>
+          <text x="40"  y="316" text-anchor="middle" fill="#d0dde8" font-size="8">→ insert() loop</text>
+
+          <rect x="118" y="268" width="84" height="60" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="160" y="286" text-anchor="middle" fill="#7dd4b0"  font-size="9" font-weight="600">② add term</text>
+          <text x="160" y="301" text-anchor="middle" fill="#d0dde8" font-size="8">save_users()</text>
+          <text x="160" y="316" text-anchor="middle" fill="#d0dde8" font-size="8">→ insert()</text>
+
+          <rect x="265" y="268" width="90" height="60" rx="7" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="310" y="284" text-anchor="middle" fill="#e8a87c"  font-size="9" font-weight="600">③ remove</text>
+          <text x="310" y="298" text-anchor="middle" fill="#e8a87c"  font-size="9" font-weight="600">by term</text>
+          <text x="310" y="312" text-anchor="middle" fill="#d0dde8" font-size="8">remove_term()</text>
+          <text x="310" y="326" text-anchor="middle" fill="#d0dde8" font-size="8">BST search + del</text>
+
+          <rect x="415" y="268" width="90" height="60" rx="7" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="460" y="284" text-anchor="middle" fill="#e8a87c"  font-size="9" font-weight="600">④ remove</text>
+          <text x="460" y="298" text-anchor="middle" fill="#e8a87c"  font-size="9" font-weight="600">by source</text>
+          <text x="460" y="312" text-anchor="middle" fill="#d0dde8" font-size="8">remove_source()</text>
+          <text x="460" y="326" text-anchor="middle" fill="#d0dde8" font-size="8">full scan + del</text>
+
+          <rect x="558" y="268" width="84" height="60" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="600" y="286" text-anchor="middle" fill="#88c9e8"  font-size="9" font-weight="600">⑤ retrieve</text>
+          <text x="600" y="301" text-anchor="middle" fill="#d0dde8" font-size="8">retrieve()</text>
+          <text x="600" y="316" text-anchor="middle" fill="#d0dde8" font-size="8">BST search</text>
+
+          <rect x="676" y="268" width="88" height="60" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="720" y="286" text-anchor="middle" fill="#88c9e8"  font-size="9" font-weight="600">⑥ display all</text>
+          <text x="720" y="301" text-anchor="middle" fill="#d0dde8" font-size="8">display()</text>
+          <text x="720" y="316" text-anchor="middle" fill="#d0dde8" font-size="8">in-order traversal</text>
+
+          <rect x="775" y="268" width="80" height="60" rx="7" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="1.5"/>
+          <text x="815" y="286" text-anchor="middle" fill="#b8a0e8"  font-size="9" font-weight="600">⑦ height</text>
+          <text x="815" y="301" text-anchor="middle" fill="#d0dde8" font-size="8">height()</text>
+          <text x="815" y="316" text-anchor="middle" fill="#d0dde8" font-size="8">L/R max+1</text>
+
+          <!-- funnel all down -->
+          <line x1="40"  y1="328" x2="40"  y2="372" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="160" y1="328" x2="160" y2="372" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="310" y1="328" x2="310" y2="372" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="460" y1="328" x2="460" y2="372" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="600" y1="328" x2="600" y2="372" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="720" y1="328" x2="720" y2="372" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="815" y1="328" x2="815" y2="372" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="40"  y1="372" x2="815" y2="372" stroke="#b8a0e8" stroke-width="1"/>
+          <line x1="430" y1="372" x2="430" y2="394" stroke="#b8a0e8" stroke-width="1.5" marker-end="url(#bf1)"/>
+
+          <!-- recursive helper box -->
+          <rect x="270" y="396" width="320" height="42" rx="8" fill="#243039" stroke="#b8a0e8" stroke-width="2"/>
+          <text x="430" y="414" text-anchor="middle" fill="#b8a0e8" font-size="12" font-weight="600">private recursive functions</text>
+          <text x="430" y="430" text-anchor="middle" fill="#d0dde8" font-size="10" font-family="monospace">insert_rec  •  remove_*_rec  •  go_left  •  display  •  height</text>
+          <line x1="430" y1="438" x2="430" y2="460" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#bf1)"/>
+
+          <!-- BST in memory -->
+          <rect x="175" y="462" width="510" height="52" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <text x="430" y="482" text-anchor="middle" fill="#7dd4b0" font-size="13" font-weight="700">Binary Search Tree  (node* root)</text>
+          <text x="430" y="500" text-anchor="middle" fill="#CBCBCB" font-size="10" font-family="monospace">left subtree &lt; node &lt; right subtree  •  sorted by strcmp(name)</text>
+
+          <!-- loop back arrow -->
+          <path d="M175,488 Q30,488 30,180 Q30,152 278,168" fill="none" stroke="rgba(203,203,203,0.3)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#bf1)"/>
+          <text x="10" y="340" fill="rgba(203,203,203,0.4)" font-size="10" transform="rotate(-90,10,340)">loop</text>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- end background-block -->
+
+</body>
+
+<!-- ── JAVASCRIPT ──────────────────────────────────
+  Both pages use a slideshow. Use the correct one for each page:
+
+  ── index.html (photo slideshow) ──────────────────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("aboutIMG");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+
+  ── index-projects.html (project slideshow) ───────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("projects");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+-->
+<script>
+  // Uncomment and use the correct slideshow script for your page (see comments above).
+</script>
+
+</html>
+

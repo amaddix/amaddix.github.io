@@ -3,76 +3,673 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--
-  <title>Ashley Maddix</title>
 
-  <h1 style="font-size:50px; position:relative; top:40px; color:#89D5D2; text-align:center;"> Hey! I'm Ashley Maddix</h1>
--->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sekuya&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <title>ASHLEY MADDIX</title>
+
   <style>
-    #anim{max-width:700px; margin:0 auto;}
-    a:hover i{transform:scale(1.5); color:#35B5AC;}
-    a:hover button{transform:scale(1.3);}
-    @media only screen and (max-width:640px){
-      #links{
-      display:grid;
-      position:fixed;
-      padding-left:5%;
-      padding-top:10%;
-      text-align:left;
-      grid-gap:3rem;
-      grid-template-columns:repeat(1, 1fr);
-      grid-template-rows:repeat(2, 50px);
-      }
+
+    /* ── RESET & BASE ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body, p {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      padding: 0;
     }
 
-    </style>
-  <a href="index.html">
-    <div id="anim"></div>
-  </a>
-  <script src="lottie.js"></script>
-  <script>
-        var animation = bodymovin.loadAnimation({
-        container: document.getElementById('anim'),
-        renderer:'svg',
-        loop:true,
-        autoplay:true,
-        path:'AshleyHeader1.json'
-        })
-    </script>
+    body {
+      width: 100%;
+      overflow-x: hidden;
+      background-color: #EFFFE3;
+    }
 
-  <script src="https://kit.fontawesome.com/d224905442.js" crossorigin="anonymous"></script>
+    h1, button {
+      font-family: "Sekuya", system-ui;
+      font-weight: 400;
+      font-style: normal;
+    }
 
-  <title>Person/Vehicle Recognition Research</title>
+    /* ── HOVER ANIMATIONS ─────────────────────────── */
+    #anim { max-width: 700px; margin: 0 auto; }
+    a:hover i                    { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    a:hover span.fa-regular      { transform: scale(1.5);  color: #CBCBCB; transition: 0.3s; }
+    a:hover button               { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    button:hover                 { transform: scale(1.3);  color: #CBCBCB; background-color: #6D8196; cursor: pointer; transition: 0.3s; }
 
+    .fa-regular {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 400 !important;
+      display: inline-block;
+    }
+
+    /* ── SITE TITLE ───────────────────────────────── */
+       .site-title {
+      font-size: 80px;
+      padding: 40px 10%;
+      color: #6D8196;
+      text-align: center;
+      margin: 0;
+    }
+
+    /* ── NAV TAB ──────────────────────────────────── */
+    .project-page-container {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0;
+    }
+    .project-page {
+      display: block;
+      width: 400px;
+      font-size: 20px;
+      border-radius: 40px 40px 0 0;
+      color: #EFFFE3;
+      background-color: #6D8196;
+      text-align: center;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    /* ── BACKGROUND BLOCK ─────────────────────────── */
+    .background-block {
+      background-color: #6D8196;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ── HERO TAGLINE ─────────────────────────────── */
+    .hero-tagline {
+      font-size: 53px;
+      color: #EFFFE3;
+      text-align: center;
+      padding: 48px 6% 12px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .hero-sub {
+      color: rgba(239,255,227,0.65);
+      font-size: 20px;
+      font-family: "Raleway", sans-serif;
+      text-align: center;
+      padding: 0 6% 40px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SOCIAL ICONS ROW ─────────────────────────── */
+    .social-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      padding-bottom: 48px;
+    }
+    .social-row a { text-decoration: none; }
+    .social-label {
+      display: block;
+      font-size: 13px;
+      color: #CBCBCB;
+      font-family: "Raleway", sans-serif;
+      margin-top: 6px;
+      letter-spacing: 0.06em;
+    }
+    .social-item { text-align: center; }
+
+    /* ── SKILLS GRID ──────────────────────────────── */
+    .skills-section { padding: 0 4% 48px; }
+    .skills-section-title {
+      font-size: 13px;
+      color: rgba(239,255,227,0.5);
+      letter-spacing: 0.18em;
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      margin: 0 0 28px;
+      text-transform: uppercase;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .skill-card {
+      background: rgba(46,61,74,0.55);
+      border: 1px solid rgba(203,203,203,0.18);
+      border-radius: 14px;
+      padding: 24px 20px 20px;
+      text-align: left;
+    }
+    .skill-card-title {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.5);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+    .skill-card-icon {
+      font-size: 22px;
+      color: #7dd4b0;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-tag {
+      background: rgba(109,129,150,0.4);
+      color: #EFFFE3;
+      border-radius: 20px;
+      padding: 5px 13px;
+      font-size: 13px;
+      font-family: "Raleway", sans-serif;
+      border: 1px solid rgba(203,203,203,0.2);
+      white-space: nowrap;
+    }
+
+    /* ── DIVIDER ──────────────────────────────────── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(203,203,203,0.2);
+      margin: 0 4% 48px;
+    }
+
+    /* ── ABOUT SECTION ────────────────────────────── */
+    .about-section {
+      padding: 0 4% 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Photo slideshow column */
+    .photo-column {
+      float: left;
+      width: 440px;
+      margin-right: 40px;
+      margin-bottom: 20px;
+    }
+    .slideshow-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Arrow buttons — shared by both pages */
+    .arrow-buttons {
+      background: transparent;
+      border: none;
+      color: #EFFFE3;
+      font-size: 36px;
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .arrow-buttons:hover { transform: scale(1.2); color: #CBCBCB; }
+
+    .aboutIMG { display: none; width: 100%; }
+    .aboutIMG img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+    }
+
+    /* Bio + traits column */
+    .bio-column { color: #EFFFE3; }
+    .about-section-title {
+      font-size: 36px;
+      color: #EFFFE3;
+      margin: 0 0 24px;
+    }
+    .bio-text {
+      font-size: 20px;
+      line-height: 1.8;
+      color: rgba(239,255,227,0.88);
+      margin: 0 0 32px;
+    }
+
+    /* Personality trait pills */
+    .traits-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.45);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+    .traits-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .trait-pill {
+      background: rgba(125,212,176,0.15);
+      border: 1px solid rgba(125,212,176,0.4);
+      color: #7dd4b0;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 14px;
+      font-family: "Raleway", sans-serif;
+    }
+
+    /* ── PROJECTS PAGE SPECIFIC ───────────────────── */
+    .title              { display: flex; flex-wrap: wrap; flex-direction: column; }
+    .slideshow-arrows   { display: flex; justify-content: space-around; }
+    .projects           { flex: 1; }
+    .detail2-container  { display: flex; justify-content: space-evenly; flex-wrap: wrap; flex-direction: row; }
+    .detail2            { flex: 1; }
+    .section-title      { font-size: 60px; }
+
+    /* ── RESPONSIVE BREAKPOINTS ───────────────────── */
+    @media (max-width: 768px) {
+      .site-title             { font-size: 52px; padding: 32px 5% 16px; }
+      .hero-tagline           { font-size: 30px; }
+      .section-title          { font-size: 42px; }
+      .project-page           { width: 50%; font-size: clamp(10px, 3.5vw, 20px); }
+      .project-page-container { justify-content: flex-end; }
+      .project-page h1        { font-size: clamp(12px, 4vw, 24px); margin: 0; padding: 6px 0; }
+      a.project-page          { border-radius: 14px 14px 0 0 !important; padding: 10px !important; }
+      .skills-grid            { grid-template-columns: repeat(2, 1fr); }
+      .about-section          { flex-direction: column; }
+      .photo-column           { max-width: 100%; }
+      .detail2-container      { flex-direction: column; }
+      .detail2                { min-width: 0; width: 100%; }
+      pre                     { font-size: 11px !important; }
+    }
+
+    @media (max-width: 480px) {
+      .site-title    { font-size: 36px; padding: 24px 4% 12px; }
+      .hero-tagline  { font-size: 24px; }
+      .hero-sub      { font-size: 15px; }
+      .section-title { font-size: 28px; }
+      .skills-grid   { grid-template-columns: 1fr; }
+      .skill-tag     { font-size: 12px; }
+      .bio-text      { font-size: 16px; }
+      .aboutIMG img  { height: 240px; }
+      .social-row    { gap: 20px; }
+      /* NOTE: index.html keeps .project-page at 50% on mobile (no override here).
+         If using index-projects.html layout, uncomment the line below instead: */
+      /* .project-page  { width: 100%; font-size: 12px; } */
+      .projects      { padding: 0 4px; }
+      .projects span[style] { font-size: 12px !important; padding: 4px 10px !important; }
+      pre            { font-size: 10px !important; white-space: pre; overflow-x: auto; }
+      svg            { min-width: 480px; }
+      .projects h1   { font-size: 16px !important; }
+      .projects p    { font-size: 16px !important; }
+      .arrow-buttons { font-size: 36px !important; }
+    }
+
+  </style>
 </head>
 
+<body>
 
-<body style="background-color:#89D5D2;">
-<div class="links" style="display:grid; position:fixed; padding-left:5%; padding-top:10%; text-align:left; grid-gap:3rem; grid-template-columns:repeat(1, 2fr); grid-template-rows:repeat(3, 60px);">
-  <a href="https://github.com/ForestPearson/CS445-545-ML-Project" style="text-decoration:none" >
-    <i class="fa-brands fa-github fa-3x" style="position:center; color:#008080;"></i>
-  </a>
-  <a href="CS445_545 ML Group Project Report.pdf" style="text-decoration:none" >
-    <i class="fa-solid fa-book fa-3x" style="position:center; color:#008080;"><div style="font-size:20px">report</div></i>
-  </a>
-  <a href="Projects.html" style="text-decoration:none" >
-    <i class="fa-solid fa-circle-arrow-left fa-3x" style="position:center; color:#008080;"></i>
-  </a>
+<!-- ── SITE TITLE ──────────────────────────────── -->
+<div>
+  <h1 class="site-title" style="color:#6D8196; text-align:center;">ASHLEY MADDIX</h1>
 </div>
 
-<div style="border-radius:15%; position:grid; text-align:center; background-color:#BBF1F1; margin-left:17%; padding-bottom:5%; margin-right:2%;">
-  <br><br>
-  <h2 style="text-align:right; color:#265C5C; padding-right:15%; ">2022</h2>
-  <h1 style="text-align:center; color:#265C5C; padding-bottom:5%;">CIFAR-10 image recognition algorithm comparison</h1>
-    <h3 style="color:#265C5C; padding:5%;">
-      <b><i> Python Language - Machine Learning -  Object Detection -  AI algorithm comparison research </i></b> <br><br>
-      <b>Team Research project </b> : Myself along with, <i>Forest Pearson, Ian Wasson, Eben Weisman, Jingjing Zhao</i> <br><br><br>
+<!-- ── NAV TAB ─────────────────────────────────── -->
+<!--
+  For index.html    → link to index-projects.html, label = PROJECTS
+  For index-projects.html → link to index.html, label = ABOUT ME
 
-      Our goal with this project was to compare the performance of 3 different algorithms tasked with classifying objects in images from the CIFAR-10 dataset.
-      We compared results using a multi-layered perceptron, a convolutional neural network, and K-means. Ultimately we found that the unsupervised K-means algorithm
-      preformed the poorest, which was an expected outcome, whereas the convolutional network found the best overall results. <br>
-    </h3>
+  index.html nav tab:
+  <div class="project-page-container">
+    <a href="index-projects.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>PROJECTS</h1></i>
+    </a>
   </div>
+
+  index-projects.html nav tab:
+  <div class="project-page-container">
+    <a href="index.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>ABOUT ME</h1></i>
+    </a>
+  </div>
+-->
+<div class="project-page-container">
+  <a href="index-projects.html" class="project-page" style="color:#CBCBCB; background-color:#6D8196;">
+    <i><h1 style="font-size:auto; margin:0;">PROJECTS</h1></i>
+  </a>
+  <a href="index.html" class="project-page" style="color:#EFFFE3; background-color:#8fa3b5;">
+    <i><h1 style="font-size:auto; margin:0;">ABOUT ME</h1></i>
+  </a>
 </div>
+
+<!-- ── MAIN CONTENT BLOCK ──────────────────────── -->
+<div class="background-block" style="background-color:#6D8196; padding-bottom:60px;">
+
+  <div class="projects">
+    <br><br><br><br>
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:30px;">CIFAR-10 Image Classification — MLP , CNN &amp; K-Means</h1>
+
+    <!-- SKILL TAGS -->
+    <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2%; padding-top:0%;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Python</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Machine Learning</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Neural Networks</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">CNN / Deep Learning</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Backpropagation</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">K-Means Clustering</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">TensorFlow / Keras</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">CUDA / GPU Acceleration</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Supervised vs. Unsupervised</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Hyperparameter Tuning</span>
+      </div>
+    </div>
+
+
+    <div style="text-align:center; padding-top:16px;">
+      <a class="github" href="CS445_545 ML Group Project Report.pdf" style="text-decoration:none;">
+        <i class="fa-solid fa-book fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+      </a>
+      <a class="github" href="https://github.com/ForestPearson/CS445-545-ML-Project" style="text-decoration:none;">
+        <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+      </a>
+    </div>
+
+
+
+    <!-- 1. OVERVIEW -->
+    <div class="detail2-container" style="align-items:flex-start;">
+      <div class="detail2" style="flex:3; min-width:280px;">
+        <p style="color:#EFFFE3; font-size:22px; padding:1%; line-height:1.7; font-weight:500;">
+          <br>
+          A group machine learning project comparing three algorithms on the <b>CIFAR-10 dataset</b> — 60,000 32×32 color images across 10 classes. The goal was to pit two supervised learning approaches against one unsupervised approach and measure the accuracy tradeoffs of each. My contribution covered the <b>K-Means</b> implementation and the project report.<br><br>
+          The three algorithms were a hand-built <b>Multi-Layer Perceptron</b> (MLP) using backpropagation, a <b>Convolutional Neural Network</b> built with TensorFlow/Keras and accelerated with CUDA/cuDNN, and a <b>K-Means clustering</b> algorithm operating in the high-dimensional RGB pixel space of CIFAR's 32×32 images. Results were clear: the CNN topped out around <b>70–80% accuracy</b>, the MLP peaked near <b>60%</b> with optimal hyperparameters, and K-Means reached approximately <b>23%</b> — expected for an unsupervised approach on a 10-class problem.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. ALGORITHM DETAIL CARDS -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Algorithm Breakdown</h1>
+      <div class="detail2-container" style="gap:16px; padding-top:16px; flex-wrap:wrap;">
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Multi-Layer Perceptron — Backpropagation</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Each 32×32 RGB pixel is flattened into an input vector feeding a three-layer network. Weights between input→hidden and hidden→output layers are updated via backpropagation each epoch. The baseline used 175 hidden units, learning rate 0.01, momentum 0.9 — plateauing at ~43%. Reducing momentum to 0.5 was the single best configuration, reaching ~60% accuracy. All tests showed healthy training/testing parity with no obvious overfitting. Cats and frogs (classes 3 and 6) were the hardest to classify, likely due to less distinct color profiles.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Convolutional Neural Network — TensorFlow/Keras</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The CNN used three Conv2D layers (32→64→64 filters) with MaxPooling after each, followed by a Flatten, a 64-unit Dense layer, and a 10-unit output layer — 122,570 total trainable parameters. CUDA/cuDNN reduced each epoch to ~6 seconds. The network exceeded 70% testing accuracy within just 5 epochs and eventually reached ~94% training / ~68% testing — demonstrating strong learning ability but clear overfitting at later epochs. A major improvement over the MLP with no additional hand-engineering required.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #b8a0e8; background:rgba(184,160,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">K-Means — Unsupervised Clustering</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">K=10 centroids are randomly initialized in the high-dimensional pixel space. Each image is assigned to its nearest centroid by Euclidean distance, then centroids are recalculated as the mean of their cluster — iterated until convergence or a max iteration cap. The primary challenge was adapting the algorithm from prior 2-feature experience to CIFAR's full RGB dimensionality. Final accuracy was ~23%, which while low is competitive for a fully unsupervised 10-class problem. Training time was only 10–20 minutes compared to ~12 hours for the MLP.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. RESULTS COMPARISON + HYPERPARAMETER TABLE -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Results &amp; Hyperparameter Tests</h1>
+      <div style="display:flex; flex-wrap:wrap; gap:24px; padding-top:20px; align-items:flex-start;">
+
+        <!-- Accuracy comparison bars -->
+        <div style="flex:1; min-width:260px;">
+          <p style="color:#CBCBCB; font-size:14px; font-weight:600; margin:0 0 14px 0; letter-spacing:0.05em;">PEAK TEST ACCURACY BY ALGORITHM</p>
+          <!-- CNN -->
+          <div style="margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+              <span style="color:#7dd4b0; font-size:13px; font-weight:600;">CNN (TensorFlow/Keras + CUDA)</span>
+              <span style="color:#7dd4b0; font-size:13px; font-weight:700;">~75%</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.1); border-radius:6px; height:12px; overflow:hidden;">
+              <div style="background:#7dd4b0; width:75%; height:100%; border-radius:6px;"></div>
+            </div>
+          </div>
+          <!-- MLP best -->
+          <div style="margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+              <span style="color:#88c9e8; font-size:13px; font-weight:600;">MLP — 175 units, 0.5 momentum (best)</span>
+              <span style="color:#88c9e8; font-size:13px; font-weight:700;">~60%</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.1); border-radius:6px; height:12px; overflow:hidden;">
+              <div style="background:#88c9e8; width:60%; height:100%; border-radius:6px;"></div>
+            </div>
+          </div>
+          <!-- MLP baseline -->
+          <div style="margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+              <span style="color:#88c9e8; font-size:13px;">MLP — 175 units, 0.9 momentum (baseline)</span>
+              <span style="color:#88c9e8; font-size:13px;">~43%</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.1); border-radius:6px; height:12px; overflow:hidden;">
+              <div style="background:rgba(136,201,232,0.45); width:43%; height:100%; border-radius:6px;"></div>
+            </div>
+          </div>
+          <!-- MLP 50 units -->
+          <div style="margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+              <span style="color:#88c9e8; font-size:13px;">MLP — 50 units (fastest + slightly higher)</span>
+              <span style="color:#88c9e8; font-size:13px;">~47%</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.1); border-radius:6px; height:12px; overflow:hidden;">
+              <div style="background:rgba(136,201,232,0.45); width:47%; height:100%; border-radius:6px;"></div>
+            </div>
+          </div>
+          <!-- K-Means -->
+          <div style="margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+              <span style="color:#b8a0e8; font-size:13px; font-weight:600;">K-Means (K=10, unsupervised)</span>
+              <span style="color:#b8a0e8; font-size:13px; font-weight:700;">~23%</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.1); border-radius:6px; height:12px; overflow:hidden;">
+              <div style="background:#b8a0e8; width:23%; height:100%; border-radius:6px;"></div>
+            </div>
+          </div>
+          <!-- random baseline -->
+          <div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+              <span style="color:rgba(203,203,203,0.5); font-size:12px;">Random baseline (10 classes)</span>
+              <span style="color:rgba(203,203,203,0.5); font-size:12px;">10%</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.1); border-radius:6px; height:8px; overflow:hidden;">
+              <div style="background:rgba(203,203,203,0.25); width:10%; height:100%; border-radius:6px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MLP hyperparameter table -->
+        <div style="flex:1; min-width:260px;">
+          <p style="color:#CBCBCB; font-size:14px; font-weight:600; margin:0 0 14px 0; letter-spacing:0.05em;">MLP HYPERPARAMETER TESTS</p>
+          <table style="width:100%; border-collapse:collapse; font-size:13px;">
+            <thead>
+            <tr style="border-bottom:1px solid rgba(203,203,203,0.3);">
+              <th style="color:#CBCBCB; text-align:left; padding:8px 10px; font-weight:600;">Config</th>
+              <th style="color:#CBCBCB; text-align:center; padding:8px 10px; font-weight:600;">Units</th>
+              <th style="color:#CBCBCB; text-align:center; padding:8px 10px; font-weight:600;">Momentum</th>
+              <th style="color:#CBCBCB; text-align:center; padding:8px 10px; font-weight:600;">Accuracy</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr style="border-bottom:1px solid rgba(203,203,203,0.1);">
+              <td style="color:#d0dde8; padding:7px 10px;">Baseline</td>
+              <td style="color:#d0dde8; padding:7px 10px; text-align:center;">175</td>
+              <td style="color:#d0dde8; padding:7px 10px; text-align:center;">0.9</td>
+              <td style="color:#d0dde8; padding:7px 10px; text-align:center;">~43%</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(203,203,203,0.1); background:rgba(125,212,176,0.08);">
+              <td style="color:#7dd4b0; padding:7px 10px; font-weight:600;">Best result</td>
+              <td style="color:#7dd4b0; padding:7px 10px; text-align:center;">175</td>
+              <td style="color:#7dd4b0; padding:7px 10px; text-align:center;">0.5</td>
+              <td style="color:#7dd4b0; padding:7px 10px; text-align:center; font-weight:700;">~60%</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(203,203,203,0.1);">
+              <td style="color:#d0dde8; padding:7px 10px;">Lower momentum</td>
+              <td style="color:#d0dde8; padding:7px 10px; text-align:center;">175</td>
+              <td style="color:#d0dde8; padding:7px 10px; text-align:center;">0.25</td>
+              <td style="color:#d0dde8; padding:7px 10px; text-align:center;">~57%</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(203,203,203,0.1);">
+              <td style="color:#d0dde8; padding:7px 10px;">Low momentum</td>
+              <td style="color:#d0dde8; padding:7px 10px; text-align:center;">175</td>
+              <td style="color:#d0dde8; padding:7px 10px; text-align:center;">0.1</td>
+              <td style="color:#d0dde8; padding:7px 10px; text-align:center;">~54%</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(203,203,203,0.1);">
+              <td style="color:#d0dde8; padding:7px 10px;">Fewer units</td>
+              <td style="color:#d0dde8; padding:7px 10px; text-align:center;">100</td>
+              <td style="color:#d0dde8; padding:7px 10px; text-align:center;">0.9</td>
+              <td style="color:#d0dde8; padding:7px 10px; text-align:center;">~43%</td>
+            </tr>
+            <tr>
+              <td style="color:#d0dde8; padding:7px 10px;">Fewest units</td>
+              <td style="color:#d0dde8; padding:7px 10px; text-align:center;">50</td>
+              <td style="color:#d0dde8; padding:7px 10px; text-align:center;">0.9</td>
+              <td style="color:#d0dde8; padding:7px 10px; text-align:center;">~47%</td>
+            </tr>
+            </tbody>
+          </table>
+          <p style="color:rgba(203,203,203,0.45); font-size:11px; margin:10px 0 0 0;">All tests: 30 epochs, lr=0.01, CIFAR-10 test set</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 4. CNN ARCHITECTURE + KEY FINDINGS -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">CNN Architecture &amp; Key Findings</h1>
+      <div style="display:flex; flex-wrap:wrap; gap:24px; padding-top:20px; align-items:flex-start;">
+
+        <!-- CNN layer diagram -->
+        <div style="flex:1.2; min-width:280px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; margin:0 0 10px 0; letter-spacing:0.05em;">CNN LAYER STACK — 122,570 trainable params</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <table style="width:100%; border-collapse:collapse; font-size:12px; font-family:monospace;">
+              <thead>
+              <tr style="background:#4a6275;">
+                <th style="color:#EFFFE3; padding:8px 12px; text-align:left; font-weight:600;">Layer</th>
+                <th style="color:#EFFFE3; padding:8px 12px; text-align:left; font-weight:600;">Output Shape</th>
+                <th style="color:#EFFFE3; padding:8px 12px; text-align:right; font-weight:600;">Params</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr style="border-top:1px solid rgba(203,203,203,0.1);">
+                <td style="color:#88c9e8; padding:7px 12px;">Conv2D</td>
+                <td style="color:#d0dde8; padding:7px 12px;">(None, 30, 30, 32)</td>
+                <td style="color:#d0dde8; padding:7px 12px; text-align:right;">896</td>
+              </tr>
+              <tr style="border-top:1px solid rgba(203,203,203,0.1); background:rgba(255,255,255,0.03);">
+                <td style="color:#CBCBCB; padding:7px 12px;">MaxPooling2D</td>
+                <td style="color:#d0dde8; padding:7px 12px;">(None, 15, 15, 32)</td>
+                <td style="color:#d0dde8; padding:7px 12px; text-align:right;">0</td>
+              </tr>
+              <tr style="border-top:1px solid rgba(203,203,203,0.1);">
+                <td style="color:#88c9e8; padding:7px 12px;">Conv2D</td>
+                <td style="color:#d0dde8; padding:7px 12px;">(None, 13, 13, 64)</td>
+                <td style="color:#d0dde8; padding:7px 12px; text-align:right;">18,496</td>
+              </tr>
+              <tr style="border-top:1px solid rgba(203,203,203,0.1); background:rgba(255,255,255,0.03);">
+                <td style="color:#CBCBCB; padding:7px 12px;">MaxPooling2D</td>
+                <td style="color:#d0dde8; padding:7px 12px;">(None, 6, 6, 64)</td>
+                <td style="color:#d0dde8; padding:7px 12px; text-align:right;">0</td>
+              </tr>
+              <tr style="border-top:1px solid rgba(203,203,203,0.1);">
+                <td style="color:#88c9e8; padding:7px 12px;">Conv2D</td>
+                <td style="color:#d0dde8; padding:7px 12px;">(None, 4, 4, 64)</td>
+                <td style="color:#d0dde8; padding:7px 12px; text-align:right;">36,928</td>
+              </tr>
+              <tr style="border-top:1px solid rgba(203,203,203,0.1); background:rgba(255,255,255,0.03);">
+                <td style="color:#CBCBCB; padding:7px 12px;">Flatten</td>
+                <td style="color:#d0dde8; padding:7px 12px;">(None, 1024)</td>
+                <td style="color:#d0dde8; padding:7px 12px; text-align:right;">0</td>
+              </tr>
+              <tr style="border-top:1px solid rgba(203,203,203,0.1);">
+                <td style="color:#7dd4b0; padding:7px 12px;">Dense</td>
+                <td style="color:#d0dde8; padding:7px 12px;">(None, 64)</td>
+                <td style="color:#d0dde8; padding:7px 12px; text-align:right;">65,600</td>
+              </tr>
+              <tr style="border-top:1px solid rgba(203,203,203,0.1); background:rgba(255,255,255,0.03);">
+                <td style="color:#7dd4b0; padding:7px 12px;">Dense (output)</td>
+                <td style="color:#d0dde8; padding:7px 12px;">(None, 10)</td>
+                <td style="color:#d0dde8; padding:7px 12px; text-align:right;">650</td>
+              </tr>
+              <tr style="border-top:2px solid rgba(203,203,203,0.3); background:#4a6275;">
+                <td colspan="2" style="color:#EFFFE3; padding:7px 12px; font-weight:600;">Total trainable params</td>
+                <td style="color:#7dd4b0; padding:7px 12px; text-align:right; font-weight:700;">122,570</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Key findings -->
+        <div style="flex:1; min-width:240px; display:flex; flex-direction:column; gap:14px;">
+          <div style="border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:16px 18px;">
+            <p style="color:#EFFFE3; font-size:15px; font-weight:600; margin:0 0 6px 0;">Momentum was the biggest MLP lever</p>
+            <p style="color:#d0dde8; font-size:14px; line-height:1.6; margin:0;">Varying hidden unit count (50–175) barely moved accuracy. Reducing momentum from 0.9 → 0.5 added <strong style="color:#7dd4b0;">+17 percentage points</strong>. The 50-unit model was notably faster to train with minimal accuracy cost.</p>
+          </div>
+          <div style="border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:16px 18px;">
+            <p style="color:#EFFFE3; font-size:15px; font-weight:600; margin:0 0 6px 0;">CNN hit 70%+ in 5 epochs</p>
+            <p style="color:#d0dde8; font-size:14px; line-height:1.6; margin:0;">The CNN's ability to share weights across neighboring pixels gave it a structural advantage over the fully-connected MLP. CUDA/cuDNN brought epoch time down to ~6 seconds, making iteration practical despite the 60,000-image dataset.</p>
+          </div>
+          <div style="border-left:4px solid #b8a0e8; background:rgba(184,160,232,0.1); border-radius:0 10px 10px 0; padding:16px 18px;">
+            <p style="color:#EFFFE3; font-size:15px; font-weight:600; margin:0 0 6px 0;">K-Means: dimensionality was the key challenge</p>
+            <p style="color:#d0dde8; font-size:14px; line-height:1.6; margin:0;">Adapting K-Means from 2-feature datasets to 3,072-dimensional CIFAR images (32×32×3) required careful matrix handling. Despite the unsupervised ceiling, ~23% on 10 classes is more than double the random baseline of 10%.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- end background-block -->
+
 </body>
+
+<!-- ── JAVASCRIPT ──────────────────────────────────
+  Both pages use a slideshow. Use the correct one for each page:
+
+  ── index.html (photo slideshow) ──────────────────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("aboutIMG");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+
+  ── index-projects.html (project slideshow) ───────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("projects");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+-->
+<script>
+  // Uncomment and use the correct slideshow script for your page (see comments above).
+</script>
+
 </html>
+

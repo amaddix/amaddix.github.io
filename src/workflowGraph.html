@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sekuya&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <title>ASHLEY MADDIX</title>
+
+  <style>
+
+    /* ── RESET & BASE ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body, p {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+      overflow-x: hidden;
+      background-color: #EFFFE3;
+    }
+
+    h1, button {
+      font-family: "Sekuya", system-ui;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    /* ── HOVER ANIMATIONS ─────────────────────────── */
+    #anim { max-width: 700px; margin: 0 auto; }
+    a:hover i                    { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    a:hover span.fa-regular      { transform: scale(1.5);  color: #CBCBCB; transition: 0.3s; }
+    a:hover button               { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    button:hover                 { transform: scale(1.3);  color: #CBCBCB; background-color: #6D8196; cursor: pointer; transition: 0.3s; }
+
+    .fa-regular {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 400 !important;
+      display: inline-block;
+    }
+
+    /* ── SITE TITLE ───────────────────────────────── */
+    .site-title {
+      font-size: 80px;
+      color: #6D8196;
+      text-align: center;
+      padding: 48px 10% 20px;
+      margin: 0;
+    }
+
+    /* ── NAV TAB ──────────────────────────────────── */
+    .project-page-container {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0;
+    }
+    .project-page {
+      display: block;
+      width: 400px;
+      font-size: 20px;
+    }
+
+    /* ── MAIN CONTENT BLOCK ───────────────────────── */
+    .background-block { margin: 0; padding: 0; }
+
+    /* ── HERO TAGLINE ─────────────────────────────── */
+    .hero-tagline {
+      font-size: 53px;
+      color: #EFFFE3;
+      text-align: center;
+      padding: 48px 6% 12px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .hero-sub {
+      color: rgba(239,255,227,0.65);
+      font-size: 20px;
+      font-family: "Raleway", sans-serif;
+      text-align: center;
+      padding: 0 6% 40px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SOCIAL ICONS ROW ─────────────────────────── */
+    .social-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      padding-bottom: 48px;
+    }
+    .social-row a { text-decoration: none; }
+    .social-label {
+      display: block;
+      font-size: 13px;
+      color: #CBCBCB;
+      font-family: "Raleway", sans-serif;
+      margin-top: 6px;
+      letter-spacing: 0.06em;
+    }
+    .social-item { text-align: center; }
+
+    /* ── SKILLS GRID ──────────────────────────────── */
+    .skills-section { padding: 0 4% 48px; }
+    .skills-section-title {
+      font-size: 13px;
+      color: rgba(239,255,227,0.5);
+      letter-spacing: 0.18em;
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      margin: 0 0 28px;
+      text-transform: uppercase;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .skill-card {
+      background: rgba(46,61,74,0.55);
+      border: 1px solid rgba(203,203,203,0.18);
+      border-radius: 14px;
+      padding: 24px 20px 20px;
+      text-align: left;
+    }
+    .skill-card-title {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.5);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+    .skill-card-icon {
+      font-size: 22px;
+      color: #7dd4b0;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-tag {
+      background: rgba(109,129,150,0.4);
+      color: #EFFFE3;
+      border-radius: 20px;
+      padding: 5px 13px;
+      font-size: 13px;
+      font-family: "Raleway", sans-serif;
+      border: 1px solid rgba(203,203,203,0.2);
+      white-space: nowrap;
+    }
+
+    /* ── DIVIDER ──────────────────────────────────── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(203,203,203,0.2);
+      margin: 0 4% 48px;
+    }
+
+    /* ── ABOUT SECTION ────────────────────────────── */
+    .about-section {
+      padding: 0 4% 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Photo slideshow column */
+    .photo-column {
+      float: left;
+      width: 440px;
+      margin-right: 40px;
+      margin-bottom: 20px;
+    }
+    .slideshow-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Arrow buttons — shared by both pages */
+    .arrow-buttons {
+      background: transparent;
+      border: none;
+      color: #EFFFE3;
+      font-size: 36px;
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .arrow-buttons:hover { transform: scale(1.2); color: #CBCBCB; }
+
+    .aboutIMG { display: none; width: 100%; }
+    .aboutIMG img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+    }
+
+    /* Bio + traits column */
+    .bio-column { color: #EFFFE3; }
+    .about-section-title {
+      font-size: 36px;
+      color: #EFFFE3;
+      margin: 0 0 24px;
+    }
+    .bio-text {
+      font-size: 20px;
+      line-height: 1.8;
+      color: rgba(239,255,227,0.88);
+      margin: 0 0 32px;
+    }
+
+    /* Personality trait pills */
+    .traits-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.45);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+    .traits-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .trait-pill {
+      background: rgba(125,212,176,0.15);
+      border: 1px solid rgba(125,212,176,0.4);
+      color: #7dd4b0;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 14px;
+      font-family: "Raleway", sans-serif;
+    }
+
+    /* ── PROJECTS PAGE SPECIFIC ───────────────────── */
+    .title              { display: flex; flex-wrap: wrap; flex-direction: column; }
+    .slideshow-arrows   { display: flex; justify-content: space-around; }
+    .projects           { flex: 1; }
+    .detail2-container  { display: flex; justify-content: space-evenly; flex-wrap: wrap; flex-direction: row; }
+    .detail2            { flex: 1; }
+    .section-title      { font-size: 60px; }
+
+    /* ── RESPONSIVE BREAKPOINTS ───────────────────── */
+    @media (max-width: 768px) {
+      .site-title             { font-size: 52px; padding: 32px 5% 16px; }
+      .hero-tagline           { font-size: 30px; }
+      .section-title          { font-size: 42px; }
+      .project-page           { width: 50%; font-size: clamp(10px, 3.5vw, 20px); }
+      .project-page-container { justify-content: flex-end; }
+      .project-page h1        { font-size: clamp(12px, 4vw, 24px); margin: 0; padding: 6px 0; }
+      a.project-page          { border-radius: 14px 14px 0 0 !important; padding: 10px !important; }
+      .skills-grid            { grid-template-columns: repeat(2, 1fr); }
+      .about-section          { flex-direction: column; }
+      .photo-column           { max-width: 100%; }
+      .detail2-container      { flex-direction: column; }
+      .detail2                { min-width: 0; width: 100%; }
+      pre                     { font-size: 11px !important; }
+    }
+
+    @media (max-width: 480px) {
+      .site-title    { font-size: 36px; padding: 24px 4% 12px; }
+      .hero-tagline  { font-size: 24px; }
+      .hero-sub      { font-size: 15px; }
+      .section-title { font-size: 28px; }
+      .skills-grid   { grid-template-columns: 1fr; }
+      .skill-tag     { font-size: 12px; }
+      .bio-text      { font-size: 16px; }
+      .aboutIMG img  { height: 240px; }
+      .social-row    { gap: 20px; }
+      /* NOTE: index.html keeps .project-page at 50% on mobile (no override here).
+         If using index-projects.html layout, uncomment the line below instead: */
+      /* .project-page  { width: 100%; font-size: 12px; } */
+      .projects      { padding: 0 4px; }
+      .projects span[style] { font-size: 12px !important; padding: 4px 10px !important; }
+      pre            { font-size: 10px !important; white-space: pre; overflow-x: auto; }
+      svg            { min-width: 480px; }
+      .projects h1   { font-size: 16px !important; }
+      .projects p    { font-size: 16px !important; }
+      .arrow-buttons { font-size: 36px !important; }
+    }
+
+  </style>
+</head>
+
+<body style="background-color:#EFFFE3; margin:0;">
+
+<!-- ── SITE TITLE ──────────────────────────────── -->
+<div>
+  <h1 class="site-title" style="color:#6D8196; text-align:center;">ASHLEY MADDIX</h1>
+</div>
+
+<!-- ── NAV TAB ─────────────────────────────────── -->
+<!--
+  For index.html    → link to index-projects.html, label = PROJECTS
+  For index-projects.html → link to index.html, label = ABOUT ME
+
+  index.html nav tab:
+  <div class="project-page-container">
+    <a href="index-projects.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>PROJECTS</h1></i>
+    </a>
+  </div>
+
+  index-projects.html nav tab:
+  <div class="project-page-container">
+    <a href="index.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>ABOUT ME</h1></i>
+    </a>
+  </div>
+-->
+<div class="project-page-container">
+  <a href="index-projects.html" class="project-page"
+     style="border-radius:40px 40px 0 0; color:#CBCBCB; background-color:#6D8196;
+              text-align:center; text-decoration:none; padding:10px; ">
+    <i><h1>PROJECTS</h1> </i>
+  </a>
+  <a href="index.html" class="project-page"
+     style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+    <i><h1>ABOUT ME</h1></i>
+  </a>
+</div>
+
+<!-- ── MAIN CONTENT BLOCK ──────────────────────── -->
+<div class="background-block" style="background-color:#6D8196; padding-bottom:60px;">
+
+  <div class="projects">
+    <br><br><br><br>
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:30px;">Workflow Graph — Adjacency List</h1>
+    <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2%; padding-top:0%;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Graph (Directed)</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Adjacency List</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Array of Vertices</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Linked List of Edges</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Pointer to Pointer</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">OOP / Classes</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Dynamic Memory</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Linear Search</span>
+      </div>
+    </div>
+    <div style="text-align:center; padding-top:16px;">
+      <a class="github" href="https://github.com/amaddix/CS163_prog5" style="text-decoration:none;">
+        <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+      </a>
+    </div>
+
+    <!-- 1. OVERVIEW -->
+    <div class="detail2-container" style="align-items:flex-start;">
+      <div class="detail2" style="flex:3; min-width:280px;">
+        <p style="color:#EFFFE3; font-size:22px; padding:1%; line-height:1.7; font-weight:500;">
+          <br>
+          This project is a C++ graph application that models a <b>directed workflow</b> — a sequence of steps where each step can connect to one or more following steps. Vertices (steps) are stored in a heap-allocated array, and edges (connections) are stored as <b>adjacency lists</b>: each vertex holds a linked list of <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">node</code> pointers, each pointing directly to another vertex in the array.<br><br>
+          The design keeps the graph compact and memory-efficient. Rather than copying vertex data into edge nodes, each <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">node</code> stores a raw <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">vertex*</code> — a pointer directly into the array — so displaying neighbors requires no lookup, just a single pointer dereference. The destructor fully traverses every adjacency list and deallocates all dynamic memory without leaks.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. KEY IMPLEMENTATION DETAILS -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Key Implementation Details</h1>
+      <div class="detail2-container" style="gap:16px; padding-top:16px; flex-wrap:wrap;">
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Array of Vertices</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The graph is backed by a dynamically allocated array of <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">vertex</code> structs, each holding a heap-allocated <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">char* step</code> name and a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">node* head</code> to its adjacency list. Vertices are inserted sequentially into the next available slot, giving O(1) insertion when the position is known.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Pointer-to-Vertex Edges</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Edge nodes don't copy vertex data — they store a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">vertex* adjacent</code> pointing directly to the target vertex in the array. This is a deliberate design choice: it eliminates redundant storage and makes neighbor traversal a single pointer dereference rather than a search.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #e8a87c; background:rgba(232,168,124,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">find_location()</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;"><code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">find_location()</code> performs a linear scan through the vertex array using <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">strcmp</code> to match by name and returns the index. Both <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">insert_edge()</code> and <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">display_next()</code> depend on this helper, keeping vertex lookup logic in one place and both callers clean.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #b8a0e8; background:rgba(184,160,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Directed Edge Insert</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;"><code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">insert_edge()</code> prepends a new node to <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">list[index1].head</code>, setting its <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">adjacent</code> to <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">&amp;list[index2]</code>. The edge is one-directional — only vertex1 gains a link to vertex2 — which makes this a <b>directed graph</b> where workflow order matters.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. CODE SAMPLES -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:10px; border-bottom:1px solid rgba(203,203,203,0.3);">Code Samples</h1>
+
+      <!-- Sample 1: text left, code right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:20px;">
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">insert_edge()</code> is the heart of the graph. It resolves both vertex names to array indices, allocates a new edge node, sets its <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">adjacent</code> to the address of the destination vertex in the array, and prepends it to the source vertex's adjacency list. The address-of operator (<code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">&amp;list[index2]</code>) is the key detail — it creates a live pointer into the array rather than a copy.
+          </p>
+        </div>
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">graph.cpp &nbsp;—&nbsp; insert_edge()</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#88c9e8;">int</span> table::insert_edge(<span style="color:#88c9e8;">char</span> *vertex1, <span style="color:#88c9e8;">char</span> *vertex2) {
+  <span style="color:#88c9e8;">int</span> index1 = find_location(vertex1);
+  <span style="color:#88c9e8;">int</span> index2 = find_location(vertex2);
+
+  <span style="color:#88c9e8;">if</span> (index1 &lt; SIZE &amp;&amp; index2 &lt; SIZE) {
+    node *temp    = <span style="color:#88c9e8;">new</span> node;
+    <span style="color:#7dd4b0;">// point directly into the vertex array — no data copy</span>
+    temp->adjacent = &amp;list[index2];
+    temp->next     = list[index1].head;
+    list[index1].head = temp;  <span style="color:#7dd4b0;">// prepend to adjacency list</span>
+    <span style="color:#88c9e8;">return</span> 1;
+  }
+  <span style="color:#88c9e8;">return</span> 0; <span style="color:#7dd4b0;">// one or both vertices not found</span>
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 2: code left, text right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:28px;">
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">graph.cpp &nbsp;—&nbsp; display_next() + destructor</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#7dd4b0;">// one dereference to get the neighbor's name</span>
+<span style="color:#88c9e8;">int</span> table::display_next(<span style="color:#88c9e8;">char</span> *key_value) {
+  <span style="color:#88c9e8;">int</span> index = find_location(key_value);
+  node *current = list[index].head;
+  <span style="color:#88c9e8;">while</span> (current) {
+    cout &lt;&lt; current->adjacent->step &lt;&lt; endl;
+    current = current->next;
+  }
+}
+
+<span style="color:#7dd4b0;">// destructor: free each adjacency list, then the array</span>
+table::~table() {
+  <span style="color:#88c9e8;">for</span> (<span style="color:#88c9e8;">int</span> i = 0; i &lt; SIZE; ++i) {
+    <span style="color:#88c9e8;">delete</span> [] list[i].step;
+    node *cur = list[i].head;
+    <span style="color:#88c9e8;">while</span> (cur) {
+      node *next = cur->next;
+      cur->adjacent = NULL;
+      <span style="color:#88c9e8;">delete</span> cur;
+      cur = next;
+    }
+  }
+  <span style="color:#88c9e8;">delete</span> [] list;
+}</pre>
+          </div>
+        </div>
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            Because edge nodes hold a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">vertex*</code> rather than copied data, displaying a neighbor's name is just <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">current-&gt;adjacent-&gt;step</code> — one pointer hop. The destructor mirrors this structure: it nulls each <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">adjacent</code> pointer before deleting the node (avoiding dangling pointer reads), then frees the vertex array itself — demonstrating careful, layered memory cleanup.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. DATA STRUCTURE DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Data Structure — Adjacency List Memory Layout</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 420" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="ga-teal"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7dd4b0"/></marker>
+            <marker id="ga-blue"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#88c9e8"/></marker>
+            <marker id="ga-orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#e8a87c"/></marker>
+            <marker id="ga-grey"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+          </defs>
+
+          <!-- TABLE CLASS box -->
+          <rect x="10" y="10" width="160" height="70" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <rect x="10" y="10" width="160" height="28" rx="10" fill="#7dd4b0"/>
+          <rect x="10" y="24"  width="160" height="14" fill="#7dd4b0"/>
+          <text x="90" y="27" text-anchor="middle" fill="#2e3d4a" font-size="11" font-weight="700">class table</text>
+          <text x="22" y="52" fill="#CBCBCB" font-size="10" font-family="monospace">vertex* list</text>
+          <text x="22" y="67" fill="#b8a0e8" font-size="9">int list_size = SIZE</text>
+
+          <!-- arrow: table → vertex array -->
+          <line x1="170" y1="45" x2="210" y2="45" stroke="#7dd4b0" stroke-width="1.5" marker-end="url(#ga-teal)"/>
+          <text x="185" y="40" fill="#7dd4b0" font-size="9">list*</text>
+
+          <!-- VERTEX ARRAY -->
+          <!-- vertex[0] -->
+          <rect x="212" y="10" width="130" height="56" rx="6" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="277" y="28" text-anchor="middle" fill="#88c9e8" font-size="10" font-weight="600">vertex[0]</text>
+          <text x="222" y="44" fill="#CBCBCB" font-size="10" font-family="monospace">step: "Plan"</text>
+          <text x="222" y="58" fill="#7dd4b0" font-size="10" font-family="monospace">head ──────→</text>
+
+          <!-- vertex[1] -->
+          <rect x="212" y="86" width="130" height="56" rx="6" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="277" y="104" text-anchor="middle" fill="#88c9e8" font-size="10" font-weight="600">vertex[1]</text>
+          <text x="222" y="120" fill="#CBCBCB" font-size="10" font-family="monospace">step: "Build"</text>
+          <text x="222" y="134" fill="#7dd4b0" font-size="10" font-family="monospace">head ──────→</text>
+
+          <!-- vertex[2] -->
+          <rect x="212" y="162" width="130" height="56" rx="6" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="277" y="180" text-anchor="middle" fill="#88c9e8" font-size="10" font-weight="600">vertex[2]</text>
+          <text x="222" y="196" fill="#CBCBCB" font-size="10" font-family="monospace">step: "Test"</text>
+          <text x="222" y="210" fill="#7dd4b0" font-size="10" font-family="monospace">head ──────→</text>
+
+          <!-- vertex[3] -->
+          <rect x="212" y="238" width="130" height="56" rx="6" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="277" y="256" text-anchor="middle" fill="#88c9e8" font-size="10" font-weight="600">vertex[3]</text>
+          <text x="222" y="272" fill="#CBCBCB" font-size="10" font-family="monospace">step: "Review"</text>
+          <text x="222" y="286" fill="#7dd4b0" font-size="10" font-family="monospace">head ──────→</text>
+
+          <!-- vertex[4] -->
+          <rect x="212" y="314" width="130" height="56" rx="6" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="277" y="332" text-anchor="middle" fill="#88c9e8" font-size="10" font-weight="600">vertex[4]</text>
+          <text x="222" y="348" fill="#CBCBCB" font-size="10" font-family="monospace">step: "Deploy"</text>
+          <text x="222" y="362" fill="#CBCBCB" font-size="10" font-family="monospace">head: NULL</text>
+
+          <!-- NODE for vertex[0] -->
+          <rect x="380" y="22" width="120" height="44" rx="6" fill="#243039" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="440" y="38" text-anchor="middle" fill="#e8a87c" font-size="10" font-weight="600">node</text>
+          <text x="392" y="52" fill="#CBCBCB" font-size="9" font-family="monospace">adjacent → vertex[1]</text>
+          <text x="392" y="62" fill="#7dd4b0" font-size="9" font-family="monospace">next → node</text>
+
+          <!-- second node for vertex[0] -->
+          <rect x="520" y="22" width="120" height="44" rx="6" fill="#243039" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="580" y="38" text-anchor="middle" fill="#e8a87c" font-size="10" font-weight="600">node</text>
+          <text x="532" y="52" fill="#CBCBCB" font-size="9" font-family="monospace">adjacent → vertex[2]</text>
+          <text x="532" y="62" fill="#CBCBCB" font-size="9" font-family="monospace">next: NULL</text>
+
+          <!-- NODE for vertex[1] -->
+          <rect x="380" y="98" width="120" height="44" rx="6" fill="#243039" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="440" y="114" text-anchor="middle" fill="#e8a87c" font-size="10" font-weight="600">node</text>
+          <text x="392" y="128" fill="#CBCBCB" font-size="9" font-family="monospace">adjacent → vertex[2]</text>
+          <text x="392" y="138" fill="#CBCBCB" font-size="9" font-family="monospace">next: NULL</text>
+
+          <!-- NODE for vertex[2] -->
+          <rect x="380" y="174" width="120" height="44" rx="6" fill="#243039" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="440" y="190" text-anchor="middle" fill="#e8a87c" font-size="10" font-weight="600">node</text>
+          <text x="392" y="204" fill="#CBCBCB" font-size="9" font-family="monospace">adjacent → vertex[3]</text>
+          <text x="392" y="214" fill="#CBCBCB" font-size="9" font-family="monospace">next: NULL</text>
+
+          <!-- NODE for vertex[3] -->
+          <rect x="380" y="250" width="120" height="44" rx="6" fill="#243039" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="440" y="266" text-anchor="middle" fill="#e8a87c" font-size="10" font-weight="600">node</text>
+          <text x="392" y="280" fill="#CBCBCB" font-size="9" font-family="monospace">adjacent → vertex[4]</text>
+          <text x="392" y="290" fill="#CBCBCB" font-size="9" font-family="monospace">next: NULL</text>
+
+          <!-- head arrows vertex → first node -->
+          <line x1="342" y1="56"  x2="378" y2="44"  stroke="#7dd4b0" stroke-width="1.2" marker-end="url(#ga-teal)"/>
+          <line x1="342" y1="132" x2="378" y2="120" stroke="#7dd4b0" stroke-width="1.2" marker-end="url(#ga-teal)"/>
+          <line x1="342" y1="208" x2="378" y2="196" stroke="#7dd4b0" stroke-width="1.2" marker-end="url(#ga-teal)"/>
+          <line x1="342" y1="284" x2="378" y2="268" stroke="#7dd4b0" stroke-width="1.2" marker-end="url(#ga-teal)"/>
+
+          <!-- node[0] next → node[0b] -->
+          <line x1="500" y1="44" x2="518" y2="44" stroke="#CBCBCB" stroke-width="1.2" marker-end="url(#ga-grey)"/>
+
+          <!-- adjacent arrows (back into vertex array) — curved -->
+          <path d="M500,52 Q560,90 344,114" fill="none" stroke="#e8a87c" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#ga-orange)"/>
+          <path d="M640,52 Q720,186 344,190" fill="none" stroke="#e8a87c" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#ga-orange)"/>
+          <path d="M500,128 Q560,166 344,186" fill="none" stroke="#e8a87c" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#ga-orange)"/>
+          <path d="M500,204 Q560,242 344,262" fill="none" stroke="#e8a87c" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#ga-orange)"/>
+          <path d="M500,280 Q560,318 344,338" fill="none" stroke="#e8a87c" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#ga-orange)"/>
+
+          <!-- Legend -->
+          <text x="30"  y="400" fill="rgba(125,212,176,0.7)"  font-size="10">──→  head* (vertex to first edge node)</text>
+          <text x="290" y="400" fill="rgba(203,203,203,0.6)"  font-size="10">──→  next* (edge chain)</text>
+          <text x="460" y="400" fill="rgba(232,168,124,0.7)"  font-size="10">- -→  adjacent* (pointer back into vertex array)</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 5. PROGRAM FLOW DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Program Flow — Setup &amp; Menu</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 460" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="gf1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+          </defs>
+
+          <!-- START -->
+          <ellipse cx="430" cy="28" rx="80" ry="20" fill="#7dd4b0"/>
+          <text x="430" y="33" text-anchor="middle" fill="#2e3d4a" font-size="13" font-weight="700">START</text>
+          <line x1="430" y1="48" x2="430" y2="70" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#gf1)"/>
+
+          <!-- init box -->
+          <rect x="260" y="72" width="340" height="38" rx="8" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="430" y="88"  text-anchor="middle" fill="#EFFFE3"  font-size="12">table graph;</text>
+          <text x="430" y="103" text-anchor="middle" fill="#7dd4b0" font-size="10" font-family="monospace">constructor: list = new vertex[SIZE],  all heads = NULL</text>
+          <line x1="430" y1="110" x2="430" y2="132" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#gf1)"/>
+
+          <!-- setup loop box -->
+          <rect x="250" y="134" width="360" height="44" rx="8" fill="#243039" stroke="#7dd4b0" stroke-width="2"/>
+          <text x="430" y="152" text-anchor="middle" fill="#7dd4b0" font-size="12" font-weight="600">Setup: add SIZE vertices</text>
+          <text x="430" y="170" text-anchor="middle" fill="#d0dde8" font-size="10" font-family="monospace">for i in 0..SIZE → cin step name → insert_vertex()</text>
+          <line x1="430" y1="178" x2="430" y2="200" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#gf1)"/>
+
+          <!-- display all box -->
+          <rect x="300" y="202" width="260" height="36" rx="8" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="430" y="218" text-anchor="middle" fill="#EFFFE3"  font-size="11">display_vertexs()</text>
+          <text x="430" y="232" text-anchor="middle" fill="#7dd4b0"  font-size="9" font-family="monospace">print all step names</text>
+          <line x1="430" y1="238" x2="430" y2="260" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#gf1)"/>
+
+          <!-- menu diamond -->
+          <polygon points="430,264 560,298 430,332 300,298" fill="#243039" stroke="#88c9e8" stroke-width="2"/>
+          <text x="430" y="294" text-anchor="middle" fill="#88c9e8" font-size="13" font-weight="600">menu()</text>
+          <text x="430" y="310" text-anchor="middle" fill="#CBCBCB" font-size="10">choose 1–3</text>
+
+          <!-- quit -->
+          <line x1="560" y1="298" x2="624" y2="298" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#gf1)"/>
+          <text x="564" y="292" fill="#CBCBCB" font-size="10">3 = Quit</text>
+          <ellipse cx="696" cy="298" rx="62" ry="22" fill="#4a6275" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="696" y="295" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">END</text>
+          <text x="696" y="309" text-anchor="middle" fill="#7dd4b0" font-size="9">~table() frees all memory</text>
+
+          <!-- down from diamond -->
+          <line x1="430" y1="332" x2="430" y2="354" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#gf1)"/>
+          <text x="436" y="348" fill="#CBCBCB" font-size="10">1–2</text>
+
+          <!-- two op boxes -->
+          <line x1="300" y1="354" x2="560" y2="354" stroke="rgba(203,203,203,0.35)" stroke-width="1"/>
+          <line x1="330" y1="354" x2="330" y2="374" stroke="#CBCBCB" stroke-width="1" marker-end="url(#gf1)"/>
+          <line x1="530" y1="354" x2="530" y2="374" stroke="#CBCBCB" stroke-width="1" marker-end="url(#gf1)"/>
+
+          <rect x="220" y="376" width="220" height="56" rx="7" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="330" y="394" text-anchor="middle" fill="#e8a87c"  font-size="10" font-weight="600">① add connection</text>
+          <text x="330" y="409" text-anchor="middle" fill="#d0dde8" font-size="9">read vertex1, vertex2</text>
+          <text x="330" y="423" text-anchor="middle" fill="#d0dde8" font-size="9">find_location() → insert_edge()</text>
+
+          <rect x="420" y="376" width="220" height="56" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="530" y="394" text-anchor="middle" fill="#88c9e8"  font-size="10" font-weight="600">② display neighbors</text>
+          <text x="530" y="409" text-anchor="middle" fill="#d0dde8" font-size="9">read step name</text>
+          <text x="530" y="423" text-anchor="middle" fill="#d0dde8" font-size="9">find_location() → display_next()</text>
+
+          <!-- loop back -->
+          <path d="M220,404 Q40,404 40,298 Q40,276 298,286" fill="none" stroke="rgba(203,203,203,0.3)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#gf1)"/>
+          <text x="18" y="360" fill="rgba(203,203,203,0.4)" font-size="10" transform="rotate(-90,18,360)">loop</text>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
+
+</div><!-- end background-block -->
+
+</body>
+
+<!-- ── JAVASCRIPT ──────────────────────────────────
+  Both pages use a slideshow. Use the correct one for each page:
+
+  ── index.html (photo slideshow) ──────────────────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("aboutIMG");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+
+  ── index-projects.html (project slideshow) ───────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("projects");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+-->
+<script>
+  // Uncomment and use the correct slideshow script for your page (see comments above).
+</script>
+
+</html>
+

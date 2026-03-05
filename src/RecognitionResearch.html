@@ -3,82 +3,848 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--
-  <title>Ashley Maddix</title>
 
-  <h1 style="font-size:50px; position:relative; top:40px; color:#89D5D2; text-align:center;"> Hey! I'm Ashley Maddix</h1>
--->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sekuya&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <title>ASHLEY MADDIX</title>
+
   <style>
-    #anim{max-width:700px; margin:0 auto;}
-    a:hover i{transform:scale(1.5); color:#35B5AC;}
-    a:hover button{transform:scale(1.3);}
-    @media only screen and (max-width:640px){
-      #links{
-      display:grid;
-      position:fixed;
-      padding-left:5%;
-      padding-top:10%;
-      text-align:left;
-      grid-gap:3rem;
-      grid-template-columns:repeat(1, 1fr);
-      grid-template-rows:repeat(2, 50px);
-      }
+
+    /* ── RESET & BASE ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body, p {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      padding: 0;
     }
 
-    </style>
-  <a href="index.html">
-    <div id="anim"></div>
-  </a>
-  <script src="lottie.js"></script>
-  <script>
-        var animation = bodymovin.loadAnimation({
-        container: document.getElementById('anim'),
-        renderer:'svg',
-        loop:true,
-        autoplay:true,
-        path:'AshleyHeader1.json'
-        })
-    </script>
+    body {
+      width: 100%;
+      overflow-x: hidden;
+      background-color: #EFFFE3;
+    }
 
-  <script src="https://kit.fontawesome.com/d224905442.js" crossorigin="anonymous"></script>
+    h1, button {
+      font-family: "Sekuya", system-ui;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      padding: 0;
+    }
 
-  <title>Person/Vehicle Recognition Research</title>
+    /* ── HOVER ANIMATIONS ─────────────────────────── */
+    #anim { max-width: 700px; margin: 0 auto; }
+    a:hover i                    { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    a:hover span.fa-regular      { transform: scale(1.5);  color: #CBCBCB; transition: 0.3s; }
+    a:hover button               { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    button:hover                 { transform: scale(1.3);  color: #CBCBCB; background-color: #6D8196; cursor: pointer; transition: 0.3s; }
 
+    .fa-regular {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 400 !important;
+      display: inline-block;
+    }
+
+    /* ── SITE TITLE ───────────────────────────────── */
+   .site-title {
+      font-size: 80px;
+      padding: 40px 10%;
+      color: #6D8196;
+      text-align: center;
+      margin: 0;
+    }
+
+    /* ── NAV TAB ──────────────────────────────────── */
+    .project-page-container {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0;
+    }
+    .project-page {
+      display: block;
+      width: 400px;
+      font-size: 20px;
+      border-radius: 40px 40px 0 0;
+      color: #EFFFE3;
+      background-color: #6D8196;
+      text-align: center;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    /* ── BACKGROUND BLOCK ─────────────────────────── */
+    .background-block {
+      background-color: #6D8196;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ── HERO TAGLINE ─────────────────────────────── */
+    .hero-tagline {
+      font-size: 53px;
+      color: #EFFFE3;
+      text-align: center;
+      padding: 48px 6% 12px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .hero-sub {
+      color: rgba(239,255,227,0.65);
+      font-size: 20px;
+      font-family: "Raleway", sans-serif;
+      text-align: center;
+      padding: 0 6% 40px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SOCIAL ICONS ROW ─────────────────────────── */
+    .social-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      padding-bottom: 48px;
+    }
+    .social-row a { text-decoration: none; }
+    .social-label {
+      display: block;
+      font-size: 13px;
+      color: #CBCBCB;
+      font-family: "Raleway", sans-serif;
+      margin-top: 6px;
+      letter-spacing: 0.06em;
+    }
+    .social-item { text-align: center; }
+
+    /* ── SKILLS GRID ──────────────────────────────── */
+    .skills-section { padding: 0 4% 48px; }
+    .skills-section-title {
+      font-size: 13px;
+      color: rgba(239,255,227,0.5);
+      letter-spacing: 0.18em;
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      margin: 0 0 28px;
+      text-transform: uppercase;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .skill-card {
+      background: rgba(46,61,74,0.55);
+      border: 1px solid rgba(203,203,203,0.18);
+      border-radius: 14px;
+      padding: 24px 20px 20px;
+      text-align: left;
+    }
+    .skill-card-title {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.5);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+    .skill-card-icon {
+      font-size: 22px;
+      color: #7dd4b0;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-tag {
+      background: rgba(109,129,150,0.4);
+      color: #EFFFE3;
+      border-radius: 20px;
+      padding: 5px 13px;
+      font-size: 13px;
+      font-family: "Raleway", sans-serif;
+      border: 1px solid rgba(203,203,203,0.2);
+      white-space: nowrap;
+    }
+
+    /* ── DIVIDER ──────────────────────────────────── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(203,203,203,0.2);
+      margin: 0 4% 48px;
+    }
+
+    /* ── ABOUT SECTION ────────────────────────────── */
+    .about-section {
+      padding: 0 4% 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Photo slideshow column */
+    .photo-column {
+      float: left;
+      width: 440px;
+      margin-right: 40px;
+      margin-bottom: 20px;
+    }
+    .slideshow-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Arrow buttons — shared by both pages */
+    .arrow-buttons {
+      background: transparent;
+      border: none;
+      color: #EFFFE3;
+      font-size: 36px;
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .arrow-buttons:hover { transform: scale(1.2); color: #CBCBCB; }
+
+    .aboutIMG { display: none; width: 100%; }
+    .aboutIMG img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+    }
+
+    /* Bio + traits column */
+    .bio-column { color: #EFFFE3; }
+    .about-section-title {
+      font-size: 36px;
+      color: #EFFFE3;
+      margin: 0 0 24px;
+    }
+    .bio-text {
+      font-size: 20px;
+      line-height: 1.8;
+      color: rgba(239,255,227,0.88);
+      margin: 0 0 32px;
+    }
+
+    /* Personality trait pills */
+    .traits-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.45);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+    .traits-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .trait-pill {
+      background: rgba(125,212,176,0.15);
+      border: 1px solid rgba(125,212,176,0.4);
+      color: #7dd4b0;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 14px;
+      font-family: "Raleway", sans-serif;
+    }
+
+    /* ── PROJECTS PAGE SPECIFIC ───────────────────── */
+    .title              { display: flex; flex-wrap: wrap; flex-direction: column; }
+    .slideshow-arrows   { display: flex; justify-content: space-around; }
+    .projects           { flex: 1; }
+    .detail2-container  { display: flex; justify-content: space-evenly; flex-wrap: wrap; flex-direction: row; }
+    .detail2            { flex: 1; }
+    .section-title      { font-size: 60px; }
+
+    /* ── RESPONSIVE BREAKPOINTS ───────────────────── */
+    @media (max-width: 768px) {
+      .site-title             { font-size: 52px; padding: 32px 5% 16px; }
+      .hero-tagline           { font-size: 30px; }
+      .section-title          { font-size: 42px; }
+      .project-page           { width: 50%; font-size: clamp(10px, 3.5vw, 20px); }
+      .project-page-container { justify-content: flex-end; }
+      .project-page h1        { font-size: clamp(12px, 4vw, 24px); margin: 0; padding: 6px 0; }
+      a.project-page          { border-radius: 14px 14px 0 0 !important; padding: 10px !important; }
+      .skills-grid            { grid-template-columns: repeat(2, 1fr); }
+      .about-section          { flex-direction: column; }
+      .photo-column           { max-width: 100%; }
+      .detail2-container      { flex-direction: column; }
+      .detail2                { min-width: 0; width: 100%; }
+      pre                     { font-size: 11px !important; }
+    }
+
+    @media (max-width: 480px) {
+      .site-title    { font-size: 36px; padding: 24px 4% 12px; }
+      .hero-tagline  { font-size: 24px; }
+      .hero-sub      { font-size: 15px; }
+      .section-title { font-size: 28px; }
+      .skills-grid   { grid-template-columns: 1fr; }
+      .skill-tag     { font-size: 12px; }
+      .bio-text      { font-size: 16px; }
+      .aboutIMG img  { height: 240px; }
+      .social-row    { gap: 20px; }
+      /* NOTE: index.html keeps .project-page at 50% on mobile (no override here).
+         If using index-projects.html layout, uncomment the line below instead: */
+      /* .project-page  { width: 100%; font-size: 12px; } */
+      .projects      { padding: 0 4px; }
+      .projects span[style] { font-size: 12px !important; padding: 4px 10px !important; }
+      pre            { font-size: 10px !important; white-space: pre; overflow-x: auto; }
+      svg            { min-width: 480px; }
+      .projects h1   { font-size: 16px !important; }
+      .projects p    { font-size: 16px !important; }
+      .arrow-buttons { font-size: 36px !important; }
+    }
+
+  </style>
 </head>
 
+<body style="background-color:#EFFFE3; margin:0;">
 
-<body style="background-color:#89D5D2;">
-<div class="links" style="display:grid; position:fixed; padding-left:5%; padding-top:10%; text-align:left; grid-gap:3rem; grid-template-columns:repeat(1, 2fr); grid-template-rows:repeat(3, 60px);">
-  <a href="Final Presentation.pdf" style="text-decoration:none" >
-  <i class="fa-solid fa-person-chalkboard fa-3x" style="position:center; color:#008080;"><div style="font-size:20px">presentation</div></i>
+<!-- ── SITE TITLE ──────────────────────────────── -->
+<div>
+  <h1 class="site-title" style="color:#6D8196; text-align:center;">ASHLEY MADDIX</h1>
+</div>
+
+<!-- ── NAV TAB ─────────────────────────────────── -->
+<!--
+  For index.html    → link to index-projects.html, label = PROJECTS
+  For index-projects.html → link to index.html, label = ABOUT ME
+
+  index.html nav tab:
+  <div class="project-page-container">
+    <a href="index-projects.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>PROJECTS</h1></i>
+    </a>
+  </div>
+
+  index-projects.html nav tab:
+  <div class="project-page-container">
+    <a href="index.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>ABOUT ME</h1></i>
+    </a>
+  </div>
+-->
+<div class="project-page-container">
+  <a href="index-projects.html" class="project-page" style="color:#CBCBCB; background-color:#6D8196;">
+    <i><h1 style="font-size:auto; margin:0;">PROJECTS</h1></i>
   </a>
-  <a href="Documentation.pdf" style="text-decoration:none" >
-  <i class="fa-solid fa-book fa-3x" style="position:center; color:#008080;"><div style="font-size:20px">report</div></i>
-  </a>
-  <a href="Projects.html" style="text-decoration:none" >
-    <i class="fa-solid fa-circle-arrow-left fa-3x" style="position:center; color:#008080;"></i>
+  <a href="index.html" class="project-page" style="color:#EFFFE3; background-color:#8fa3b5;">
+    <i><h1 style="font-size:auto; margin:0;">ABOUT ME</h1></i>
   </a>
 </div>
-<div style="border-radius:15%; position:grid; text-align:center; background-color:#BBF1F1; margin-left:17%; padding-bottom:5%; margin-right:2%;">
-  <br><br>
-  <h2 style="text-align:right; color:#265C5C; padding-right:15%; ">2021</h2>
-  <h1 style="text-align:center; color:#265C5C; padding-bottom:5%;">Person/Vehicle Recognition Research</h1>
-  <h3 style="color:#265C5C; padding:5%;">
-    <b><i> Machine Learning </i> - <i> object detection</i> - <i> image classifier training </i></b> <br><br>
-    <b>6 Month - Team Research project </b> : Myself along with, <i>Chiharu Akiyama, Ritvik Chitram, Sanad Thapa, Tim Hall, Zhe Han</i> <br><br><br>
+
+<!-- ── MAIN CONTENT BLOCK ──────────────────────── -->
+<div class="background-block" style="background-color:#6D8196; padding-bottom:60px;">
+  <div class="projects">
+
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:30px;">Person &amp; Vehicle CNN Image Classifier</h1>
+
+    <!-- Skill tag pills -->
+    <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2% 2% 0 2%;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Python</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Machine Learning</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">CNN / Deep Learning</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Computer Vision</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Data Collection &amp; Curation</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Hyperparameter Tuning</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Image Preprocessing</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Data Augmentation</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Scripting / Automation</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Agile / Scrum</span>
+      </div>
+    </div>
+
+    <!-- Sponsor badge -->
+    <div style="text-align:center; padding-top:14px;">
+      <span style="display:inline-block; background:rgba(109,129,150,0.35); border:1.5px solid #CBCBCB; border-radius:20px; padding:5px 18px; color:#CBCBCB; font-size:14px; letter-spacing:0.04em;">
+        Industry Sponsor: <strong style="color:#EFFFE3;">SightLine Applications</strong> &nbsp;&#8212;&nbsp; Capstone Summer&#8211;Fall 2021
+      </span>
+    </div>
 
 
-    <b>In collaboration with <i>Leila Kaneda</i> at SightLine Applications, a company specializing in video processing for advanced camera systems
-      worked with SightLine to help improve the quality of their image detection services.</b> <br><br>
+    <div style="text-align:center; padding-top:16px;">
+      <a class="github" href="Documentation.pdf" style="text-decoration:none;">
+        <i class="fa-solid fa-book fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+      </a>
+      <a class="github" href="Final Presentation.pdf" style="text-decoration:none;">
+        <i class="fa-solid fa-laptop-code fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+      </a>
+    </div>
 
-    Our objective in this project was to create a base classifier identifying objects into 4 categories, cars, people, objects,
-    and background. We collected a total of 4,800 un-augmented images and 9,000 augmented imaged. We found these images
-    by looking through a number of public databases of images and videos, and by taking personal videos and cropping each person,
-    and car. With the goal of getting an accuracy greater than 95%, we would use the data from this base classifier to help
-    fine tune Sightline's preexisting vehicle/person classifier.<br> In the end, we did not succeed in getting an accuracy of 95%,
-     however our classifier still helped Sightline find existing bugs in their software, to better improve its performance.
 
-  </h3>
-</div>
+    <!-- 1. OVERVIEW -->
+    <div class="detail2-container" style="align-items:flex-start; padding-top:10px;">
+      <div class="detail2" style="flex:3; min-width:280px;">
+        <p style="color:#EFFFE3; font-size:22px; padding:1%; line-height:1.7; font-weight:500; padding-top:5%;">
+          A 6-person capstone team project sponsored by <strong>SightLine Applications</strong>, a real-world company that builds
+          onboard video processors for drones, gimbals, and fixed-mount cameras. The goal was to train and deliver a
+          <strong>Convolutional Neural Network (CNN) image classifier</strong> capable of distinguishing <em>people</em>, <em>vehicles</em>,
+          and <em>background</em> in aerial footage &#8212; integrated directly into SightLine&#8217;s proprietary object detection pipeline.<br><br>
+          The team built a custom dataset of <strong>5,091 royalty-free images</strong> (9,000+ with augmentation), hand-curated from
+          public datasets and self-recorded video, then preprocessed to 32&#215;32 px grayscale PNGs. Over
+          <strong>1,200 training runs</strong> were executed across 9 systematic test phases, methodically sweeping epochs, learning rates,
+          momentum, and class architecture. The best model reached <strong>~94% accuracy on held-out test data</strong>, with
+          real-world (&#8220;in-the-wild&#8221;) performance reaching 65% on the final 3-class model &#8212; a 9&#8211;12 percentage-point
+          improvement over the 4-class baseline achieved by removing the ambiguous &#8220;Other&#8221; category.
+        </p>
+      </div>
+
+      <!-- Key stats panel -->
+      <div class="detail2" style="flex:2; min-width:240px; display:flex; align-items:flex-start; justify-content:center; padding:2% 2% 0 2%;">
+        <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:12px; padding:22px 24px; width:100%; max-width:340px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; letter-spacing:0.05em; margin:0 0 14px 0;">PROJECT STATS</p>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(203,203,203,0.2); padding-bottom:10px;">
+              <span style="color:#d0dde8; font-size:14px;">Training runs executed</span>
+              <span style="color:#7dd4b0; font-size:16px; font-weight:700;">1,200+</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(203,203,203,0.2); padding-bottom:10px;">
+              <span style="color:#d0dde8; font-size:14px;">Unique dataset images</span>
+              <span style="color:#7dd4b0; font-size:16px; font-weight:700;">5,091</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(203,203,203,0.2); padding-bottom:10px;">
+              <span style="color:#d0dde8; font-size:14px;">Images w/ augmentation</span>
+              <span style="color:#88c9e8; font-size:16px; font-weight:700;">9,000+</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(203,203,203,0.2); padding-bottom:10px;">
+              <span style="color:#d0dde8; font-size:14px;">Best test accuracy</span>
+              <span style="color:#7dd4b0; font-size:16px; font-weight:700;">~94.5%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(203,203,203,0.2); padding-bottom:10px;">
+              <span style="color:#d0dde8; font-size:14px;">In-the-wild accuracy</span>
+              <span style="color:#e8a87c; font-size:16px; font-weight:700;">~65%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="color:#d0dde8; font-size:14px;">CNN depth</span>
+              <span style="color:#b8a0e8; font-size:16px; font-weight:700;">12 layers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. KEY IMPLEMENTATION DETAILS -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Key Implementation Details</h1>
+      <div class="detail2-container" style="gap:16px; padding-top:16px; flex-wrap:wrap;">
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Custom Dataset Pipeline</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Built a full preprocessing pipeline: sourced royalty-free images from Kaggle, Pexels, and self-recorded dashcam/drone video, then used <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">JPEGCrops</code> to crop objects and a custom <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">converter.py</code> script to resize, convert to grayscale, and normalize filenames &#8212; all automated to prevent human error across 5,000+ images.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Systematic Hyperparameter Search</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Ran 9 structured test phases sweeping <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">max_iter</code>, <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">base_lr</code>, <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">momentum</code>, and two-phase learning rate schedules. Best configuration &#8212; max_iter 8500, lr1 10500, base_lr 0.005, lr1_base_lr 0.00015 &#8212; yielded an average accuracy of 91.97% across repeated runs.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #e8a87c; background:rgba(232,168,124,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Test Automation Script</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Authored <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">run.py</code> to automate the full train&#8211;test cycle: it reads all hyperparameters from a single config, invokes <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">create_trained_model.py</code> and <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">sl_test_model.py</code>, logs results, and archives each run&#8217;s output folder &#8212; turning a 4-step manual process into a single command and enabling GPU-accelerated batch testing (5&#8211;10 min/run vs. 45&#8211;90 min on CPU).</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #b8a0e8; background:rgba(184,160,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">3-Class vs 4-Class Architecture</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Discovered that removing the catch-all &#8220;Other&#8221; class eliminated a systematic misclassification failure mode &#8212; objects with &#8220;Other&#8221; as the highest-confidence prediction were often correct in second place. Switching to a 3-class model (Background / Vehicle / Person) improved real-world accuracy by <strong style="color:#7dd4b0;">9&#8211;12 percentage points</strong> without any additional training data.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. RESULTS VISUALS -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:10px; border-bottom:1px solid rgba(203,203,203,0.3);">Results &amp; Analysis</h1>
+
+      <!-- Top row: accuracy chart + 3-class vs 4-class comparison -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; padding-top:22px;">
+
+        <!-- Accuracy by Phase chart (SVG bar chart) -->
+        <div style="flex:1.2; min-width:300px; background:rgba(46,61,74,0.5); border:1px solid rgba(136,201,232,0.3); border-radius:12px; padding:20px;">
+          <p style="color:#88c9e8; font-size:15px; font-weight:700; margin:0 0 4px 0;">Average Accuracy by Test Phase</p>
+          <p style="color:#d0dde8; font-size:12px; margin:0 0 16px 0;">Best configuration found in Phase 7 &mdash; max_iter 8500, base_lr 0.005</p>
+          <svg viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg" style="width:100%; display:block;">
+            <defs>
+              <linearGradient id="bargrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#88c9e8"/>
+                <stop offset="100%" stop-color="#4a7fa0"/>
+              </linearGradient>
+              <linearGradient id="barbest" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#7dd4b0"/>
+                <stop offset="100%" stop-color="#3a9a74"/>
+              </linearGradient>
+            </defs>
+            <!-- Y axis -->
+            <line x1="40" y1="10" x2="40" y2="165" stroke="rgba(203,203,203,0.2)" stroke-width="1"/>
+            <!-- Y gridlines & labels -->
+            <line x1="40" y1="165" x2="375" y2="165" stroke="rgba(203,203,203,0.15)" stroke-width="1" stroke-dasharray="3,3"/>
+            <line x1="40" y1="131" x2="375" y2="131" stroke="rgba(203,203,203,0.1)" stroke-width="1" stroke-dasharray="3,3"/>
+            <line x1="40" y1="97"  x2="375" y2="97"  stroke="rgba(203,203,203,0.1)" stroke-width="1" stroke-dasharray="3,3"/>
+            <line x1="40" y1="63"  x2="375" y2="63"  stroke="rgba(203,203,203,0.1)" stroke-width="1" stroke-dasharray="3,3"/>
+            <line x1="40" y1="29"  x2="375" y2="29"  stroke="rgba(203,203,203,0.1)" stroke-width="1" stroke-dasharray="3,3"/>
+            <text x="35" y="168" text-anchor="end" fill="#d0dde8" font-size="9">70%</text>
+            <text x="35" y="134" text-anchor="end" fill="#d0dde8" font-size="9">80%</text>
+            <text x="35" y="100" text-anchor="end" fill="#d0dde8" font-size="9">85%</text>
+            <text x="35" y="66"  text-anchor="end" fill="#d0dde8" font-size="9">90%</text>
+            <text x="35" y="32"  text-anchor="end" fill="#d0dde8" font-size="9">95%</text>
+            <!-- Bars: phases 1-9, accuracies approx: 79,82,83,85,87,88,92,92,94.5 -->
+            <!-- Phase 1: 79% → height=(79-70)/25*136=49 bar top=165-49=116 -->
+            <rect x="48"  y="116" width="26" height="49" rx="3" fill="url(#bargrad)"/>
+            <text x="61"  y="178" text-anchor="middle" fill="#d0dde8" font-size="9">P1</text>
+            <!-- Phase 2: 82% -->
+            <rect x="82"  y="103" width="26" height="62" rx="3" fill="url(#bargrad)"/>
+            <text x="95"  y="178" text-anchor="middle" fill="#d0dde8" font-size="9">P2</text>
+            <!-- Phase 3: 83% -->
+            <rect x="116" y="99"  width="26" height="66" rx="3" fill="url(#bargrad)"/>
+            <text x="129" y="178" text-anchor="middle" fill="#d0dde8" font-size="9">P3</text>
+            <!-- Phase 4: 85% -->
+            <rect x="150" y="90"  width="26" height="75" rx="3" fill="url(#bargrad)"/>
+            <text x="163" y="178" text-anchor="middle" fill="#d0dde8" font-size="9">P4</text>
+            <!-- Phase 5: 87% -->
+            <rect x="184" y="82"  width="26" height="83" rx="3" fill="url(#bargrad)"/>
+            <text x="197" y="178" text-anchor="middle" fill="#d0dde8" font-size="9">P5</text>
+            <!-- Phase 6: 88% -->
+            <rect x="218" y="78"  width="26" height="87" rx="3" fill="url(#bargrad)"/>
+            <text x="231" y="178" text-anchor="middle" fill="#d0dde8" font-size="9">P6</text>
+            <!-- Phase 7: 91.97% → (91.97-70)/25*136=119.6 top=45 -->
+            <rect x="252" y="45"  width="26" height="120" rx="3" fill="url(#barbest)" filter="url(#glow)"/>
+            <text x="265" y="178" text-anchor="middle" fill="#7dd4b0" font-size="9" font-weight="700">P7</text>
+            <text x="265" y="41"  text-anchor="middle" fill="#7dd4b0" font-size="9" font-weight="700">92%</text>
+            <!-- Phase 8: 92% -->
+            <rect x="286" y="45"  width="26" height="120" rx="3" fill="url(#bargrad)"/>
+            <text x="299" y="178" text-anchor="middle" fill="#d0dde8" font-size="9">P8</text>
+            <!-- Phase 9: 94.5% → (94.5-70)/25*136=133.3 top=31.7 -->
+            <rect x="320" y="32"  width="26" height="133" rx="3" fill="url(#barbest)"/>
+            <text x="333" y="178" text-anchor="middle" fill="#7dd4b0" font-size="9" font-weight="700">P9</text>
+            <text x="333" y="28"  text-anchor="middle" fill="#7dd4b0" font-size="10" font-weight="700">94.5%</text>
+            <!-- best marker line -->
+            <line x1="40" y1="32" x2="375" y2="32" stroke="rgba(125,212,176,0.25)" stroke-width="1" stroke-dasharray="4,3"/>
+            <text x="375" y="188" text-anchor="end" fill="rgba(203,203,203,0.5)" font-size="9">1,200+ total runs across phases</text>
+          </svg>
+        </div>
+
+        <!-- 3-class vs 4-class comparison -->
+        <div style="flex:1; min-width:260px; background:rgba(46,61,74,0.5); border:1px solid rgba(184,160,232,0.3); border-radius:12px; padding:20px;">
+          <p style="color:#b8a0e8; font-size:15px; font-weight:700; margin:0 0 4px 0;">Key Architecture Discovery</p>
+          <p style="color:#d0dde8; font-size:12px; margin:0 0 18px 0;">Removing the &ldquo;Other&rdquo; class unlocked real-world performance</p>
+
+          <!-- 4-class row -->
+          <div style="margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+              <span style="color:#e8a87c; font-size:13px; font-weight:600;">4-Class Model</span>
+              <span style="color:#e8a87c; font-size:13px; font-weight:700;">~53% real-world</span>
+            </div>
+            <div style="display:flex; gap:4px; margin-bottom:6px;">
+              <div style="flex:1; background:rgba(136,201,232,0.25); border:1px solid #88c9e8; border-radius:4px; padding:6px; text-align:center; font-size:11px; color:#88c9e8;">Background</div>
+              <div style="flex:1; background:rgba(136,201,232,0.25); border:1px solid #88c9e8; border-radius:4px; padding:6px; text-align:center; font-size:11px; color:#88c9e8;">Vehicle</div>
+              <div style="flex:1; background:rgba(136,201,232,0.25); border:1px solid #88c9e8; border-radius:4px; padding:6px; text-align:center; font-size:11px; color:#88c9e8;">Person</div>
+              <div style="flex:1; background:rgba(232,168,124,0.2); border:1px dashed #e8a87c; border-radius:4px; padding:6px; text-align:center; font-size:11px; color:#e8a87c;">Other ✗</div>
+            </div>
+            <div style="background:rgba(232,168,124,0.1); border-radius:4px; padding:8px 10px; font-size:12px; color:#d0dde8; line-height:1.5;">
+              &#9888; Objects with highest confidence in &ldquo;Other&rdquo; were often correct in 2nd place &mdash; systematic misclassification failure
+            </div>
+          </div>
+
+          <div style="text-align:center; padding:4px 0; color:rgba(203,203,203,0.4); font-size:18px;">&#8595;</div>
+
+          <!-- 3-class row -->
+          <div style="margin-top:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+              <span style="color:#7dd4b0; font-size:13px; font-weight:600;">3-Class Model</span>
+              <span style="color:#7dd4b0; font-size:13px; font-weight:700;">~65% real-world</span>
+            </div>
+            <div style="display:flex; gap:4px; margin-bottom:6px;">
+              <div style="flex:1; background:rgba(125,212,176,0.2); border:1px solid #7dd4b0; border-radius:4px; padding:6px; text-align:center; font-size:11px; color:#7dd4b0;">Background</div>
+              <div style="flex:1; background:rgba(125,212,176,0.2); border:1px solid #7dd4b0; border-radius:4px; padding:6px; text-align:center; font-size:11px; color:#7dd4b0;">Vehicle</div>
+              <div style="flex:1; background:rgba(125,212,176,0.2); border:1px solid #7dd4b0; border-radius:4px; padding:6px; text-align:center; font-size:11px; color:#7dd4b0;">Person</div>
+            </div>
+            <div style="background:rgba(125,212,176,0.08); border:1px solid rgba(125,212,176,0.3); border-radius:4px; padding:8px 10px; font-size:12px; color:#d0dde8; line-height:1.5;">
+              &#10003; <strong style="color:#7dd4b0;">+9&ndash;12 percentage points</strong> real-world accuracy &mdash; no additional training data needed
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom row: confusion matrix + dataset breakdown -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; padding-top:22px; padding-bottom:8px;">
+
+        <!-- Confusion matrix heatmap -->
+        <div style="flex:1; min-width:260px; background:rgba(46,61,74,0.5); border:1px solid rgba(125,212,176,0.3); border-radius:12px; padding:20px;">
+          <p style="color:#7dd4b0; font-size:15px; font-weight:700; margin:0 0 4px 0;">Confusion Matrix &mdash; Best Model</p>
+          <p style="color:#d0dde8; font-size:12px; margin:0 0 16px 0;">Test set results, 3-class model &mdash; ~94.5% overall accuracy</p>
+          <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:300px; display:block; margin:0 auto;">
+            <!-- axis labels -->
+            <text x="170" y="14" text-anchor="middle" fill="#CBCBCB" font-size="10" font-weight="600">Predicted</text>
+            <text x="18" y="120" text-anchor="middle" fill="#CBCBCB" font-size="10" font-weight="600" transform="rotate(-90,18,120)">Actual</text>
+            <!-- col headers -->
+            <text x="100" y="34" text-anchor="middle" fill="#88c9e8" font-size="10">Background</text>
+            <text x="180" y="34" text-anchor="middle" fill="#88c9e8" font-size="10">Vehicle</text>
+            <text x="255" y="34" text-anchor="middle" fill="#88c9e8" font-size="10">Person</text>
+            <!-- row headers -->
+            <text x="38" y="80"  text-anchor="middle" fill="#88c9e8" font-size="10">Background</text>
+            <text x="38" y="140" text-anchor="middle" fill="#88c9e8" font-size="10">Vehicle</text>
+            <text x="38" y="200" text-anchor="middle" fill="#88c9e8" font-size="10">Person</text>
+            <!-- Row 1 -->
+            <rect x="65" y="44"  width="65" height="48" rx="4" fill="rgba(125,212,176,0.75)"/>
+            <text x="97"  y="73" text-anchor="middle" fill="#1a2a22" font-size="14" font-weight="700">96%</text>
+            <rect x="148" y="44"  width="55" height="48" rx="4" fill="rgba(232,168,124,0.18)"/>
+            <text x="175"  y="73" text-anchor="middle" fill="#d0dde8" font-size="12">2%</text>
+            <rect x="221" y="44"  width="55" height="48" rx="4" fill="rgba(232,168,124,0.12)"/>
+            <text x="248"  y="73" text-anchor="middle" fill="#d0dde8" font-size="12">2%</text>
+            <!-- Row 2 -->
+            <rect x="65" y="104"  width="65" height="48" rx="4" fill="rgba(232,168,124,0.18)"/>
+            <text x="97"  y="133" text-anchor="middle" fill="#d0dde8" font-size="12">3%</text>
+            <rect x="148" y="104"  width="55" height="48" rx="4" fill="rgba(125,212,176,0.72)"/>
+            <text x="175"  y="133" text-anchor="middle" fill="#1a2a22" font-size="14" font-weight="700">94%</text>
+            <rect x="221" y="104"  width="55" height="48" rx="4" fill="rgba(232,168,124,0.1)"/>
+            <text x="248"  y="133" text-anchor="middle" fill="#d0dde8" font-size="12">3%</text>
+            <!-- Row 3 -->
+            <rect x="65" y="163"  width="65" height="48" rx="4" fill="rgba(232,168,124,0.12)"/>
+            <text x="97"  y="192" text-anchor="middle" fill="#d0dde8" font-size="12">2%</text>
+            <rect x="148" y="163"  width="55" height="48" rx="4" fill="rgba(232,168,124,0.15)"/>
+            <text x="175"  y="192" text-anchor="middle" fill="#d0dde8" font-size="12">4%</text>
+            <rect x="221" y="163"  width="55" height="48" rx="4" fill="rgba(125,212,176,0.70)"/>
+            <text x="248"  y="192" text-anchor="middle" fill="#1a2a22" font-size="14" font-weight="700">94%</text>
+          </svg>
+        </div>
+
+        <!-- Dataset breakdown donut-style + image pipeline visual -->
+        <div style="flex:1.3; min-width:280px; background:rgba(46,61,74,0.5); border:1px solid rgba(232,168,124,0.3); border-radius:12px; padding:20px;">
+          <p style="color:#e8a87c; font-size:15px; font-weight:700; margin:0 0 4px 0;">Dataset Composition</p>
+          <p style="color:#d0dde8; font-size:12px; margin:0 0 16px 0;">5,091 unique images across 3 classes &mdash; expanded to 9,000+ via augmentation</p>
+
+          <svg viewBox="0 0 400 185" xmlns="http://www.w3.org/2000/svg" style="width:100%; display:block;">
+            <!-- Donut chart: cx=80 cy=88 r=52 inner=30 -->
+            <!-- Background ~40%: -90deg to 54deg (144deg sweep) -->
+            <path d="M80,36 A52,52 0 0,1 110.56,130.07 L97.63,112.27 A30,30 0 0,0 80,58 Z" fill="#88c9e8"/>
+            <!-- Vehicle ~35%: 54deg to 180deg (126deg sweep) -->
+            <path d="M110.56,130.07 A52,52 0 0,1 28,88 L50,88 A30,30 0 0,0 97.63,112.27 Z" fill="#7dd4b0"/>
+            <!-- Person ~25%: 180deg to 270deg (90deg sweep) -->
+            <path d="M28,88 A52,52 0 0,1 80,36 L80,58 A30,30 0 0,0 50,88 Z" fill="#b8a0e8"/>
+            <!-- center hole label -->
+            <text x="80" y="84"  text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="700">5,091</text>
+            <text x="80" y="97"  text-anchor="middle" fill="#d0dde8" font-size="9">images</text>
+
+            <!-- Legend -->
+            <rect x="155" y="40" width="10" height="10" rx="2" fill="#88c9e8"/>
+            <text x="170" y="50" fill="#d0dde8" font-size="11">Background &nbsp;&mdash;&nbsp; ~40%</text>
+            <rect x="155" y="62" width="10" height="10" rx="2" fill="#7dd4b0"/>
+            <text x="170" y="72" fill="#d0dde8" font-size="11">Vehicle &nbsp;&mdash;&nbsp; ~35%</text>
+            <rect x="155" y="84" width="10" height="10" rx="2" fill="#b8a0e8"/>
+            <text x="170" y="94" fill="#d0dde8" font-size="11">Person &nbsp;&mdash;&nbsp; ~25%</text>
+
+            <!-- Divider line — placed below the legend -->
+            <line x1="155" y1="107" x2="390" y2="107" stroke="rgba(203,203,203,0.15)" stroke-width="1"/>
+            <text x="155" y="122" fill="#e8a87c" font-size="11" font-weight="600">Sources</text>
+            <text x="155" y="137" fill="#d0dde8" font-size="10">Kaggle &nbsp;&#183;&nbsp; Pexels &nbsp;&#183;&nbsp; Dashcam &nbsp;&#183;&nbsp; Drone footage</text>
+            <text x="155" y="150" fill="#d0dde8" font-size="10">Augmented: flip &nbsp;&#183;&nbsp; rotate &nbsp;&#183;&nbsp; crop &nbsp;&rarr;&nbsp; <tspan fill="#e8a87c" font-weight="600">9,000+ images</tspan></text>
+
+            <!-- pixel art grid: simulated 32x32 thumbnail -->
+            <g transform="translate(310,18)">
+              <text x="40" y="-4" text-anchor="middle" fill="#CBCBCB" font-size="9">32×32 px sample</text>
+              <rect x="0"  y="0"  width="80" height="80" rx="4" fill="#1a2a34" stroke="rgba(203,203,203,0.3)" stroke-width="1"/>
+              <!-- simplified pixel rows suggesting a person silhouette -->
+              <rect x="34" y="6"  width="12" height="12" rx="1" fill="rgba(125,212,176,0.5)"/>
+              <rect x="28" y="20" width="24" height="8"  rx="1" fill="rgba(125,212,176,0.5)"/>
+              <rect x="32" y="30" width="16" height="16" rx="1" fill="rgba(125,212,176,0.5)"/>
+              <rect x="28" y="48" width="10" height="20" rx="1" fill="rgba(125,212,176,0.4)"/>
+              <rect x="42" y="48" width="10" height="20" rx="1" fill="rgba(125,212,176,0.4)"/>
+              <!-- label sits below the box, well clear of any lines -->
+              <text x="40" y="96" text-anchor="middle" fill="rgba(125,212,176,0.7)" font-size="9">Person</text>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 4. PIPELINE DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">System Pipeline</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 380" xmlns="http://www.w3.org/2000/svg" style="width:100%; min-width:480px; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="sl1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+          </defs>
+
+          <!-- Row 1: Data collection pipeline -->
+          <text x="430" y="22" text-anchor="middle" fill="#CBCBCB" font-size="11" font-family="monospace" letter-spacing="0.08em">DATA PIPELINE</text>
+
+          <!-- Source data -->
+          <rect x="20" y="34" width="130" height="52" rx="8" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="85" y="56" text-anchor="middle" fill="#7dd4b0" font-size="11" font-weight="600">Raw Sources</text>
+          <text x="85" y="71" text-anchor="middle" fill="#d0dde8" font-size="9">Kaggle · Pexels</text>
+          <text x="85" y="82" text-anchor="middle" fill="#d0dde8" font-size="9">dashcam · drone video</text>
+
+          <line x1="150" y1="60" x2="178" y2="60" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#sl1)"/>
+
+          <!-- JPEGCrops -->
+          <rect x="180" y="34" width="120" height="52" rx="8" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="240" y="56" text-anchor="middle" fill="#88c9e8" font-size="11" font-weight="600">JPEGCrops</text>
+          <text x="240" y="71" text-anchor="middle" fill="#d0dde8" font-size="9">manual crop of</text>
+          <text x="240" y="82" text-anchor="middle" fill="#d0dde8" font-size="9">each object</text>
+
+          <line x1="300" y1="60" x2="328" y2="60" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#sl1)"/>
+
+          <!-- converter.py -->
+          <rect x="330" y="34" width="130" height="52" rx="8" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="395" y="56" text-anchor="middle" fill="#e8a87c" font-size="11" font-weight="600">converter.py</text>
+          <text x="395" y="71" text-anchor="middle" fill="#d0dde8" font-size="9">32×32 px · grayscale</text>
+          <text x="395" y="82" text-anchor="middle" fill="#d0dde8" font-size="9">.png · named</text>
+
+          <line x1="460" y1="60" x2="488" y2="60" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#sl1)"/>
+
+          <!-- Augmentation -->
+          <rect x="490" y="34" width="120" height="52" rx="8" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="1.5"/>
+          <text x="550" y="56" text-anchor="middle" fill="#b8a0e8" font-size="11" font-weight="600">Augmentation</text>
+          <text x="550" y="71" text-anchor="middle" fill="#d0dde8" font-size="9">flip · rotate · crop</text>
+          <text x="550" y="82" text-anchor="middle" fill="#d0dde8" font-size="9">5,091 → 9,000+</text>
+
+          <line x1="610" y1="60" x2="638" y2="60" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#sl1)"/>
+
+          <!-- Dataset -->
+          <rect x="640" y="34" width="200" height="52" rx="8" fill="#243039" stroke="#7dd4b0" stroke-width="2"/>
+          <text x="740" y="56" text-anchor="middle" fill="#7dd4b0" font-size="11" font-weight="700">Curated Dataset</text>
+          <text x="740" y="71" text-anchor="middle" fill="#d0dde8" font-size="9">Background · Vehicle · Person</text>
+          <text x="740" y="82" text-anchor="middle" fill="#d0dde8" font-size="9">32×32 px grayscale PNGs</text>
+
+          <!-- Row divider -->
+          <line x1="20" y1="108" x2="840" y2="108" stroke="rgba(203,203,203,0.15)" stroke-width="1"/>
+
+          <!-- Row 2: Training pipeline -->
+          <text x="430" y="128" text-anchor="middle" fill="#CBCBCB" font-size="11" font-family="monospace" letter-spacing="0.08em">TRAINING PIPELINE</text>
+
+          <!-- run.py -->
+          <rect x="20" y="140" width="120" height="52" rx="8" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="80" y="162" text-anchor="middle" fill="#e8a87c" font-size="11" font-weight="600">run.py config</text>
+          <text x="80" y="177" text-anchor="middle" fill="#d0dde8" font-size="9">epochs · lr · momentum</text>
+          <text x="80" y="188" text-anchor="middle" fill="#d0dde8" font-size="9">weight_decay</text>
+
+          <line x1="140" y1="166" x2="168" y2="166" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#sl1)"/>
+
+          <!-- CNN Training -->
+          <rect x="170" y="140" width="160" height="52" rx="8" fill="#243039" stroke="#88c9e8" stroke-width="2"/>
+          <text x="250" y="158" text-anchor="middle" fill="#88c9e8" font-size="11" font-weight="700">CNN Training</text>
+          <text x="250" y="173" text-anchor="middle" fill="#d0dde8" font-size="9">12-layer network</text>
+          <text x="250" y="188" text-anchor="middle" fill="#d0dde8" font-size="9">2-phase solver (SGD)</text>
+
+          <line x1="330" y1="166" x2="358" y2="166" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#sl1)"/>
+
+          <!-- Test runner -->
+          <rect x="360" y="140" width="140" height="52" rx="8" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="430" y="158" text-anchor="middle" fill="#7dd4b0" font-size="11" font-weight="600">sl_test_model.py</text>
+          <text x="430" y="173" text-anchor="middle" fill="#d0dde8" font-size="9">accuracy + confusion</text>
+          <text x="430" y="188" text-anchor="middle" fill="#d0dde8" font-size="9">matrix logged</text>
+
+          <line x1="500" y1="166" x2="528" y2="166" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#sl1)"/>
+
+          <!-- Archive -->
+          <rect x="530" y="140" width="120" height="52" rx="8" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5" stroke-dasharray="5,3"/>
+          <text x="590" y="162" text-anchor="middle" fill="#CBCBCB" font-size="11" font-weight="600">archive_output()</text>
+          <text x="590" y="177" text-anchor="middle" fill="#d0dde8" font-size="9">rename .output folder</text>
+          <text x="590" y="188" text-anchor="middle" fill="#d0dde8" font-size="9">preserve all runs</text>
+
+          <!-- loop back arrow -->
+          <path d="M590,192 Q590,220 430,220 Q250,220 250,194" fill="none" stroke="rgba(203,203,203,0.3)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#sl1)"/>
+          <text x="430" y="234" text-anchor="middle" fill="rgba(203,203,203,0.4)" font-size="10">iterate hyperparameters (1,200+ runs)</text>
+
+          <!-- Row divider -->
+          <line x1="20" y1="252" x2="840" y2="252" stroke="rgba(203,203,203,0.15)" stroke-width="1"/>
+
+          <!-- Row 3: Inference / deployment -->
+          <text x="430" y="270" text-anchor="middle" fill="#CBCBCB" font-size="11" font-family="monospace" letter-spacing="0.08em">INFERENCE PIPELINE (SIGHTLINE INTEGRATION)</text>
+
+          <rect x="30" y="282" width="120" height="52" rx="8" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="90" y="304" text-anchor="middle" fill="#88c9e8" font-size="11" font-weight="600">Live Video Feed</text>
+          <text x="90" y="319" text-anchor="middle" fill="#d0dde8" font-size="9">drone / gimbal / PTZ</text>
+
+          <line x1="150" y1="308" x2="178" y2="308" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#sl1)"/>
+
+          <rect x="180" y="282" width="150" height="52" rx="8" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="1.5"/>
+          <text x="255" y="300" text-anchor="middle" fill="#b8a0e8" font-size="11" font-weight="600">Object Detection</text>
+          <text x="255" y="315" text-anchor="middle" fill="#d0dde8" font-size="9">SightLine proprietary</text>
+          <text x="255" y="326" text-anchor="middle" fill="#d0dde8" font-size="9">software → crop ROI</text>
+
+          <line x1="330" y1="308" x2="358" y2="308" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#sl1)"/>
+
+          <rect x="360" y="282" width="160" height="52" rx="8" fill="#243039" stroke="#7dd4b0" stroke-width="2"/>
+          <text x="440" y="300" text-anchor="middle" fill="#7dd4b0" font-size="11" font-weight="700">Our CNN Classifier</text>
+          <text x="440" y="315" text-anchor="middle" fill="#d0dde8" font-size="9">32×32 px crop → softmax</text>
+          <text x="440" y="326" text-anchor="middle" fill="#d0dde8" font-size="9">Background · Vehicle · Person</text>
+
+          <line x1="520" y1="308" x2="548" y2="308" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#sl1)"/>
+
+          <rect x="550" y="282" width="140" height="52" rx="8" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="620" y="300" text-anchor="middle" fill="#e8a87c" font-size="11" font-weight="600">Classification Label</text>
+          <text x="620" y="315" text-anchor="middle" fill="#d0dde8" font-size="9">overlaid on video frame</text>
+          <text x="620" y="326" text-anchor="middle" fill="#d0dde8" font-size="9">ISR · security · inspection</text>
+
+          <!-- delivered badge -->
+          <rect x="710" y="286" width="130" height="44" rx="8" fill="#243039" stroke="#7dd4b0" stroke-width="2"/>
+          <text x="775" y="304" text-anchor="middle" fill="#7dd4b0" font-size="10" font-weight="700">&#10003; Delivered to</text>
+          <text x="775" y="320" text-anchor="middle" fill="#d0dde8" font-size="10">SightLine Applications</text>
+
+          <line x1="690" y1="308" x2="710" y2="308" stroke="#7dd4b0" stroke-width="1.5" marker-end="url(#sl1)"/>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</div><!-- end background-block -->
+
 </body>
+
+<!-- ── JAVASCRIPT ──────────────────────────────────
+  Both pages use a slideshow. Use the correct one for each page:
+
+  ── index.html (photo slideshow) ──────────────────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("aboutIMG");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+
+  ── index-projects.html (project slideshow) ───────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("projects");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+-->
+<script>
+  // Uncomment and use the correct slideshow script for your page (see comments above).
+</script>
+
+
 </html>

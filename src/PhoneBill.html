@@ -1,113 +1,625 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--
-  <title>Ashley Maddix</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <h1 style="font-size:50px; position:relative; top:40px; color:#89D5D2; text-align:center;"> Hey! I'm Ashley Maddix</h1>
--->
-  <style>
-    #anim{max-width:700px; margin:0 auto;}
-    a:hover i{transform:scale(1.5); color:#35B5AC;}
-    a:hover button{transform:scale(1.3);}
-    @media only screen and (max-width:640px){
-      #links{
-      display:grid;
-      position:fixed;
-      padding-left:5%;
-      padding-top:10%;
-      text-align:left;
-      grid-gap:3rem;
-      grid-template-columns:repeat(1, 1fr);
-      grid-template-rows:repeat(2, 50px);
-      }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sekuya&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>ASHLEY MADDIX</title>
+
+    <style>
+
+    /* ── RESET & BASE ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body, p {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      padding: 0;
     }
 
-    </style>
-  <a href="index.html">
-    <div id="anim"></div>
-  </a>
-  <script src="lottie.js"></script>
-  <script>
-        var animation = bodymovin.loadAnimation({
-        container: document.getElementById('anim'),
-        renderer:'svg',
-        loop:true,
-        autoplay:true,
-        path:'AshleyHeader1.json'
-        })
-    </script>
+    body {
+      width: 100%;
+      overflow-x: hidden;
+      background-color: #EFFFE3;
+    }
 
-  <script src="https://kit.fontawesome.com/d224905442.js" crossorigin="anonymous"></script>
+    h1, button {
+      font-family: "Sekuya", system-ui;
+      font-weight: 400;
+      font-style: normal;
+    }
 
-  <title>PhoneBillManager</title>
+    /* ── HOVER ANIMATIONS ─────────────────────────── */
+    #anim { max-width: 700px; margin: 0 auto; }
+    a:hover i                    { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    a:hover span.fa-regular      { transform: scale(1.5);  color: #CBCBCB; transition: 0.3s; }
+    a:hover button               { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    button:hover                 { transform: scale(1.3);  color: #CBCBCB; background-color: #6D8196; cursor: pointer; transition: 0.3s; }
 
+    .fa-regular {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 400 !important;
+      display: inline-block;
+    }
+
+    /* ── SITE TITLE ───────────────────────────────── */
+    .site-title {
+      font-size: 80px;
+      color: #6D8196;
+      text-align: center;
+      padding: 48px 10% 20px;
+      margin: 0;
+    }
+
+    /* ── NAV TAB ──────────────────────────────────── */
+    .project-page-container {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0;
+    }
+    .project-page {
+      display: block;
+      width: 400px;
+      font-size: 20px;
+    }
+
+    /* ── MAIN CONTENT BLOCK ───────────────────────── */
+    .background-block { margin: 0; padding: 0; }
+
+    /* ── HERO TAGLINE ─────────────────────────────── */
+    .hero-tagline {
+      font-size: 53px;
+      color: #EFFFE3;
+      text-align: center;
+      padding: 48px 6% 12px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .hero-sub {
+      color: rgba(239,255,227,0.65);
+      font-size: 20px;
+      font-family: "Raleway", sans-serif;
+      text-align: center;
+      padding: 0 6% 40px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SOCIAL ICONS ROW ─────────────────────────── */
+    .social-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      padding-bottom: 48px;
+    }
+    .social-row a { text-decoration: none; }
+    .social-label {
+      display: block;
+      font-size: 13px;
+      color: #CBCBCB;
+      font-family: "Raleway", sans-serif;
+      margin-top: 6px;
+      letter-spacing: 0.06em;
+    }
+    .social-item { text-align: center; }
+
+    /* ── SKILLS GRID ──────────────────────────────── */
+    .skills-section { padding: 0 4% 48px; }
+    .skills-section-title {
+      font-size: 13px;
+      color: rgba(239,255,227,0.5);
+      letter-spacing: 0.18em;
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      margin: 0 0 28px;
+      text-transform: uppercase;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .skill-card {
+      background: rgba(46,61,74,0.55);
+      border: 1px solid rgba(203,203,203,0.18);
+      border-radius: 14px;
+      padding: 24px 20px 20px;
+      text-align: left;
+    }
+    .skill-card-title {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.5);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+    .skill-card-icon {
+      font-size: 22px;
+      color: #7dd4b0;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-tag {
+      background: rgba(109,129,150,0.4);
+      color: #EFFFE3;
+      border-radius: 20px;
+      padding: 5px 13px;
+      font-size: 13px;
+      font-family: "Raleway", sans-serif;
+      border: 1px solid rgba(203,203,203,0.2);
+      white-space: nowrap;
+    }
+
+    /* ── DIVIDER ──────────────────────────────────── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(203,203,203,0.2);
+      margin: 0 4% 48px;
+    }
+
+    /* ── ABOUT SECTION ────────────────────────────── */
+    .about-section {
+      padding: 0 4% 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Photo slideshow column */
+    .photo-column {
+      float: left;
+      width: 440px;
+      margin-right: 40px;
+      margin-bottom: 20px;
+    }
+    .slideshow-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Arrow buttons — shared by both pages */
+    .arrow-buttons {
+      background: transparent;
+      border: none;
+      color: #EFFFE3;
+      font-size: 36px;
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .arrow-buttons:hover { transform: scale(1.2); color: #CBCBCB; }
+
+    .aboutIMG { display: none; width: 100%; }
+    .aboutIMG img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+    }
+
+    /* Bio + traits column */
+    .bio-column { color: #EFFFE3; }
+    .about-section-title {
+      font-size: 36px;
+      color: #EFFFE3;
+      margin: 0 0 24px;
+    }
+    .bio-text {
+      font-size: 20px;
+      line-height: 1.8;
+      color: rgba(239,255,227,0.88);
+      margin: 0 0 32px;
+    }
+
+    /* Personality trait pills */
+    .traits-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.45);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+    .traits-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .trait-pill {
+      background: rgba(125,212,176,0.15);
+      border: 1px solid rgba(125,212,176,0.4);
+      color: #7dd4b0;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 14px;
+      font-family: "Raleway", sans-serif;
+    }
+
+    /* ── PROJECTS PAGE SPECIFIC ───────────────────── */
+    .title              { display: flex; flex-wrap: wrap; flex-direction: column; }
+    .slideshow-arrows   { display: flex; justify-content: space-around; }
+    .projects           { flex: 1;  }
+    .detail2-container  { display: flex; justify-content: space-evenly; flex-wrap: wrap; flex-direction: row; }
+    .detail2            { flex: 1; }
+    .section-title      { font-size: 60px; }
+
+    /* ── RESPONSIVE BREAKPOINTS ───────────────────── */
+    @media (max-width: 768px) {
+      .site-title             { font-size: 52px; padding: 32px 5% 16px; }
+      .hero-tagline           { font-size: 30px; }
+      .section-title          { font-size: 42px; }
+      .project-page           { width: 50%; font-size: clamp(10px, 3.5vw, 20px); }
+      .project-page-container { justify-content: flex-end; }
+      .project-page h1        { font-size: clamp(12px, 4vw, 24px); margin: 0; padding: 6px 0; }
+      a.project-page          { border-radius: 14px 14px 0 0 !important; padding: 10px !important; }
+      .skills-grid            { grid-template-columns: repeat(2, 1fr); }
+      .about-section          { flex-direction: column; }
+      .photo-column           { max-width: 100%; }
+      .detail2-container      { flex-direction: column; }
+      .detail2                { min-width: 0; width: 100%; }
+      pre                     { font-size: 11px !important; }
+    }
+
+    @media (max-width: 480px) {
+      .site-title    { font-size: 36px; padding: 24px 4% 12px; }
+      .hero-tagline  { font-size: 24px; }
+      .hero-sub      { font-size: 15px; }
+      .section-title { font-size: 28px; }
+      .skills-grid   { grid-template-columns: 1fr; }
+      .skill-tag     { font-size: 12px; }
+      .bio-text      { font-size: 16px; }
+      .aboutIMG img  { height: 240px; }
+      .social-row    { gap: 20px; }
+      /* NOTE: index.html keeps .project-page at 50% on mobile (no override here).
+         If using index-projects.html layout, uncomment the line below instead: */
+      /* .project-page  { width: 100%; font-size: 12px; } */
+      .projects      { padding: 0 4px; }
+      .projects span[style] { font-size: 12px !important; padding: 4px 10px !important; }
+      pre            { font-size: 10px !important; white-space: pre; overflow-x: auto; }
+      svg            { min-width: 480px; }
+      .projects h1   { font-size: 16px !important; }
+      .projects p    { font-size: 16px !important; }
+      .arrow-buttons { font-size: 36px !important; }
+    }
+
+  </style>
 </head>
 
+<body style="background-color:#EFFFE3; margin:0;">
 
-<body style="background-color:#89D5D2;">
-<div class="links" style="display:grid; position:fixed; padding-left:5%; padding-top:10%; text-align:left; grid-gap:3rem; grid-template-columns:repeat(1, 2fr); grid-template-rows:repeat(4, 60px);">
-  <a href="https://github.com/amaddix/CS410-SUMQ22/tree/main/phonebill-web" style="text-decoration:none" >
-    <i class="fa-brands fa-github fa-3x" style="position:center; color:#008080;"></i>
-  </a>
-
-  <a href="Projects.html" style="text-decoration:none" >
-    <i class="fa-solid fa-circle-arrow-left fa-3x" style="position:center; color:#008080;"></i>
-  </a>
+<!-- ── SITE TITLE ──────────────────────────────── -->
+<div>
+    <h1 class="site-title" style="color:#6D8196; text-align:center;">ASHLEY MADDIX</h1>
 </div>
-<!--<div style="border-radius:15%; position:grid; text-align:center; background-color:#BBF1F1; margin-left:17%; margin-right:2%; "> -->
-    <div style="border-radius:15%; position:grid; text-align:center; background-color:#BBF1F1; margin-left:17%; padding-bottom:5%; margin-right:2%;">
 
-    <br><br>
-    <h2 style="text-align:right; color:#265C5C; padding-right:15%; ">2022</h2>
-    <h1 style="text-align:center; color:#265C5C; padding-bottom:1%;">  Phone Bill Manager - <br>   Client / Server  </h1>
-
-    <h3 style="color:#265C5C; padding:1%;">           <b><i> Java Language - Object Oriented design - Test driven development - intelliJ - android studio - REST API - maven - javadocs - jacoco </i></b> <br><br><br>
-<br>
-        Through the course of an advanced java programming course, I created both a client-server web interface and an android
-        application to simulate a phone bill managing account.<br><br>
-        <i> Android App</i>:
-        <a href="phoneBill2.html" style="text-decoration:none" >
-            <i class="fa-solid fa-chevron-right fa-2x" style="position:right; text-align:right; color:#008080;"></i>
-        </a></h3>
-
-
-        <h3 style="color:#265C5C; padding:1%;">
-        <hr style="border-color:#008080; ">
-
-
-
-
-<br>
-
-
-      <br> This program receives information from the client on a customer and a phone call, saves
-      that information to the server. The client can request and retrieve information from the server about a customers
-      phone bill history, and has the option to filter their search between two times for a customers phone bill history<br><br>
-      <img src="phonebill4.png" alt="p3" style="display:relative; border-radius:5%; width:100%; height:100%; object-fit:cover;">
-      <i>Site Launches on local host 8888</i>
-      <br><br><br><br>
-
-      <img src="phonebill3.png" alt="p3" style="display:relative; border-radius:5%; width:100%; height:100%; object-fit:cover;">
-      <i>Client enters a phone call transaction to save onto the server</i>
-      <br><br><br><br>
-
-      <img src="phonebill1.png" alt="p3" style="display:relative; border-radius:5%; width:100%; height:100%; object-fit:cover;">
-      <i>Client can request a particular customers phone bill information, displaying a complete list
-      of calls under requested customers name</i>
-      <br><br><br><br>
-
-      <img src="phonebill2.png" alt="p3" style="display:relative; border-radius:5%; width:100%; height:1auto; object-fit:cover;">
-      <i>Client can filter the search results, only displaying the calls between two times for the
-      requested customer</i>
-      <br><br><br><br>
-
-
-  </h3>
-
-  </div>
+<div class="project-page-container">
+    <a href="index-projects.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#CBCBCB; background-color:#6D8196;
+              text-align:center; text-decoration:none; padding:10px; ">
+        <i><h1>PROJECTS</h1> </i>
+    </a>
+    <a href="index.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+        <i><h1>ABOUT ME</h1></i>
+    </a>
 </div>
+
+<!-- ── MAIN CONTENT BLOCK ──────────────────────── -->
+<div class="background-block" style="background-color:#6D8196; padding-bottom:60px;">
+
+
+    <div class="title" style="color:#EFFFE3; text-align:center;">
+
+        <h1 class="section-title" style="font-size:60px; padding: 20px;">Phone Bill Manager</h1>
+
+
+
+
+        <!-- project "slide-show" -->
+
+        <!-- PROJECT #1 PHONE BILL -->
+        <!-- PROJECT #1 PHONE BILL -->
+        <div class="projects">
+
+
+
+            <!-- Skill tag pills -->
+            <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2% 2% 0 2%;">
+                <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+                    <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Java</span>
+                    <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">REST API</span>
+                    <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Android</span>
+                    <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">OOP</span>
+                    <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Client&#8211;Server</span>
+                    <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">TDD / JUnit</span>
+                    <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Maven</span>
+                    <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Servlet / HTTP</span>
+                    <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">File I/O</span>
+                    <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Javadoc / JaCoCo</span>
+                </div>
+            </div>
+
+            <!-- GitHub link -->
+            <div style="text-align:center; padding-top:16px;">
+                <a class="github" href="https://github.com/amaddix/CS410-SUMQ22/tree/main/phonebill-android" style="text-decoration:none;">
+                    <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+                </a>
+            </div>
+
+            <!-- 1. OVERVIEW -->
+            <div class="detail2-container" style="align-items:flex-start;">
+                <div class="detail2" style="flex:3; min-width:280px;">
+                    <p style="color:#EFFFE3; font-size:22px; padding:1%; line-height:1.7; font-weight:500; padding-top:7%">
+
+                        A full-stack phone billing system built across five iterative project phases &#8212; evolving from a command-line Java app into a
+                        networked client&#8211;server system with an Android front-end. The application models real-world billing infrastructure:
+                        customers can be created, phone calls logged against their account, and records queried or filtered by date-range.<br><br>
+                        The server exposes a <b>RESTful HTTP API</b> backed by a custom Java Servlet. The Android client communicates with this
+                        server via HTTP GET and POST requests, while also maintaining a <b>local file-based data store</b> for offline persistence.
+                        On startup, users can push locally saved bills back to the server &#8212; giving the app genuine dual-layer data resilience.<br><br>
+                        Built with a strict <b>test-driven development</b> workflow: JUnit tests were written before implementation,
+                        coverage tracked with JaCoCo, and builds automated end-to-end through Maven.
+                    </p>
+                </div>
+                <div class="detail2" style="flex:2; min-width:240px; display:flex; align-items:center; justify-content:center; padding:2%;">
+                    <video style="width:50%; border-radius:12px; border:2px solid #CBCBCB;" controls="controls">
+                        <source src="phonebill.mov" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- 2. KEY IMPLEMENTATION DETAILS -->
+            <div style="padding: 2% 3% 0 3%;">
+                <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Key Implementation Details</h1>
+                <div class="detail2-container" style="gap:16px; padding-top:16px; flex-wrap:wrap;">
+
+                    <div style="flex:1; min-width:220px; border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+                        <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">REST Servlet (GET &amp; POST)</p>
+                        <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;"><code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">PhoneBillServlet</code> handles GET requests to retrieve a full bill or search calls between two timestamps, and POST requests to add new calls. Customer bills are held in a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">HashMap&lt;String, PhoneBill&gt;</code> on the server for fast lookup by customer name.</p>
+                    </div>
+
+                    <div style="flex:1; min-width:220px; border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+                        <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Date-Range Filtering</p>
+                        <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The search endpoint parses timestamps with <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">SimpleDateFormat</code> and compares <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">Date.compareTo()</code> to include only calls whose start and end fall within the queried window &#8212; mirroring production billing query logic.</p>
+                    </div>
+
+                    <div style="flex:1; min-width:220px; border-left:4px solid #e8a87c; background:rgba(232,168,124,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+                        <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Dual-Layer Persistence</p>
+                        <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The Android client writes call data to a local <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">billList.txt</code> via <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">TextDumper</code>, then on relaunch offers to sync that file back to the server &#8212; intentionally decoupling local state from server state.</p>
+                    </div>
+
+                    <div style="flex:1; min-width:220px; border-left:4px solid #b8a0e8; background:rgba(184,160,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+                        <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Sorted Call List</p>
+                        <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;"><code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">PhoneBill.sorted()</code> runs a bubble-sort over the internal <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">PhoneCall[]</code> array after every insertion, normalizing phone number formats (dashed, spaced, plain) before numeric comparison to guarantee consistent ordering regardless of input style.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 3. CODE SAMPLES -->
+            <div style="padding: 2% 3% 0 3%;">
+                <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:10px; border-bottom:1px solid rgba(203,203,203,0.3);">Code Samples</h1>
+
+                <!-- Snippet 1: text left, code right -->
+                <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:20px;">
+                    <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+                        <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+                            The servlet's <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">doPost()</code> extracts and validates all five required parameters before constructing a
+                            <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">PhoneCall</code>, then either creates a new
+                            <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">PhoneBill</code> or appends to an existing one in the server map.
+                            Validate first, mutate state only on success &#8212; a defensive pattern used in production APIs.
+                        </p>
+                    </div>
+                    <div style="flex:1.4; min-width:300px;">
+                        <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">PhoneBillServlet.java &nbsp;&#8212;&nbsp; doPost() handler</p>
+                        <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#88c9e8;">String</span> customer = getParameter(<span style="color:#7dd4b0;">"customer"</span>, request);
+<span style="color:#88c9e8;">if</span> (customer == <span style="color:#e8a87c;">null</span>) { missingRequiredParameter(response, <span style="color:#7dd4b0;">"customer"</span>); <span style="color:#88c9e8;">return</span>; }
+<span style="color:#7dd4b0;">// ... validate caller, callee, start, end ...</span>
+
+PhoneCall tcall = <span style="color:#88c9e8;">new</span> PhoneCall(customer, tcaller, tcallee, start, end);
+PhoneBill bill1 = <span style="color:#88c9e8;">this</span>.phoneBillMap.get(customer);
+
+<span style="color:#88c9e8;">if</span> (bill1 == <span style="color:#e8a87c;">null</span>) {
+  bill1 = <span style="color:#88c9e8;">new</span> PhoneBill(tcall);          <span style="color:#7dd4b0;">// first call: create bill</span>
+  <span style="color:#88c9e8;">this</span>.phoneBillMap.put(customer, bill1);
+} <span style="color:#88c9e8;">else</span> {
+  bill1.addPhoneCall(tcall);             <span style="color:#7dd4b0;">// subsequent: append + sort</span>
+  <span style="color:#88c9e8;">this</span>.phoneBillMap.put(customer, bill1);
+}
+response.setStatus(HttpServletResponse.SC_OK);</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Snippet 2: code left, text right -->
+                <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:28px; margin-bottom:8px;">
+                    <div style="flex:1.4; min-width:300px;">
+                        <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">PhoneBillRestClient.java &nbsp;&#8212;&nbsp; date-range search</p>
+                        <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#88c9e8;">public int</span> getSearch(<span style="color:#88c9e8;">String</span> customer, <span style="color:#88c9e8;">String</span> start, <span style="color:#88c9e8;">String</span> end)
+    <span style="color:#88c9e8;">throws</span> IOException, ParserException {
+
+  Response response = http.get(Map.of(
+    <span style="color:#7dd4b0;">"customer"</span>, customer,
+    <span style="color:#7dd4b0;">"start"</span>,    start,    <span style="color:#7dd4b0;">// MM/dd/yyyy hh:mm a</span>
+    <span style="color:#7dd4b0;">"end"</span>,      end
+  ));
+
+  <span style="color:#88c9e8;">if</span> (response.getHttpStatusCode() != HTTP_OK) {
+    System.err.println(<span style="color:#7dd4b0;">"No calls found in range"</span>);
+    <span style="color:#88c9e8;">return</span> <span style="color:#e8a87c;">0</span>;
+  }
+  System.out.println(response.getContent());
+  <span style="color:#88c9e8;">return</span> <span style="color:#e8a87c;">1</span>;
+}</pre>
+                        </div>
+                    </div>
+                    <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+                        <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+                            <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">PhoneBillRestClient</code> wraps
+                            <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">HttpRequestHelper</code> into three typed, intention-revealing methods:
+                            add (POST), retrieve by name (GET), and search by range (GET with three params).
+                            This keeps <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">Project4.java</code> free of raw HTTP plumbing,
+                            and surfaces non-200 responses as readable error messages rather than raw exceptions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. ARCHITECTURE DIAGRAM -->
+            <div style="padding: 2% 3% 3% 3%;">
+                <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">System Architecture</h1>
+                <div style="margin-top:16px; overflow-x:auto;">
+                    <svg viewBox="0 0 860 480" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+                        <defs>
+                            <marker id="pb-arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+                            <marker id="pb-grn" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7dd4b0"/></marker>
+                            <marker id="pb-blu" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#88c9e8"/></marker>
+                            <marker id="pb-pur" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#b8a0e8"/></marker>
+                        </defs>
+
+                        <!-- ANDROID CLIENT -->
+                        <rect x="10" y="40" width="200" height="380" rx="14" fill="#243039" stroke="#88c9e8" stroke-width="2"/>
+                        <text x="110" y="68" text-anchor="middle" fill="#88c9e8" font-size="13" font-weight="700">Android Client</text>
+                        <rect x="26" y="84" width="168" height="44" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+                        <text x="110" y="101" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">MainActivity</text>
+                        <text x="110" y="116" text-anchor="middle" fill="#d0dde8" font-size="9">phoneBillMap + UI dispatch</text>
+                        <rect x="26" y="146" width="168" height="44" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+                        <text x="110" y="163" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">AddPhoneBill Activity</text>
+                        <text x="110" y="178" text-anchor="middle" fill="#d0dde8" font-size="9">capture customer name</text>
+                        <rect x="26" y="208" width="168" height="44" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+                        <text x="110" y="225" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">AddPhoneCall Activity</text>
+                        <text x="110" y="240" text-anchor="middle" fill="#d0dde8" font-size="9">5-field form via Intent</text>
+                        <rect x="26" y="270" width="168" height="44" rx="7" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+                        <text x="110" y="287" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">PrettyPrint / Search</text>
+                        <text x="110" y="302" text-anchor="middle" fill="#d0dde8" font-size="9">ListView display activities</text>
+                        <rect x="26" y="332" width="168" height="44" rx="7" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="1.5"/>
+                        <text x="110" y="349" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">TextDumper / TextParser</text>
+                        <text x="110" y="364" text-anchor="middle" fill="#d0dde8" font-size="9">billList.txt local persistence</text>
+
+                        <!-- HTTP ARROWS -->
+                        <line x1="210" y1="200" x2="308" y2="200" stroke="#7dd4b0" stroke-width="2" marker-end="url(#pb-grn)"/>
+                        <text x="258" y="193" text-anchor="middle" fill="#7dd4b0" font-size="10" font-weight="600">POST /calls</text>
+                        <text x="258" y="207" text-anchor="middle" fill="#7dd4b0" font-size="9">add phone call</text>
+                        <line x1="308" y1="240" x2="210" y2="240" stroke="#88c9e8" stroke-width="2" marker-end="url(#pb-blu)"/>
+                        <text x="258" y="257" text-anchor="middle" fill="#88c9e8" font-size="10" font-weight="600">GET ?customer</text>
+                        <text x="258" y="270" text-anchor="middle" fill="#88c9e8" font-size="9">retrieve bill</text>
+                        <line x1="308" y1="300" x2="210" y2="300" stroke="#b8a0e8" stroke-width="2" marker-end="url(#pb-pur)"/>
+                        <text x="258" y="317" text-anchor="middle" fill="#b8a0e8" font-size="10" font-weight="600">GET ?customer+start+end</text>
+                        <text x="258" y="330" text-anchor="middle" fill="#b8a0e8" font-size="9">date-range search</text>
+
+                        <!-- SERVER -->
+                        <rect x="310" y="40" width="210" height="380" rx="14" fill="#243039" stroke="#7dd4b0" stroke-width="2"/>
+                        <text x="415" y="68" text-anchor="middle" fill="#7dd4b0" font-size="13" font-weight="700">Java Server (Jetty)</text>
+                        <rect x="326" y="84" width="178" height="56" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+                        <text x="415" y="104" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">PhoneBillServlet</text>
+                        <text x="415" y="119" text-anchor="middle" fill="#d0dde8" font-size="9">doGet() &#8212; retrieve / search</text>
+                        <text x="415" y="132" text-anchor="middle" fill="#d0dde8" font-size="9">doPost() &#8212; add call</text>
+                        <rect x="326" y="158" width="178" height="44" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+                        <text x="415" y="175" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">PhoneBillRestClient</text>
+                        <text x="415" y="190" text-anchor="middle" fill="#d0dde8" font-size="9">typed HTTP wrapper methods</text>
+                        <rect x="326" y="220" width="178" height="56" rx="7" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+                        <text x="415" y="240" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">HashMap&lt;String, PhoneBill&gt;</text>
+                        <text x="415" y="255" text-anchor="middle" fill="#d0dde8" font-size="9">in-memory bill store</text>
+                        <text x="415" y="268" text-anchor="middle" fill="#d0dde8" font-size="9">keyed by customer name</text>
+                        <rect x="326" y="294" width="178" height="44" rx="7" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="1.5"/>
+                        <text x="415" y="311" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">PrettyPrinter</text>
+                        <text x="415" y="326" text-anchor="middle" fill="#d0dde8" font-size="9">formats bill to PrintWriter</text>
+                        <rect x="326" y="356" width="178" height="44" rx="7" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5"/>
+                        <text x="415" y="373" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">Messages</text>
+                        <text x="415" y="388" text-anchor="middle" fill="#d0dde8" font-size="9">error / response string helpers</text>
+
+                        <!-- DOMAIN MODEL -->
+                        <rect x="560" y="40" width="290" height="380" rx="14" fill="#243039" stroke="#CBCBCB" stroke-width="2"/>
+                        <text x="705" y="68" text-anchor="middle" fill="#CBCBCB" font-size="13" font-weight="700">Domain Model</text>
+                        <rect x="576" y="84" width="258" height="36" rx="7" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5" stroke-dasharray="5,3"/>
+                        <text x="705" y="100" text-anchor="middle" fill="#CBCBCB" font-size="11" font-style="italic">AbstractPhoneBill&lt;PhoneCall&gt;</text>
+                        <text x="705" y="114" text-anchor="middle" fill="#7dd4b0" font-size="9">edu.pdx.cs410J (library base)</text>
+                        <rect x="576" y="138" width="258" height="80" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+                        <text x="705" y="156" text-anchor="middle" fill="#7dd4b0" font-size="11" font-weight="700">PhoneBill</text>
+                        <text x="705" y="172" text-anchor="middle" fill="#d0dde8" font-size="9">String customer</text>
+                        <text x="705" y="185" text-anchor="middle" fill="#d0dde8" font-size="9">PhoneCall[] call  (capacity 100)</text>
+                        <text x="705" y="198" text-anchor="middle" fill="#d0dde8" font-size="9">int callNum  &#8226;  addPhoneCall()  &#8226;  sorted()</text>
+                        <line x1="705" y1="120" x2="705" y2="136" stroke="#7dd4b0" stroke-width="1.5" marker-end="url(#pb-grn)"/>
+                        <rect x="576" y="238" width="258" height="36" rx="7" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5" stroke-dasharray="5,3"/>
+                        <text x="705" y="254" text-anchor="middle" fill="#CBCBCB" font-size="11" font-style="italic">AbstractPhoneCall</text>
+                        <text x="705" y="268" text-anchor="middle" fill="#7dd4b0" font-size="9">edu.pdx.cs410J (library base)</text>
+                        <rect x="576" y="292" width="258" height="92" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="2"/>
+                        <text x="705" y="310" text-anchor="middle" fill="#88c9e8" font-size="11" font-weight="700">PhoneCall</text>
+                        <text x="705" y="326" text-anchor="middle" fill="#d0dde8" font-size="9">String customer, caller, callee</text>
+                        <text x="705" y="339" text-anchor="middle" fill="#d0dde8" font-size="9">String startTime, endTime</text>
+                        <text x="705" y="352" text-anchor="middle" fill="#d0dde8" font-size="9">getBeginTimeString() &#8212; SimpleDateFormat</text>
+                        <text x="705" y="365" text-anchor="middle" fill="#d0dde8" font-size="9">getEndTimeString() &#8212; SHORT locale format</text>
+                        <line x1="705" y1="274" x2="705" y2="290" stroke="#88c9e8" stroke-width="1.5" marker-end="url(#pb-blu)"/>
+                        <line x1="705" y1="218" x2="705" y2="236" stroke="#b8a0e8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#pb-pur)"/>
+                        <text x="714" y="230" fill="#b8a0e8" font-size="9">owns []</text>
+
+                        <!-- Legend -->
+                        <text x="30"  y="450" fill="#7dd4b0" font-size="10">&#9472;&#9472;&#9472; POST (add)</text>
+                        <text x="140" y="450" fill="#88c9e8" font-size="10">&#9472;&#9472;&#9472; GET (retrieve)</text>
+                        <text x="270" y="450" fill="#b8a0e8" font-size="10">&#9472;&#9472;&#9472; GET (search)</text>
+                        <text x="540" y="450" fill="rgba(203,203,203,0.5)" font-size="10">- - - extends (library base class)</text>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</div><!-- end background-block -->
+
 </body>
+
+<!-- ── JAVASCRIPT ──────────────────────────────────
+  Both pages use a slideshow. Use the correct one for each page:
+
+  ── index.html (photo slideshow) ──────────────────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("aboutIMG");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+
+  ── index-projects.html (project slideshow) ───────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("projects");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+-->
+<script>
+  // Uncomment and use the correct slideshow script for your page (see comments above).
+</script>
+
 </html>

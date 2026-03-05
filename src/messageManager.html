@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sekuya&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <title>ASHLEY MADDIX</title>
+
+  <style>
+
+    /* ── RESET & BASE ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body, p {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+      overflow-x: hidden;
+      background-color: #EFFFE3;
+    }
+
+    h1, button {
+      font-family: "Sekuya", system-ui;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    /* ── HOVER ANIMATIONS ─────────────────────────── */
+    #anim { max-width: 700px; margin: 0 auto; }
+    a:hover i                    { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    a:hover span.fa-regular      { transform: scale(1.5);  color: #CBCBCB; transition: 0.3s; }
+    a:hover button               { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    button:hover                 { transform: scale(1.3);  color: #CBCBCB; background-color: #6D8196; cursor: pointer; transition: 0.3s; }
+
+    .fa-regular {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 400 !important;
+      display: inline-block;
+    }
+
+    /* ── SITE TITLE ───────────────────────────────── */
+   .site-title {
+      font-size: 80px;
+      padding: 40px 10%;
+      color: #6D8196;
+      text-align: center;
+      margin: 0;
+    }
+
+    /* ── NAV TAB ──────────────────────────────────── */
+    .project-page-container {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0;
+    }
+    .project-page {
+      display: block;
+      width: 400px;
+      font-size: 20px;
+      border-radius: 40px 40px 0 0;
+      color: #EFFFE3;
+      background-color: #6D8196;
+      text-align: center;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    /* ── BACKGROUND BLOCK ─────────────────────────── */
+    .background-block {
+      background-color: #6D8196;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ── HERO TAGLINE ─────────────────────────────── */
+    .hero-tagline {
+      font-size: 53px;
+      color: #EFFFE3;
+      text-align: center;
+      padding: 48px 6% 12px;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .hero-sub {
+      color: rgba(239,255,227,0.65);
+      font-size: 20px;
+      font-family: "Raleway", sans-serif;
+      text-align: center;
+      padding: 0 6% 40px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SOCIAL ICONS ROW ─────────────────────────── */
+    .social-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      padding-bottom: 48px;
+    }
+    .social-row a { text-decoration: none; }
+    .social-label {
+      display: block;
+      font-size: 13px;
+      color: #CBCBCB;
+      font-family: "Raleway", sans-serif;
+      margin-top: 6px;
+      letter-spacing: 0.06em;
+    }
+    .social-item { text-align: center; }
+
+    /* ── SKILLS GRID ──────────────────────────────── */
+    .skills-section { padding: 0 4% 48px; }
+    .skills-section-title {
+      font-size: 13px;
+      color: rgba(239,255,227,0.5);
+      letter-spacing: 0.18em;
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      margin: 0 0 28px;
+      text-transform: uppercase;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .skill-card {
+      background: rgba(46,61,74,0.55);
+      border: 1px solid rgba(203,203,203,0.18);
+      border-radius: 14px;
+      padding: 24px 20px 20px;
+      text-align: left;
+    }
+    .skill-card-title {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.5);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+    .skill-card-icon {
+      font-size: 22px;
+      color: #7dd4b0;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-tag {
+      background: rgba(109,129,150,0.4);
+      color: #EFFFE3;
+      border-radius: 20px;
+      padding: 5px 13px;
+      font-size: 13px;
+      font-family: "Raleway", sans-serif;
+      border: 1px solid rgba(203,203,203,0.2);
+      white-space: nowrap;
+    }
+
+    /* ── DIVIDER ──────────────────────────────────── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(203,203,203,0.2);
+      margin: 0 4% 48px;
+    }
+
+    /* ── ABOUT SECTION ────────────────────────────── */
+    .about-section {
+      padding: 0 4% 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Photo slideshow column */
+    .photo-column {
+      float: left;
+      width: 440px;
+      margin-right: 40px;
+      margin-bottom: 20px;
+    }
+    .slideshow-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Arrow buttons — shared by both pages */
+    .arrow-buttons {
+      background: transparent;
+      border: none;
+      color: #EFFFE3;
+      font-size: 36px;
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .arrow-buttons:hover { transform: scale(1.2); color: #CBCBCB; }
+
+    .aboutIMG { display: none; width: 100%; }
+    .aboutIMG img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+    }
+
+    /* Bio + traits column */
+    .bio-column { color: #EFFFE3; }
+    .about-section-title {
+      font-size: 36px;
+      color: #EFFFE3;
+      margin: 0 0 24px;
+    }
+    .bio-text {
+      font-size: 20px;
+      line-height: 1.8;
+      color: rgba(239,255,227,0.88);
+      margin: 0 0 32px;
+    }
+
+    /* Personality trait pills */
+    .traits-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.45);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+    .traits-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .trait-pill {
+      background: rgba(125,212,176,0.15);
+      border: 1px solid rgba(125,212,176,0.4);
+      color: #7dd4b0;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 14px;
+      font-family: "Raleway", sans-serif;
+    }
+
+    /* ── PROJECTS PAGE SPECIFIC ───────────────────── */
+    .title              { display: flex; flex-wrap: wrap; flex-direction: column; }
+    .slideshow-arrows   { display: flex; justify-content: space-around; }
+    .projects           { flex: 1; }
+    .detail2-container  { display: flex; justify-content: space-evenly; flex-wrap: wrap; flex-direction: row; }
+    .detail2            { flex: 1; }
+    .section-title      { font-size: 60px; }
+
+    /* ── RESPONSIVE BREAKPOINTS ───────────────────── */
+    @media (max-width: 768px) {
+      .site-title             { font-size: 52px; padding: 32px 5% 16px; }
+      .hero-tagline           { font-size: 30px; }
+      .section-title          { font-size: 42px; }
+      .project-page           { width: 50%; font-size: clamp(10px, 3.5vw, 20px); }
+      .project-page-container { justify-content: flex-end; }
+      .project-page h1        { font-size: clamp(12px, 4vw, 24px); margin: 0; padding: 6px 0; }
+      a.project-page          { border-radius: 14px 14px 0 0 !important; padding: 10px !important; }
+      .skills-grid            { grid-template-columns: repeat(2, 1fr); }
+      .about-section          { flex-direction: column; }
+      .photo-column           { max-width: 100%; }
+      .detail2-container      { flex-direction: column; }
+      .detail2                { min-width: 0; width: 100%; }
+      pre                     { font-size: 11px !important; }
+    }
+
+    @media (max-width: 480px) {
+      .site-title    { font-size: 36px; padding: 24px 4% 12px; }
+      .hero-tagline  { font-size: 24px; }
+      .hero-sub      { font-size: 15px; }
+      .section-title { font-size: 28px; }
+      .skills-grid   { grid-template-columns: 1fr; }
+      .skill-tag     { font-size: 12px; }
+      .bio-text      { font-size: 16px; }
+      .aboutIMG img  { height: 240px; }
+      .social-row    { gap: 20px; }
+      /* NOTE: index.html keeps .project-page at 50% on mobile (no override here).
+         If using index-projects.html layout, uncomment the line below instead: */
+      /* .project-page  { width: 100%; font-size: 12px; } */
+      .projects      { padding: 0 4px; }
+      .projects span[style] { font-size: 12px !important; padding: 4px 10px !important; }
+      pre            { font-size: 10px !important; white-space: pre; overflow-x: auto; }
+      svg            { min-width: 480px; }
+      .projects h1   { font-size: 16px !important; }
+      .projects p    { font-size: 16px !important; }
+      .arrow-buttons { font-size: 36px !important; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- ── SITE TITLE ──────────────────────────────── -->
+<div>
+  <h1 class="site-title" style="color:#6D8196; text-align:center;">ASHLEY MADDIX</h1>
+</div>
+
+<!-- ── NAV TAB ─────────────────────────────────── -->
+<!--
+  For index.html    → link to index-projects.html, label = PROJECTS
+  For index-projects.html → link to index.html, label = ABOUT ME
+
+  index.html nav tab:
+  <div class="project-page-container">
+    <a href="index-projects.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>PROJECTS</h1></i>
+    </a>
+  </div>
+
+  index-projects.html nav tab:
+  <div class="project-page-container">
+    <a href="index.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>ABOUT ME</h1></i>
+    </a>
+  </div>
+-->
+<div class="project-page-container">
+  <a href="index-projects.html" class="project-page" style="color:#CBCBCB; background-color:#6D8196;">
+    <i><h1 style="font-size:auto; margin:0;">PROJECTS</h1></i>
+  </a>
+  <a href="index.html" class="project-page" style="color:#EFFFE3; background-color:#8fa3b5;">
+    <i><h1 style="font-size:auto; margin:0;">ABOUT ME</h1></i>
+  </a>
+</div>
+
+<!-- ── MAIN CONTENT BLOCK ──────────────────────── -->
+<div class="background-block" style="background-color:#6D8196; padding-bottom:60px;">
+
+  <div class="projects">
+    <br><br><br><br>
+    <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:30px;">Message Manager</h1>
+    <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2%; padding-top:0%;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Stack (LLL of Arrays)</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Circular Linked List</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Queue</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">OOP / Classes</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Dynamic Memory</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Recursion</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Pointer Arithmetic</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Encapsulation</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Randomized Dispatch</span>
+      </div>
+    </div>
+    <div style="text-align:center; padding-top:16px;">
+      <a class="github" href="https://github.com/amaddix/CS163_Prog2" style="text-decoration:none;">
+        <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+      </a>
+    </div>
+
+    <!-- 1. OVERVIEW + SKILLS -->
+    <div class="detail2-container" style="align-items:flex-start;">
+      <div class="detail2" style="flex:3; min-width:280px;">
+        <p style="color:#EFFFE3; font-size:22px; padding:1%; line-height:1.7; font-weight:500;">
+          <br>
+          This project is a menu-driven C++ messaging simulation that models how an inbox and outbox work at the data structure level — with no standard library containers. Received messages are stored in a <b>stack built from a linked list of arrays</b>, while outgoing messages queue up in a <b>circular linked list</b> and are dispatched in randomized batches using <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">rand()</code>.<br><br>
+          Every field in every message is <b>heap-allocated</b> on input and the destructors for both classes fully traverse their respective structures, deallocating each <code style="font-family:monospace; font-size:0.85em; background:#2e3d4a; color:#EFFFE3; padding:2px 6px; border-radius:4px;">char*</code> field and node without leaks. Reply messages carry a reference to the original message they respond to, making the outbox context-aware.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. KEY IMPLEMENTATION DETAILS -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Key Implementation Details</h1>
+      <div class="detail2-container" style="gap:16px; padding-top:16px; flex-wrap:wrap;">
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Stack — LLL of Arrays</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The inbox is not a simple stack — each node holds a fixed-size array of <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">MAX</code> messages. When an array fills, a new node is allocated and pushed to the front. This hybrid structure demonstrates understanding of both contiguous and linked memory models simultaneously.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Queue — Circular Linked List</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The outbox is implemented as a circular linked list where <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">queue_rear->next</code> always points back to the head. This allows O(1) enqueue at the tail and O(1) dequeue from the head — with careful pointer management to convert between CLL and linear form for counting.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #e8a87c; background:rgba(232,168,124,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Recursive Count</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Because the queue is circular, traversal requires temporarily breaking the ring. The public <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">count()</code> wrapper converts the CLL to a linear list, calls the private recursive overload, then restores the ring — separating traversal concerns cleanly and protecting the data structure's integrity.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #b8a0e8; background:rgba(184,160,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Context-Aware Replies</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">Each <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">q_node</code> carries both a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">reply</code> and a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">sent</code> message field plus a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">response</code> bool. When a user replies, the original incoming message is saved alongside the outgoing one — modelling real-world message threading at the struct level.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. CODE SAMPLES -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:10px; border-bottom:1px solid rgba(203,203,203,0.3);">Code Samples</h1>
+
+      <!-- Snippet 1: text left, code right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:20px;">
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            The first snippet is the destructor for the circular queue. Because <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">queue_rear->next</code> always points back to the head rather than <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">NULL</code>, a standard traversal loop would never terminate. The solution is to sever that back-link first, converting the circular structure into a regular linear list, then traverse and deallocate normally.
+          </p>
+        </div>
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">queue.cpp &nbsp;—&nbsp; ~replied_message() destructor</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#88c9e8;">if</span> (queue_rear) {
+  <span style="color:#7dd4b0;">// break the ring: save head, sever rear->next</span>
+  q_node *head = queue_rear->next;
+  queue_rear->next = NULL;
+  queue_rear = head;
+
+  <span style="color:#88c9e8;">while</span> (queue_rear) {
+    clear_reply();
+    <span style="color:#88c9e8;">if</span> (queue_rear->responce) clear_sent();
+    head = head->next;
+    <span style="color:#88c9e8;">delete</span> queue_rear;
+    queue_rear = head;        <span style="color:#7dd4b0;">// advance — terminates at NULL</span>
+  }
+  queue_rear = NULL;
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Snippet 2: code left, text right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:28px; margin-bottom:8px;">
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">queue.cpp &nbsp;—&nbsp; count() wrapper + recursive overload</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#7dd4b0;">// Public wrapper: temporarily linearise the CLL, count, restore ring</span>
+<span style="color:#88c9e8;">int</span> replied_message::count() {
+  <span style="color:#88c9e8;">if</span> (!queue_rear) return 0;
+  <span style="color:#88c9e8;">if</span> (queue_rear->next == queue_rear) return 1;
+
+  q_node *head      = queue_rear->next;
+  q_node *rear_temp = queue_rear;
+  queue_rear->next  = NULL;          <span style="color:#7dd4b0;">// sever: CLL → LLL</span>
+  queue_rear        = head;
+
+  <span style="color:#88c9e8;">int</span> amount = count(queue_rear);    <span style="color:#7dd4b0;">// recurse on linear list</span>
+
+  queue_rear        = rear_temp;     <span style="color:#7dd4b0;">// restore rear pointer</span>
+  queue_rear->next  = head;          <span style="color:#7dd4b0;">// re-link: LLL → CLL</span>
+  return amount;
+}
+
+<span style="color:#7dd4b0;">// Private recursive overload</span>
+<span style="color:#88c9e8;">int</span> replied_message::count(q_node *queue_rear) {
+  <span style="color:#88c9e8;">if</span> (!queue_rear) return 0;
+  return count(queue_rear->next) + 1;
+}</pre>
+          </div>
+        </div>
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            The second snippet shows the <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">count()</code> function, which faces the same challenge. The public wrapper temporarily breaks the ring, saves the rear pointer, then calls the private recursive overload on the now-linear list. Once counting is done, the ring is fully restored before returning. This keeps the recursive logic simple while protecting the structure's circular integrity.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. THREE-FILE ARCHITECTURE -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Four-File Architecture</h1>
+      <div class="detail2-container" style="gap:16px; padding-top:16px;">
+
+        <div style="flex:1; min-width:200px; background:#4a6275; border-radius:10px; padding:20px; text-align:left;">
+          <code style="font-family:monospace; font-size:14px; color:#7dd4b0; display:block; margin-bottom:8px;">prog1.h</code>
+          <p style="color:#EFFFE3; font-size:16px; font-weight:500; margin-bottom:6px;">Contracts &amp; Interfaces</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.5;">Defines the <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">message</code>, <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">s_node</code>, and <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">q_node</code> structs plus both class declarations. The single source of truth for all data shapes shared across files.</p>
+        </div>
+
+        <div style="flex:1; min-width:200px; background:#4a6275; border-radius:10px; padding:20px; text-align:left;">
+          <code style="font-family:monospace; font-size:14px; color:#7dd4b0; display:block; margin-bottom:8px;">stack.cpp</code>
+          <p style="color:#EFFFE3; font-size:16px; font-weight:500; margin-bottom:6px;">Inbox / Stack Logic</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.5;">All methods for <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">received_message</code>: constructor, destructor, push, pop, peek, display, save_in, and clear_index.</p>
+        </div>
+
+        <div style="flex:1; min-width:200px; background:#4a6275; border-radius:10px; padding:20px; text-align:left;">
+          <code style="font-family:monospace; font-size:14px; color:#7dd4b0; display:block; margin-bottom:8px;">queue.cpp</code>
+          <p style="color:#EFFFE3; font-size:16px; font-weight:500; margin-bottom:6px;">Outbox / Queue Logic</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.5;">All methods for <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">replied_message</code>: constructor, destructor, enqueue, dequeue, peek, display, count (recursive), save_out, save_message, clear_reply, and clear_sent.</p>
+        </div>
+
+        <div style="flex:1; min-width:200px; background:#4a6275; border-radius:10px; padding:20px; text-align:left;">
+          <code style="font-family:monospace; font-size:14px; color:#7dd4b0; display:block; margin-bottom:8px;">main.cpp</code>
+          <p style="color:#EFFFE3; font-size:16px; font-weight:500; margin-bottom:6px;">User Interface</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.5;">Menu loop, input collection via <code style="font-family:monospace; font-size:12px; color:#7dd4b0;">receiving()</code>, and randomized batch dispatch logic. No data structure logic leaks into the UI layer.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 5. OOP CLASS DIAGRAM -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">OOP Class &amp; Data Structure Diagram</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 460" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="mm-grey"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+            <marker id="mm-teal"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7dd4b0"/></marker>
+            <marker id="mm-blue"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#88c9e8"/></marker>
+            <marker id="mm-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#b8a0e8"/></marker>
+            <marker id="mm-orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#e8a87c"/></marker>
+          </defs>
+
+          <!-- received_message CLASS (stack) -->
+          <rect x="20" y="20" width="250" height="180" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <rect x="20" y="20" width="250" height="34" rx="10" fill="#7dd4b0"/>
+          <rect x="20" y="42" width="250" height="12" fill="#7dd4b0"/>
+          <text x="145" y="42" text-anchor="middle" fill="#2e3d4a" font-size="13" font-weight="700">class received_message</text>
+          <text x="35" y="70"  fill="#b8a0e8" font-size="10" font-weight="700">PRIVATE</text>
+          <text x="35" y="86"  fill="#CBCBCB" font-size="10" font-family="monospace">s_node* stack_head</text>
+          <text x="35" y="101" fill="#CBCBCB" font-size="10" font-family="monospace">int stack_index</text>
+          <text x="35" y="116" fill="#7dd4b0" font-size="10" font-family="monospace">save_in()  /  clear_index()</text>
+          <line x1="30" y1="124" x2="260" y2="124" stroke="rgba(203,203,203,0.2)" stroke-width="1"/>
+          <text x="35" y="138" fill="#e8a87c" font-size="10" font-weight="700">PUBLIC</text>
+          <text x="35" y="153" fill="#EFFFE3" font-size="10" font-family="monospace">push()  /  pop()  /  peek()</text>
+          <text x="35" y="168" fill="#EFFFE3" font-size="10" font-family="monospace">display()</text>
+          <text x="35" y="183" fill="#EFFFE3" font-size="10" font-family="monospace">received_message()  /  ~()</text>
+
+          <!-- replied_message CLASS (queue) -->
+          <rect x="310" y="20" width="250" height="180" rx="10" fill="#2e3d4a" stroke="#88c9e8" stroke-width="2"/>
+          <rect x="310" y="20" width="250" height="34" rx="10" fill="#88c9e8"/>
+          <rect x="310" y="42" width="250" height="12" fill="#88c9e8"/>
+          <text x="435" y="42" text-anchor="middle" fill="#2e3d4a" font-size="13" font-weight="700">class replied_message</text>
+          <text x="325" y="70"  fill="#b8a0e8" font-size="10" font-weight="700">PRIVATE</text>
+          <text x="325" y="86"  fill="#CBCBCB" font-size="10" font-family="monospace">q_node* queue_rear</text>
+          <text x="325" y="101" fill="#7dd4b0" font-size="10" font-family="monospace">save_out()  /  save_message()</text>
+          <line x1="320" y1="110" x2="550" y2="110" stroke="rgba(203,203,203,0.2)" stroke-width="1"/>
+          <text x="325" y="124" fill="#e8a87c" font-size="10" font-weight="700">PUBLIC</text>
+          <text x="325" y="139" fill="#EFFFE3" font-size="10" font-family="monospace">enqueue()  /  dequeue()  /  peek()</text>
+          <text x="325" y="154" fill="#EFFFE3" font-size="10" font-family="monospace">display()  /  count()</text>
+          <text x="325" y="169" fill="#EFFFE3" font-size="10" font-family="monospace">clear_sent()  /  clear_reply()</text>
+          <text x="325" y="184" fill="#EFFFE3" font-size="10" font-family="monospace">replied_message()  /  ~()</text>
+
+          <!-- s_node STRUCT -->
+          <rect x="20" y="260" width="220" height="100" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <rect x="20" y="260" width="220" height="32" rx="10" fill="#7dd4b0"/>
+          <rect x="20" y="278" width="220" height="14" fill="#7dd4b0"/>
+          <text x="130" y="279" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">struct s_node</text>
+          <text x="35"  y="308" fill="#88c9e8" font-size="10" font-family="monospace">message* list  [MAX=5]</text>
+          <text x="35"  y="323" fill="#CBCBCB" font-size="10" font-family="monospace">s_node* next</text>
+          <text x="35"  y="348" fill="#7dd4b0" font-size="9">array of messages per node</text>
+
+          <!-- q_node STRUCT -->
+          <rect x="280" y="260" width="240" height="118" rx="10" fill="#2e3d4a" stroke="#88c9e8" stroke-width="2"/>
+          <rect x="280" y="260" width="240" height="32" rx="10" fill="#88c9e8"/>
+          <rect x="280" y="278" width="240" height="14" fill="#88c9e8"/>
+          <text x="400" y="279" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">struct q_node</text>
+          <text x="295" y="308" fill="#CBCBCB" font-size="10" font-family="monospace">message sent</text>
+          <text x="295" y="323" fill="#CBCBCB" font-size="10" font-family="monospace">message reply</text>
+          <text x="295" y="338" fill="#b8a0e8" font-size="10" font-family="monospace">bool responce</text>
+          <text x="295" y="353" fill="#CBCBCB" font-size="10" font-family="monospace">q_node* next</text>
+          <text x="295" y="372" fill="#88c9e8" font-size="9">circular: rear->next == head</text>
+
+          <!-- message STRUCT -->
+          <rect x="570" y="260" width="270" height="150" rx="10" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="2"/>
+          <rect x="570" y="260" width="270" height="32" rx="10" fill="#b8a0e8"/>
+          <rect x="570" y="278" width="270" height="14" fill="#b8a0e8"/>
+          <text x="705" y="279" text-anchor="middle" fill="#2e3d4a" font-size="12" font-weight="700">struct message</text>
+          <text x="585" y="308" fill="#CBCBCB" font-size="10" font-family="monospace">char* name, *number, *email</text>
+          <text x="585" y="323" fill="#CBCBCB" font-size="10" font-family="monospace">char* nick, *date, *time</text>
+          <text x="585" y="338" fill="#CBCBCB" font-size="10" font-family="monospace">char* subject, *body</text>
+          <text x="585" y="353" fill="#b8a0e8" font-size="10" font-family="monospace">bool blocked, secret</text>
+          <text x="585" y="375" fill="#b8a0e8" font-size="9">all char* heap-allocated on input</text>
+          <text x="585" y="390" fill="#b8a0e8" font-size="9">deallocated by each class destructor</text>
+
+          <!-- received_message → s_node -->
+          <line x1="130" y1="200" x2="130" y2="258" stroke="#7dd4b0" stroke-width="1.5" marker-end="url(#mm-teal)"/>
+          <text x="135" y="235" fill="#7dd4b0" font-size="10">owns stack_head*</text>
+
+          <!-- replied_message → q_node -->
+          <line x1="400" y1="200" x2="400" y2="258" stroke="#88c9e8" stroke-width="1.5" marker-end="url(#mm-blue)"/>
+          <text x="405" y="235" fill="#88c9e8" font-size="10">owns queue_rear*</text>
+
+          <!-- s_node → message (list array) -->
+          <line x1="240" y1="308" x2="568" y2="308" stroke="#b8a0e8" stroke-width="1.5" marker-end="url(#mm-purple)"/>
+          <text x="390" y="300" fill="#b8a0e8" font-size="10" text-anchor="middle">list[ ] holds messages</text>
+
+          <!-- q_node → message (sent + reply) -->
+          <line x1="520" y1="325" x2="568" y2="325" stroke="#b8a0e8" stroke-width="1.5" marker-end="url(#mm-purple)"/>
+          <text x="544" y="318" fill="#b8a0e8" font-size="10" text-anchor="middle">sent &amp; reply</text>
+
+          <!-- s_node self-ref next -->
+          <path d="M 60,360 A 40,22 0 1,0 150,360" fill="none" stroke="#CBCBCB" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#mm-grey)"/>
+          <text x="105" y="400" fill="#CBCBCB" font-size="10" text-anchor="middle">next*</text>
+
+          <!-- q_node self-ref next (circular) -->
+          <path d="M 320,378 A 40,22 0 1,0 410,378" fill="none" stroke="#CBCBCB" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#mm-grey)"/>
+          <text x="365" y="418" fill="#CBCBCB" font-size="10" text-anchor="middle">next* (circular)</text>
+
+          <!-- Legend -->
+          <text x="30"  y="445" fill="rgba(203,203,203,0.5)" font-size="10">─ ─  self-referential / circular next*</text>
+          <text x="270" y="445" fill="rgba(203,203,203,0.5)" font-size="10">───  ownership / composition</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 6. PROGRAM FLOW DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Program Flow — Menu to Data Structures</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 540" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="pf1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+            <marker id="pf2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7dd4b0"/></marker>
+            <marker id="pf3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#88c9e8"/></marker>
+          </defs>
+
+          <!-- START -->
+          <ellipse cx="430" cy="28" rx="80" ry="20" fill="#7dd4b0"/>
+          <text x="430" y="33" text-anchor="middle" fill="#2e3d4a" font-size="13" font-weight="700">START</text>
+          <line x1="430" y1="48" x2="430" y2="70" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#pf1)"/>
+
+          <!-- init box -->
+          <rect x="280" y="72" width="300" height="38" rx="8" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="430" y="88"  text-anchor="middle" fill="#EFFFE3"  font-size="12">received_message received;</text>
+          <text x="430" y="103" text-anchor="middle" fill="#7dd4b0" font-size="10" font-family="monospace">replied_message replied;  →  both constructors run</text>
+          <line x1="430" y1="110" x2="430" y2="132" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#pf1)"/>
+
+          <!-- menu diamond -->
+          <polygon points="430,136 570,178 430,220 290,178" fill="#243039" stroke="#88c9e8" stroke-width="2"/>
+          <text x="430" y="174" text-anchor="middle" fill="#88c9e8" font-size="13" font-weight="600">menu()</text>
+          <text x="430" y="190" text-anchor="middle" fill="#CBCBCB" font-size="10">choose 1–7</text>
+
+          <!-- quit -->
+          <line x1="570" y1="178" x2="634" y2="178" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#pf1)"/>
+          <text x="574" y="172" fill="#CBCBCB" font-size="10">7 = Quit</text>
+          <ellipse cx="700" cy="178" rx="62" ry="22" fill="#4a6275" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="700" y="175" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">END</text>
+          <text x="700" y="189" text-anchor="middle" fill="#7dd4b0" font-size="9">~received / ~replied</text>
+
+          <!-- down from diamond -->
+          <line x1="430" y1="220" x2="430" y2="242" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#pf1)"/>
+          <text x="436" y="236" fill="#CBCBCB" font-size="10">1–6</text>
+
+          <!-- horizontal spine -->
+          <line x1="55" y1="242" x2="805" y2="242" stroke="rgba(203,203,203,0.35)" stroke-width="1"/>
+          <line x1="55"  y1="242" x2="55"  y2="262" stroke="#CBCBCB" stroke-width="1" marker-end="url(#pf1)"/>
+          <line x1="185" y1="242" x2="185" y2="262" stroke="#CBCBCB" stroke-width="1" marker-end="url(#pf1)"/>
+          <line x1="315" y1="242" x2="315" y2="262" stroke="#CBCBCB" stroke-width="1" marker-end="url(#pf1)"/>
+          <line x1="545" y1="242" x2="545" y2="262" stroke="#CBCBCB" stroke-width="1" marker-end="url(#pf1)"/>
+          <line x1="675" y1="242" x2="675" y2="262" stroke="#CBCBCB" stroke-width="1" marker-end="url(#pf1)"/>
+          <line x1="805" y1="242" x2="805" y2="262" stroke="#CBCBCB" stroke-width="1" marker-end="url(#pf1)"/>
+
+          <!-- op boxes row -->
+          <rect x="5"   y="264" width="100" height="52" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="55"  y="284" text-anchor="middle" fill="#7dd4b0"  font-size="11" font-weight="600">① receive</text>
+          <text x="55"  y="299" text-anchor="middle" fill="#d0dde8" font-size="10">receiving()</text>
+          <text x="55"  y="311" text-anchor="middle" fill="#d0dde8" font-size="10">→ push()</text>
+
+          <rect x="133" y="264" width="104" height="52" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="185" y="284" text-anchor="middle" fill="#7dd4b0"  font-size="11" font-weight="600">② view inbox</text>
+          <text x="185" y="299" text-anchor="middle" fill="#d0dde8" font-size="10">received</text>
+          <text x="185" y="311" text-anchor="middle" fill="#d0dde8" font-size="10">.display()</text>
+
+          <rect x="263" y="264" width="104" height="52" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="315" y="284" text-anchor="middle" fill="#88c9e8"  font-size="11" font-weight="600">③ reply</text>
+          <text x="315" y="299" text-anchor="middle" fill="#d0dde8" font-size="10">peek() + receiving()</text>
+          <text x="315" y="311" text-anchor="middle" fill="#d0dde8" font-size="10">→ enqueue()</text>
+
+          <rect x="493" y="264" width="104" height="52" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="545" y="284" text-anchor="middle" fill="#88c9e8"  font-size="11" font-weight="600">④ send new</text>
+          <text x="545" y="299" text-anchor="middle" fill="#d0dde8" font-size="10">receiving()</text>
+          <text x="545" y="311" text-anchor="middle" fill="#d0dde8" font-size="10">→ enqueue()</text>
+
+          <rect x="623" y="264" width="104" height="52" rx="7" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="675" y="284" text-anchor="middle" fill="#e8a87c"  font-size="11" font-weight="600">⑤ disregard</text>
+          <text x="675" y="299" text-anchor="middle" fill="#d0dde8" font-size="10">peek() then</text>
+          <text x="675" y="311" text-anchor="middle" fill="#d0dde8" font-size="10">pop()</text>
+
+          <rect x="753" y="264" width="104" height="52" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="805" y="284" text-anchor="middle" fill="#88c9e8"  font-size="11" font-weight="600">⑥ view sent</text>
+          <text x="805" y="299" text-anchor="middle" fill="#d0dde8" font-size="10">replied</text>
+          <text x="805" y="311" text-anchor="middle" fill="#d0dde8" font-size="10">.display()</text>
+
+          <!-- auto-dispatch check -->
+          <line x1="430" y1="316" x2="430" y2="340" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#pf1)"/>
+          <rect x="270" y="342" width="320" height="42" rx="8" fill="#243039" stroke="#b8a0e8" stroke-width="1.5"/>
+          <text x="430" y="359" text-anchor="middle" fill="#b8a0e8" font-size="12" font-weight="600">Auto-dispatch check: count() &gt; 3?</text>
+          <text x="430" y="375" text-anchor="middle" fill="#d0dde8" font-size="10">recursive count on CLL  →  rand() % count  →  dequeue loop</text>
+
+          <!-- yes/no from dispatch -->
+          <line x1="590" y1="363" x2="640" y2="363" stroke="#CBCBCB" stroke-width="1" marker-end="url(#pf1)"/>
+          <text x="594" y="357" fill="#CBCBCB" font-size="10">No</text>
+          <text x="643" y="367" fill="#CBCBCB" font-size="11">loop back</text>
+
+          <line x1="430" y1="384" x2="430" y2="406" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#pf1)"/>
+          <text x="436" y="399" fill="#CBCBCB" font-size="10">Yes</text>
+
+          <!-- dequeue batch -->
+          <rect x="290" y="408" width="280" height="38" rx="8" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="430" y="424" text-anchor="middle" fill="#e8a87c" font-size="12" font-weight="600">dequeue() × rand batch</text>
+          <text x="430" y="438" text-anchor="middle" fill="#d0dde8" font-size="10">removes from front of circular queue</text>
+          <line x1="430" y1="446" x2="430" y2="468" stroke="#CBCBCB" stroke-width="1.5" marker-end="url(#pf1)"/>
+
+          <!-- data structures box -->
+          <rect x="180" y="470" width="500" height="50" rx="10" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <text x="430" y="489" text-anchor="middle" fill="#7dd4b0" font-size="13" font-weight="700">Data Structures in Memory</text>
+          <text x="430" y="507" text-anchor="middle" fill="#CBCBCB" font-size="10" font-family="monospace">Stack: s_node[head → ... → NULL]   |   Queue: q_node[rear→next=head] ↺</text>
+
+          <!-- loop back arrow -->
+          <path d="M180,495 Q30,495 30,178 Q30,150 288,164" fill="none" stroke="rgba(203,203,203,0.3)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#pf1)"/>
+          <text x="8" y="350" fill="rgba(203,203,203,0.4)" font-size="10" transform="rotate(-90,8,350)">loop</text>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
+
+</div><!-- end background-block -->
+
+</body>
+
+<!-- ── JAVASCRIPT ──────────────────────────────────
+  Both pages use a slideshow. Use the correct one for each page:
+
+  ── index.html (photo slideshow) ──────────────────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("aboutIMG");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+
+  ── index-projects.html (project slideshow) ───────
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  function plusDivs(n) { showDivs(slideIndex += n); }
+  function showDivs(n) {
+    var x = document.getElementsByClassName("projects");
+    if (n > x.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = x.length; }
+    for (var i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+    x[slideIndex - 1].style.display = "block";
+  }
+-->
+<script>
+  // Uncomment and use the correct slideshow script for your page (see comments above).
+</script>
+
+</html>
+

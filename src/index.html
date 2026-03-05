@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sekuya&display=swap" rel="stylesheet">
@@ -13,491 +12,472 @@
 
     <title>ASHLEY MADDIX</title>
 
-    <!--background-color:#CBCBCB; color:#6D8196; -->
     <style>
-  #anim { max-width: 700px; margin: 0 auto; }
-  a:hover i { transform: scale(1.5); color: #CBCBCB; }
-  a:hover button { transform: scale(1.3); color: #CBCBCB; }
-
- *, *::before, *::after { box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; }
 
     body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        overflow-x: hidden;
-        background-color: #EFFFE3;
-        font-family: "Raleway", sans-serif;
-        font-weight: 400;
-        font-style: normal;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+      background-color: #EFFFE3;
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-style: normal;
     }
 
     p { font-family: "Raleway", sans-serif; }
 
     h1, button {
-        font-family: "Sekuya", system-ui;
-        font-weight: 400;
-        font-style: normal;
+      font-family: "Sekuya", sans-serif;
+      font-weight: 400;
+      font-style: normal;
     }
 
     /* ── HOVER ANIMATIONS ─────────────────────────── */
     #anim { max-width: 700px; margin: 0 auto; }
-    a:hover i       { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
-    a:hover button  { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    a:hover i                 { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    a:hover span.fa-regular   { transform: scale(1.5);  color: #CBCBCB; transition: 0.3s; }
+    a:hover button            { transform: scale(1.15); color: #CBCBCB; transition: transform 0.25s; }
+    button:hover              { transform: scale(1.3);  color: #CBCBCB; background-color: #6D8196; cursor: pointer; transition: 0.3s; }
 
     /* ── SITE TITLE ───────────────────────────────── */
-    .site-title {
-        font-size: 80px;
-        color: #6D8196;
-        text-align: center;
-        padding: 48px 10% 20px;
-        margin: 0;
+   .site-title {
+      font-size: 80px;
+      padding: 40px 10%;
+      color: #6D8196;
+      text-align: center;
+      margin: 0;
     }
 
-    /* ── NAV TAB (PROJECTS button) ────────────────── */
+    /* ── NAV TAB ──────────────────────────────────── */
     .project-page-container {
-        display: flex;
-        justify-content: flex-end;
-        font-size: 0;
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0;
     }
     .project-page {
-        display: block;
-        width: 400px;
-        font-size: 20px;
+      display: block;
+      width: 400px;
+      font-size: 20px;
+      border-radius: 40px 40px 0 0;
+      color: #EFFFE3;
+      background-color: #6D8196;
+      text-align: center;
+      text-decoration: none;
+      padding: 10px;
     }
 
-    /* ── MAIN CONTENT BLOCK ───────────────────────── */
-    .background-block { margin: 0; padding: 0; }
+    /* ── BACKGROUND BLOCK ─────────────────────────── */
+    .background-block {
+      background-color: #6D8196;
+      margin: 0;
+      padding: 0;
+    }
 
     /* ── HERO TAGLINE ─────────────────────────────── */
     .hero-tagline {
-        font-size: 42px;
-        color: #EFFFE3;
-        text-align: center;
-        padding: 48px 6% 12px;
-        margin: 0;
-        line-height: 1.2;
+      font-size: 53px;
+      color: #EFFFE3;
+      text-align: center;
+      padding: 48px 6% 12px;
+      margin: 0;
+      line-height: 1.2;
     }
     .hero-sub {
-        color: rgba(239,255,227,0.65);
-        font-size: 18px;
-        font-family: "Raleway", sans-serif;
-        text-align: center;
-        padding: 0 6% 40px;
-        letter-spacing: 0.04em;
+      color: rgba(239,255,227,0.65);
+      font-size: 20px;
+      font-family: "Raleway", sans-serif;
+      text-align: center;
+      padding: 0 6% 40px;
+      letter-spacing: 0.04em;
     }
 
     /* ── SOCIAL ICONS ROW ─────────────────────────── */
     .social-row {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 32px;
-        padding-bottom: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      padding-bottom: 48px;
     }
     .social-row a { text-decoration: none; }
     .social-label {
-        display: block;
-        font-size: 13px;
-        color: #CBCBCB;
-        font-family: "Raleway", sans-serif;
-        margin-top: 6px;
-        letter-spacing: 0.06em;
+      display: block;
+      font-size: 13px;
+      color: #CBCBCB;
+      font-family: "Raleway", sans-serif;
+      margin-top: 6px;
+      letter-spacing: 0.06em;
     }
     .social-item { text-align: center; }
 
     /* ── SKILLS GRID ──────────────────────────────── */
-    .skills-section {
-        padding: 0 4% 48px;
-    }
+    .skills-section { padding: 0 4% 48px; }
     .skills-section-title {
-        font-size: 13px;
-        color: rgba(239,255,227,0.5);
-        letter-spacing: 0.18em;
-        text-align: center;
-        font-family: "Raleway", sans-serif;
-        margin: 0 0 28px;
-        text-transform: uppercase;
+      font-size: 13px;
+      color: rgba(239,255,227,0.5);
+      letter-spacing: 0.18em;
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      margin: 0 0 28px;
+      text-transform: uppercase;
     }
     .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        max-width: 860px;
-        margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
     }
     .skill-card {
-        background: rgba(46, 61, 74, 0.55);
-        border: 1px solid rgba(203,203,203,0.18);
-        border-radius: 14px;
-        padding: 24px 20px 20px;
-        text-align: left;
+      background: rgba(46, 61, 74, 0.55);
+      border: 1px solid rgba(203,203,203,0.18);
+      border-radius: 14px;
+      padding: 24px 20px 20px;
+      text-align: left;
     }
     .skill-card-title {
-        font-size: 11px;
-        letter-spacing: 0.16em;
-        color: rgba(239,255,227,0.5);
-        font-family: "Raleway", sans-serif;
-        text-transform: uppercase;
-        margin: 0 0 14px;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.5);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 14px;
     }
     .skill-card-icon {
-        font-size: 22px;
-        color: #7dd4b0;
-        margin-bottom: 14px;
-        display: block;
+      font-size: 22px;
+      color: #7dd4b0;
+      margin-bottom: 14px;
+      display: block;
     }
     .skill-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
     .skill-tag {
-        background: rgba(109,129,150,0.4);
-        color: #EFFFE3;
-        border-radius: 20px;
-        padding: 5px 13px;
-        font-size: 13px;
-        font-family: "Raleway", sans-serif;
-        border: 1px solid rgba(203,203,203,0.2);
-        white-space: nowrap;
+      background: rgba(109,129,150,0.4);
+      color: #EFFFE3;
+      border-radius: 20px;
+      padding: 5px 13px;
+      font-size: 13px;
+      font-family: "Raleway", sans-serif;
+      border: 1px solid rgba(203,203,203,0.2);
+      white-space: nowrap;
     }
 
     /* ── DIVIDER ──────────────────────────────────── */
     .section-divider {
-        border: none;
-        border-top: 1px solid rgba(203,203,203,0.2);
-        margin: 0 4% 48px;
+      border: none;
+      border-top: 1px solid rgba(203,203,203,0.2);
+      margin: 0 4% 48px;
     }
 
     /* ── ABOUT SECTION ────────────────────────────── */
- .about-section {
-    padding: 0 4% 60px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-
-    /* Photo slideshow column */
-.photo-column {
-    float: left;           /* ← floats the photo left so text wraps around it */
-    width: 440px;
-    margin-right: 40px;
-    margin-bottom: 20px;
-}
+    .about-section {
+      padding: 0 4% 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .photo-column {
+      float: left;
+      width: 440px;
+      margin-right: 40px;
+      margin-bottom: 20px;
+    }
     .slideshow-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     .arrow-buttons {
-        background: transparent;
-        border: none;
-        color: #EFFFE3;
-        font-size: 36px;
-        cursor: pointer;
-        padding: 8px;
-        flex-shrink: 0;
-        transition: transform 0.2s;
+      background: transparent;
+      border: none;
+      color: #EFFFE3;
+      font-size: 36px;
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+      transition: transform 0.2s;
     }
     .arrow-buttons:hover { transform: scale(1.2); color: #CBCBCB; }
-
     .aboutIMG { display: none; width: 100%; }
     .aboutIMG img {
-        width: 100%;
-        height: 540px;
-        object-fit: cover;
-        border-radius: 14px;
-        display: block;
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
     }
-
-    /* Bio + traits column */
-    .bio-column {
-
-        color: #EFFFE3;
-    }
+    .bio-column { color: #EFFFE3; }
     .about-section-title {
-        font-size: 36px;
-        color: #EFFFE3;
-        margin: 0 0 24px;
+      font-size: 36px;
+      color: #EFFFE3;
+      margin: 0 0 24px;
     }
     .bio-text {
-        font-size: 20px;
-        line-height: 1.8;
-        color: rgba(239,255,227,0.88);
-        margin: 0 0 32px;
+      font-size: 20px;
+      line-height: 1.8;
+      color: rgba(239,255,227,0.88);
+      margin: 0 0 32px;
     }
-
-    /* Personality trait pills */
     .traits-label {
-        font-size: 11px;
-        letter-spacing: 0.16em;
-        color: rgba(239,255,227,0.45);
-        font-family: "Raleway", sans-serif;
-        text-transform: uppercase;
-        margin: 0 0 12px;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(239,255,227,0.45);
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 12px;
     }
     .traits-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
     .trait-pill {
-        background: rgba(125,212,176,0.15);
-        border: 1px solid rgba(125,212,176,0.4);
-        color: #7dd4b0;
-        border-radius: 20px;
-        padding: 6px 16px;
-        font-size: 14px;
-        font-family: "Raleway", sans-serif;
+      background: rgba(125,212,176,0.15);
+      border: 1px solid rgba(125,212,176,0.4);
+      color: #7dd4b0;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 14px;
+      font-family: "Raleway", sans-serif;
     }
 
     /* ── RESPONSIVE ───────────────────────────────── */
     @media (max-width: 768px) {
-        .site-title     { font-size: 52px; padding: 32px 5% 16px; }
-        .hero-tagline   { font-size: 30px; }
-        .project-page   { width: 100%; font-size: 14px; }
-        .project-page-container { justify-content: stretch; }
-        .skills-grid    { grid-template-columns: repeat(2, 1fr); }
-        .about-section  { flex-direction: column; }
-        .photo-column   { max-width: 100%; }
+      .site-title    { font-size: 52px; padding: 32px 5% 16px; }
+      .hero-tagline  { font-size: 30px; }
+      .project-page  { width: 50%; font-size: clamp(10px, 3.5vw, 20px); }
+      .project-page-container { justify-content: flex-end; }
+      .project-page h1 { font-size: clamp(12px, 4vw, 24px); margin: 0; padding: 6px 0; }
+      a.project-page { border-radius: 14px 14px 0 0 !important; padding: 10px !important; }
+      .skills-grid   { grid-template-columns: repeat(2, 1fr); }
+      .about-section { flex-direction: column; }
+      .photo-column  { max-width: 100%; }
     }
 
     @media (max-width: 480px) {
-        .site-title     { font-size: 36px; padding: 24px 4% 12px; }
-        .hero-tagline   { font-size: 24px; }
-        .hero-sub       { font-size: 15px; }
-        .skills-grid    { grid-template-columns: 1fr; }
-        .skill-tag      { font-size: 12px; }
-        .bio-text       { font-size: 16px; }
-        .aboutIMG img   { height: 240px; }
-        .social-row     { gap: 20px; }
+      .site-title    { font-size: 36px; padding: 24px 4% 12px; }
+      .hero-tagline  { font-size: 24px; }
+      .hero-sub      { font-size: 15px; }
+      .skills-grid   { grid-template-columns: 1fr; }
+      .skill-tag     { font-size: 12px; }
+      .bio-text      { font-size: 16px; }
+      .aboutIMG img  { height: 240px; }
+      .social-row    { gap: 20px; }
     }
 
-    </style>
+  </style>
 
-    <!--           .details-container {
-            display: block;
-        }
-        -->
-    <!--animation for buttons with hover-->
     <script src="lottie.js"></script>
     <script>
-        var animation = bodymovin.loadAnimation({
-        container: document.getElementById('anim'),
-        renderer:'svg',
-        loop:true,
-        autoplay:true,
-        path:'AshleyHeader1.json'
-        })
-    </script>
+    var animation = bodymovin.loadAnimation({
+      container: document.getElementById('anim'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'AshleyHeader1.json'
+    })
+  </script>
     <script src="https://kit.fontawesome.com/d224905442.js" crossorigin="anonymous"></script>
-
-
-
 
 </head>
 
-<!-- NAME / LINKS -->
 <body>
 
-    <div>
-        <H1 class="site-title"> ASHLEY MADDIX </H1>
+<!-- HEADER -->
+<div>
+    <h1 class="site-title">ASHLEY MADDIX</h1>
 </div>
-<!--
--->
 
+<!-- NAV TABS -->
+<div class="project-page-container">
+    <a href="index.html" class="project-page" style="color:#CBCBCB; background-color:#6D8196;">
+        <i><h1 style="font-size:auto; margin:0;">ABOUT ME</h1></i>
+    </a>
+    <a href="index-projects.html" class="project-page" style="color:#EFFFE3; background-color:#8fa3b5;">
+        <i><h1 style="font-size:auto; margin:0;">PROJECTS</h1></i>
+    </a>
+</div>
 
-    <!-- ── PROJECTS NAV TAB ──────────────────────── -->
-    <div class="project-page-container">
-        <a href="index-projects.html" class="project-page"
-           style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#6D8196;
-                  text-align:center; text-decoration:none; padding:10px;">
-            <i><h1>PROJECTS</h1></i>
-        </a>
+<!-- MAIN CONTENT BLOCK -->
+<div class="background-block">
+
+    <!-- Hero tagline -->
+    <h1 class="hero-tagline">Full Stack &amp; Backend Software Developer</h1>
+    <p class="hero-sub">B.S. Computer Science &nbsp;·&nbsp; Systems &amp; Data Structures &nbsp;·&nbsp; Detail-Oriented Builder</p>
+
+    <!-- Social / contact links -->
+    <div class="social-row">
+        <div class="social-item">
+            <a href="https://github.com/amaddix">
+                <i class="fa-brands fa-github fa-2x" style="color:#CBCBCB;"></i>
+                <span class="social-label">GitHub</span>
+            </a>
+        </div>
+        <div class="social-item">
+            <a href="https://www.linkedin.com/in/ashley-maddix-a28643118/">
+                <i class="fa-brands fa-linkedin-in fa-2x" style="color:#CBCBCB;"></i>
+                <span class="social-label">LinkedIn</span>
+            </a>
+        </div>
+        <div class="social-item">
+            <a href="CS RESUME 2025.pdf">
+                <i class="fa-solid fa-file fa-2x" style="color:#CBCBCB;"></i>
+                <span class="social-label">Resume</span>
+            </a>
+        </div>
     </div>
 
-    <!-- ── MAIN CONTENT BLOCK ────────────────────── -->
-    <div class="background-block" style="background-color:#6D8196; padding-bottom:60px;">
+    <!-- ── SKILLS ─────────────────────────────── -->
+    <div class="skills-section">
+        <p class="skills-section-title">Technical Skills</p>
+        <div class="skills-grid">
 
-        <!-- Hero tagline -->
-        <h1 class="hero-tagline">Full Stack &amp; Backend Software Developer</h1>
-        <p class="hero-sub">B.S. Computer Science &nbsp;·&nbsp; Systems &amp; Data Structures &nbsp;·&nbsp; Detail-Oriented Builder</p>
+            <!-- Languages -->
+            <div class="skill-card">
+                <span class="skill-card-icon"><i class="fa-solid fa-code"></i></span>
+                <p class="skill-card-title">Languages</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                </div>
+            </div>
 
-        <!-- Social / contact links -->
-        <div class="social-row">
-            <div class="social-item">
-                <a href="https://github.com/amaddix">
-                    <i class="fa-brands fa-github fa-2x" style="color:#CBCBCB;"></i>
-                    <span class="social-label">GitHub</span>
-                </a>
+            <!-- Frameworks & Libraries -->
+            <div class="skill-card">
+                <span class="skill-card-icon"><i class="fa-solid fa-layer-group"></i></span>
+                <p class="skill-card-title">Frameworks &amp; Libraries</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Express.js</span>
+                    <span class="skill-tag">Spring Boot</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">Angular</span>
+                    <span class="skill-tag">jQuery</span>
+                </div>
             </div>
-            <div class="social-item">
-                <a href="https://www.linkedin.com/in/ashley-maddix-a28643118/">
-                    <i class="fa-brands fa-linkedin-in fa-2x" style="color:#CBCBCB;"></i>
-                    <span class="social-label">LinkedIn</span>
-                </a>
+
+            <!-- Core CS Concepts -->
+            <div class="skill-card">
+                <span class="skill-card-icon"><i class="fa-solid fa-brain"></i></span>
+                <p class="skill-card-title">Core CS Concepts</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Data Structures</span>
+                    <span class="skill-tag">Algorithms</span>
+                    <span class="skill-tag">OOP</span>
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">Full Stack</span>
+                    <span class="skill-tag">AI / ML Training</span>
+                </div>
             </div>
-            <div class="social-item">
-                <a href="CS RESUME 2025.pdf">
-                    <i class="fa-solid fa-file fa-2x" style="color:#CBCBCB;"></i>
-                    <span class="social-label">Resume</span>
-                </a>
+
+            <!-- Tools & Environments -->
+            <div class="skill-card">
+                <span class="skill-card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+                <p class="skill-card-title">Tools &amp; Environments</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">IntelliJ</span>
+                    <span class="skill-tag">Android Studio</span>
+                    <span class="skill-tag">Maven</span>
+                    <span class="skill-tag">Vim</span>
+                </div>
+            </div>
+
+            <!-- Databases & Storage -->
+            <div class="skill-card">
+                <span class="skill-card-icon"><i class="fa-solid fa-database"></i></span>
+                <p class="skill-card-title">Databases &amp; Storage</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">File I/O</span>
+                    <span class="skill-tag">Client–Server</span>
+                    <span class="skill-tag">Data Persistence</span>
+                </div>
+            </div>
+
+            <!-- Testing & Process -->
+            <div class="skill-card">
+                <span class="skill-card-icon"><i class="fa-solid fa-flask"></i></span>
+                <p class="skill-card-title">Testing &amp; Process</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Test-Driven Dev</span>
+                    <span class="skill-tag">JUnit / JaCoCo</span>
+                    <span class="skill-tag">JavaDocs</span>
+                    <span class="skill-tag">Agile Mindset</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ── ABOUT ME ───────────────────────────── -->
+    <div class="about-section">
+
+        <!-- Photo slideshow -->
+        <div class="photo-column">
+            <div class="slideshow-wrapper">
+                <button class="arrow-buttons" onclick="plusDivs(-1)">&#10094;</button>
+                <div style="flex:1;">
+                    <div class="aboutIMG"><img src="PROJGLACIERME.jpeg"         alt="Grinnell Glacier, Montana"></div>
+                    <div class="aboutIMG"><img src="PROJZIONVIEW.jpeg"          alt="Zion National Park view"></div>
+                    <div class="aboutIMG"><img src="PROJLATTEARTjpeg.jpeg"     alt="Latte art"></div>
+                    <div class="aboutIMG"><img src="PROJKIKO.jpeg"              alt="Kiko"></div>
+                    <div class="aboutIMG"><img src="PROJCAVE.jpeg"              alt="Cave exploration"></div>
+                    <div class="aboutIMG"><img src="PROJKAYAK.jpeg"             alt="Kayaking"></div>
+                    <div class="aboutIMG"><img src="PROJZIONME.jpeg"            alt="Angels Landing, Zion"></div>
+                    <div class="aboutIMG"><img src="PROJGRANDCANYON.jpeg"       alt="Grand Canyon"></div>
+                    <div class="aboutIMG"><img src="PORTFOLIO10tidepools..jpeg" alt="Tide pools"></div>
+                    <div class="aboutIMG"><img src="PROJNLIGHTS.jpeg"           alt="Northern Lights"></div>
+                    <div class="aboutIMG"><img src="PROJANTELOPE.jpeg"          alt="Antelope Canyon"></div>
+                    <div class="aboutIMG"><img src="PROJGLACIERVIEW.jpg"        alt="Glacier National Park view"></div>
+                    <div class="aboutIMG"><img src="PROJROSSLAKE.jpeg"          alt="Ross Lake"></div>
+                </div>
+                <button class="arrow-buttons" onclick="plusDivs(1)">&#10095;</button>
             </div>
         </div>
 
-            <!-- ── SKILLS ─────────────────────────────── -->
-            <div class="skills-section">
-                <p class="skills-section-title">Technical Skills</p>
-                <div class="skills-grid">
+        <!-- Bio + traits -->
+        <div class="bio-column">
+            <h1 class="about-section-title">About Me</h1>
 
-                    <!-- Languages -->
-                    <div class="skill-card">
-                        <span class="skill-card-icon"><i class="fa-solid fa-code"></i></span>
-                        <p class="skill-card-title">Languages</p>
-                        <div class="skill-tags">
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">HTML</span>
-                            <span class="skill-tag">CSS</span>
-                        </div>
-                    </div>
+            <p class="bio-text">
+                I didn't walk into my computer science degree with complete certainty — I walked in curious, and a little nervous. What I found on the other side completely changed me.<br><br>
+                From the moment I started building, I knew this was it. There's nothing quite like starting from a blank file and crafting something that actually works — designing the structure, breaking everything down to its smallest moving parts, finding the cleanest way to organize it all. It feels like solving a puzzle. A puzzle that, without fail, breaks on you.<br><br>
+                Sure, a stubborn bug at midnight can make me want to lose my mind. But tracking it down — figuring out exactly what went wrong and why — is genuinely one of the most satisfying feelings I know.<br><br>
+                I'm a fullstack developer with a natural pull toward the backend. I love architecting the core of a system — the logic, the data flow, the foundation everything else depends on. But I care deeply about the front end too, because a backend is only as good as the cohesive, polished experience it delivers. Clean design isn't an afterthought to me — it's part of the craft.<br><br>
+                Outside of software, I travel as much as I can — drawn to places with striking geology and rich history. Angels Landing, Grinnell Glacier, Antelope Canyon. I don't shy away from the brutal hikes. And yes, I'm absolutely the person stopping mid-trail to look at every bird and bug — I find wonder in the details everywhere I look, and that curiosity never really turns off.
+            </p>
 
-                    <!-- Frameworks & Libraries -->
-                    <div class="skill-card">
-                        <span class="skill-card-icon"><i class="fa-solid fa-layer-group"></i></span>
-                        <p class="skill-card-title">Frameworks &amp; Libraries</p>
-                        <div class="skill-tags">
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">Express.js</span>
-                            <span class="skill-tag">Spring Boot</span>
-                            <span class="skill-tag">Bootstrap</span>
-                            <span class="skill-tag">Angular</span>
-                            <span class="skill-tag">jQuery</span>
-                        </div>
-                    </div>
-
-                    <!-- Core CS Concepts -->
-                    <div class="skill-card">
-                        <span class="skill-card-icon"><i class="fa-solid fa-brain"></i></span>
-                        <p class="skill-card-title">Core CS Concepts</p>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Data Structures</span>
-                            <span class="skill-tag">Algorithms</span>
-                            <span class="skill-tag">OOP</span>
-                            <span class="skill-tag">REST APIs</span>
-                            <span class="skill-tag">Full Stack</span>
-                            <span class="skill-tag">AI / ML Training</span>
-                        </div>
-                    </div>
-
-                    <!-- Tools & Environments -->
-                    <div class="skill-card">
-                        <span class="skill-card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></span>
-                        <p class="skill-card-title">Tools &amp; Environments</p>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Linux</span>
-                            <span class="skill-tag">IntelliJ</span>
-                            <span class="skill-tag">Android Studio</span>
-                            <span class="skill-tag">Maven</span>
-                            <span class="skill-tag">Vim</span>
-                        </div>
-                    </div>
-
-                    <!-- Databases & Storage -->
-                    <div class="skill-card">
-                        <span class="skill-card-icon"><i class="fa-solid fa-database"></i></span>
-                        <p class="skill-card-title">Databases &amp; Storage</p>
-                        <div class="skill-tags">
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">File I/O</span>
-                            <span class="skill-tag">Client–Server</span>
-                            <span class="skill-tag">Data Persistence</span>
-                        </div>
-                    </div>
-
-                    <!-- Testing & Process -->
-                    <div class="skill-card">
-                        <span class="skill-card-icon"><i class="fa-solid fa-flask"></i></span>
-                        <p class="skill-card-title">Testing &amp; Process</p>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Test-Driven Dev</span>
-                            <span class="skill-tag">JUnit / JaCoCo</span>
-                            <span class="skill-tag">JavaDocs</span>
-                            <span class="skill-tag">Agile Mindset</span>
-                        </div>
-                    </div>
-
-                </div>
+            <!-- Personality trait pills -->
+            <p class="traits-label">A little about how I work</p>
+            <div class="traits-row">
+                <span class="trait-pill">Detail-Oriented</span>
+                <span class="trait-pill">Curious</span>
+                <span class="trait-pill">Creative Problem-Solver</span>
+                <span class="trait-pill">Independent Thinker</span>
+                <span class="trait-pill">Team Player</span>
+                <span class="trait-pill">Always Improving</span>
+                <span class="trait-pill">Obsessed with the Details</span>
             </div>
+        </div>
 
-            <hr class="section-divider">
+    </div>
 
-            <!-- ── ABOUT ME ───────────────────────────── -->
-            <div class="about-section">
-
-                <!-- Photo slideshow -->
-                <div class="photo-column">
-                    <div class="slideshow-wrapper">
-                        <button class="arrow-buttons" onclick="plusDivs(-1)">&#10094;</button>
-                        <div style="flex:1;">
-                            <div class="aboutIMG"><img src="PROJGLACIERME.jpeg"       alt="Grinnell Glacier, Montana"></div>
-                            <div class="aboutIMG"><img src="PROJZIONVIEW.jpeg"        alt="Zion National Park view"></div>
-                            <div class="aboutIMG"><img src="PROJLATTEARTjpeg.jpeg"   alt="Latte art"></div>
-                            <div class="aboutIMG"><img src="PROJKIKO.jpeg"            alt="Kiko"></div>
-                            <div class="aboutIMG"><img src="PROJCAVE.jpeg"            alt="Cave exploration"></div>
-                            <div class="aboutIMG"><img src="PROJKAYAK.jpeg"           alt="Kayaking"></div>
-                            <div class="aboutIMG"><img src="PROJZIONME.jpeg"          alt="Angels Landing, Zion"></div>
-                            <div class="aboutIMG"><img src="PROJGRANDCANYON.jpeg"     alt="Grand Canyon"></div>
-                            <div class="aboutIMG"><img src="PORTFOLIO10tidepools..jpeg" alt="Tide pools"></div>
-                            <div class="aboutIMG"><img src="PROJNLIGHTS.jpeg"         alt="Northern Lights"></div>
-                            <div class="aboutIMG"><img src="PROJANTELOPE.jpeg"        alt="Antelope Canyon"></div>
-                            <div class="aboutIMG"><img src="PROJGLACIERVIEW.jpg"      alt="Glacier National Park view"></div>
-                            <div class="aboutIMG"><img src="PROJROSSLAKE.jpeg"        alt="Ross Lake"></div>
-                        </div>
-                        <button class="arrow-buttons" onclick="plusDivs(1)">&#10095;</button>
-                    </div>
-                </div>
-
-                <!-- Bio + traits -->
-                <div class="bio-column">
-                    <h1 class="about-section-title">About Me</h1>
-
-                    <p class="bio-text">
-                        I didn't walk into my computer science degree with complete certainty — I walked in curious, and a little nervous. What I found on the other side completely changed me.<br><br>
-                        From the moment I started building, I knew this was it. There's nothing quite like starting from a blank file and crafting something that actually works — designing the structure, breaking everything down to its smallest moving parts, finding the cleanest way to organize it all. It feels like solving a puzzle. A puzzle that, without fail, breaks on you.<br><br>
-                        Sure, a stubborn bug at midnight can make me want to lose my mind. But tracking it down — figuring out exactly what went wrong and why — is genuinely one of the most satisfying feelings I know.<br><br>
-                        I'm a fullstack developer with a natural pull toward the backend. I love architecting the core of a system — the logic, the data flow, the foundation everything else depends on. But I care deeply about the front end too, because a backend is only as good as the cohesive, polished experience it delivers. Clean design isn't an afterthought to me — it's part of the craft.<br><br>
-                        Outside of software, I travel as much as I can — drawn to places with striking geology and rich history. Angels Landing, Grinnell Glacier, Antelope Canyon. I don't shy away from the brutal hikes. And yes, I'm absolutely the person stopping mid-trail to look at every bird and bug — I find wonder in the details everywhere I look, and that curiosity never really turns off.
-                    </p>
-
-                    <!-- Personality trait pills -->
-                    <p class="traits-label">A little about how I work</p>
-                    <div class="traits-row">
-                        <span class="trait-pill">Detail-Oriented</span>
-                        <span class="trait-pill">Curious</span>
-                        <span class="trait-pill">Creative Problem-Solver</span>
-                        <span class="trait-pill">Independent Thinker</span>
-                        <span class="trait-pill">Team Player</span>
-                        <span class="trait-pill">Always Improving</span>
-                        <span class="trait-pill">Obsessed with the Details</span>
-                    </div>
-                </div>
-
-            </div>
-
-        </div><!-- end background-block -->
-<body></body>
-
-
-
+</div><!-- end background-block -->
 
 <script>
-
 var slideIndex = 1;
 showDivs(slideIndex);
 
@@ -508,115 +488,14 @@ function plusDivs(n) {
 function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("aboutIMG");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
+  if (n > x.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = x.length; }
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
-  x[slideIndex-1].style.display = "block";
+  x[slideIndex - 1].style.display = "block";
 }
-
 </script>
+
+</body>
 </html>
-
-<!--
-
-            <p style="color:#EFFFE3;font-size:25px">
-            <br> This program receives information from the client on a customer and a phone call, saves
-            that information to the server. The client can request and retrieve information from the server about a customers
-            phone bill history, and has the option to filter their search between two times for a customers phone bill history<br><br>
-            <img src="phonebill4.png" alt="p3" style="display:relative; border-radius:5%; width:100%; height:100%; object-fit:cover;">
-            <i>Site Launches on local host 8888</i>
-            <br><br><br><br>
-
-            <img src="phonebill3.png" alt="p3" style="display:relative; border-radius:5%; width:100%; height:100%; object-fit:cover;">
-            <i>Client enters a phone call transaction to save onto the server</i>
-            <br><br><br><br>
-
-            <img src="phonebill1.png" alt="p3" style="display:relative; border-radius:5%; width:100%; height:100%; object-fit:cover;">
-            <i>Client can request a particular customers phone bill information, displaying a complete list
-                of calls under requested customers name</i>
-            <br><br><br><br>
-
-            <img src="phonebill2.png" alt="p3" style="display:relative; border-radius:5%; width:100%; height:1auto; object-fit:cover;">
-            <i>Client can filter the search results, only displaying the calls between two times for the
-                requested customer</i>
-            </p>
-
-            -->
-
-<!--
-     <h1 style="border:none; position:center; font-size:60px;  color:#EFFFE3; text-align:center; ">Projects</h1>
-     <h2 style="text-align:left; color:#EFFFE3; ">2022</h2>
-     <h1 style="text-align:left; color:#EFFFE3; padding:2%">  Phone Bill Manager - <br>   Client / Server  </h1>
-
-     <h3 style="color:#EFFFE3; padding:1%;">
-         <b><i> Java Language - Object Oriented design - Test driven development - intelliJ - android studio - REST API - maven - javadocs - jacoco </i></b> <br><br><br>
-<h3 Through the course of an advanced java programming course, I created both a client-server web interface and an android
-    application to simulate a phone bill managing account.<br><br>
-
-         <i> Client-Server</i>:
-         <a href="PhoneBill.html" style="text-decoration:none" >
-             <i class="fa-solid fa-chevron-right fa-2x" style="position:right; text-align:right; color:#008080;"></i>
-         </a></h3>
-     <h3 style="color:#265C5C; padding:1%;">
-
-         <br>
-
-         <hr style="border-color:#008080; ">
-
-         <br> This program receives information from the user on a customer and a phone call, saves
-         that information to the server. The user can request and retrieve information about a customers
-         phone bill history, and has the option to filter their search between two times for a customers phone bill history.
-         With each added phone call, the program saves this new information into a local file stored on the user's smartphone,
-         and each time the app is launched, the user has the ability to re-upload the previous data or overwrite changes. <br><br>
-         <br><br>
-
-         <video width="50%" height="50%;"
-                controls="controls"/>
-
-         <source src="phonebill.mov "
-                 type="video/mp4">
-         </video>
-     </h3>
-     -->
-
-
-
-<!--
- Thanks for visiting my page!! My name's Ashley, I've graduated recently with my Bachelors of Science in Computer Science.
-            I'd like to say that I'm a pretty creative person, and I love when I can freely think and strategize. What drew me to this field was how
-            some of these problems we work on feel like puzzles, how everything can work together and flow perfectly. I've also always been the kind of
-            person who appreciates when something is made with a lot of consideration to the users.
-            So I enjoy working full stack, it really allows me to take all perspectives in consideration and ensures my work is usable and
-            reflects it's intended design. I also love knowing that this industry
-            is always evolving, meaning no one person will know everything - leaving lots of room for growth in one another!
-            <br><br>
-
-            <b>Technical Skills :</b> <i>C++, Java, Python, HTML, CSS, Java Script, SQL, Linux, Vim, MacOS, Android Studio, Visual Studio, Atom, NetBeans, Adobe After Effects, IntelliJ, Object-Oriented Programs,
-    Abstract Data Types, Data Structures, Algorithms, Testing + Training Data, ML Image Detection</i>
-    <br><br><br><br><br>
-    <i>Optimistic, Detail Oriented, Creative, Kind, Team Player, Independent Thinker, Hard Working </i> <br>
-    I like the color green, the season fall, born march 1998, frogs, making art, finding unique things, and finding ways to make something new.
-
--->
-
-
-<!--
-PLACE UNDER STYLE
-#anim{max-width:700px; margin:0 auto;}
-a:hover i{transform:scale(1.5); color:#35B5AC;}
-a:hover button{transform:scale(1.3);}
-@media only screen and (max-width:640px){
-#links{
-display:grid;
-position:fixed;
-padding-left:5%;
-padding-top:10%;
-text-align:left;
-grid-gap:3rem;
-grid-template-columns:repeat(1, 1fr);
-grid-template-rows:repeat(2, 50px);
-}
-}
--->
