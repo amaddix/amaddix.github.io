@@ -246,17 +246,28 @@
     }
 
     /* ── RESPONSIVE ─────────────────────────────── */
+   /* ── RESPONSIVE ───────────────────────────────── */
     @media (max-width: 768px) {
-      .site-title { font-size: 52px; padding: 28px 5%; }
-      .section-title { font-size: 42px; }
-      .project-page { width: 100%; font-size: 14px; }
-      .project-page-container { justify-content: stretch; }
+      .site-title    { font-size: 52px; padding: 32px 5% 16px; }
+      .hero-tagline  { font-size: 30px; }
+      .project-page  { width: 50%; font-size: clamp(10px, 3.5vw, 20px); }
+      .project-page-container { justify-content: flex-end; }
+      .project-page h1 { font-size: clamp(12px, 4vw, 24px); margin: 0; padding: 6px 0; }
+      a.project-page { border-radius: 14px 14px 0 0 !important; padding: 10px !important; }
+      .skills-grid   { grid-template-columns: repeat(2, 1fr); }
+      .about-section { flex-direction: column; }
+      .photo-column  { max-width: 100%; }
     }
 
     @media (max-width: 480px) {
-      .site-title { font-size: 36px; padding: 20px 4%; }
-      .section-title { font-size: 28px; }
-      .grid { grid-template-columns: 1fr; }
+      .site-title    { font-size: 36px; padding: 24px 4% 12px; }
+      .hero-tagline  { font-size: 24px; }
+      .hero-sub      { font-size: 15px; }
+      .skills-grid   { grid-template-columns: 1fr; }
+      .skill-tag     { font-size: 12px; }
+      .bio-text      { font-size: 16px; }
+      .aboutIMG img  { height: 240px; }
+      .social-row    { gap: 20px; }
     }
   </style>
 </head>
