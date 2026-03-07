@@ -3667,3 +3667,268 @@ function showDivs(n) {
 </script>
 </body>
 </html>
+
+
+
+
+
+<div class="title" style="color:#EFFFE3; text-align:center;">
+  <br><br><br><br>
+  <h1 style="text-align:center; color:#EFFFE3; padding:1%; font-size:30px;">Phone Bill</h1>
+
+
+
+
+
+  <!-- project "slide-show" -->
+
+  <!-- PROJECT #1 PHONE BILL -->
+  <!-- PROJECT #1 PHONE BILL -->
+  <div class="projects">
+
+
+
+    <!-- Skill tag pills -->
+    <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2% 2% 0 2%;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Java</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">REST API</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Android</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">OOP</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Client&#8211;Server</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">TDD / JUnit</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Maven</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Servlet / HTTP</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">File I/O</span>
+        <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Javadoc / JaCoCo</span>
+      </div>
+    </div>
+
+    <!-- GitHub link -->
+    <div style="text-align:center; padding-top:16px;">
+      <a class="github" href="https://github.com/amaddix/CS410-SUMQ22/tree/main/phonebill-android" style="text-decoration:none;">
+        <i class="fa-brands fa-github fa-3x" style="color:#CBCBCB; padding:1%;"></i>
+      </a>
+    </div>
+
+    <!-- 1. OVERVIEW -->
+    <div class="detail2-container" style="align-items:flex-start;">
+      <div class="detail2" style="flex:3; min-width:0;">
+        <p style="color:#EFFFE3; font-size:22px; padding:1%; line-height:1.7; font-weight:500; padding-top:7%">
+
+          A full-stack phone billing system built across five iterative project phases &#8212; evolving from a command-line Java app into a
+          networked client&#8211;server system with an Android front-end. The application models real-world billing infrastructure:
+          customers can be created, phone calls logged against their account, and records queried or filtered by date-range.<br><br>
+          The server exposes a <b>RESTful HTTP API</b> backed by a custom Java Servlet. The Android client communicates with this
+          server via HTTP GET and POST requests, while also maintaining a <b>local file-based data store</b> for offline persistence.
+          On startup, users can push locally saved bills back to the server &#8212; giving the app genuine dual-layer data resilience.<br><br>
+          Built with a strict <b>test-driven development</b> workflow: JUnit tests were written before implementation,
+          coverage tracked with JaCoCo, and builds automated end-to-end through Maven.
+        </p>
+      </div>
+      <div class="detail2" style="flex:2; min-width:240px; display:flex; align-items:center; justify-content:center; padding:2%;">
+        <video style="width:50%; max-width:100%; border-radius:12px; border:2px solid #CBCBCB;" controls>
+
+          <source src="phonebill.mov" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- 2. KEY IMPLEMENTATION DETAILS -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Key Implementation Details</h1>
+      <div class="detail2-container" style="gap:16px; padding-top:16px; flex-wrap:wrap;">
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">REST Servlet (GET &amp; POST)</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;"><code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">PhoneBillServlet</code> handles GET requests to retrieve a full bill or search calls between two timestamps, and POST requests to add new calls. Customer bills are held in a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">HashMap&lt;String, PhoneBill&gt;</code> on the server for fast lookup by customer name.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Date-Range Filtering</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The search endpoint parses timestamps with <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">SimpleDateFormat</code> and compares <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">Date.compareTo()</code> to include only calls whose start and end fall within the queried window &#8212; mirroring production billing query logic.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #e8a87c; background:rgba(232,168,124,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Dual-Layer Persistence</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The Android client writes call data to a local <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">billList.txt</code> via <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">TextDumper</code>, then on relaunch offers to sync that file back to the server &#8212; intentionally decoupling local state from server state.</p>
+        </div>
+
+        <div style="flex:1; min-width:220px; border-left:4px solid #b8a0e8; background:rgba(184,160,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+          <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Sorted Call List</p>
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;"><code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">PhoneBill.sorted()</code> runs a bubble-sort over the internal <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">PhoneCall[]</code> array after every insertion, normalizing phone number formats (dashed, spaced, plain) before numeric comparison to guarantee consistent ordering regardless of input style.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. CODE SAMPLES -->
+    <div style="padding: 2% 3% 0 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:10px; border-bottom:1px solid rgba(203,203,203,0.3);">Code Samples</h1>
+
+      <!-- Snippet 1: text left, code right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:20px;">
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            The servlet's <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">doPost()</code> extracts and validates all five required parameters before constructing a
+            <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">PhoneCall</code>, then either creates a new
+            <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">PhoneBill</code> or appends to an existing one in the server map.
+            Validate first, mutate state only on success &#8212; a defensive pattern used in production APIs.
+          </p>
+        </div>
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">PhoneBillServlet.java &nbsp;&#8212;&nbsp; doPost() handler</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#88c9e8;">String</span> customer = getParameter(<span style="color:#7dd4b0;">"customer"</span>, request);
+<span style="color:#88c9e8;">if</span> (customer == <span style="color:#e8a87c;">null</span>) { missingRequiredParameter(response, <span style="color:#7dd4b0;">"customer"</span>); <span style="color:#88c9e8;">return</span>; }
+<span style="color:#7dd4b0;">// ... validate caller, callee, start, end ...</span>
+
+PhoneCall tcall = <span style="color:#88c9e8;">new</span> PhoneCall(customer, tcaller, tcallee, start, end);
+PhoneBill bill1 = <span style="color:#88c9e8;">this</span>.phoneBillMap.get(customer);
+
+<span style="color:#88c9e8;">if</span> (bill1 == <span style="color:#e8a87c;">null</span>) {
+  bill1 = <span style="color:#88c9e8;">new</span> PhoneBill(tcall);          <span style="color:#7dd4b0;">// first call: create bill</span>
+  <span style="color:#88c9e8;">this</span>.phoneBillMap.put(customer, bill1);
+} <span style="color:#88c9e8;">else</span> {
+  bill1.addPhoneCall(tcall);             <span style="color:#7dd4b0;">// subsequent: append + sort</span>
+  <span style="color:#88c9e8;">this</span>.phoneBillMap.put(customer, bill1);
+}
+response.setStatus(HttpServletResponse.SC_OK);</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Snippet 2: code left, text right -->
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:28px; margin-bottom:8px;">
+        <div style="flex:1.4; min-width:300px;">
+          <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">PhoneBillRestClient.java &nbsp;&#8212;&nbsp; date-range search</p>
+          <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
+            <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#88c9e8;">public int</span> getSearch(<span style="color:#88c9e8;">String</span> customer, <span style="color:#88c9e8;">String</span> start, <span style="color:#88c9e8;">String</span> end)
+    <span style="color:#88c9e8;">throws</span> IOException, ParserException {
+
+  Response response = http.get(Map.of(
+    <span style="color:#7dd4b0;">"customer"</span>, customer,
+    <span style="color:#7dd4b0;">"start"</span>,    start,    <span style="color:#7dd4b0;">// MM/dd/yyyy hh:mm a</span>
+    <span style="color:#7dd4b0;">"end"</span>,      end
+  ));
+
+  <span style="color:#88c9e8;">if</span> (response.getHttpStatusCode() != HTTP_OK) {
+    System.err.println(<span style="color:#7dd4b0;">"No calls found in range"</span>);
+    <span style="color:#88c9e8;">return</span> <span style="color:#e8a87c;">0</span>;
+  }
+  System.out.println(response.getContent());
+  <span style="color:#88c9e8;">return</span> <span style="color:#e8a87c;">1</span>;
+}</pre>
+          </div>
+        </div>
+        <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+          <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
+            <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">PhoneBillRestClient</code> wraps
+            <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">HttpRequestHelper</code> into three typed, intention-revealing methods:
+            add (POST), retrieve by name (GET), and search by range (GET with three params).
+            This keeps <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">Project4.java</code> free of raw HTTP plumbing,
+            and surfaces non-200 responses as readable error messages rather than raw exceptions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. ARCHITECTURE DIAGRAM -->
+    <div style="padding: 2% 3% 3% 3%;">
+      <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">System Architecture</h1>
+      <div style="margin-top:16px; overflow-x:auto;">
+        <svg viewBox="0 0 860 480" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; display:block; margin:0 auto; font-family:'Raleway',sans-serif;">
+          <defs>
+            <marker id="pb-arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#CBCBCB"/></marker>
+            <marker id="pb-grn" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7dd4b0"/></marker>
+            <marker id="pb-blu" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#88c9e8"/></marker>
+            <marker id="pb-pur" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#b8a0e8"/></marker>
+          </defs>
+
+          <!-- ANDROID CLIENT -->
+          <rect x="10" y="40" width="200" height="380" rx="14" fill="#243039" stroke="#88c9e8" stroke-width="2"/>
+          <text x="110" y="68" text-anchor="middle" fill="#88c9e8" font-size="13" font-weight="700">Android Client</text>
+          <rect x="26" y="84" width="168" height="44" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="110" y="101" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">MainActivity</text>
+          <text x="110" y="116" text-anchor="middle" fill="#d0dde8" font-size="9">phoneBillMap + UI dispatch</text>
+          <rect x="26" y="146" width="168" height="44" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="110" y="163" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">AddPhoneBill Activity</text>
+          <text x="110" y="178" text-anchor="middle" fill="#d0dde8" font-size="9">capture customer name</text>
+          <rect x="26" y="208" width="168" height="44" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="110" y="225" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">AddPhoneCall Activity</text>
+          <text x="110" y="240" text-anchor="middle" fill="#d0dde8" font-size="9">5-field form via Intent</text>
+          <rect x="26" y="270" width="168" height="44" rx="7" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="110" y="287" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">PrettyPrint / Search</text>
+          <text x="110" y="302" text-anchor="middle" fill="#d0dde8" font-size="9">ListView display activities</text>
+          <rect x="26" y="332" width="168" height="44" rx="7" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="1.5"/>
+          <text x="110" y="349" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">TextDumper / TextParser</text>
+          <text x="110" y="364" text-anchor="middle" fill="#d0dde8" font-size="9">billList.txt local persistence</text>
+
+          <!-- HTTP ARROWS -->
+          <line x1="210" y1="200" x2="308" y2="200" stroke="#7dd4b0" stroke-width="2" marker-end="url(#pb-grn)"/>
+          <text x="258" y="193" text-anchor="middle" fill="#7dd4b0" font-size="10" font-weight="600">POST /calls</text>
+          <text x="258" y="207" text-anchor="middle" fill="#7dd4b0" font-size="9">add phone call</text>
+          <line x1="308" y1="240" x2="210" y2="240" stroke="#88c9e8" stroke-width="2" marker-end="url(#pb-blu)"/>
+          <text x="258" y="257" text-anchor="middle" fill="#88c9e8" font-size="10" font-weight="600">GET ?customer</text>
+          <text x="258" y="270" text-anchor="middle" fill="#88c9e8" font-size="9">retrieve bill</text>
+          <line x1="308" y1="300" x2="210" y2="300" stroke="#b8a0e8" stroke-width="2" marker-end="url(#pb-pur)"/>
+          <text x="258" y="317" text-anchor="middle" fill="#b8a0e8" font-size="10" font-weight="600">GET ?customer+start+end</text>
+          <text x="258" y="330" text-anchor="middle" fill="#b8a0e8" font-size="9">date-range search</text>
+
+          <!-- SERVER -->
+          <rect x="310" y="40" width="210" height="380" rx="14" fill="#243039" stroke="#7dd4b0" stroke-width="2"/>
+          <text x="415" y="68" text-anchor="middle" fill="#7dd4b0" font-size="13" font-weight="700">Java Server (Jetty)</text>
+          <rect x="326" y="84" width="178" height="56" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="1.5"/>
+          <text x="415" y="104" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">PhoneBillServlet</text>
+          <text x="415" y="119" text-anchor="middle" fill="#d0dde8" font-size="9">doGet() &#8212; retrieve / search</text>
+          <text x="415" y="132" text-anchor="middle" fill="#d0dde8" font-size="9">doPost() &#8212; add call</text>
+          <rect x="326" y="158" width="178" height="44" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="1.5"/>
+          <text x="415" y="175" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">PhoneBillRestClient</text>
+          <text x="415" y="190" text-anchor="middle" fill="#d0dde8" font-size="9">typed HTTP wrapper methods</text>
+          <rect x="326" y="220" width="178" height="56" rx="7" fill="#2e3d4a" stroke="#e8a87c" stroke-width="1.5"/>
+          <text x="415" y="240" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">HashMap&lt;String, PhoneBill&gt;</text>
+          <text x="415" y="255" text-anchor="middle" fill="#d0dde8" font-size="9">in-memory bill store</text>
+          <text x="415" y="268" text-anchor="middle" fill="#d0dde8" font-size="9">keyed by customer name</text>
+          <rect x="326" y="294" width="178" height="44" rx="7" fill="#2e3d4a" stroke="#b8a0e8" stroke-width="1.5"/>
+          <text x="415" y="311" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">PrettyPrinter</text>
+          <text x="415" y="326" text-anchor="middle" fill="#d0dde8" font-size="9">formats bill to PrintWriter</text>
+          <rect x="326" y="356" width="178" height="44" rx="7" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5"/>
+          <text x="415" y="373" text-anchor="middle" fill="#EFFFE3" font-size="11" font-weight="600">Messages</text>
+          <text x="415" y="388" text-anchor="middle" fill="#d0dde8" font-size="9">error / response string helpers</text>
+
+          <!-- DOMAIN MODEL -->
+          <rect x="560" y="40" width="290" height="380" rx="14" fill="#243039" stroke="#CBCBCB" stroke-width="2"/>
+          <text x="705" y="68" text-anchor="middle" fill="#CBCBCB" font-size="13" font-weight="700">Domain Model</text>
+          <rect x="576" y="84" width="258" height="36" rx="7" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5" stroke-dasharray="5,3"/>
+          <text x="705" y="100" text-anchor="middle" fill="#CBCBCB" font-size="11" font-style="italic">AbstractPhoneBill&lt;PhoneCall&gt;</text>
+          <text x="705" y="114" text-anchor="middle" fill="#7dd4b0" font-size="9">edu.pdx.cs410J (library base)</text>
+          <rect x="576" y="138" width="258" height="80" rx="7" fill="#2e3d4a" stroke="#7dd4b0" stroke-width="2"/>
+          <text x="705" y="156" text-anchor="middle" fill="#7dd4b0" font-size="11" font-weight="700">PhoneBill</text>
+          <text x="705" y="172" text-anchor="middle" fill="#d0dde8" font-size="9">String customer</text>
+          <text x="705" y="185" text-anchor="middle" fill="#d0dde8" font-size="9">PhoneCall[] call  (capacity 100)</text>
+          <text x="705" y="198" text-anchor="middle" fill="#d0dde8" font-size="9">int callNum  &#8226;  addPhoneCall()  &#8226;  sorted()</text>
+          <line x1="705" y1="120" x2="705" y2="136" stroke="#7dd4b0" stroke-width="1.5" marker-end="url(#pb-grn)"/>
+          <rect x="576" y="238" width="258" height="36" rx="7" fill="#2e3d4a" stroke="#CBCBCB" stroke-width="1.5" stroke-dasharray="5,3"/>
+          <text x="705" y="254" text-anchor="middle" fill="#CBCBCB" font-size="11" font-style="italic">AbstractPhoneCall</text>
+          <text x="705" y="268" text-anchor="middle" fill="#7dd4b0" font-size="9">edu.pdx.cs410J (library base)</text>
+          <rect x="576" y="292" width="258" height="92" rx="7" fill="#2e3d4a" stroke="#88c9e8" stroke-width="2"/>
+          <text x="705" y="310" text-anchor="middle" fill="#88c9e8" font-size="11" font-weight="700">PhoneCall</text>
+          <text x="705" y="326" text-anchor="middle" fill="#d0dde8" font-size="9">String customer, caller, callee</text>
+          <text x="705" y="339" text-anchor="middle" fill="#d0dde8" font-size="9">String startTime, endTime</text>
+          <text x="705" y="352" text-anchor="middle" fill="#d0dde8" font-size="9">getBeginTimeString() &#8212; SimpleDateFormat</text>
+          <text x="705" y="365" text-anchor="middle" fill="#d0dde8" font-size="9">getEndTimeString() &#8212; SHORT locale format</text>
+          <line x1="705" y1="274" x2="705" y2="290" stroke="#88c9e8" stroke-width="1.5" marker-end="url(#pb-blu)"/>
+          <line x1="705" y1="218" x2="705" y2="236" stroke="#b8a0e8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#pb-pur)"/>
+          <text x="714" y="230" fill="#b8a0e8" font-size="9">owns []</text>
+
+          <!-- Legend -->
+          <text x="30"  y="450" fill="#7dd4b0" font-size="10">&#9472;&#9472;&#9472; POST (add)</text>
+          <text x="140" y="450" fill="#88c9e8" font-size="10">&#9472;&#9472;&#9472; GET (retrieve)</text>
+          <text x="270" y="450" fill="#b8a0e8" font-size="10">&#9472;&#9472;&#9472; GET (search)</text>
+          <text x="540" y="450" fill="rgba(203,203,203,0.5)" font-size="10">- - - extends (library base class)</text>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</div>

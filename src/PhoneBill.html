@@ -15,7 +15,13 @@
     <style>
 
     /* ── RESET & BASE ─────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      min-width: 0;
+      max-width: 100%;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
 
     body, p {
       font-family: "Raleway", sans-serif;
@@ -67,7 +73,7 @@
     }
     .project-page {
       display: block;
-      width: 400px;
+      width: clamp(100px, 45%, 400px);
       font-size: 20px;
       border-radius: 40px 40px 0 0;
       color: #EFFFE3;
@@ -193,7 +199,8 @@
     /* Photo slideshow column */
     .photo-column {
       float: left;
-      width: 440px;
+      width: 100%;
+      max-width: 440px;
       margin-right: 40px;
       margin-bottom: 20px;
     }
@@ -266,7 +273,7 @@
     /* ── PROJECTS PAGE SPECIFIC ───────────────────── */
     .title              { display: flex; flex-wrap: wrap; flex-direction: column; }
     .slideshow-arrows   { display: flex; justify-content: space-around; }
-    .projects           { flex: 1;  }
+    .projects           { flex: 1; }
     .detail2-container  { display: flex; justify-content: space-evenly; flex-wrap: wrap; flex-direction: row; }
     .detail2            { flex: 1; }
     .section-title      { font-size: 60px; }
@@ -282,32 +289,34 @@
       a.project-page          { border-radius: 14px 14px 0 0 !important; padding: 10px !important; }
       .skills-grid            { grid-template-columns: repeat(2, 1fr); }
       .about-section          { flex-direction: column; }
-      .photo-column           { max-width: 100%; }
-      .detail2-container      { flex-direction: column; }
-      .detail2                { min-width: 0; width: 100%; }
-      pre                     { font-size: 11px !important; }
+      .photo-column           { float: none; width: 100% !important; max-width: 100% !important; margin-right: 0; }
+      .detail2-container      { flex-direction: column !important; }
+      .detail2                { min-width: 0 !important; width: 100% !important; flex: none !important; }
+      pre                     { font-size: 11px !important; overflow-x: auto; }
+      /* Catch any remaining inline flex children with fixed widths */
+      .detail2-container > * { min-width: 0 !important; width: 100% !important; max-width: 100% !important; }
+      div[style*="display:flex"] > div { min-width: 0 !important; }
     }
 
     @media (max-width: 480px) {
-      .site-title    { font-size: 36px; padding: 24px 4% 12px; }
-      .hero-tagline  { font-size: 24px; }
-      .hero-sub      { font-size: 15px; }
-      .section-title { font-size: 28px; }
+      .site-title    { font-size: clamp(28px, 8vw, 36px); padding: 20px 4% 10px; }
+      .hero-tagline  { font-size: 22px; }
+      .hero-sub      { font-size: 14px; }
+      .section-title { font-size: 26px; }
       .skills-grid   { grid-template-columns: 1fr; }
-      .skill-tag     { font-size: 12px; }
-      .bio-text      { font-size: 16px; }
-      .aboutIMG img  { height: 240px; }
-      .social-row    { gap: 20px; }
-      /* NOTE: index.html keeps .project-page at 50% on mobile (no override here).
-         If using index-projects.html layout, uncomment the line below instead: */
-      /* .project-page  { width: 100%; font-size: 12px; } */
-      .projects      { padding: 0 4px; }
-      .projects span[style] { font-size: 12px !important; padding: 4px 10px !important; }
-      pre            { font-size: 10px !important; white-space: pre; overflow-x: auto; }
-      svg            { min-width: 480px; }
-      .projects h1   { font-size: 16px !important; }
-      .projects p    { font-size: 16px !important; }
-      .arrow-buttons { font-size: 36px !important; }
+      .skill-tag     { font-size: 12px; white-space: normal; }
+      .bio-text      { font-size: 15px; }
+      .aboutIMG img  { height: 220px; }
+      .social-row    { gap: 16px; }
+      .projects      { padding: 0; }
+      /* Scale all text inside the project content area */
+      .projects p    { font-size: clamp(13px, 3.8vw, 15px) !important; line-height: 1.65 !important; }
+      .projects h1   { font-size: clamp(15px, 4.5vw, 20px) !important; }
+      .projects span { font-size: 12px !important; padding: 4px 10px !important; }
+      pre            { font-size: 10px !important; overflow-x: auto; white-space: pre; }
+      svg            { min-width: 0 !important; max-width: 100%; }
+      video          { width: 100% !important; }
+      .arrow-buttons { font-size: 26px !important; }
     }
 
   </style>
@@ -320,6 +329,29 @@
     <h1 class="site-title" style="color:#6D8196; text-align:center;">ASHLEY MADDIX</h1>
 </div>
 
+<!-- ── NAV TAB ─────────────────────────────────── -->
+<!--
+  For index.html    → link to index-projects.html, label = PROJECTS
+  For index-projects.html → link to index.html, label = ABOUT ME
+
+  index.html nav tab:
+  <div class="project-page-container">
+    <a href="index-projects.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>PROJECTS</h1></i>
+    </a>
+  </div>
+
+  index-projects.html nav tab:
+  <div class="project-page-container">
+    <a href="index.html" class="project-page"
+       style="border-radius:40px 40px 0 0; color:#EFFFE3; background-color:#8fa3b5;
+              text-align:center; text-decoration:none; padding:10px;">
+      <i><h1>ABOUT ME</h1></i>
+    </a>
+  </div>
+-->
 <div class="project-page-container">
     <a href="index-projects.html" class="project-page" style="color:#CBCBCB; background-color:#6D8196;">
         <i><h1 style="font-size:auto; margin:0;">PROJECTS</h1></i>
@@ -331,6 +363,7 @@
 
 <!-- ── MAIN CONTENT BLOCK ──────────────────────── -->
 <div class="background-block" style="background-color:#6D8196; padding-bottom:60px;">
+
 
 
     <div class="title" style="color:#EFFFE3; text-align:center;">
@@ -350,7 +383,7 @@
 
 
             <!-- Skill tag pills -->
-            <div class="detail2" style="flex:2; min-width:240px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2% 2% 0 2%;">
+            <div class="detail2" style="flex:2; min-width:0; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2% 2% 0 2%;">
                 <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
                     <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">Java</span>
                     <span style="background:#4a6275; color:#EFFFE3; border:2px solid #CBCBCB; border-radius:20px; padding:6px 16px; font-size:15px;">REST API</span>
@@ -374,7 +407,7 @@
 
             <!-- 1. OVERVIEW -->
             <div class="detail2-container" style="align-items:flex-start;">
-                <div class="detail2" style="flex:3; min-width:280px;">
+                <div class="detail2" style="flex:3; min-width:0;">
                     <p style="color:#EFFFE3; font-size:22px; padding:1%; line-height:1.7; font-weight:500; padding-top:7%">
 
                         A full-stack phone billing system built across five iterative project phases &#8212; evolving from a command-line Java app into a
@@ -387,8 +420,9 @@
                         coverage tracked with JaCoCo, and builds automated end-to-end through Maven.
                     </p>
                 </div>
-                <div class="detail2" style="flex:2; min-width:240px; display:flex; align-items:center; justify-content:center; padding:2%;">
-                    <video style="width:50%; border-radius:12px; border:2px solid #CBCBCB;" controls="controls">
+                <div class="detail2" style="flex:2; min-width:0; display:flex; align-items:center; justify-content:center; padding:2%;">
+                    <video style="width:100%; max-width:100%; border-radius:12px; border:2px solid #CBCBCB;" controls>
+
                         <source src="phonebill.mov" type="video/mp4">
                     </video>
                 </div>
@@ -399,22 +433,22 @@
                 <h1 style="color:#CBCBCB; font-size:22px; text-align:left; padding-bottom:16px; border-bottom:1px solid rgba(203,203,203,0.3);">Key Implementation Details</h1>
                 <div class="detail2-container" style="gap:16px; padding-top:16px; flex-wrap:wrap;">
 
-                    <div style="flex:1; min-width:220px; border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+                    <div style="flex:1; min-width:0; border-left:4px solid #7dd4b0; background:rgba(125,212,176,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
                         <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">REST Servlet (GET &amp; POST)</p>
                         <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;"><code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">PhoneBillServlet</code> handles GET requests to retrieve a full bill or search calls between two timestamps, and POST requests to add new calls. Customer bills are held in a <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">HashMap&lt;String, PhoneBill&gt;</code> on the server for fast lookup by customer name.</p>
                     </div>
 
-                    <div style="flex:1; min-width:220px; border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+                    <div style="flex:1; min-width:0; border-left:4px solid #88c9e8; background:rgba(136,201,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
                         <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Date-Range Filtering</p>
                         <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The search endpoint parses timestamps with <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">SimpleDateFormat</code> and compares <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">Date.compareTo()</code> to include only calls whose start and end fall within the queried window &#8212; mirroring production billing query logic.</p>
                     </div>
 
-                    <div style="flex:1; min-width:220px; border-left:4px solid #e8a87c; background:rgba(232,168,124,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+                    <div style="flex:1; min-width:0; border-left:4px solid #e8a87c; background:rgba(232,168,124,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
                         <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Dual-Layer Persistence</p>
                         <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;">The Android client writes call data to a local <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">billList.txt</code> via <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">TextDumper</code>, then on relaunch offers to sync that file back to the server &#8212; intentionally decoupling local state from server state.</p>
                     </div>
 
-                    <div style="flex:1; min-width:220px; border-left:4px solid #b8a0e8; background:rgba(184,160,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
+                    <div style="flex:1; min-width:0; border-left:4px solid #b8a0e8; background:rgba(184,160,232,0.1); border-radius:0 10px 10px 0; padding:18px 20px; text-align:left;">
                         <p style="color:#EFFFE3; font-size:16px; font-weight:600; margin-bottom:8px;">Sorted Call List</p>
                         <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.6;"><code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">PhoneBill.sorted()</code> runs a bubble-sort over the internal <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">PhoneCall[]</code> array after every insertion, normalizing phone number formats (dashed, spaced, plain) before numeric comparison to guarantee consistent ordering regardless of input style.</p>
                     </div>
@@ -428,7 +462,7 @@
 
                 <!-- Snippet 1: text left, code right -->
                 <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:20px;">
-                    <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+                    <div style="flex:1; min-width:0; display:flex; align-items:center;">
                         <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
                             The servlet's <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">doPost()</code> extracts and validates all five required parameters before constructing a
                             <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">PhoneCall</code>, then either creates a new
@@ -436,7 +470,7 @@
                             Validate first, mutate state only on success &#8212; a defensive pattern used in production APIs.
                         </p>
                     </div>
-                    <div style="flex:1.4; min-width:300px;">
+                    <div style="flex:1.4; min-width:0;">
                         <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">PhoneBillServlet.java &nbsp;&#8212;&nbsp; doPost() handler</p>
                         <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
             <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#88c9e8;">String</span> customer = getParameter(<span style="color:#7dd4b0;">"customer"</span>, request);
@@ -460,7 +494,7 @@ response.setStatus(HttpServletResponse.SC_OK);</pre>
 
                 <!-- Snippet 2: code left, text right -->
                 <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; padding-top:28px; margin-bottom:8px;">
-                    <div style="flex:1.4; min-width:300px;">
+                    <div style="flex:1.4; min-width:0;">
                         <p style="color:#CBCBCB; font-size:13px; font-family:monospace; padding:0 0 6px 0; letter-spacing:0.05em; margin:0;">PhoneBillRestClient.java &nbsp;&#8212;&nbsp; date-range search</p>
                         <div style="background:#2e3d4a; border:2px solid #CBCBCB; border-radius:10px; overflow:hidden;">
             <pre style="margin:0; padding:16px; font-family:monospace; font-size:12px; line-height:1.75; color:#EFFFE3; overflow-x:auto; white-space:pre;"><span style="color:#88c9e8;">public int</span> getSearch(<span style="color:#88c9e8;">String</span> customer, <span style="color:#88c9e8;">String</span> start, <span style="color:#88c9e8;">String</span> end)
@@ -481,7 +515,7 @@ response.setStatus(HttpServletResponse.SC_OK);</pre>
 }</pre>
                         </div>
                     </div>
-                    <div style="flex:1; min-width:240px; display:flex; align-items:center;">
+                    <div style="flex:1; min-width:0; display:flex; align-items:center;">
                         <p style="color:#d0dde8; font-size:15px; font-weight:400; line-height:1.7; margin:0;">
                             <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">PhoneBillRestClient</code> wraps
                             <code style="font-family:monospace; background:#2e3d4a; padding:1px 5px; border-radius:3px;">HttpRequestHelper</code> into three typed, intention-revealing methods:
@@ -592,7 +626,7 @@ response.setStatus(HttpServletResponse.SC_OK);</pre>
 
         </div>
     </div>
-</div>
+
 
 </div><!-- end background-block -->
 
